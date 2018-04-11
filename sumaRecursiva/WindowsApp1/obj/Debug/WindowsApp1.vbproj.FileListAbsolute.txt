@@ -1,0 +1,14 @@
+C:\Users\Leandro\source\repos\sumaRecursiva\WindowsApp1\bin\Debug\WindowsApp1.exe.config
+C:\Users\Leandro\source\repos\sumaRecursiva\WindowsApp1\bin\Debug\WindowsApp1.exe
+C:\Users\Leandro\source\repos\sumaRecursiva\WindowsApp1\bin\Debug\WindowsApp1.pdb
+C:\Users\Leandro\source\repos\sumaRecursiva\WindowsApp1\bin\Debug\WindowsApp1.xml
+C:\Users\Leandro\source\repos\sumaRecursiva\WindowsApp1\obj\Debug\WindowsApp1.vbprojResolveAssemblyReference.cache
+C:\Users\Leandro\source\repos\sumaRecursiva\WindowsApp1\obj\Debug\WindowsApp1.frmCargaVector.resources
+C:\Users\Leandro\source\repos\sumaRecursiva\WindowsApp1\obj\Debug\WindowsApp1.frmPpal.resources
+C:\Users\Leandro\source\repos\sumaRecursiva\WindowsApp1\obj\Debug\WindowsApp1.Resources.resources
+C:\Users\Leandro\source\repos\sumaRecursiva\WindowsApp1\obj\Debug\WindowsApp1.vbproj.GenerateResource.Cache
+C:\Users\Leandro\source\repos\sumaRecursiva\WindowsApp1\obj\Debug\WindowsApp1.vbproj.CoreCompileInputs.cache
+C:\Users\Leandro\source\repos\sumaRecursiva\WindowsApp1\obj\Debug\WindowsApp1.exe
+C:\Users\Leandro\source\repos\sumaRecursiva\WindowsApp1\obj\Debug\WindowsApp1.xml
+C:\Users\Leandro\source\repos\sumaRecursiva\WindowsApp1\obj\Debug\WindowsApp1.pdb
+C:\Users\Leandro\source\repos\sumaRecursiva\WindowsApp1\obj\Debug\WindowsApp1.frmPersona.resources
