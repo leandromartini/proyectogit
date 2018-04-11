@@ -25,6 +25,7 @@ Partial Class frmPpal
         Me.BtnCerrar = New System.Windows.Forms.Button()
         Me.BtnVector = New System.Windows.Forms.Button()
         Me.btnPersona = New System.Windows.Forms.Button()
+        Me.Button1 = New System.Windows.Forms.Button()
         Me.SuspendLayout()
         '
         'BtnCerrar
@@ -54,11 +55,21 @@ Partial Class frmPpal
         Me.btnPersona.Text = "Personas"
         Me.btnPersona.UseVisualStyleBackColor = True
         '
+        'Button1
+        '
+        Me.Button1.Location = New System.Drawing.Point(296, 12)
+        Me.Button1.Name = "Button1"
+        Me.Button1.Size = New System.Drawing.Size(105, 23)
+        Me.Button1.TabIndex = 4
+        Me.Button1.Text = "Leandro Acer!"
+        Me.Button1.UseVisualStyleBackColor = True
+        '
         'frmPpal
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(655, 261)
+        Me.Controls.Add(Me.Button1)
         Me.Controls.Add(Me.btnPersona)
         Me.Controls.Add(Me.BtnVector)
         Me.Controls.Add(Me.BtnCerrar)
@@ -70,4 +81,5 @@ Partial Class frmPpal
     Friend WithEvents BtnCerrar As Button
     Friend WithEvents BtnVector As Button
     Friend WithEvents btnPersona As Button
+    Friend WithEvents Button1 As Button
 End Class
