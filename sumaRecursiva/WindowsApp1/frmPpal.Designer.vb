@@ -61,7 +61,7 @@ Partial Class frmPpal
         Me.Button1.Name = "Button1"
         Me.Button1.Size = New System.Drawing.Size(105, 23)
         Me.Button1.TabIndex = 4
-        Me.Button1.Text = "Leandro Acer!"
+        Me.Button1.Text = "Adios!"
         Me.Button1.UseVisualStyleBackColor = True
         '
         'frmPpal

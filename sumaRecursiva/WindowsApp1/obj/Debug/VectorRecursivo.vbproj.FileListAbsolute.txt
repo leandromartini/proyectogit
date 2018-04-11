@@ -44,7 +44,6 @@ C:\ProyectosGit\proyectogit\sumaRecursiva\WindowsApp1\obj\Debug\WindowsApp1.frmP
 C:\ProyectosGit\proyectogit\sumaRecursiva\WindowsApp1\obj\Debug\WindowsApp1.Resources.resources
 C:\ProyectosGit\proyectogit\sumaRecursiva\WindowsApp1\obj\Debug\VectorRecursivo.vbproj.GenerateResource.cache
 C:\ProyectosGit\proyectogit\sumaRecursiva\WindowsApp1\obj\Debug\VectorRecursivo.vbproj.CoreCompileInputs.cache
-C:\ProyectosGit\proyectogit\sumaRecursiva\WindowsApp1\obj\Debug\VectorRecursivo.vbproj.CopyComplete
 C:\ProyectosGit\proyectogit\sumaRecursiva\WindowsApp1\obj\Debug\WindowsApp1.exe
 C:\ProyectosGit\proyectogit\sumaRecursiva\WindowsApp1\obj\Debug\WindowsApp1.xml
 C:\ProyectosGit\proyectogit\sumaRecursiva\WindowsApp1\obj\Debug\WindowsApp1.pdb
