@@ -32,4 +32,27 @@ Module conexion
             MsgBox(ex.Message)
         End Try
     End Sub
+
+    Public Sub CreateCommand2(ByVal name As String, ByVal ape As String, ByVal fec As String, ByVal ciudad As Long)
+        Try
+            Dim sProdString As String = "[dbo].[persona_actualizarRegistro]"
+            Dim command As New SqlCommand(sProdString, objConn)
+            Dim dalRes As New DataSet
+            With command
+                command.CommandType = CommandType.StoredProcedure
+                command.Parameters.AddWithValue("@idusuario", -1)
+                command.Parameters.AddWithValue("@nombre", name)
+                command.Parameters.AddWithValue("@apellido", ape)
+                command.Parameters.AddWithValue("@fecNac", fec)
+                command.Parameters.AddWithValue("@ciudad", ciudad)
+                conn()
+                command.ExecuteNonQuery()
+
+            End With
+
+            disconect()
+        Catch ex As Exception
+            MsgBox(ex.Message)
+        End Try
+    End Sub
 End Module

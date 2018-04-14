@@ -27,6 +27,7 @@ Partial Class frmPersona
         Me.TextBox2 = New System.Windows.Forms.TextBox()
         Me.TextBox3 = New System.Windows.Forms.TextBox()
         Me.ComboBox1 = New System.Windows.Forms.ComboBox()
+        Me.Button2 = New System.Windows.Forms.Button()
         Me.SuspendLayout()
         '
         'Button1
@@ -67,11 +68,21 @@ Partial Class frmPersona
         Me.ComboBox1.Size = New System.Drawing.Size(145, 21)
         Me.ComboBox1.TabIndex = 4
         '
+        'Button2
+        '
+        Me.Button2.Location = New System.Drawing.Point(179, 230)
+        Me.Button2.Name = "Button2"
+        Me.Button2.Size = New System.Drawing.Size(115, 29)
+        Me.Button2.TabIndex = 5
+        Me.Button2.Text = "Alta SP"
+        Me.Button2.UseVisualStyleBackColor = True
+        '
         'frmPersona
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(669, 271)
+        Me.Controls.Add(Me.Button2)
         Me.Controls.Add(Me.ComboBox1)
         Me.Controls.Add(Me.TextBox3)
         Me.Controls.Add(Me.TextBox2)
@@ -89,4 +100,5 @@ Partial Class frmPersona
     Friend WithEvents TextBox2 As TextBox
     Friend WithEvents TextBox3 As TextBox
     Friend WithEvents ComboBox1 As ComboBox
+    Friend WithEvents Button2 As Button
 End Class

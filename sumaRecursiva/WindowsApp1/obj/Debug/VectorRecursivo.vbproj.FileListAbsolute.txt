@@ -18,7 +18,6 @@ C:\ProyectosGit\sumaRecursiva\WindowsApp1\bin\Debug\WindowsApp1.exe.config
 C:\ProyectosGit\sumaRecursiva\WindowsApp1\bin\Debug\WindowsApp1.exe
 C:\ProyectosGit\sumaRecursiva\WindowsApp1\bin\Debug\WindowsApp1.pdb
 C:\ProyectosGit\sumaRecursiva\WindowsApp1\bin\Debug\WindowsApp1.xml
-C:\ProyectosGit\sumaRecursiva\WindowsApp1\bin\Debug\Errores.dll
 C:\ProyectosGit\sumaRecursiva\WindowsApp1\bin\Debug\Errores.pdb
 C:\ProyectosGit\sumaRecursiva\WindowsApp1\bin\Debug\Errores.xml
 C:\ProyectosGit\sumaRecursiva\WindowsApp1\obj\Debug\VectorRecursivo.vbprojResolveAssemblyReference.cache

@@ -18,4 +18,10 @@ Public Class frmPersona
 
 
     End Sub
+
+    Private Sub Button2_Click(sender As Object, e As EventArgs) Handles Button2.Click
+
+
+        conexion.CreateCommand2(TextBox1.Text, TextBox2.Text, TextBox3.Text, 1)
+    End Sub
 End Class
