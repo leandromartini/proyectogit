@@ -72,6 +72,7 @@
     <Import Include="System.Threading.Tasks" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="conexion.vb" />
     <Compile Include="frmPersona.designer.vb">
       <DependentUpon>frmPersona.vb</DependentUpon>
     </Compile>

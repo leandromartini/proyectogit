@@ -23,10 +23,11 @@ Partial Class frmPersona
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Me.Button1 = New System.Windows.Forms.Button()
-        Me.TextBox1 = New System.Windows.Forms.TextBox()
-        Me.TextBox2 = New System.Windows.Forms.TextBox()
-        Me.TextBox3 = New System.Windows.Forms.TextBox()
-        Me.ComboBox1 = New System.Windows.Forms.ComboBox()
+        Me.txtNombre = New System.Windows.Forms.TextBox()
+        Me.txtApellido = New System.Windows.Forms.TextBox()
+        Me.txtFecNac = New System.Windows.Forms.TextBox()
+        Me.cboLocalidad = New System.Windows.Forms.ComboBox()
+        Me.btnCerrar = New System.Windows.Forms.Button()
         Me.SuspendLayout()
         '
         'Button1
@@ -38,44 +39,54 @@ Partial Class frmPersona
         Me.Button1.Text = "Alta"
         Me.Button1.UseVisualStyleBackColor = True
         '
-        'TextBox1
+        'txtNombre
         '
-        Me.TextBox1.Location = New System.Drawing.Point(124, 12)
-        Me.TextBox1.Name = "TextBox1"
-        Me.TextBox1.Size = New System.Drawing.Size(145, 20)
-        Me.TextBox1.TabIndex = 1
+        Me.txtNombre.Location = New System.Drawing.Point(124, 12)
+        Me.txtNombre.Name = "txtNombre"
+        Me.txtNombre.Size = New System.Drawing.Size(145, 20)
+        Me.txtNombre.TabIndex = 1
         '
-        'TextBox2
+        'txtApellido
         '
-        Me.TextBox2.Location = New System.Drawing.Point(124, 38)
-        Me.TextBox2.Name = "TextBox2"
-        Me.TextBox2.Size = New System.Drawing.Size(145, 20)
-        Me.TextBox2.TabIndex = 2
+        Me.txtApellido.Location = New System.Drawing.Point(124, 38)
+        Me.txtApellido.Name = "txtApellido"
+        Me.txtApellido.Size = New System.Drawing.Size(145, 20)
+        Me.txtApellido.TabIndex = 2
         '
-        'TextBox3
+        'txtFecNac
         '
-        Me.TextBox3.Location = New System.Drawing.Point(124, 64)
-        Me.TextBox3.Name = "TextBox3"
-        Me.TextBox3.Size = New System.Drawing.Size(145, 20)
-        Me.TextBox3.TabIndex = 3
+        Me.txtFecNac.Location = New System.Drawing.Point(124, 64)
+        Me.txtFecNac.Name = "txtFecNac"
+        Me.txtFecNac.Size = New System.Drawing.Size(145, 20)
+        Me.txtFecNac.TabIndex = 3
         '
-        'ComboBox1
+        'cboLocalidad
         '
-        Me.ComboBox1.FormattingEnabled = True
-        Me.ComboBox1.Location = New System.Drawing.Point(124, 90)
-        Me.ComboBox1.Name = "ComboBox1"
-        Me.ComboBox1.Size = New System.Drawing.Size(145, 21)
-        Me.ComboBox1.TabIndex = 4
+        Me.cboLocalidad.FormattingEnabled = True
+        Me.cboLocalidad.Location = New System.Drawing.Point(124, 90)
+        Me.cboLocalidad.Name = "cboLocalidad"
+        Me.cboLocalidad.Size = New System.Drawing.Size(145, 21)
+        Me.cboLocalidad.TabIndex = 4
+        '
+        'btnCerrar
+        '
+        Me.btnCerrar.Location = New System.Drawing.Point(553, 240)
+        Me.btnCerrar.Name = "btnCerrar"
+        Me.btnCerrar.Size = New System.Drawing.Size(99, 23)
+        Me.btnCerrar.TabIndex = 5
+        Me.btnCerrar.Text = "Cerrar"
+        Me.btnCerrar.UseVisualStyleBackColor = True
         '
         'frmPersona
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(669, 271)
-        Me.Controls.Add(Me.ComboBox1)
-        Me.Controls.Add(Me.TextBox3)
-        Me.Controls.Add(Me.TextBox2)
-        Me.Controls.Add(Me.TextBox1)
+        Me.Controls.Add(Me.btnCerrar)
+        Me.Controls.Add(Me.cboLocalidad)
+        Me.Controls.Add(Me.txtFecNac)
+        Me.Controls.Add(Me.txtApellido)
+        Me.Controls.Add(Me.txtNombre)
         Me.Controls.Add(Me.Button1)
         Me.Name = "frmPersona"
         Me.Text = "Persona"
@@ -85,8 +96,9 @@ Partial Class frmPersona
     End Sub
 
     Friend WithEvents Button1 As Button
-    Friend WithEvents TextBox1 As TextBox
-    Friend WithEvents TextBox2 As TextBox
-    Friend WithEvents TextBox3 As TextBox
-    Friend WithEvents ComboBox1 As ComboBox
+    Friend WithEvents txtNombre As TextBox
+    Friend WithEvents txtApellido As TextBox
+    Friend WithEvents txtFecNac As TextBox
+    Friend WithEvents cboLocalidad As ComboBox
+    Friend WithEvents btnCerrar As Button
 End Class

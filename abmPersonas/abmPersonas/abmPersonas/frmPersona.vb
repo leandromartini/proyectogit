@@ -1,21 +1,21 @@
 ﻿Imports System.Data.SqlClient
 Public Class frmPersona
     Private Sub frmPersona_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        ComboBox1.Items.Add("La Plata")
-        ComboBox1.Items.Add("Trenque Lauquen")
-        ComboBox1.Items.Add("Bahia Blanca")
+        cboLocalidad.Items.Add("La Plata")
+        cboLocalidad.Items.Add("Trenque Lauquen")
+        cboLocalidad.Items.Add("Bahia Blanca")
 
     End Sub
 
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
 
-        Dim query As String
+        conexion.CreateCommand(txtNombre.Text, txtApellido.Text, txtFecNac.Text, 1)
 
-        query = "insert into persona ( nombre, apellido, fecNac, ciudad) values ( " & TextBox1.Text & "," & TextBox2.Text & "," & TextBox3.Text & ", 1 )"
-
-        ' conexion.CreateCommand(query)
-
-
-
+    End Sub
+    Sub limpiar()
+        cboLocalidad.Text = ""
+    End Sub
+    Private Sub btnCerrar_Click(sender As Object, e As EventArgs) Handles btnCerrar.Click
+        Me.Close()
     End Sub
 End Class
