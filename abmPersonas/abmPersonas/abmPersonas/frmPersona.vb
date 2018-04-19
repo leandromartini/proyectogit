@@ -10,9 +10,12 @@ Public Class frmPersona
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
 
         conexion.CreateCommand(txtNombre.Text, txtApellido.Text, txtFecNac.Text, 1)
-
+        limpiar()
     End Sub
-    Sub limpiar()
+    Public Sub limpiar()
+        txtNombre.Text = ""
+        txtApellido.Text = ""
+        txtFecNac.Text = ""
         cboLocalidad.Text = ""
     End Sub
     Private Sub btnCerrar_Click(sender As Object, e As EventArgs) Handles btnCerrar.Click
