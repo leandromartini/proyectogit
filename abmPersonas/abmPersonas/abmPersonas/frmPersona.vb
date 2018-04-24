@@ -1,9 +1,15 @@
 ﻿Imports System.Data.SqlClient
+Imports System.Data
+
+
+
 Public Class frmPersona
+
+    Dim objDS As DataSet
+
     Private Sub frmPersona_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        cboLocalidad.Items.Add("La Plata")
-        cboLocalidad.Items.Add("Trenque Lauquen")
-        cboLocalidad.Items.Add("Bahia Blanca")
+        objDS = pwiComun.llenarCboLocalidades()
+
 
     End Sub
 
@@ -19,6 +25,7 @@ Public Class frmPersona
         cboLocalidad.Text = ""
     End Sub
     Private Sub btnCerrar_Click(sender As Object, e As EventArgs) Handles btnCerrar.Click
+        limpiar()
         Me.Close()
     End Sub
 End Class
