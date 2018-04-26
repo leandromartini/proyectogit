@@ -10,6 +10,9 @@ Public Class frmPersona
     Private Sub frmPersona_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         objDS = pwiComun.llenarCboLocalidades()
 
+        cboLocalidad.DataSource = objDS.Tables(0)
+        cboLocalidad.DisplayMember = "descrip"
+        cboLocalidad.ValueMember = "cod_ent"
 
     End Sub
 

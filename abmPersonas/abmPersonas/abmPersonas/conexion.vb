@@ -36,6 +36,7 @@ Module conexion
                 command.Parameters.AddWithValue("@ciudad", ciudad)
                 conn()
                 cantidad = command.ExecuteNonQuery()
+
             End With
             disconect()
         Catch ex As Exception
@@ -43,17 +44,20 @@ Module conexion
         End Try
     End Sub
 
-    Public Function obtenerLocalidades() As SqlDataReader
+    Public Function obtenerLocalidades() As DataSet
         Try
+
             Dim sProdString As String = "[dbo].[localidades_ObtenerRegistro]"
             Dim command As New SqlCommand(sProdString, objConn)
-            Dim dalRes As New DataSet
+            Dim dataset As New DataSet
             With command
                 command.CommandType = CommandType.StoredProcedure
                 conn()
-                obtenerLocalidades = command.ExecuteReader()
             End With
+            Dim da As New SqlDataAdapter(command)
+            da.Fill(dataset)
             disconect()
+            obtenerLocalidades = dataset
         Catch ex As Exception
             MsgBox(ex.Message)
             obtenerLocalidades = Nothing
