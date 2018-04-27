@@ -1,8 +1,6 @@
 ﻿Imports System.Data.SqlClient
 Imports System.Data
 
-
-
 Public Class frmPersona
 
     Dim objDS As DataSet

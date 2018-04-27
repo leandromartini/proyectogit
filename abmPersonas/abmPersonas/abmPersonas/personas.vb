@@ -1,7 +1,7 @@
 ﻿Imports System
 Imports System.Data
 Imports System.Data.SqlClient
-Imports abmPersonas.conexion
+
 Public Class personas
 
     Public Function ActualizarLista(ByVal name As String, ByVal ape As String, ByVal fec As String, ByVal ciudad As Long) As Integer
