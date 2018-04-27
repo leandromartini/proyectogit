@@ -4,21 +4,21 @@ Imports System.Data.SqlClient
 
 Public Class localidades
 
-    Public Shared Function obtenerLocalidades() As SqlDataReader
+
+    Public Function obtenerLocalidades() As DataSet
         Try
-            Dim sConnectionString As String _
-            = "Initial Catalog=pruebas; Data Source=localhost ; Integrated Security=SSPI;"
-            Dim objConn As New SqlConnection(sConnectionString)
 
             Dim sProdString As String = "[dbo].[localidades_ObtenerRegistro]"
             Dim command As New SqlCommand(sProdString, objConn)
-            Dim dalRes As New DataSet
-
-            command.CommandType = CommandType.StoredProcedure
-            conn()
-            obtenerLocalidades = command.ExecuteReader()
-
+            Dim dataset As New DataSet
+            With command
+                command.CommandType = CommandType.StoredProcedure
+                conn()
+            End With
+            Dim da As New SqlDataAdapter(command)
+            da.Fill(dataset)
             disconect()
+            obtenerLocalidades = dataset
         Catch ex As Exception
             MsgBox(ex.Message)
             obtenerLocalidades = Nothing

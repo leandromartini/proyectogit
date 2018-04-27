@@ -43,21 +43,21 @@ Partial Class frmPersona
         '
         Me.txtNombre.Location = New System.Drawing.Point(124, 12)
         Me.txtNombre.Name = "txtNombre"
-        Me.txtNombre.Size = New System.Drawing.Size(145, 20)
+        Me.txtNombre.Size = New System.Drawing.Size(173, 20)
         Me.txtNombre.TabIndex = 1
         '
         'txtApellido
         '
         Me.txtApellido.Location = New System.Drawing.Point(124, 38)
         Me.txtApellido.Name = "txtApellido"
-        Me.txtApellido.Size = New System.Drawing.Size(145, 20)
+        Me.txtApellido.Size = New System.Drawing.Size(173, 20)
         Me.txtApellido.TabIndex = 2
         '
         'txtFecNac
         '
         Me.txtFecNac.Location = New System.Drawing.Point(124, 64)
         Me.txtFecNac.Name = "txtFecNac"
-        Me.txtFecNac.Size = New System.Drawing.Size(145, 20)
+        Me.txtFecNac.Size = New System.Drawing.Size(173, 20)
         Me.txtFecNac.TabIndex = 3
         '
         'cboLocalidad
@@ -65,7 +65,7 @@ Partial Class frmPersona
         Me.cboLocalidad.FormattingEnabled = True
         Me.cboLocalidad.Location = New System.Drawing.Point(124, 90)
         Me.cboLocalidad.Name = "cboLocalidad"
-        Me.cboLocalidad.Size = New System.Drawing.Size(145, 21)
+        Me.cboLocalidad.Size = New System.Drawing.Size(173, 21)
         Me.cboLocalidad.TabIndex = 4
         '
         'btnCerrar

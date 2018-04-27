@@ -95,6 +95,7 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+    <Compile Include="personas.vb" />
     <Compile Include="pwiComun.vb" />
   </ItemGroup>
   <ItemGroup>
