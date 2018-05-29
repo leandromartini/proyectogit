@@ -88,11 +88,11 @@ Public Class frmPersona
 
     Private Sub btnModificar_Click(sender As Object, e As EventArgs) Handles btnModificar.Click
         Dim idUsuario As Integer
-        Dim bool As Integer
         Try
             Dim n As String = MsgBox("Seguro de desea eliminar?", MsgBoxStyle.YesNo, "Confirmation Dialog Box")
             If n = vbYes Then
                 idUsuario = dgPersonas.CurrentRow.Cells("idusuario").Value
+                Dim bool As Integer
                 bool = objPwicomun.eliminarPersonas(idUsuario)
                 If bool Then
                     MsgBox("Se elimino correctamente.")
