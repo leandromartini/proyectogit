@@ -3,8 +3,6 @@ Imports System.Data
 Imports System.Data.SqlClient
 
 Public Class localidades
-
-
     Public Function obtenerLocalidades() As DataSet
         Try
 

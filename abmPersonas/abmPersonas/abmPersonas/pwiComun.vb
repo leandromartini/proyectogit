@@ -19,12 +19,12 @@ Public Class pwiComun
         End Try
 
     End Function
-    Public Function ActualizarLista(ByVal txtNombre As String, ByVal txtApellido As String, ByVal fecNac As String, ByVal loc As Integer) As Integer
+    Public Function ActualizarRegistro(ByVal idPersona As Integer, ByVal txtNombre As String, ByVal txtApellido As String, ByVal fecNac As String, ByVal loc As Integer) As Integer
 
         Try
-            ActualizarLista = objPersona.ActualizarLista(txtNombre, txtApellido, fecNac, loc)
+            ActualizarRegistro = objPersona.ActualizarRegistro(idPersona, txtNombre, txtApellido, fecNac, loc)
         Catch ex As Exception
-            ActualizarLista = 0
+            ActualizarRegistro = 0
         End Try
     End Function
 
