@@ -6,7 +6,7 @@ GO
 -- Create date: <Create Date,,>
 -- Description:	<Description,,>
 -- =============================================
-ALTER PROCEDURE [dbo].[persona_obtenerLista]-- 11,'Joaquin','Hernandez','04/12/1989',9
+CREATE PROCEDURE [dbo].[persona_obtenerLista]-- 11,'Joaquin','Hernandez','04/12/1989',9
 
 AS
 BEGIN 
