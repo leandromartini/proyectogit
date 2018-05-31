@@ -4,7 +4,7 @@ Imports System.Data.SqlClient
 
 Public Class personas
 
-    Public Function ActualizarRegistro(ByVal idPersona As Integer, ByVal name As String, ByVal ape As String, ByVal fec As String, ByVal ciudad As Long) As Integer
+    Public Function ActualizarRegistroPersonas(ByVal idPersona As Integer, ByVal name As String, ByVal ape As String, ByVal fec As String, ByVal ciudad As Long) As Integer
         Try
             Dim sProdString As String = "[dbo].[persona_actualizarRegistro]"
             Dim command As New SqlCommand(sProdString, objConn)
@@ -16,16 +16,16 @@ Public Class personas
                 command.Parameters.AddWithValue("@fecNac", fec)
                 command.Parameters.AddWithValue("@ciudad", ciudad)
                 conn()
-                ActualizarRegistro = command.ExecuteNonQuery()
+                ActualizarRegistroPersonas = command.ExecuteNonQuery()
 
             End With
             disconect()
         Catch ex As Exception
-            ActualizarRegistro = 0
+            ActualizarRegistroPersonas = 0
             MsgBox(ex.Message)
         End Try
     End Function
-    Public Function obtenerPersonas() As DataSet
+    Public Function obtenerListaPersonas() As DataSet
         Try
 
             Dim sProdString As String = "[dbo].[persona_obtenerLista]"
@@ -38,13 +38,13 @@ Public Class personas
             Dim da As New SqlDataAdapter(command)
             da.Fill(dataset)
             disconect()
-            obtenerPersonas = dataset
+            obtenerListaPersonas = dataset
         Catch ex As Exception
             MsgBox(ex.Message)
-            obtenerPersonas = Nothing
+            obtenerListaPersonas = Nothing
         End Try
     End Function
-    Public Function eliminarPersonas(ByVal idusuario As String) As Integer
+    Public Function eliminarRegistroPersonas(ByVal idusuario As String) As Integer
         Try
 
             Dim sProdString As String = "[dbo].[persona_EliminarRegistro]"
@@ -55,12 +55,12 @@ Public Class personas
                 command.Parameters.AddWithValue("@idusuario", idusuario)
                 conn()
             End With
-            eliminarPersonas = command.ExecuteNonQuery()
+            eliminarRegistroPersonas = command.ExecuteNonQuery()
             disconect()
 
         Catch ex As Exception
             MsgBox(ex.Message)
-            eliminarPersonas = 0
+            eliminarRegistroPersonas = 0
         End Try
     End Function
 End Class

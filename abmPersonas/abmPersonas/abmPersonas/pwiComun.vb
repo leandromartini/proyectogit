@@ -13,7 +13,7 @@ Public Class pwiComun
 
     Public Function obtenerListaPersonas() As DataSet
         Try
-            obtenerListaPersonas = objPersona.obtenerPersonas
+            obtenerListaPersonas = objPersona.obtenerListaPersonas
         Catch ex As Exception
             obtenerListaPersonas = Nothing
         End Try
@@ -22,7 +22,7 @@ Public Class pwiComun
     Public Function ActualizarRegistro(ByVal idPersona As Integer, ByVal txtNombre As String, ByVal txtApellido As String, ByVal fecNac As String, ByVal loc As Integer) As Integer
 
         Try
-            ActualizarRegistro = objPersona.ActualizarRegistro(idPersona, txtNombre, txtApellido, fecNac, loc)
+            ActualizarRegistro = objPersona.ActualizarRegistroPersonas(idPersona, txtNombre, txtApellido, fecNac, loc)
         Catch ex As Exception
             ActualizarRegistro = 0
         End Try
@@ -31,11 +31,12 @@ Public Class pwiComun
     Public Function eliminarPersonas(ByVal idusuario As String) As Integer
 
         Try
-            eliminarPersonas = objPersona.eliminarPersonas(idusuario)
+            eliminarPersonas = objPersona.eliminarRegistroPersonas(idusuario)
         Catch ex As Exception
             eliminarPersonas = 0
         End Try
     End Function
+
 End Class
 
 

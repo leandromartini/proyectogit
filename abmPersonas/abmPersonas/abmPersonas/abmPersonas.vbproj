@@ -73,6 +73,8 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="conexion.vb" />
+    <Compile Include="deudas.vb" />
+    <Compile Include="emisiondeuda.vb" />
     <Compile Include="frmPersona.designer.vb">
       <DependentUpon>frmPersona.vb</DependentUpon>
     </Compile>
