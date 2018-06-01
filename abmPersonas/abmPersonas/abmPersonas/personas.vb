@@ -47,7 +47,7 @@ Public Class personas
     Public Function eliminarRegistroPersonas(ByVal idusuario As String) As Integer
         Try
 
-            Dim sProdString As String = "[dbo].[persona_EliminarRegistro]"
+            Dim sProdString As String = "[dbo].[persona_eliminarRegistro]"
             Dim command As New SqlCommand(sProdString, objConn)
             Dim dataset As New DataSet
             With command

@@ -6,7 +6,7 @@ Public Class localidades
     Public Function obtenerLocalidades() As DataSet
         Try
 
-            Dim sProdString As String = "[dbo].[localidades_ObtenerRegistro]"
+            Dim sProdString As String = "[dbo].[localidades_obtenerRegistro]"
             Dim command As New SqlCommand(sProdString, objConn)
             Dim dataset As New DataSet
             With command

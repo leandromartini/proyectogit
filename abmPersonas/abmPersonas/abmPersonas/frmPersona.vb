@@ -23,6 +23,7 @@ Public Class frmPersona
                 dgPersonas.Columns("nombre").HeaderText = "Nombre"
             End If
         Catch ex As Exception
+            MsgBox(ex.Message)
             btnEliminar.Enabled = False
         End Try
     End Sub
@@ -96,9 +97,6 @@ Public Class frmPersona
             MsgBox(ex.Message)
         End Try
     End Sub
-    Private Sub btnLimpiar_Click(sender As Object, e As EventArgs) Handles btnLimpiar.Click
-        limpiar()
-    End Sub
 
     Private Sub btnModificar_Click(sender As Object, e As EventArgs) Handles btnModificar.Click
         Try
@@ -132,4 +130,7 @@ Public Class frmPersona
         End If
         validar = True
     End Function
+    Private Sub btnLimpiar_Click(sender As Object, e As EventArgs) Handles btnLimpiar.Click
+        limpiar()
+    End Sub
 End Class
