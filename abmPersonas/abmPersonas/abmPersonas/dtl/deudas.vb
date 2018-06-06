@@ -20,7 +20,7 @@ Public Class deudas
             disconect()
         Catch ex As Exception
             MsgBox(ex.Message)
-            actualizarRegistroDeudas = Nothing
+            actualizarRegistroDeudas = 0
         End Try
     End Function
 End Class

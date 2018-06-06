@@ -133,4 +133,23 @@ Public Class frmPersona
     Private Sub btnLimpiar_Click(sender As Object, e As EventArgs) Handles btnLimpiar.Click
         limpiar()
     End Sub
+    Private Sub btnVolver_Click(sender As Object, e As EventArgs) Handles btnVolver.Click
+        limpiar()
+        Me.Close()
+    End Sub
+
+    Private Sub btnAltaDeuda_Click(sender As Object, e As EventArgs) Handles btnAltaDeuda.Click
+        Try
+            If dgPersonas.CurrentRow IsNot Nothing Then
+                frmAltaDeudas.idpersona = dgPersonas.CurrentRow.Cells("idusuario").Value
+                frmAltaDeudas.ShowDialog()
+            Else
+                MsgBox("Debe seleccionar una persona para el alta de deudas")
+            End If
+
+        Catch ex As Exception
+            MsgBox(ex.Message)
+        End Try
+
+    End Sub
 End Class

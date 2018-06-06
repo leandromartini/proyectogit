@@ -72,16 +72,30 @@
     <Import Include="System.Threading.Tasks" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="brl\brlDeudaAlta.vb" />
     <Compile Include="conexion.vb" />
-    <Compile Include="deudas.vb" />
+    <Compile Include="Dtl\deudas.vb" />
+    <Compile Include="Dtl\localidades.vb" />
+    <Compile Include="Dtl\personas.vb" />
     <Compile Include="emisiondeuda.vb" />
-    <Compile Include="frmPersona.designer.vb">
-      <DependentUpon>frmPersona.vb</DependentUpon>
+    <Compile Include="formularios\frmAltaDeudas.Designer.vb">
+      <DependentUpon>frmAltaDeudas.vb</DependentUpon>
     </Compile>
-    <Compile Include="frmPersona.vb">
+    <Compile Include="formularios\frmAltaDeudas.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="localidades.vb" />
+    <Compile Include="formularios\frmPersona.designer.vb">
+      <DependentUpon>frmPersona.vb</DependentUpon>
+    </Compile>
+    <Compile Include="formularios\frmPersona.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="formularios\frmPpal.Designer.vb">
+      <DependentUpon>frmPpal.vb</DependentUpon>
+    </Compile>
+    <Compile Include="formularios\frmPpal.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="My Project\AssemblyInfo.vb" />
     <Compile Include="My Project\Application.Designer.vb">
       <AutoGen>True</AutoGen>
@@ -97,12 +111,18 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
-    <Compile Include="personas.vb" />
-    <Compile Include="pwiComun.vb" />
+    <Compile Include="pwi\pwiComun.vb" />
+    <Compile Include="pwi\pwiDeudas.vb" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="frmPersona.resx">
+    <EmbeddedResource Include="formularios\frmAltaDeudas.resx">
+      <DependentUpon>frmAltaDeudas.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="formularios\frmPersona.resx">
       <DependentUpon>frmPersona.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="formularios\frmPpal.resx">
+      <DependentUpon>frmPpal.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="My Project\Resources.resx">
       <Generator>VbMyResourcesResXFileCodeGenerator</Generator>

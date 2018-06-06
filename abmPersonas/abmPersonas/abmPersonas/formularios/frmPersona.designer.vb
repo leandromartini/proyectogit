@@ -37,13 +37,15 @@ Partial Class frmPersona
         Me.Label1 = New System.Windows.Forms.Label()
         Me.btnModificar = New System.Windows.Forms.Button()
         Me.btnEliminar = New System.Windows.Forms.Button()
+        Me.btnVolver = New System.Windows.Forms.Button()
+        Me.btnAltaDeuda = New System.Windows.Forms.Button()
         CType(Me.dgPersonas, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GroupBox1.SuspendLayout()
         Me.SuspendLayout()
         '
         'btnAlta
         '
-        Me.btnAlta.Location = New System.Drawing.Point(76, 137)
+        Me.btnAlta.Location = New System.Drawing.Point(79, 124)
         Me.btnAlta.Name = "btnAlta"
         Me.btnAlta.Size = New System.Drawing.Size(79, 23)
         Me.btnAlta.TabIndex = 0
@@ -102,7 +104,7 @@ Partial Class frmPersona
         '
         'btnLimpiar
         '
-        Me.btnLimpiar.Location = New System.Drawing.Point(170, 137)
+        Me.btnLimpiar.Location = New System.Drawing.Point(169, 124)
         Me.btnLimpiar.Name = "btnLimpiar"
         Me.btnLimpiar.Size = New System.Drawing.Size(79, 23)
         Me.btnLimpiar.TabIndex = 7
@@ -112,8 +114,10 @@ Partial Class frmPersona
         'GroupBox1
         '
         Me.GroupBox1.Controls.Add(Me.Label4)
+        Me.GroupBox1.Controls.Add(Me.btnModificar)
         Me.GroupBox1.Controls.Add(Me.Label3)
         Me.GroupBox1.Controls.Add(Me.Label2)
+        Me.GroupBox1.Controls.Add(Me.btnEliminar)
         Me.GroupBox1.Controls.Add(Me.Label1)
         Me.GroupBox1.Controls.Add(Me.txtNombre)
         Me.GroupBox1.Controls.Add(Me.btnLimpiar)
@@ -123,7 +127,7 @@ Partial Class frmPersona
         Me.GroupBox1.Controls.Add(Me.cboLocalidad)
         Me.GroupBox1.Location = New System.Drawing.Point(12, 12)
         Me.GroupBox1.Name = "GroupBox1"
-        Me.GroupBox1.Size = New System.Drawing.Size(265, 172)
+        Me.GroupBox1.Size = New System.Drawing.Size(265, 201)
         Me.GroupBox1.TabIndex = 8
         Me.GroupBox1.TabStop = False
         Me.GroupBox1.Text = "Personas"
@@ -166,7 +170,7 @@ Partial Class frmPersona
         '
         'btnModificar
         '
-        Me.btnModificar.Location = New System.Drawing.Point(403, 316)
+        Me.btnModificar.Location = New System.Drawing.Point(9, 171)
         Me.btnModificar.Name = "btnModificar"
         Me.btnModificar.Size = New System.Drawing.Size(99, 23)
         Me.btnModificar.TabIndex = 10
@@ -175,20 +179,38 @@ Partial Class frmPersona
         '
         'btnEliminar
         '
-        Me.btnEliminar.Location = New System.Drawing.Point(283, 316)
+        Me.btnEliminar.Location = New System.Drawing.Point(160, 171)
         Me.btnEliminar.Name = "btnEliminar"
         Me.btnEliminar.Size = New System.Drawing.Size(99, 23)
         Me.btnEliminar.TabIndex = 11
         Me.btnEliminar.Text = "Eliminar"
         Me.btnEliminar.UseVisualStyleBackColor = True
         '
+        'btnVolver
+        '
+        Me.btnVolver.Location = New System.Drawing.Point(21, 316)
+        Me.btnVolver.Name = "btnVolver"
+        Me.btnVolver.Size = New System.Drawing.Size(99, 23)
+        Me.btnVolver.TabIndex = 12
+        Me.btnVolver.Text = "Volver"
+        Me.btnVolver.UseVisualStyleBackColor = True
+        '
+        'btnAltaDeuda
+        '
+        Me.btnAltaDeuda.Location = New System.Drawing.Point(283, 316)
+        Me.btnAltaDeuda.Name = "btnAltaDeuda"
+        Me.btnAltaDeuda.Size = New System.Drawing.Size(99, 23)
+        Me.btnAltaDeuda.TabIndex = 13
+        Me.btnAltaDeuda.Text = "Alta Deuda"
+        Me.btnAltaDeuda.UseVisualStyleBackColor = True
+        '
         'frmPersona
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(845, 351)
-        Me.Controls.Add(Me.btnEliminar)
-        Me.Controls.Add(Me.btnModificar)
+        Me.Controls.Add(Me.btnAltaDeuda)
+        Me.Controls.Add(Me.btnVolver)
         Me.Controls.Add(Me.GroupBox1)
         Me.Controls.Add(Me.dgPersonas)
         Me.Controls.Add(Me.btnCerrar)
@@ -216,4 +238,6 @@ Partial Class frmPersona
     Friend WithEvents Label1 As Label
     Friend WithEvents btnModificar As Button
     Friend WithEvents btnEliminar As Button
+    Friend WithEvents btnVolver As Button
+    Friend WithEvents btnAltaDeuda As Button
 End Class
