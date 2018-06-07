@@ -32,7 +32,7 @@ Partial Class frmPpal
         Me.btnPersonas.Name = "btnPersonas"
         Me.btnPersonas.Size = New System.Drawing.Size(128, 28)
         Me.btnPersonas.TabIndex = 0
-        Me.btnPersonas.Text = "Altas Personas"
+        Me.btnPersonas.Text = "Alta Personas/Deudas"
         Me.btnPersonas.UseVisualStyleBackColor = True
         '
         'btnCobrar

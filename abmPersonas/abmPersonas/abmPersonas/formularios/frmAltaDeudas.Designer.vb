@@ -25,11 +25,11 @@ Partial Class frmAltaDeudas
         Me.btnAltaDeuda = New System.Windows.Forms.Button()
         Me.txtIdentificador = New System.Windows.Forms.TextBox()
         Me.Label1 = New System.Windows.Forms.Label()
-        Me.txtTpoDeuda = New System.Windows.Forms.TextBox()
         Me.txtMonto = New System.Windows.Forms.TextBox()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.Label3 = New System.Windows.Forms.Label()
         Me.btnVolver = New System.Windows.Forms.Button()
+        Me.cboTposDeudas = New System.Windows.Forms.ComboBox()
         Me.SuspendLayout()
         '
         'btnAltaDeuda
@@ -46,7 +46,7 @@ Partial Class frmAltaDeudas
         Me.txtIdentificador.Location = New System.Drawing.Point(125, 34)
         Me.txtIdentificador.Name = "txtIdentificador"
         Me.txtIdentificador.ReadOnly = True
-        Me.txtIdentificador.Size = New System.Drawing.Size(97, 20)
+        Me.txtIdentificador.Size = New System.Drawing.Size(128, 20)
         Me.txtIdentificador.TabIndex = 1
         '
         'Label1
@@ -58,18 +58,11 @@ Partial Class frmAltaDeudas
         Me.Label1.TabIndex = 2
         Me.Label1.Text = "Identificador."
         '
-        'txtTpoDeuda
-        '
-        Me.txtTpoDeuda.Location = New System.Drawing.Point(125, 71)
-        Me.txtTpoDeuda.Name = "txtTpoDeuda"
-        Me.txtTpoDeuda.Size = New System.Drawing.Size(31, 20)
-        Me.txtTpoDeuda.TabIndex = 3
-        '
         'txtMonto
         '
         Me.txtMonto.Location = New System.Drawing.Point(125, 106)
         Me.txtMonto.Name = "txtMonto"
-        Me.txtMonto.Size = New System.Drawing.Size(89, 20)
+        Me.txtMonto.Size = New System.Drawing.Size(128, 20)
         Me.txtMonto.TabIndex = 4
         '
         'Label2
@@ -99,16 +92,24 @@ Partial Class frmAltaDeudas
         Me.btnVolver.Text = "Volver"
         Me.btnVolver.UseVisualStyleBackColor = True
         '
+        'cboTposDeudas
+        '
+        Me.cboTposDeudas.FormattingEnabled = True
+        Me.cboTposDeudas.Location = New System.Drawing.Point(125, 71)
+        Me.cboTposDeudas.Name = "cboTposDeudas"
+        Me.cboTposDeudas.Size = New System.Drawing.Size(128, 21)
+        Me.cboTposDeudas.TabIndex = 8
+        '
         'frmAltaDeudas
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(668, 224)
+        Me.Controls.Add(Me.cboTposDeudas)
         Me.Controls.Add(Me.btnVolver)
         Me.Controls.Add(Me.Label3)
         Me.Controls.Add(Me.Label2)
         Me.Controls.Add(Me.txtMonto)
-        Me.Controls.Add(Me.txtTpoDeuda)
         Me.Controls.Add(Me.Label1)
         Me.Controls.Add(Me.txtIdentificador)
         Me.Controls.Add(Me.btnAltaDeuda)
@@ -122,9 +123,9 @@ Partial Class frmAltaDeudas
     Friend WithEvents btnAltaDeuda As Button
     Friend WithEvents txtIdentificador As TextBox
     Friend WithEvents Label1 As Label
-    Friend WithEvents txtTpoDeuda As TextBox
     Friend WithEvents txtMonto As TextBox
     Friend WithEvents Label2 As Label
     Friend WithEvents Label3 As Label
     Friend WithEvents btnVolver As Button
+    Friend WithEvents cboTposDeudas As ComboBox
 End Class

@@ -4,7 +4,14 @@ Public Class frmAltaDeudas
     Dim objPwiDeudas As New pwiDeudas
     Public idpersona As Integer
     Sub abrirFormulario()
+        Dim objDs As New DataSet
         Try
+            objDs = objPwiDeudas.obtenerTpoDeudas()
+            cboTposDeudas.DataSource = objDS.Tables(0)
+            cboTposDeudas.DisplayMember = "descrip"
+            cboTposDeudas.ValueMember = "cod"
+            cboTposDeudas.Text = "Seleccione Tipo Deuda"
+
             txtIdentificador.Text = idpersona
             txtMonto.Text = 0
         Catch ex As Exception
@@ -21,7 +28,7 @@ Public Class frmAltaDeudas
         If Not validar() Then
             Exit Sub
         End If
-        bool = objPwiDeudas.generarDeuda(idpersona, txtTpoDeuda.Text, txtMonto.Text, Date.Now)
+        bool = objPwiDeudas.generarDeuda(idpersona, cboTposDeudas.SelectedValue, txtMonto.Text, Date.Now)
         If bool Then
             MsgBox("Se guardo con exito la deuda!")
             limpiar()
@@ -34,14 +41,14 @@ Public Class frmAltaDeudas
     End Sub
     Sub limpiar()
         txtMonto.Text = 0
-        txtTpoDeuda.Text = ""
+        cboTposDeudas.Text = "Seleccione Tipo Deuda"
     End Sub
     Function validar()
         If txtMonto.Text = 0 Then
             MsgBox("El monto no puede ser cero (0)")
             Exit Function
         End If
-        If txtTpoDeuda.Text = "" Then
+        If cboTposDeudas.Text = "Seleccione Tipo Deuda" Then
             MsgBox("Ingrese el tipo de deuda")
             Exit Function
         End If

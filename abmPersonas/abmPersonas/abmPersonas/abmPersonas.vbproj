@@ -75,6 +75,7 @@
     <Compile Include="brl\brlDeudaAlta.vb" />
     <Compile Include="conexion.vb" />
     <Compile Include="Dtl\deudas.vb" />
+    <Compile Include="Dtl\deudasTpos.vb" />
     <Compile Include="Dtl\localidades.vb" />
     <Compile Include="Dtl\personas.vb" />
     <Compile Include="emisiondeuda.vb" />
