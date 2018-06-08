@@ -10,7 +10,8 @@ Public Class frmAltaDeudas
             cboTposDeudas.DataSource = objDS.Tables(0)
             cboTposDeudas.DisplayMember = "descrip"
             cboTposDeudas.ValueMember = "cod"
-            cboTposDeudas.Text = "Seleccione Tipo Deuda"
+            cboTposDeudas.SelectedIndex = -1
+            cboTposDeudas.Text = "Seleccione tipo de deuda"
 
             txtIdentificador.Text = idpersona
             txtMonto.Text = 0

@@ -1,6 +1,8 @@
 USE [pruebas]
 GO
 
+IF exists (select * from persona) DROP TABLE persona
+
 /****** Object:  Table [dbo].[persona]    Script Date: 20/04/2018 16:25:15 ******/
 SET ANSI_NULLS ON
 GO

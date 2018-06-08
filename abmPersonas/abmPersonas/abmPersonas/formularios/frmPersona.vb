@@ -12,6 +12,7 @@ Public Class frmPersona
             cboLocalidad.DataSource = objDS.Tables(0)
             cboLocalidad.DisplayMember = "descrip"
             cboLocalidad.ValueMember = "cod_ent"
+            cboLocalidad.SelectedIndex = -1
             cboLocalidad.Text = "Seleccionar Localidad"
 
             objDS = objPwicomun.obtenerListaPersonas()
@@ -24,14 +25,13 @@ Public Class frmPersona
             End If
         Catch ex As Exception
             MsgBox(ex.Message)
-            btnEliminar.Enabled = False
         End Try
     End Sub
 
     Private Sub frmPersona_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         Try
             abrirFormulario()
-            btnEliminar.Enabled = True
+
         Catch ex As Exception
             MsgBox(ex.Message)
         End Try
@@ -84,15 +84,20 @@ Public Class frmPersona
         Dim idUsuario As Integer
         Dim bool As Integer
         Try
-            Dim n As String = MsgBox("Seguro de desea eliminar?", MsgBoxStyle.YesNo, "Confirmation Dialog Box")
-            If n = vbYes Then
-                idUsuario = dgPersonas.CurrentRow.Cells("idusuario").Value
-                bool = objPwicomun.eliminarPersonas(idUsuario)
-                If bool Then
-                    MsgBox("Se elimino correctamente.")
-                    abrirFormulario()
+            If dgPersonas.CurrentRow IsNot Nothing Then
+                Dim n As String = MsgBox("Seguro de desea eliminar?", MsgBoxStyle.YesNo, "Confirmation Dialog Box")
+                If n = vbYes Then
+                    idUsuario = dgPersonas.CurrentRow.Cells("idusuario").Value
+                    bool = objPwicomun.eliminarPersonas(idUsuario)
+                    If bool Then
+                        MsgBox("Se elimino correctamente.")
+                        abrirFormulario()
+                    End If
                 End If
+            Else
+                MsgBox("Debe seleccionar una fila a eliminar")
             End If
+
         Catch ex As Exception
             MsgBox(ex.Message)
         End Try
@@ -100,12 +105,16 @@ Public Class frmPersona
 
     Private Sub btnModificar_Click(sender As Object, e As EventArgs) Handles btnModificar.Click
         Try
-            limpiar()
-            txtNombre.Text = dgPersonas.CurrentRow.Cells("nombre").Value
-            txtApellido.Text = dgPersonas.CurrentRow.Cells("apellido").Value
-            txtFecNac.Text = dgPersonas.CurrentRow.Cells("fecNac").Value
-            cboLocalidad.SelectedValue = dgPersonas.CurrentRow.Cells("ciudad").Value
-            idPersona = dgPersonas.CurrentRow.Cells("idusuario").Value
+            If dgPersonas.CurrentRow IsNot Nothing Then
+                limpiar()
+                txtNombre.Text = dgPersonas.CurrentRow.Cells("nombre").Value
+                txtApellido.Text = dgPersonas.CurrentRow.Cells("apellido").Value
+                txtFecNac.Text = dgPersonas.CurrentRow.Cells("fecNac").Value
+                cboLocalidad.SelectedValue = dgPersonas.CurrentRow.Cells("ciudad").Value
+                idPersona = dgPersonas.CurrentRow.Cells("idusuario").Value
+            Else
+                MsgBox("Ninguna fila seleccionada para modificar")
+            End If
         Catch ex As Exception
 
         End Try

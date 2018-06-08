@@ -46,7 +46,7 @@ Partial Class frmAltaDeudas
         Me.txtIdentificador.Location = New System.Drawing.Point(125, 34)
         Me.txtIdentificador.Name = "txtIdentificador"
         Me.txtIdentificador.ReadOnly = True
-        Me.txtIdentificador.Size = New System.Drawing.Size(128, 20)
+        Me.txtIdentificador.Size = New System.Drawing.Size(165, 20)
         Me.txtIdentificador.TabIndex = 1
         '
         'Label1
@@ -62,7 +62,7 @@ Partial Class frmAltaDeudas
         '
         Me.txtMonto.Location = New System.Drawing.Point(125, 106)
         Me.txtMonto.Name = "txtMonto"
-        Me.txtMonto.Size = New System.Drawing.Size(128, 20)
+        Me.txtMonto.Size = New System.Drawing.Size(165, 20)
         Me.txtMonto.TabIndex = 4
         '
         'Label2
@@ -97,7 +97,7 @@ Partial Class frmAltaDeudas
         Me.cboTposDeudas.FormattingEnabled = True
         Me.cboTposDeudas.Location = New System.Drawing.Point(125, 71)
         Me.cboTposDeudas.Name = "cboTposDeudas"
-        Me.cboTposDeudas.Size = New System.Drawing.Size(128, 21)
+        Me.cboTposDeudas.Size = New System.Drawing.Size(165, 21)
         Me.cboTposDeudas.TabIndex = 8
         '
         'frmAltaDeudas
