@@ -32,13 +32,14 @@ Partial Class frmPersona
         Me.btnLimpiar = New System.Windows.Forms.Button()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
         Me.Label4 = New System.Windows.Forms.Label()
+        Me.btnModificar = New System.Windows.Forms.Button()
         Me.Label3 = New System.Windows.Forms.Label()
         Me.Label2 = New System.Windows.Forms.Label()
-        Me.Label1 = New System.Windows.Forms.Label()
-        Me.btnModificar = New System.Windows.Forms.Button()
         Me.btnEliminar = New System.Windows.Forms.Button()
+        Me.Label1 = New System.Windows.Forms.Label()
         Me.btnVolver = New System.Windows.Forms.Button()
         Me.btnAltaDeuda = New System.Windows.Forms.Button()
+        Me.Button1 = New System.Windows.Forms.Button()
         CType(Me.dgPersonas, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GroupBox1.SuspendLayout()
         Me.SuspendLayout()
@@ -141,6 +142,15 @@ Partial Class frmPersona
         Me.Label4.TabIndex = 12
         Me.Label4.Text = "Localidad"
         '
+        'btnModificar
+        '
+        Me.btnModificar.Location = New System.Drawing.Point(9, 171)
+        Me.btnModificar.Name = "btnModificar"
+        Me.btnModificar.Size = New System.Drawing.Size(99, 23)
+        Me.btnModificar.TabIndex = 10
+        Me.btnModificar.Text = "Modificar"
+        Me.btnModificar.UseVisualStyleBackColor = True
+        '
         'Label3
         '
         Me.Label3.AutoSize = True
@@ -159,24 +169,6 @@ Partial Class frmPersona
         Me.Label2.TabIndex = 10
         Me.Label2.Text = "Apellido"
         '
-        'Label1
-        '
-        Me.Label1.AutoSize = True
-        Me.Label1.Location = New System.Drawing.Point(6, 19)
-        Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(44, 13)
-        Me.Label1.TabIndex = 9
-        Me.Label1.Text = "Nombre"
-        '
-        'btnModificar
-        '
-        Me.btnModificar.Location = New System.Drawing.Point(9, 171)
-        Me.btnModificar.Name = "btnModificar"
-        Me.btnModificar.Size = New System.Drawing.Size(99, 23)
-        Me.btnModificar.TabIndex = 10
-        Me.btnModificar.Text = "Modificar"
-        Me.btnModificar.UseVisualStyleBackColor = True
-        '
         'btnEliminar
         '
         Me.btnEliminar.Location = New System.Drawing.Point(160, 171)
@@ -185,6 +177,15 @@ Partial Class frmPersona
         Me.btnEliminar.TabIndex = 11
         Me.btnEliminar.Text = "Eliminar"
         Me.btnEliminar.UseVisualStyleBackColor = True
+        '
+        'Label1
+        '
+        Me.Label1.AutoSize = True
+        Me.Label1.Location = New System.Drawing.Point(6, 19)
+        Me.Label1.Name = "Label1"
+        Me.Label1.Size = New System.Drawing.Size(44, 13)
+        Me.Label1.TabIndex = 9
+        Me.Label1.Text = "Nombre"
         '
         'btnVolver
         '
@@ -204,17 +205,30 @@ Partial Class frmPersona
         Me.btnAltaDeuda.Text = "Alta Deuda"
         Me.btnAltaDeuda.UseVisualStyleBackColor = True
         '
+        'Button1
+        '
+        Me.Button1.Location = New System.Drawing.Point(403, 316)
+        Me.Button1.Name = "Button1"
+        Me.Button1.Size = New System.Drawing.Size(99, 23)
+        Me.Button1.TabIndex = 14
+        Me.Button1.Text = "Ver Deudas"
+        Me.Button1.UseVisualStyleBackColor = True
+        '
         'frmPersona
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
+        Me.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink
         Me.ClientSize = New System.Drawing.Size(845, 351)
+        Me.Controls.Add(Me.Button1)
         Me.Controls.Add(Me.btnAltaDeuda)
         Me.Controls.Add(Me.btnVolver)
         Me.Controls.Add(Me.GroupBox1)
         Me.Controls.Add(Me.dgPersonas)
         Me.Controls.Add(Me.btnCerrar)
+        Me.MaximizeBox = False
         Me.Name = "frmPersona"
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Persona"
         CType(Me.dgPersonas, System.ComponentModel.ISupportInitialize).EndInit()
         Me.GroupBox1.ResumeLayout(False)
@@ -240,4 +254,5 @@ Partial Class frmPersona
     Friend WithEvents btnEliminar As Button
     Friend WithEvents btnVolver As Button
     Friend WithEvents btnAltaDeuda As Button
+    Friend WithEvents Button1 As Button
 End Class

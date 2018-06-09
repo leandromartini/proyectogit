@@ -1,6 +1,7 @@
 USE [pruebas]
 GO
 
+IF exists (select * from [deudas]) DROP TABLE [deudas]
 /****** Object:  Table [dbo].[deudas]    Script Date: 30/5/2018 21:04:34 ******/
 SET ANSI_NULLS ON
 GO

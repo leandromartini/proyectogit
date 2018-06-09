@@ -48,10 +48,13 @@ Partial Class frmPpal
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
+        Me.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink
         Me.ClientSize = New System.Drawing.Size(611, 261)
         Me.Controls.Add(Me.btnCobrar)
         Me.Controls.Add(Me.btnPersonas)
+        Me.MaximizeBox = False
         Me.Name = "frmPpal"
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "frmPpal"
         Me.ResumeLayout(False)
 

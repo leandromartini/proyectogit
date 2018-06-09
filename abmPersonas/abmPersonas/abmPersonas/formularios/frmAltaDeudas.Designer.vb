@@ -104,6 +104,7 @@ Partial Class frmAltaDeudas
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
+        Me.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink
         Me.ClientSize = New System.Drawing.Size(668, 224)
         Me.Controls.Add(Me.cboTposDeudas)
         Me.Controls.Add(Me.btnVolver)
@@ -113,7 +114,9 @@ Partial Class frmAltaDeudas
         Me.Controls.Add(Me.Label1)
         Me.Controls.Add(Me.txtIdentificador)
         Me.Controls.Add(Me.btnAltaDeuda)
+        Me.MaximizeBox = False
         Me.Name = "frmAltaDeudas"
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "frmAltaDeudas"
         Me.ResumeLayout(False)
         Me.PerformLayout()
