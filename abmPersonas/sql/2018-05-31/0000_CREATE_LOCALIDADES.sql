@@ -15,4 +15,6 @@ CREATE TABLE [dbo].[localidades](
 ) ON [PRIMARY]
 GO
 
-
+--INSERT INTO [dbo].[localidades]([cod_ent],[descrip])
+--     VALUES(2,'La Plata'),(3,'Azul'),(4,'Pehuajo'),(5,'Bragado')
+--GO

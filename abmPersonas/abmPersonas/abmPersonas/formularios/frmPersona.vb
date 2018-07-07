@@ -61,7 +61,7 @@ Public Class frmPersona
         txtNombre.Text = ""
         txtApellido.Text = ""
         dpFecNac.Text = ""
-        cboLocalidad.Text = "Seleccionar Localidad"
+        cboLocalidad.SelectedIndex = -1
         txtNombre.Enabled = True
         txtApellido.Enabled = True
         dpFecNac.Enabled = True
