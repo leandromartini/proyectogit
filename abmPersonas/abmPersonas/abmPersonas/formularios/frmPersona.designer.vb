@@ -1,9 +1,9 @@
-﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()> _
+﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()>
 Partial Class frmPersona
     Inherits System.Windows.Forms.Form
 
     'Form reemplaza a Dispose para limpiar la lista de componentes.
-    <System.Diagnostics.DebuggerNonUserCode()> _
+    <System.Diagnostics.DebuggerNonUserCode()>
     Protected Overrides Sub Dispose(ByVal disposing As Boolean)
         Try
             If disposing AndAlso components IsNot Nothing Then
@@ -20,12 +20,11 @@ Partial Class frmPersona
     'NOTA: el Diseñador de Windows Forms necesita el siguiente procedimiento
     'Se puede modificar usando el Diseñador de Windows Forms.  
     'No lo modifique con el editor de código.
-    <System.Diagnostics.DebuggerStepThrough()> _
+    <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
         Me.btnAlta = New System.Windows.Forms.Button()
         Me.txtNombre = New System.Windows.Forms.TextBox()
         Me.txtApellido = New System.Windows.Forms.TextBox()
-        Me.txtFecNac = New System.Windows.Forms.TextBox()
         Me.cboLocalidad = New System.Windows.Forms.ComboBox()
         Me.btnCerrar = New System.Windows.Forms.Button()
         Me.dgPersonas = New System.Windows.Forms.DataGridView()
@@ -40,6 +39,7 @@ Partial Class frmPersona
         Me.btnVolver = New System.Windows.Forms.Button()
         Me.btnAltaDeuda = New System.Windows.Forms.Button()
         Me.Button1 = New System.Windows.Forms.Button()
+        Me.dpFecNac = New System.Windows.Forms.DateTimePicker()
         CType(Me.dgPersonas, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GroupBox1.SuspendLayout()
         Me.SuspendLayout()
@@ -66,13 +66,6 @@ Partial Class frmPersona
         Me.txtApellido.Name = "txtApellido"
         Me.txtApellido.Size = New System.Drawing.Size(169, 20)
         Me.txtApellido.TabIndex = 2
-        '
-        'txtFecNac
-        '
-        Me.txtFecNac.Location = New System.Drawing.Point(79, 71)
-        Me.txtFecNac.Name = "txtFecNac"
-        Me.txtFecNac.Size = New System.Drawing.Size(169, 20)
-        Me.txtFecNac.TabIndex = 3
         '
         'cboLocalidad
         '
@@ -114,6 +107,7 @@ Partial Class frmPersona
         '
         'GroupBox1
         '
+        Me.GroupBox1.Controls.Add(Me.dpFecNac)
         Me.GroupBox1.Controls.Add(Me.Label4)
         Me.GroupBox1.Controls.Add(Me.btnModificar)
         Me.GroupBox1.Controls.Add(Me.Label3)
@@ -124,7 +118,6 @@ Partial Class frmPersona
         Me.GroupBox1.Controls.Add(Me.btnLimpiar)
         Me.GroupBox1.Controls.Add(Me.btnAlta)
         Me.GroupBox1.Controls.Add(Me.txtApellido)
-        Me.GroupBox1.Controls.Add(Me.txtFecNac)
         Me.GroupBox1.Controls.Add(Me.cboLocalidad)
         Me.GroupBox1.Location = New System.Drawing.Point(12, 12)
         Me.GroupBox1.Name = "GroupBox1"
@@ -214,6 +207,14 @@ Partial Class frmPersona
         Me.Button1.Text = "Ver Deudas"
         Me.Button1.UseVisualStyleBackColor = True
         '
+        'dpFecNac
+        '
+        Me.dpFecNac.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
+        Me.dpFecNac.Location = New System.Drawing.Point(79, 71)
+        Me.dpFecNac.Name = "dpFecNac"
+        Me.dpFecNac.Size = New System.Drawing.Size(79, 20)
+        Me.dpFecNac.TabIndex = 15
+        '
         'frmPersona
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -240,7 +241,6 @@ Partial Class frmPersona
     Friend WithEvents btnAlta As Button
     Friend WithEvents txtNombre As TextBox
     Friend WithEvents txtApellido As TextBox
-    Friend WithEvents txtFecNac As TextBox
     Friend WithEvents cboLocalidad As ComboBox
     Friend WithEvents btnCerrar As Button
     Friend WithEvents dgPersonas As DataGridView
@@ -255,4 +255,5 @@ Partial Class frmPersona
     Friend WithEvents btnVolver As Button
     Friend WithEvents btnAltaDeuda As Button
     Friend WithEvents Button1 As Button
+    Friend WithEvents dpFecNac As DateTimePicker
 End Class

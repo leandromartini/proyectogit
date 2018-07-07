@@ -43,9 +43,10 @@ Public Class frmPersona
         Try
             If Not validar() Then
                 MsgBox("Asegurese de llenar todos los campos!")
+
                 Exit Sub
             End If
-            num = objPwicomun.ActualizarRegistro(idPersona, txtNombre.Text, txtApellido.Text, txtFecNac.Text, cboLocalidad.SelectedValue)
+            num = objPwicomun.ActualizarRegistro(idPersona, txtNombre.Text, txtApellido.Text, dpFecNac.Text, cboLocalidad.SelectedValue)
             If num Then
                 MsgBox("Se agregaron los datos de la persona.")
                 bloquear()
@@ -59,11 +60,11 @@ Public Class frmPersona
     Public Sub limpiar()
         txtNombre.Text = ""
         txtApellido.Text = ""
-        txtFecNac.Text = ""
+        dpFecNac.Text = ""
         cboLocalidad.Text = "Seleccionar Localidad"
         txtNombre.Enabled = True
         txtApellido.Enabled = True
-        txtFecNac.Enabled = True
+        dpFecNac.Enabled = True
         cboLocalidad.Enabled = True
         btnAlta.Enabled = True
     End Sub
@@ -71,7 +72,7 @@ Public Class frmPersona
         idPersona = -1
         txtNombre.Enabled = False
         txtApellido.Enabled = False
-        txtFecNac.Enabled = False
+        dpFecNac.Enabled = False
         cboLocalidad.Enabled = False
         btnAlta.Enabled = False
     End Sub
@@ -109,7 +110,7 @@ Public Class frmPersona
                 limpiar()
                 txtNombre.Text = dgPersonas.CurrentRow.Cells("nombre").Value
                 txtApellido.Text = dgPersonas.CurrentRow.Cells("apellido").Value
-                txtFecNac.Text = dgPersonas.CurrentRow.Cells("fecNac").Value
+                dpFecNac.Text = dgPersonas.CurrentRow.Cells("fecNac").Value
                 cboLocalidad.SelectedValue = dgPersonas.CurrentRow.Cells("ciudad").Value
                 idPersona = dgPersonas.CurrentRow.Cells("idusuario").Value
             Else
@@ -129,7 +130,7 @@ Public Class frmPersona
             validar = False
             Exit Function
         End If
-        If txtFecNac.Text = "" Then
+        If dpFecNac.Text = "" Then
             validar = False
             Exit Function
         End If
@@ -159,6 +160,5 @@ Public Class frmPersona
         Catch ex As Exception
             MsgBox(ex.Message)
         End Try
-
     End Sub
 End Class
