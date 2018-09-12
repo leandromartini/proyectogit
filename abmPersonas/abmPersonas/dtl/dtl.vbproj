@@ -64,7 +64,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="conexion.vb" />
-    <Compile Include="dedudasTpos.vb" />
+    <Compile Include="deudasTpos.vb" />
     <Compile Include="deudas.vb" />
     <Compile Include="localidades.vb" />
     <Compile Include="My Project\AssemblyInfo.vb" />

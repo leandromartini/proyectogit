@@ -47,10 +47,12 @@ Public Class frmAltaDeudas
     Function validar()
         If txtMonto.Text = 0 Then
             MsgBox("El monto no puede ser cero (0)")
+            validar = False
             Exit Function
         End If
         If cboTposDeudas.Text = "Seleccione Tipo Deuda" Then
             MsgBox("Ingrese el tipo de deuda")
+            validar = False
             Exit Function
         End If
         validar = True

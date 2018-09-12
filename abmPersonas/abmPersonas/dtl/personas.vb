@@ -4,7 +4,7 @@ Imports System.Data.SqlClient
 
 Public Class personas
 
-    Public Function ActualizarRegistroPersonas(ByVal idPersona As Integer, ByVal name As String, ByVal ape As String, ByVal fec As String, ByVal ciudad As Long) As Integer
+    Public Shared Function ActualizarRegistroPersonas(ByVal idPersona As Integer, ByVal name As String, ByVal ape As String, ByVal fec As String, ByVal ciudad As Long) As Integer
         Try
             Dim sProdString As String = "[dbo].[persona_actualizarRegistro]"
             Dim command As New SqlCommand(sProdString, objConn)
@@ -25,7 +25,7 @@ Public Class personas
             MsgBox(ex.Message)
         End Try
     End Function
-    Public Function obtenerListaPersonas() As DataSet
+    Public Shared Function obtenerListaPersonas() As DataSet
         Try
 
             Dim sProdString As String = "[dbo].[persona_obtenerLista]"
@@ -44,7 +44,7 @@ Public Class personas
             obtenerListaPersonas = Nothing
         End Try
     End Function
-    Public Function eliminarRegistroPersonas(ByVal idusuario As String) As Integer
+    Public Shared Function eliminarRegistroPersonas(ByVal idusuario As String) As Integer
         Try
 
             Dim sProdString As String = "[dbo].[persona_eliminarRegistro]"

@@ -72,12 +72,7 @@
     <Import Include="System.Threading.Tasks" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="brl\brlDeudaAlta.vb" />
     <Compile Include="conexion.vb" />
-    <Compile Include="Dtl\deudas.vb" />
-    <Compile Include="Dtl\deudasTpos.vb" />
-    <Compile Include="Dtl\localidades.vb" />
-    <Compile Include="Dtl\personas.vb" />
     <Compile Include="emisiondeuda.vb" />
     <Compile Include="formularios\frmAltaDeudas.Designer.vb">
       <DependentUpon>frmAltaDeudas.vb</DependentUpon>
@@ -152,6 +147,16 @@
       <LastGenOutput>Settings.Designer.vb</LastGenOutput>
     </None>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\brl\brl.vbproj">
+      <Project>{0e9eed85-13bd-4d33-9c44-751fa067484b}</Project>
+      <Name>brl</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\dtl\dtl.vbproj">
+      <Project>{0eeaefed-5890-4b01-8512-d88080be46d6}</Project>
+      <Name>dtl</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
 </Project>

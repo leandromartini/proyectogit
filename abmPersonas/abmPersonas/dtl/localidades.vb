@@ -3,7 +3,7 @@ Imports System.Data
 Imports System.Data.SqlClient
 
 Public Class localidades
-    Public Function obtenerLocalidades() As DataSet
+    Public Shared Function obtenerLocalidades() As DataSet
         Try
 
             Dim sProdString As String = "[dbo].[localidades_obtenerRegistro]"
