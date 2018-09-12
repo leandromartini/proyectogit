@@ -1,3 +1,0 @@
-Dar de alta deudores con un monto inicial
-Darles la posibilidad de abonar y saldar el monto parcial o total
-Al ser saldado por completo se eliminara!
