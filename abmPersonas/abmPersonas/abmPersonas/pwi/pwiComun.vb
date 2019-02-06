@@ -5,7 +5,7 @@ Public Class pwiComun
         Dim Hours As Integer = Hour(Date.Now)
 
         Try
-            If Hours = 18 Then
+            If Hours = 13 Then
                 llenarCboLocalidades = dtl.localidades.obtenerLocalidades
             Else
 
