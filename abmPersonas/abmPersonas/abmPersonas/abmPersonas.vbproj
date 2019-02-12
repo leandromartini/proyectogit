@@ -72,7 +72,6 @@
     <Import Include="System.Threading.Tasks" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="conexion.vb" />
     <Compile Include="emisiondeuda.vb" />
     <Compile Include="formularios\frmAltaDeudas.Designer.vb">
       <DependentUpon>frmAltaDeudas.vb</DependentUpon>
@@ -157,6 +156,9 @@
       <Project>{0eeaefed-5890-4b01-8512-d88080be46d6}</Project>
       <Name>dtl</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Connected Services\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
 </Project>

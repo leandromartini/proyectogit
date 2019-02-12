@@ -2,9 +2,15 @@
 Public Class pwiComun
 
     Public Function llenarCboLocalidades() As DataSet
+        Dim Hours As Integer = Hour(Date.Now)
 
         Try
-            llenarCboLocalidades = dtl.localidades.obtenerLocalidades
+            If Hours = 13 Then
+                llenarCboLocalidades = dtl.localidades.obtenerLocalidades
+            Else
+
+            End If
+
         Catch ex As Exception
             llenarCboLocalidades = Nothing
         End Try
