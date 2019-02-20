@@ -97,9 +97,13 @@
     <Compile Include="Pwi\PwiIngresos.vb" />
   </ItemGroup>
   <ItemGroup>
+<<<<<<< HEAD
     <EmbeddedResource Include="Forms\frmPpal.resx">
       <DependentUpon>frmPpal.vb</DependentUpon>
-    </EmbeddedResource>
+=======
+    <EmbeddedResource Include="Form1.resx">
+      <DependentUpon>Form1.vb</DependentUpon>
+>>>>>>> 166f678cae6e6215c5cca1e312054fe952b1b34a
     </EmbeddedResource>
     <EmbeddedResource Include="My Project\Resources.resx">
       <Generator>VbMyResourcesResXFileCodeGenerator</Generator>
