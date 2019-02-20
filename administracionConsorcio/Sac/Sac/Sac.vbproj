@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
   <PropertyGroup>
@@ -72,6 +72,12 @@
     <Import Include="System.Threading.Tasks" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Forms\frmIngresos.Designer.vb">
+      <DependentUpon>frmIngresos.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\frmIngresos.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Forms\frmPpal.vb">
       <SubType>Form</SubType>
     </Compile>
@@ -97,6 +103,9 @@
     <Compile Include="Pwi\PwiIngresos.vb" />
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="Forms\frmIngresos.resx">
+      <DependentUpon>frmIngresos.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\frmPpal.resx">
       <DependentUpon>frmPpal.vb</DependentUpon>
     </EmbeddedResource>
@@ -118,6 +127,12 @@
       <LastGenOutput>Settings.Designer.vb</LastGenOutput>
     </None>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\brl\brl.vbproj">
+      <Project>{ff74d3d0-533b-4498-8204-e314905ed723}</Project>
+      <Name>brl</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
 </Project>
