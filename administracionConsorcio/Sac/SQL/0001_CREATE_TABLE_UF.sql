@@ -11,6 +11,7 @@ GO
 CREATE TABLE [dbo].[UF](
 	[id_uf] [int] IDENTITY(1,1) NOT NULL,
 	[dpto] [varchar](2) NOT NULL,
+	[coef] [decimal](5,4) NOT NULL,
 	[descrip] [varchar](10) NOT NULL,
  CONSTRAINT [PK_UF] PRIMARY KEY CLUSTERED 
 (
