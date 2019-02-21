@@ -5,44 +5,50 @@ Public Class frmIngresos
 
     Private Sub frmIngresos_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         Try
+            Dim fecha As Date = Date.Now
+
             setearControles()
 
-            If Format(Date.Now, "dd") = 20 Then
+            If Not Format(fecha, "dd") = 1 Then
+                abrirFormulario(Format(fecha, "MM"), Format(fecha, "YY"))
 
-                If vbYes = MsgBox("Desea cargar la tabla de ingresos del mes de " & Format(Date.Now, "MMMM"), vbYesNo, "status") Then
-                    'Cargar los nuevos valores para el mes entrante
+            Else
+                If vbYes = MsgBox("Desea cargar la tabla de ingresos del mes de " & Format(fecha, "MMMM"), vbYesNo, "status") Then
+
+
+
                 Else
-                    'Visualizar en el datagrid el mes aterior ya que no existe nuevos valores
-                End If
 
+                    abrirFormulario(Format(fecha, "MM"), (Format(fecha, "YY")) - 1)
+                End If
             End If
-            abrirFormulario()
+
 
         Catch ex As Exception
             MsgBox(ex.Message)
         End Try
     End Sub
 
-    Sub abrirFormulario()
+    Sub abrirFormulario(ByVal mes As Long, ByVal año As Long)
         Try
-            cargarIngresos()
+            verIngresos(mes, año)
 
         Catch ex As Exception
             MsgBox(ex.Message)
         End Try
     End Sub
     Sub setearControles()
-
+        'Codigo solo para el load
     End Sub
 
     Private Sub DateTimePicker1_ValueChanged(sender As Object, e As EventArgs) Handles DtpMesIngreso.ValueChanged
 
     End Sub
 
-    Sub cargarIngresos()
+    Sub verIngresos(ByVal mes As Long, ByVal año As Long)
         Try
 
-            objDS = objPwiIngresos.obtenerIngresosMes()
+            objDS = objPwiIngresos.obtenerIngresosMes(mes, año)
             If Not objDS.Tables Is Nothing Then
                 dgIngresos.DataSource = objDS.Tables(0)
                 'dgIngresos.Columns("idUsuario").Visible = False
