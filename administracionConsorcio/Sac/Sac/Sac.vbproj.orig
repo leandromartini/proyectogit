@@ -72,12 +72,6 @@
     <Import Include="System.Threading.Tasks" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Forms\frmIngresos.Designer.vb">
-      <DependentUpon>frmIngresos.vb</DependentUpon>
-    </Compile>
-    <Compile Include="Forms\frmIngresos.vb">
-      <SubType>Form</SubType>
-    </Compile>
     <Compile Include="Forms\frmPpal.vb">
       <SubType>Form</SubType>
     </Compile>
@@ -103,11 +97,13 @@
     <Compile Include="Pwi\PwiIngresos.vb" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Forms\frmIngresos.resx">
-      <DependentUpon>frmIngresos.vb</DependentUpon>
-    </EmbeddedResource>
+<<<<<<< HEAD
     <EmbeddedResource Include="Forms\frmPpal.resx">
       <DependentUpon>frmPpal.vb</DependentUpon>
+=======
+    <EmbeddedResource Include="Form1.resx">
+      <DependentUpon>Form1.vb</DependentUpon>
+>>>>>>> 166f678cae6e6215c5cca1e312054fe952b1b34a
     </EmbeddedResource>
     <EmbeddedResource Include="My Project\Resources.resx">
       <Generator>VbMyResourcesResXFileCodeGenerator</Generator>
@@ -127,12 +123,6 @@
       <LastGenOutput>Settings.Designer.vb</LastGenOutput>
     </None>
     <None Include="App.config" />
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\brl\brl.vbproj">
-      <Project>{ff74d3d0-533b-4498-8204-e314905ed723}</Project>
-      <Name>brl</Name>
-    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
 </Project>

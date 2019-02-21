@@ -4,34 +4,31 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{539F8D2A-D11D-4D54-A348-73B789BF3E5C}</ProjectGuid>
-    <OutputType>WinExe</OutputType>
-    <StartupObject>Sac.My.MyApplication</StartupObject>
-    <RootNamespace>Sac</RootNamespace>
-    <AssemblyName>Sac</AssemblyName>
+    <ProjectGuid>{FF74D3D0-533B-4498-8204-E314905ED723}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <RootNamespace>brl</RootNamespace>
+    <AssemblyName>brl</AssemblyName>
     <FileAlignment>512</FileAlignment>
-    <MyType>WindowsForms</MyType>
+    <MyType>Windows</MyType>
     <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
-    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
-    <PlatformTarget>AnyCPU</PlatformTarget>
     <DebugSymbols>true</DebugSymbols>
     <DebugType>full</DebugType>
     <DefineDebug>true</DefineDebug>
     <DefineTrace>true</DefineTrace>
     <OutputPath>bin\Debug\</OutputPath>
-    <DocumentationFile>Sac.xml</DocumentationFile>
+    <DocumentationFile>brl.xml</DocumentationFile>
     <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022</NoWarn>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
-    <PlatformTarget>AnyCPU</PlatformTarget>
     <DebugType>pdbonly</DebugType>
     <DefineDebug>false</DefineDebug>
     <DefineTrace>true</DefineTrace>
     <Optimize>true</Optimize>
     <OutputPath>bin\Release\</OutputPath>
-    <DocumentationFile>Sac.xml</DocumentationFile>
+    <DocumentationFile>brl.xml</DocumentationFile>
     <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022</NoWarn>
   </PropertyGroup>
   <PropertyGroup>
@@ -49,9 +46,6 @@
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Data" />
-    <Reference Include="System.Deployment" />
-    <Reference Include="System.Drawing" />
-    <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -64,27 +58,13 @@
     <Import Include="System.Collections" />
     <Import Include="System.Collections.Generic" />
     <Import Include="System.Data" />
-    <Import Include="System.Drawing" />
     <Import Include="System.Diagnostics" />
-    <Import Include="System.Windows.Forms" />
     <Import Include="System.Linq" />
     <Import Include="System.Xml.Linq" />
     <Import Include="System.Threading.Tasks" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Forms\frmIngresos.Designer.vb">
-      <DependentUpon>frmIngresos.vb</DependentUpon>
-    </Compile>
-    <Compile Include="Forms\frmIngresos.vb">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Forms\frmPpal.vb">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Forms\frmPpal.Designer.vb">
-      <DependentUpon>frmPpal.vb</DependentUpon>
-      <SubType>Form</SubType>
-    </Compile>
+    <Compile Include="brlIngresos.vb" />
     <Compile Include="My Project\AssemblyInfo.vb" />
     <Compile Include="My Project\Application.Designer.vb">
       <AutoGen>True</AutoGen>
@@ -100,15 +80,8 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
-    <Compile Include="Pwi\PwiIngresos.vb" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Forms\frmIngresos.resx">
-      <DependentUpon>frmIngresos.vb</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\frmPpal.resx">
-      <DependentUpon>frmPpal.vb</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="My Project\Resources.resx">
       <Generator>VbMyResourcesResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.vb</LastGenOutput>
@@ -126,12 +99,11 @@
       <CustomToolNamespace>My</CustomToolNamespace>
       <LastGenOutput>Settings.Designer.vb</LastGenOutput>
     </None>
-    <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\brl\brl.vbproj">
-      <Project>{ff74d3d0-533b-4498-8204-e314905ed723}</Project>
-      <Name>brl</Name>
+    <ProjectReference Include="..\dtl\dtl.vbproj">
+      <Project>{0c355964-394c-4cf1-8217-77f2add2d0b7}</Project>
+      <Name>dtl</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
