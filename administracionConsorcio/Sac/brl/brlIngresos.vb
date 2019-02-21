@@ -19,32 +19,31 @@ Public Class brlIngresos
             Dim objDS As DataSet
             objDS = objIngresos.obtenerIngresosMes(mes, año, id_uf)
             If IsNothing(objDS) Then
-                Throw New Exception("No se pudo obtener un registro vacío de Lugar de Realización")
+                Throw New Exception("No se pudo obtener un registro vacío")
             End If
 
-            If objDS.Tables Is Nothing Then
-                objDS.Tables(0).MoveFirst()
+            'If objDS.Tables Is Nothing Then
+            '    objDS.Tables(0).Columns("IdImplementa")
+            'End If
+            If objDS.Tables() = True Then
+
             End If
 
-            While Not rsImplementacion.EOF
-                rsImplementacion("IdImplementa") = lngIdImplementa
-                rsImplementacion("IdOferta") = lngIdOferta
-                rsImplementacion("nroImplementa") = lngNroImplementa
-                rsImplementacion("FecIni") = dtmFecInicio
-                rsImplementacion("FecFin") = dtmFecFin
-                rsImplementacion("cod_ent") = lngCod_ent
-                rsImplementacion("codLugarRealiza") = lngCodLugarRealiza
-                rsImplementacion("matricula") = lngMatricula
-                rsImplementacion("arancel") = lngArancel
-                rsImplementacion("cupoMinimo") = lngCupoMinimo
-                rsImplementacion("cod_usu") = strCodUsu
-                rsImplementacion("fecCreacion") = dtmfecCreacion
-                rsImplementacion("Modalidad") = lngTpoModalidad
-                rsImplementacion("IdMoodle") = lngIdMooddle
-                rsImplementacion("estado") = lngEstado
-                rsImplementacion("soloActivos") = lngsoloActivos
-                rsImplementacion("cupoMaximo") = lngCupoMaximo
-                actualizarIngresosMes = objIngresos.actualizarRegistroIngresos(id_uf, mes, año, expMes, expExtra, mantEdif, subTotal, redondeo, total)
+
+            'While Not rsImplementacion.EOF
+            objDS.Tables(0).Rows("hola") = 1
+
+
+            '    objDS.Tables(0).Columns("mes") = mes
+            '    objDS.Tables(0).Columns("año") = año
+            '    objDS.Tables(0).Columns("expMes") = expMes
+            '    objDS.Tables(0).Columns("expExtra") = expExtra
+            '    objDS.Tables(0).Columns("mantEdif") = mantEdif
+            '    objDS.Tables(0).Columns("subTotal") = subTotal
+            '    objDS.Tables(0).Columns("redondeo") = redondeo
+            '    objDS.Tables(0).Columns("total") = total
+
+            actualizarIngresosMes = objIngresos.actualizarRegistroIngresos(objDS.Tables(0).Columns("id_uf").DefaultValue, mes, año, expMes, expExtra, mantEdif, subTotal, redondeo, total)
 
 
 

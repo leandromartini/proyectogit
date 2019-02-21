@@ -15,8 +15,8 @@ Public Class frmIngresos
             Else
                 If vbYes = MsgBox("Desea cargar la tabla de ingresos del mes de " & Format(fecha, "MMMM"), vbYesNo, "status") Then
 
-
-
+                    NuevoIngresos()
+                    abrirFormulario(Format(fecha, "MM"), Format(fecha, "YY"))
                 Else
 
                     abrirFormulario(Format(fecha, "MM"), (Format(fecha, "YY")) - 1)
@@ -41,9 +41,6 @@ Public Class frmIngresos
         'Codigo solo para el load
     End Sub
 
-    Private Sub DateTimePicker1_ValueChanged(sender As Object, e As EventArgs) Handles DtpMesIngreso.ValueChanged
-
-    End Sub
 
     Sub verIngresos(ByVal mes As Long, ByVal año As Long)
         Try
@@ -60,6 +57,13 @@ Public Class frmIngresos
         Catch ex As Exception
             MsgBox(ex.Message)
         End Try
+
+    End Sub
+
+    Sub nuevoIngresos()
+
+        Dim lngNuevo As Long
+        lngNuevo = objPwiIngresos.actualizarIngresosMes(id_uf, mes, año, expMes, expExtra, mantEdif, subTotal, redondeo, total)
 
     End Sub
 End Class
