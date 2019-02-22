@@ -1,6 +1,6 @@
 ﻿Imports System.Data.SqlClient
 Public Class dtlUF
-    Public Function obtenerListaUf(ByVal mes As Long, ByVal año As Long, Optional ByVal id_uf As Long = -1) As DataSet
+    Public Function obtenerListaUf(Optional ByVal id_uf As Long = -1) As DataSet
         Try
 
             Dim sProdString As String = "[dbo].[Uf_obtenerLista]"

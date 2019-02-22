@@ -68,7 +68,7 @@ Public Class frmIngresos
     Sub nuevoIngresos()
 
         Dim lngNuevo As Long
-        'lngNuevo = objPwiIngresos.actualizarIngresosMes(dgIngresos)
+        lngNuevo = objPwiIngresos.actualizarIngresosMes(dgIngresos)
 
     End Sub
 
@@ -76,4 +76,44 @@ Public Class frmIngresos
         'Las variables o controles que haya que limpiar
         Me.Close()
     End Sub
+
+    Private Sub btnNuevoIngreso_Click(sender As Object, e As EventArgs) Handles btnNuevoIngreso.Click
+        Try
+            Dim objNuevoIngreso As DataSet
+            controlesNuevoIngreso(True)
+
+            objNuevoIngreso = objPwiIngresos.NuevoIngresoMes()
+            If objDS Is Nothing Then
+                MsgBox("Error Dataset es nothing")
+                Exit Sub
+            End If
+
+            If Not objDS.Tables Is Nothing Then
+                dgIngresos.DataSource = objNuevoIngreso.Tables(0)
+                'dgIngresos.Columns("idUsuario").Visible = False
+                'dgIngresos.Columns("ciudad").Visible = False
+                'dgIngresos.Columns("descrip").HeaderText = "Ciudad"
+                'dgIngresos.Columns("nombre").HeaderText = "Nombre"
+            End If
+        Catch ex As Exception
+
+        End Try
+
+    End Sub
+    Private Sub btnGuardar_Click(sender As Object, e As EventArgs) Handles btnGuardar.Click
+        controlesNuevoIngreso(False)
+    End Sub
+    Sub controlesNuevoIngreso(ByVal bool As Boolean)
+        btnNuevoIngreso.Visible = Not bool
+        btnGuardar.Visible = bool
+        For Each tb As TextBox In Me.Controls.OfType(Of TextBox)()
+            tb.Enabled = bool
+        Next
+    End Sub
+
+    Private Sub TextBox1_Leave(sender As Object, e As EventArgs) Handles TextBox1.Leave
+        calcularExp()
+    End Sub
+
+
 End Class

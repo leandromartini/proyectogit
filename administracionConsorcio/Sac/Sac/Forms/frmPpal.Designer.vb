@@ -25,8 +25,6 @@ Partial Class frmPpal
         Me.components = New System.ComponentModel.Container()
         Me.MenuStrip1 = New System.Windows.Forms.MenuStrip()
         Me.IngresosToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.NuevoToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.InquilinosToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.InformesToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.DeDeudasToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.BalanceMensualToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
@@ -47,22 +45,9 @@ Partial Class frmPpal
         '
         'IngresosToolStripMenuItem
         '
-        Me.IngresosToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.NuevoToolStripMenuItem, Me.InquilinosToolStripMenuItem})
         Me.IngresosToolStripMenuItem.Name = "IngresosToolStripMenuItem"
         Me.IngresosToolStripMenuItem.Size = New System.Drawing.Size(63, 20)
         Me.IngresosToolStripMenuItem.Text = "Ingresos"
-        '
-        'NuevoToolStripMenuItem
-        '
-        Me.NuevoToolStripMenuItem.Name = "NuevoToolStripMenuItem"
-        Me.NuevoToolStripMenuItem.Size = New System.Drawing.Size(124, 22)
-        Me.NuevoToolStripMenuItem.Text = "Nuevo"
-        '
-        'InquilinosToolStripMenuItem
-        '
-        Me.InquilinosToolStripMenuItem.Name = "InquilinosToolStripMenuItem"
-        Me.InquilinosToolStripMenuItem.Size = New System.Drawing.Size(124, 22)
-        Me.InquilinosToolStripMenuItem.Text = "Cobranza"
         '
         'InformesToolStripMenuItem
         '
@@ -129,8 +114,6 @@ Partial Class frmPpal
     Friend WithEvents SalirToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents lblfechahora As Label
     Friend WithEvents Timer1 As Timer
-    Friend WithEvents NuevoToolStripMenuItem As ToolStripMenuItem
-    Friend WithEvents InquilinosToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents DeDeudasToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents BalanceMensualToolStripMenuItem As ToolStripMenuItem
 End Class
