@@ -42,6 +42,12 @@ SELECT @sOpe = ' '
 	select @sOpe = ' AND ' 
 	end
 
-	select * from ingresos + @sWhere
+	if @sWhere = ' WHERE '
+	@sWhere = ''
+
+	select dpto,coef,mes,anio,expMes,expExtra,mantEdif,subTotal,redondeo,total from ingresos i
+	left join uf on (i.id_uf = uf.id_uf)
+	+ @sWhere
 
 END 
+

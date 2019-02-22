@@ -63,7 +63,7 @@ Public Class frmIngresos
     Sub nuevoIngresos()
 
         Dim lngNuevo As Long
-        lngNuevo = objPwiIngresos.actualizarIngresosMes(id_uf, mes, año, expMes, expExtra, mantEdif, subTotal, redondeo, total)
+        lngNuevo = objPwiIngresos.actualizarIngresosMes(dgIngresos)
 
     End Sub
 End Class
