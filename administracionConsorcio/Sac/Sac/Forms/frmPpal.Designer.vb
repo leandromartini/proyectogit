@@ -55,13 +55,13 @@ Partial Class frmPpal
         'NuevoToolStripMenuItem
         '
         Me.NuevoToolStripMenuItem.Name = "NuevoToolStripMenuItem"
-        Me.NuevoToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
+        Me.NuevoToolStripMenuItem.Size = New System.Drawing.Size(124, 22)
         Me.NuevoToolStripMenuItem.Text = "Nuevo"
         '
         'InquilinosToolStripMenuItem
         '
         Me.InquilinosToolStripMenuItem.Name = "InquilinosToolStripMenuItem"
-        Me.InquilinosToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
+        Me.InquilinosToolStripMenuItem.Size = New System.Drawing.Size(124, 22)
         Me.InquilinosToolStripMenuItem.Text = "Cobranza"
         '
         'InformesToolStripMenuItem
@@ -102,6 +102,7 @@ Partial Class frmPpal
         'Timer1
         '
         Me.Timer1.Enabled = True
+        Me.Timer1.Interval = 1000
         '
         'frmPpal
         '

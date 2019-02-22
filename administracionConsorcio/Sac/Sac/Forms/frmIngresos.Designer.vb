@@ -39,7 +39,7 @@ Partial Class frmIngresos
         Me.dgIngresos.Location = New System.Drawing.Point(12, 58)
         Me.dgIngresos.Name = "dgIngresos"
         Me.dgIngresos.ReadOnly = True
-        Me.dgIngresos.Size = New System.Drawing.Size(776, 291)
+        Me.dgIngresos.Size = New System.Drawing.Size(818, 291)
         Me.dgIngresos.TabIndex = 0
         '
         'DtpMesIngreso
@@ -54,7 +54,7 @@ Partial Class frmIngresos
         'txtTotal
         '
         Me.txtTotal.BackColor = System.Drawing.SystemColors.ScrollBar
-        Me.txtTotal.Location = New System.Drawing.Point(704, 355)
+        Me.txtTotal.Location = New System.Drawing.Point(746, 355)
         Me.txtTotal.Name = "txtTotal"
         Me.txtTotal.Size = New System.Drawing.Size(84, 20)
         Me.txtTotal.TabIndex = 2
@@ -81,7 +81,7 @@ Partial Class frmIngresos
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(800, 450)
+        Me.ClientSize = New System.Drawing.Size(842, 450)
         Me.Controls.Add(Me.Button2)
         Me.Controls.Add(Me.btnVolver)
         Me.Controls.Add(Me.txtTotal)

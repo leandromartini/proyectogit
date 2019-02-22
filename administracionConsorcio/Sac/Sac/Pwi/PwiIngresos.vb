@@ -3,7 +3,7 @@ Public Class PwiIngresos
     Dim objIngresos As New brlIngresos
     Public Function obtenerIngresosMes(ByVal mes As Long, ByVal año As Long) As DataSet
         Try
-            'obtenerIngresosMes = objIngresos.obtenerIngresosMes(mes, año)
+            obtenerIngresosMes = objIngresos.obtenerIngresosMes(mes, año)
         Catch ex As Exception
             obtenerIngresosMes = Nothing
         End Try

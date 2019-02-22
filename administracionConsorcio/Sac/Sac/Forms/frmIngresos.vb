@@ -10,16 +10,16 @@ Public Class frmIngresos
             setearControles()
 
             If Not Format(fecha, "dd") = 1 Then
-                abrirFormulario(Format(fecha, "MM"), Format(fecha, "yy"))
+                abrirFormulario(Format(fecha, "MM"), Format(fecha, "yyyy"))
 
             Else
                 If vbYes = MsgBox("Desea cargar la tabla de ingresos del mes de " & Format(fecha, "MMMM"), vbYesNo, "status") Then
 
                     NuevoIngresos()
-                    abrirFormulario(Format(fecha, "MM"), Format(fecha, "yy"))
+                    abrirFormulario(Format(fecha, "MM"), Format(fecha, "yyyy"))
                 Else
 
-                    abrirFormulario(Format(fecha, "MM"), (Format(fecha, "yy")) - 1)
+                    abrirFormulario(Format(fecha, "MM"), (Format(fecha, "yyyy")) - 1)
                 End If
             End If
 

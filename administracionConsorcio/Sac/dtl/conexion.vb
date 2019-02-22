@@ -1,7 +1,7 @@
 ﻿Imports System.Data.SqlClient
 Module conexion
     Dim sConnectionString As String _
-            = "Initial Catalog=pruebas; Data Source=localhost ; Integrated Security=SSPI;"
+            = "Initial Catalog=SAR; Data Source=localhost ; Integrated Security=SSPI;"
     Public objConn As New SqlConnection(sConnectionString)
 
     Sub conn()
