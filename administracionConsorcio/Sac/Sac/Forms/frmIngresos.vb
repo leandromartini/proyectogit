@@ -5,44 +5,52 @@ Public Class frmIngresos
 
     Private Sub frmIngresos_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         Try
+            Dim fecha As Date = Date.Now
+
             setearControles()
 
-            If Format(Date.Now, "dd") = 20 Then
+            If Not Format(fecha, "dd") = 1 Then
+                abrirFormulario(Format(fecha, "MM"), Format(fecha, "yy"))
 
-                If vbYes = MsgBox("Desea cargar la tabla de ingresos del mes de " & Format(Date.Now, "MMMM"), vbYesNo, "status") Then
-                    'Cargar los nuevos valores para el mes entrante
+            Else
+                If vbYes = MsgBox("Desea cargar la tabla de ingresos del mes de " & Format(fecha, "MMMM"), vbYesNo, "status") Then
+
+                    NuevoIngresos()
+                    abrirFormulario(Format(fecha, "MM"), Format(fecha, "yy"))
                 Else
-                    'Visualizar en el datagrid el mes aterior ya que no existe nuevos valores
-                End If
 
+                    abrirFormulario(Format(fecha, "MM"), (Format(fecha, "yy")) - 1)
+                End If
             End If
-            abrirFormulario()
+
 
         Catch ex As Exception
             MsgBox(ex.Message)
         End Try
     End Sub
 
-    Sub abrirFormulario()
+    Sub abrirFormulario(ByVal mes As String, ByVal año As String)
         Try
-            cargarIngresos()
+            verIngresos(mes, año)
 
         Catch ex As Exception
             MsgBox(ex.Message)
         End Try
     End Sub
     Sub setearControles()
-
+        DtpMesIngreso.Value = Date.Now
     End Sub
 
-    Private Sub DateTimePicker1_ValueChanged(sender As Object, e As EventArgs) Handles DtpMesIngreso.ValueChanged
 
-    End Sub
-
-    Sub cargarIngresos()
+    Sub verIngresos(ByVal mes As Long, ByVal año As Long)
         Try
 
-            objDS = objPwiIngresos.obtenerIngresosMes()
+            objDS = objPwiIngresos.obtenerIngresosMes(mes, año)
+            If objDS Is Nothing Then
+                MsgBox("Error Dataset es nothing")
+                Exit Sub
+            End If
+
             If Not objDS.Tables Is Nothing Then
                 dgIngresos.DataSource = objDS.Tables(0)
                 'dgIngresos.Columns("idUsuario").Visible = False
@@ -55,5 +63,17 @@ Public Class frmIngresos
             MsgBox(ex.Message)
         End Try
 
+    End Sub
+
+    Sub nuevoIngresos()
+
+        Dim lngNuevo As Long
+        'lngNuevo = objPwiIngresos.actualizarIngresosMes(dgIngresos)
+
+    End Sub
+
+    Private Sub btnVolver_Click(sender As Object, e As EventArgs) Handles btnVolver.Click
+        'Las variables o controles que haya que limpiar
+        Me.Close()
     End Sub
 End Class
