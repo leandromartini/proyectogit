@@ -10,16 +10,16 @@ Public Class frmIngresos
             setearControles()
 
             If Not Format(fecha, "dd") = 1 Then
-                abrirFormulario(Format(fecha, "MM"), Format(fecha, "YY"))
+                abrirFormulario(Format(fecha, "MM"), Format(fecha, "yy"))
 
             Else
                 If vbYes = MsgBox("Desea cargar la tabla de ingresos del mes de " & Format(fecha, "MMMM"), vbYesNo, "status") Then
 
                     NuevoIngresos()
-                    abrirFormulario(Format(fecha, "MM"), Format(fecha, "YY"))
+                    abrirFormulario(Format(fecha, "MM"), Format(fecha, "yy"))
                 Else
 
-                    abrirFormulario(Format(fecha, "MM"), (Format(fecha, "YY")) - 1)
+                    abrirFormulario(Format(fecha, "MM"), (Format(fecha, "yy")) - 1)
                 End If
             End If
 
@@ -29,7 +29,7 @@ Public Class frmIngresos
         End Try
     End Sub
 
-    Sub abrirFormulario(ByVal mes As Long, ByVal año As Long)
+    Sub abrirFormulario(ByVal mes As String, ByVal año As String)
         Try
             verIngresos(mes, año)
 
@@ -38,7 +38,7 @@ Public Class frmIngresos
         End Try
     End Sub
     Sub setearControles()
-        'Codigo solo para el load
+        DtpMesIngreso.Value = Date.Now
     End Sub
 
 
@@ -46,6 +46,11 @@ Public Class frmIngresos
         Try
 
             objDS = objPwiIngresos.obtenerIngresosMes(mes, año)
+            If objDS Is Nothing Then
+                MsgBox("Error Dataset es nothing")
+                Exit Sub
+            End If
+
             If Not objDS.Tables Is Nothing Then
                 dgIngresos.DataSource = objDS.Tables(0)
                 'dgIngresos.Columns("idUsuario").Visible = False
@@ -63,7 +68,12 @@ Public Class frmIngresos
     Sub nuevoIngresos()
 
         Dim lngNuevo As Long
-        lngNuevo = objPwiIngresos.actualizarIngresosMes(dgIngresos)
+        'lngNuevo = objPwiIngresos.actualizarIngresosMes(dgIngresos)
 
+    End Sub
+
+    Private Sub btnVolver_Click(sender As Object, e As EventArgs) Handles btnVolver.Click
+        'Las variables o controles que haya que limpiar
+        Me.Close()
     End Sub
 End Class
