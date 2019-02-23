@@ -49,8 +49,16 @@ Public Class PwiIngresos
 
         Try
 
+            If auxDatagid.Rows.Count = 0 Then
+                Exit Function
+            End If
 
-            'actualizarIngresosMes = objIngresos.actualizarIngresosMes(id_uf, mes, año, expMes, expExtra, mantEdif, subTotal, redondeo, total)
+            For Each row As DataGridViewRow In auxDatagid.Rows
+                actualizarIngresosMes = brlIngresos.actualizarIngresosMes(row.Cells(1).Value, 2, 2019, row.Cells(6).Value, row.Cells(7).Value, row.Cells(8).Value, row.Cells(9).Value, row.Cells(10).Value, row.Cells(11).Value)
+
+            Next
+
+
 
         Catch ex As Exception
             actualizarIngresosMes = Nothing
@@ -59,11 +67,30 @@ Public Class PwiIngresos
 
     End Function
 
-    Public Sub montoExp(ByVal importe As Integer)
+    Public Sub montoExp(ByVal importe As Integer, ByRef intDefine As Integer)
 
         For Each row As DataRow In objCoef.Tables(0).Rows()
+            row.Item(9) = 0
+            row.Item(11) = 123
+            row.Item(10) = 123
 
-            row.Item(6) = importe * row(2)
+            Select Case intDefine
+
+                Case 1
+                    row.Item(6) = importe * row(2)
+                    row.Item(9) += row.Item(6)
+                Case 2
+                    If row(2) > 0.03 Then
+                        row.Item(7) = importe / 15
+                    End If
+                    row.Item(9) += row.Item(7)
+                Case 3
+                    row.Item(8) = importe / 20
+                    row.Item(9) += row.Item(8)
+            End Select
+
+
+
 
         Next
 

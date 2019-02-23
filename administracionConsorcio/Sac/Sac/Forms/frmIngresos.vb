@@ -2,6 +2,11 @@
 Public Class frmIngresos
     Dim objDS As DataSet
     Dim objPwiIngresos As New PwiIngresos
+    Enum CampoTotal
+        expMes = 1
+        expExt = 2
+        MantEdif = 3
+    End Enum
 
     Private Sub frmIngresos_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         Try
@@ -100,6 +105,8 @@ Public Class frmIngresos
     End Sub
     Private Sub btnGuardar_Click(sender As Object, e As EventArgs) Handles btnGuardar.Click
         controlesNuevoIngreso(False)
+        nuevoIngresos()
+
     End Sub
     Sub controlesNuevoIngreso(ByVal bool As Boolean)
         btnNuevoIngreso.Visible = Not bool
@@ -110,8 +117,15 @@ Public Class frmIngresos
     End Sub
 
     Private Sub TextBox1_Leave(sender As Object, e As EventArgs) Handles TextBox1.Leave
-        objPwiIngresos.montoExp(TextBox1.Text)
+        objPwiIngresos.montoExp(TextBox1.Text, CampoTotal.expMes)
     End Sub
 
+    Private Sub TextBox2_Leave(sender As Object, e As EventArgs) Handles TextBox2.Leave
+        objPwiIngresos.montoExp(TextBox2.Text, CampoTotal.expExt)
+    End Sub
 
+    Private Sub TextBox3_Leave(sender As Object, e As EventArgs) Handles TextBox3.Leave
+
+        objPwiIngresos.montoExp(TextBox3.Text, CampoTotal.MantEdif)
+    End Sub
 End Class
