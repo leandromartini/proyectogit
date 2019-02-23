@@ -44,6 +44,8 @@ Partial Class frmIngresos
         Me.dgIngresos.AllowUserToAddRows = False
         Me.dgIngresos.AllowUserToDeleteRows = False
         Me.dgIngresos.AllowUserToOrderColumns = True
+        Me.dgIngresos.AllowUserToResizeColumns = False
+        Me.dgIngresos.AllowUserToResizeRows = False
         Me.dgIngresos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.dgIngresos.Location = New System.Drawing.Point(12, 58)
         Me.dgIngresos.Name = "dgIngresos"

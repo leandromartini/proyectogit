@@ -53,10 +53,7 @@ Public Class frmIngresos
 
             If Not objDS.Tables Is Nothing Then
                 dgIngresos.DataSource = objDS.Tables(0)
-                'dgIngresos.Columns("idUsuario").Visible = False
-                'dgIngresos.Columns("ciudad").Visible = False
-                'dgIngresos.Columns("descrip").HeaderText = "Ciudad"
-                'dgIngresos.Columns("nombre").HeaderText = "Nombre"
+
             End If
 
         Catch ex As Exception
@@ -90,10 +87,11 @@ Public Class frmIngresos
 
             If Not objDS.Tables Is Nothing Then
                 dgIngresos.DataSource = objNuevoIngreso.Tables(0)
-                'dgIngresos.Columns("idUsuario").Visible = False
-                'dgIngresos.Columns("ciudad").Visible = False
+                dgIngresos.Columns("mes").Visible = False
+                dgIngresos.Columns("anio").Visible = False
+                dgIngresos.Columns("id_uf").Visible = False
+                dgIngresos.Columns("descrip").Visible = False
                 'dgIngresos.Columns("descrip").HeaderText = "Ciudad"
-                'dgIngresos.Columns("nombre").HeaderText = "Nombre"
             End If
         Catch ex As Exception
 
@@ -112,7 +110,7 @@ Public Class frmIngresos
     End Sub
 
     Private Sub TextBox1_Leave(sender As Object, e As EventArgs) Handles TextBox1.Leave
-        calcularExp()
+        objPwiIngresos.montoExp(TextBox1.Text)
     End Sub
 
 

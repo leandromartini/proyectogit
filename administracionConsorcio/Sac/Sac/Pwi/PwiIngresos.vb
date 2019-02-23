@@ -2,6 +2,7 @@
 Public Class PwiIngresos
     Dim brlIngresos As New brlIngresos
     Dim brlCoef As New brlUf
+    Dim objCoef As New DataSet
     Public Function obtenerIngresosMes(ByVal mes As Long, ByVal año As Long) As DataSet
         Try
             obtenerIngresosMes = BRLIngresos.obtenerIngresosMes(mes, año)
@@ -14,7 +15,8 @@ Public Class PwiIngresos
 
     Public Function NuevoIngresoMes() As DataSet
         Try
-            Dim objCoef As New DataSet
+
+            objCoef.Clear()
 
             objCoef = brlCoef.obtenerListaUf(-1)
 
@@ -56,5 +58,15 @@ Public Class PwiIngresos
         End Try
 
     End Function
+
+    Public Sub montoExp(ByVal importe As Integer)
+
+        For Each row As DataRow In objCoef.Tables(0).Rows()
+
+            row.Item(6) = importe * row(2)
+
+        Next
+
+    End Sub
 
 End Class
