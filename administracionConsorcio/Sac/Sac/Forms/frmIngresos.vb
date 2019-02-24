@@ -96,7 +96,7 @@ Public Class frmIngresos
                 dgIngresos.Columns("anio").Visible = False
                 dgIngresos.Columns("id_uf").Visible = False
                 dgIngresos.Columns("descrip").Visible = False
-                'dgIngresos.Columns("descrip").HeaderText = "Ciudad"
+
             End If
         Catch ex As Exception
 

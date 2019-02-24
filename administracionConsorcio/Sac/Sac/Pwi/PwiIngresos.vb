@@ -19,15 +19,35 @@ Public Class PwiIngresos
             objCoef.Clear()
 
             objCoef = brlCoef.obtenerListaUf(-1)
+            Dim column As DataColumn
+
 
             objCoef.Tables(0).Columns.Add("mes")
             objCoef.Tables(0).Columns.Add("anio")
             objCoef.Tables(0).Columns.Add("expMes")
             objCoef.Tables(0).Columns.Add("expExtra")
             objCoef.Tables(0).Columns.Add("mantEdif")
-            objCoef.Tables(0).Columns.Add("subTotal")
-            objCoef.Tables(0).Columns.Add("reondeo")
-            objCoef.Tables(0).Columns.Add("total")
+            column = New DataColumn
+            With column
+                .ColumnName = "subTotal"
+                .DataType = System.Type.GetType("System.Int32")
+                .DefaultValue = 0
+                objCoef.Tables(0).Columns.Add(column)
+            End With
+            column = New DataColumn
+            With column
+                .ColumnName = "reondeo"
+                .DefaultValue = 0
+            End With
+            objCoef.Tables(0).Columns.Add(column)
+            column = New DataColumn
+            With column
+                .ColumnName = "total"
+                .DataType = System.Type.GetType("System.Int32")
+                .DefaultValue = 0
+                objCoef.Tables(0).Columns.Add(column)
+            End With
+
 
             NuevoIngresoMes = objCoef
             '3. Calcular los valores, segun el importe exp. mes y cargarlos junto a exp extra mant edif total redonde total
@@ -70,28 +90,25 @@ Public Class PwiIngresos
     Public Sub montoExp(ByVal importe As Integer, ByRef intDefine As Integer)
 
         For Each row As DataRow In objCoef.Tables(0).Rows()
-            row.Item(9) = 0
-            row.Item(11) = 123
-            row.Item(10) = 123
 
             Select Case intDefine
 
                 Case 1
                     row.Item(6) = importe * row(2)
-                    row.Item(9) += row.Item(6)
                 Case 2
                     If row(2) > 0.03 Then
                         row.Item(7) = importe / 15
+                    Else
+                        row.Item(7) = 0
                     End If
-                    row.Item(9) += row.Item(7)
                 Case 3
                     row.Item(8) = importe / 20
-                    row.Item(9) += row.Item(8)
             End Select
 
+            row.Item(9) = CInt(row.Item(6)) + CInt(row.Item(7)) + CInt(row.Item(8))
 
-
-
+            'row.Item(10) = 0
+            'row.Item(11) = 0
         Next
 
     End Sub
