@@ -1,12 +1,10 @@
 ﻿Imports brl
 Public Class PwiIngresos
-    Dim brlIngresos As New brlIngresos
-    Dim brlCoef As New brlUf
-    Dim objCoef As New DataSet
-    Dim objIngresos As New DataSet
-    Dim objAuxIngresos As New DataSet
+    Dim objAuxIngresos As DataSet
+
     Public Function obtenerIngresosMes(ByVal mes As Long, ByVal año As Long, ByVal id_uf As Long) As DataSet
         Try
+            Dim brlIngresos As New brlIngresos
             obtenerIngresosMes = brlIngresos.obtenerIngresosMes(mes, año, id_uf)
         Catch ex As Exception
             obtenerIngresosMes = Nothing
@@ -16,10 +14,13 @@ Public Class PwiIngresos
     End Function
 
     Public Function NuevoIngresoMes() As DataSet
-        Try
 
-            objCoef.Clear()
-            objIngresos.Clear()
+        Dim brlCoef As New brlUf
+        Dim objCoef As New DataSet
+        objAuxIngresos = New DataSet
+        Dim objIngresos As New DataSet
+
+        Try
 
             objCoef = brlCoef.obtenerListaUf(-1)
 
@@ -40,29 +41,23 @@ Public Class PwiIngresos
                 End With
             Next
 
-
-
             NuevoIngresoMes = objAuxIngresos
-            '3. Calcular los valores, segun el importe exp. mes y cargarlos junto a exp extra mant edif total redonde total
-            '3.1 Pedi valores de exp mes exp extra y mant edif.
-            '3.2 desarrollar la funcion redonde.
-            '3.3 sumar totales.
+
             '4. Una vez cargada la tabla recorrer hacer el alta de datos y visualizar.
         Catch ex As Exception
             NuevoIngresoMes = Nothing
             MsgBox(ex.Message)
         End Try
-
     End Function
 
-    'Public Function actualizarIngresosMes(ByVal id_uf As Long, ByVal mes As Long, ByVal año As Long, ByVal expMes As Double, ByVal expExtra As Double,
-    '                                           ByVal mantEdif As Double, ByVal subTotal As Double, ByVal redondeo As Double, ByVal total As Double) As Integer
+    Public Function actualizarIngresosMes(ByVal auxDatagid As DataGridView) As Boolean
 
-    Public Function actualizarIngresosMes(ByVal auxDatagid As DataGridView)
+        Dim brlIngresos As New brlIngresos
 
         Try
 
             If auxDatagid.Rows.Count = 0 Then
+                actualizarIngresosMes = False
                 Exit Function
             End If
 
@@ -74,10 +69,9 @@ Public Class PwiIngresos
 
 
         Catch ex As Exception
-            actualizarIngresosMes = Nothing
+            actualizarIngresosMes = False
             MsgBox(ex.Message)
         End Try
-
     End Function
 
     Public Sub MontoExp(ByVal importe As Integer, ByRef intDefine As Integer)

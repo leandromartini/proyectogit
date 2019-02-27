@@ -1,9 +1,9 @@
-﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()> _
+﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()>
 Partial Class frmIngresos
     Inherits System.Windows.Forms.Form
 
     'Form reemplaza a Dispose para limpiar la lista de componentes.
-    <System.Diagnostics.DebuggerNonUserCode()> _
+    <System.Diagnostics.DebuggerNonUserCode()>
     Protected Overrides Sub Dispose(ByVal disposing As Boolean)
         Try
             If disposing AndAlso components IsNot Nothing Then
@@ -20,7 +20,7 @@ Partial Class frmIngresos
     'NOTA: el Diseñador de Windows Forms necesita el siguiente procedimiento
     'Se puede modificar usando el Diseñador de Windows Forms.  
     'No lo modifique con el editor de código.
-    <System.Diagnostics.DebuggerStepThrough()> _
+    <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
         Me.dgIngresos = New System.Windows.Forms.DataGridView()
         Me.DtpMesIngreso = New System.Windows.Forms.DateTimePicker()
@@ -33,7 +33,6 @@ Partial Class frmIngresos
         Me.TextBox5 = New System.Windows.Forms.TextBox()
         Me.TextBox6 = New System.Windows.Forms.TextBox()
         Me.btnGuardar = New System.Windows.Forms.Button()
-        Me.GroupBox1 = New System.Windows.Forms.GroupBox()
         CType(Me.dgIngresos, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
@@ -43,7 +42,6 @@ Partial Class frmIngresos
         Me.dgIngresos.AllowUserToDeleteRows = False
         Me.dgIngresos.AllowUserToResizeColumns = False
         Me.dgIngresos.AllowUserToResizeRows = False
-        Me.dgIngresos.BackgroundColor = System.Drawing.SystemColors.ControlDarkDark
         Me.dgIngresos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.dgIngresos.Location = New System.Drawing.Point(12, 58)
         Me.dgIngresos.Name = "dgIngresos"
@@ -124,6 +122,7 @@ Partial Class frmIngresos
         Me.TextBox4.Name = "TextBox4"
         Me.TextBox4.Size = New System.Drawing.Size(87, 20)
         Me.TextBox4.TabIndex = 8
+        Me.TextBox4.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
         '
         'TextBox5
         '
@@ -134,6 +133,7 @@ Partial Class frmIngresos
         Me.TextBox5.Name = "TextBox5"
         Me.TextBox5.Size = New System.Drawing.Size(87, 20)
         Me.TextBox5.TabIndex = 9
+        Me.TextBox5.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
         '
         'TextBox6
         '
@@ -144,6 +144,7 @@ Partial Class frmIngresos
         Me.TextBox6.Name = "TextBox6"
         Me.TextBox6.Size = New System.Drawing.Size(87, 20)
         Me.TextBox6.TabIndex = 10
+        Me.TextBox6.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
         '
         'btnGuardar
         '
@@ -154,16 +155,6 @@ Partial Class frmIngresos
         Me.btnGuardar.Text = "Guardar"
         Me.btnGuardar.UseVisualStyleBackColor = True
         Me.btnGuardar.Visible = False
-        '
-        'GroupBox1
-        '
-        Me.GroupBox1.BackColor = System.Drawing.SystemColors.ControlDarkDark
-        Me.GroupBox1.ForeColor = System.Drawing.SystemColors.ActiveCaptionText
-        Me.GroupBox1.Location = New System.Drawing.Point(11, 369)
-        Me.GroupBox1.Name = "GroupBox1"
-        Me.GroupBox1.Size = New System.Drawing.Size(820, 48)
-        Me.GroupBox1.TabIndex = 14
-        Me.GroupBox1.TabStop = False
         '
         'frmIngresos
         '
@@ -181,7 +172,6 @@ Partial Class frmIngresos
         Me.Controls.Add(Me.dgIngresos)
         Me.Controls.Add(Me.btnGuardar)
         Me.Controls.Add(Me.btnNuevoIngreso)
-        Me.Controls.Add(Me.GroupBox1)
         Me.MaximizeBox = False
         Me.Name = "frmIngresos"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
@@ -203,5 +193,4 @@ Partial Class frmIngresos
     Friend WithEvents TextBox5 As TextBox
     Friend WithEvents TextBox6 As TextBox
     Friend WithEvents btnGuardar As Button
-    Friend WithEvents GroupBox1 As GroupBox
 End Class

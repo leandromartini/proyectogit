@@ -1,7 +1,9 @@
-﻿Imports System.Text.RegularExpressions
+﻿
 Public Class frmIngresos
     Dim objDS As DataSet
     Dim objPwiIngresos As New PwiIngresos
+    Dim objPwiComun As New pwiComun
+
     Enum CampoTotal
         expMes = 1
         expExt = 2
@@ -42,10 +44,6 @@ Public Class frmIngresos
             MsgBox(ex.Message)
         End Try
     End Sub
-    Sub setearControles()
-        DtpMesIngreso.Value = Date.Now
-    End Sub
-
 
     Sub verIngresos(ByVal mes As Long, ByVal año As Long, ByVal id_uf As Long)
         Try
@@ -74,7 +72,7 @@ Public Class frmIngresos
 
     End Sub
 
-    Sub nuevoIngresos()
+    Sub NuevoIngresos()
 
         Dim lngNuevo As Long
         lngNuevo = objPwiIngresos.actualizarIngresosMes(dgIngresos)
@@ -83,6 +81,7 @@ Public Class frmIngresos
 
     Private Sub btnVolver_Click(sender As Object, e As EventArgs) Handles btnVolver.Click
         'Las variables o controles que haya que limpiar
+        controlesNuevoIngreso(False)
         Me.Close()
     End Sub
 
@@ -126,44 +125,63 @@ Public Class frmIngresos
         btnGuardar.Visible = bool
         For Each tb As TextBox In Me.Controls.OfType(Of TextBox)()
             tb.Enabled = bool
+            tb.Clear()
+            tb.Text = "00.0"
         Next
+        TextBox1.Focus()
+        TextBox4.ReadOnly = bool
+        TextBox5.ReadOnly = bool
+        TextBox6.ReadOnly = bool
+
+    End Sub
+    Sub setearControles()
+        DtpMesIngreso.Value = Date.Now
     End Sub
 
     Private Sub TextBox1_Leave(sender As Object, e As EventArgs) Handles TextBox1.Leave
-        If Not ValidarMonto(CStr(TextBox1.Text)) Then
-            MsgBox("Debe ingresar un importe valido.")
-            TextBox1.Clear()
-            TextBox1.Focus()
-            Exit Sub
-        End If
-        objPwiIngresos.MontoExp(TextBox1.Text, CampoTotal.expMes)
+        Try
+                If Not objPwiComun.ValidarNumericoDecimal(CStr(TextBox1.Text)) Then
+                MsgBox("Debe ingresar un importe valido.")
+                TextBox1.Clear()
+                TextBox1.Focus()
+                Exit Sub
+            End If
+            objPwiIngresos.MontoExp(TextBox1.Text, CampoTotal.expMes)
+
+        Catch ex As Exception
+            MsgBox(ex.Message)
+        End Try
     End Sub
 
     Private Sub TextBox2_Leave(sender As Object, e As EventArgs) Handles TextBox2.Leave
-        If Not ValidarMonto(CStr(TextBox2.Text)) Then
-            MsgBox("Debe ingresar un importe valido.")
-            TextBox2.Clear()
-            TextBox2.Focus()
-            Exit Sub
-        End If
-        objPwiIngresos.MontoExp(TextBox2.Text, CampoTotal.expExt)
+        Try
+                If Not objPwiComun.ValidarNumericoDecimal(CStr(TextBox2.Text)) Then
+                MsgBox("Debe ingresar un importe valido.")
+                TextBox2.Clear()
+                TextBox2.Focus()
+                Exit Sub
+            End If
+            objPwiIngresos.MontoExp(TextBox2.Text, CampoTotal.expExt)
 
+        Catch ex As Exception
+            MsgBox(ex.Message)
+        End Try
     End Sub
 
     Private Sub TextBox3_Leave(sender As Object, e As EventArgs) Handles TextBox3.Leave
-        If Not ValidarMonto(CStr(TextBox3.Text)) Then
-            MsgBox("Debe ingresar un importe valido.")
-            TextBox3.Clear()
-            TextBox3.Focus()
-            Exit Sub
-        End If
-        objPwiIngresos.MontoExp(TextBox3.Text, CampoTotal.MantEdif)
+        Try
+            If Not objPwiComun.ValidarNumericoDecimal(CStr(TextBox3.Text)) Then
+                MsgBox("Debe ingresar un importe valido.")
+                TextBox3.Clear()
+                TextBox3.Focus()
+                Exit Sub
+            End If
+            objPwiIngresos.MontoExp(TextBox3.Text, CampoTotal.MantEdif)
+
+        Catch ex As Exception
+            MsgBox(ex.Message)
+        End Try
     End Sub
 
-    Public Shared Function ValidarMonto(ByVal importe As String) As Boolean
-        If String.IsNullOrWhiteSpace(importe) Then Return False
-        Return Regex.IsMatch(CStr(importe),
-                  "^[0-9]+(\.[0-9]{1,2})?$")
 
-    End Function
 End Class
