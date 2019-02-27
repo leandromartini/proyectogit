@@ -1,4 +1,4 @@
-﻿
+﻿Imports System.Text.RegularExpressions
 Public Class frmIngresos
     Dim objDS As DataSet
     Dim objPwiIngresos As New PwiIngresos
@@ -130,7 +130,7 @@ Public Class frmIngresos
     End Sub
 
     Private Sub TextBox1_Leave(sender As Object, e As EventArgs) Handles TextBox1.Leave
-        If Not ValidarMonto(TextBox1.Text) Then
+        If Not ValidarMonto(CStr(TextBox1.Text)) Then
             MsgBox("Debe ingresar un importe valido.")
             TextBox1.Clear()
             TextBox1.Focus()
@@ -140,7 +140,7 @@ Public Class frmIngresos
     End Sub
 
     Private Sub TextBox2_Leave(sender As Object, e As EventArgs) Handles TextBox2.Leave
-        If Not ValidarMonto(TextBox2.Text) Then
+        If Not ValidarMonto(CStr(TextBox2.Text)) Then
             MsgBox("Debe ingresar un importe valido.")
             TextBox2.Clear()
             TextBox2.Focus()
@@ -151,7 +151,7 @@ Public Class frmIngresos
     End Sub
 
     Private Sub TextBox3_Leave(sender As Object, e As EventArgs) Handles TextBox3.Leave
-        If Not ValidarMonto(TextBox3.Text) Then
+        If Not ValidarMonto(CStr(TextBox3.Text)) Then
             MsgBox("Debe ingresar un importe valido.")
             TextBox3.Clear()
             TextBox3.Focus()
@@ -160,11 +160,10 @@ Public Class frmIngresos
         objPwiIngresos.MontoExp(TextBox3.Text, CampoTotal.MantEdif)
     End Sub
 
-    Function ValidarMonto(number)
-        If IsNumeric(number) Then
-            ValidarMonto = True
-        Else
-            ValidarMonto = False
-        End If
+    Public Shared Function ValidarMonto(ByVal importe As String) As Boolean
+        If String.IsNullOrWhiteSpace(importe) Then Return False
+        Return Regex.IsMatch(CStr(importe),
+                  "^[0-9]+(\.[0-9]{1,2})?$")
+
     End Function
 End Class

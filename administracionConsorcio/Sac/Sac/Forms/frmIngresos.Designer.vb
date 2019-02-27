@@ -87,7 +87,8 @@ Partial Class frmIngresos
         Me.TextBox1.Name = "TextBox1"
         Me.TextBox1.Size = New System.Drawing.Size(87, 20)
         Me.TextBox1.TabIndex = 5
-        Me.TextBox1.Text = "0"
+        Me.TextBox1.Text = "00.0"
+        Me.TextBox1.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
         '
         'TextBox2
         '
@@ -98,18 +99,21 @@ Partial Class frmIngresos
         Me.TextBox2.Name = "TextBox2"
         Me.TextBox2.Size = New System.Drawing.Size(87, 20)
         Me.TextBox2.TabIndex = 6
-        Me.TextBox2.Text = "0"
+        Me.TextBox2.Text = "00.0"
+        Me.TextBox2.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
         '
         'TextBox3
         '
         Me.TextBox3.BackColor = System.Drawing.SystemColors.ScrollBar
+        Me.TextBox3.Cursor = System.Windows.Forms.Cursors.IBeam
         Me.TextBox3.Enabled = False
         Me.TextBox3.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.TextBox3.Location = New System.Drawing.Point(458, 390)
         Me.TextBox3.Name = "TextBox3"
         Me.TextBox3.Size = New System.Drawing.Size(87, 20)
         Me.TextBox3.TabIndex = 7
-        Me.TextBox3.Text = "0"
+        Me.TextBox3.Text = "00.0"
+        Me.TextBox3.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
         '
         'TextBox4
         '
