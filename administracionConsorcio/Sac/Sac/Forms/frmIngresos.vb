@@ -15,16 +15,16 @@ Public Class frmIngresos
             setearControles()
 
             If Not Format(fecha, "dd") = 1 Then
-                abrirFormulario(Format(fecha, "MM"), Format(fecha, "yyyy"))
+                abrirFormulario(Format(fecha, "MM"), Format(fecha, "yyyy"), -1)
 
             Else
                 If vbYes = MsgBox("Desea cargar la tabla de ingresos del mes de " & Format(fecha, "MMMM"), vbYesNo, "status") Then
 
                     NuevoIngresos()
-                    abrirFormulario(Format(fecha, "MM"), Format(fecha, "yyyy"))
+                    abrirFormulario(Format(fecha, "MM"), Format(fecha, "yyyy"), -1)
                 Else
 
-                    abrirFormulario(Format(fecha, "MM"), (Format(fecha, "yyyy")) - 1)
+                    abrirFormulario(Format(fecha, "MM"), (Format(fecha, "yyyy")) - 1, -1)
                 End If
             End If
 
@@ -34,9 +34,9 @@ Public Class frmIngresos
         End Try
     End Sub
 
-    Sub abrirFormulario(ByVal mes As String, ByVal año As String)
+    Sub abrirFormulario(ByVal mes As String, ByVal año As String, ByVal id_uf As Long)
         Try
-            verIngresos(mes, año)
+            verIngresos(mes, año, id_uf)
 
         Catch ex As Exception
             MsgBox(ex.Message)
@@ -47,10 +47,10 @@ Public Class frmIngresos
     End Sub
 
 
-    Sub verIngresos(ByVal mes As Long, ByVal año As Long)
+    Sub verIngresos(ByVal mes As Long, ByVal año As Long, ByVal id_uf As Long)
         Try
 
-            objDS = objPwiIngresos.obtenerIngresosMes(mes, año)
+            objDS = objPwiIngresos.obtenerIngresosMes(mes, año, id_uf)
             If objDS Is Nothing Then
                 MsgBox("Error Dataset es nothing")
                 Exit Sub
@@ -58,7 +58,14 @@ Public Class frmIngresos
 
             If Not objDS.Tables Is Nothing Then
                 dgIngresos.DataSource = objDS.Tables(0)
-
+                dgIngresos.Columns("dpto").Width = 115
+                dgIngresos.Columns("coef").Width = 115
+                dgIngresos.Columns("expMes").Width = 88
+                dgIngresos.Columns("expExtra").Width = 88
+                dgIngresos.Columns("mantEdif").Width = 88
+                dgIngresos.Columns("subTotal").Width = 88
+                dgIngresos.Columns("redondeo").Width = 88
+                dgIngresos.Columns("total").Width = 88
             End If
 
         Catch ex As Exception
@@ -92,14 +99,20 @@ Public Class frmIngresos
 
             If Not objDS.Tables Is Nothing Then
                 dgIngresos.DataSource = objNuevoIngreso.Tables(0)
-                dgIngresos.Columns("mes").Visible = False
-                dgIngresos.Columns("anio").Visible = False
                 dgIngresos.Columns("id_uf").Visible = False
                 dgIngresos.Columns("descrip").Visible = False
+                dgIngresos.Columns("dpto").Width = 115
+                dgIngresos.Columns("coef").Width = 115
+                dgIngresos.Columns("expMes").Width = 87
+                dgIngresos.Columns("expExtra").Width = 87
+                dgIngresos.Columns("mantEdif").Width = 87
+                dgIngresos.Columns("subTotal").Width = 87
+                dgIngresos.Columns("redondeo").Width = 87
+                dgIngresos.Columns("total").Width = 87
 
             End If
         Catch ex As Exception
-
+            MsgBox(ex.Message)
         End Try
 
     End Sub
@@ -117,15 +130,41 @@ Public Class frmIngresos
     End Sub
 
     Private Sub TextBox1_Leave(sender As Object, e As EventArgs) Handles TextBox1.Leave
-        objPwiIngresos.montoExp(TextBox1.Text, CampoTotal.expMes)
+        If Not ValidarMonto(TextBox1.Text) Then
+            MsgBox("Debe ingresar un importe valido.")
+            TextBox1.Clear()
+            TextBox1.Focus()
+            Exit Sub
+        End If
+        objPwiIngresos.MontoExp(TextBox1.Text, CampoTotal.expMes)
     End Sub
 
     Private Sub TextBox2_Leave(sender As Object, e As EventArgs) Handles TextBox2.Leave
-        objPwiIngresos.montoExp(TextBox2.Text, CampoTotal.expExt)
+        If Not ValidarMonto(TextBox2.Text) Then
+            MsgBox("Debe ingresar un importe valido.")
+            TextBox2.Clear()
+            TextBox2.Focus()
+            Exit Sub
+        End If
+        objPwiIngresos.MontoExp(TextBox2.Text, CampoTotal.expExt)
+
     End Sub
 
     Private Sub TextBox3_Leave(sender As Object, e As EventArgs) Handles TextBox3.Leave
-
-        objPwiIngresos.montoExp(TextBox3.Text, CampoTotal.MantEdif)
+        If Not ValidarMonto(TextBox3.Text) Then
+            MsgBox("Debe ingresar un importe valido.")
+            TextBox3.Clear()
+            TextBox3.Focus()
+            Exit Sub
+        End If
+        objPwiIngresos.MontoExp(TextBox3.Text, CampoTotal.MantEdif)
     End Sub
+
+    Function ValidarMonto(number)
+        If IsNumeric(number) Then
+            ValidarMonto = True
+        Else
+            ValidarMonto = False
+        End If
+    End Function
 End Class

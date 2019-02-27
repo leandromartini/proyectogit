@@ -3,9 +3,11 @@ Public Class PwiIngresos
     Dim brlIngresos As New brlIngresos
     Dim brlCoef As New brlUf
     Dim objCoef As New DataSet
-    Public Function obtenerIngresosMes(ByVal mes As Long, ByVal año As Long) As DataSet
+    Dim objIngresos As New DataSet
+    Dim objAuxIngresos As New DataSet
+    Public Function obtenerIngresosMes(ByVal mes As Long, ByVal año As Long, ByVal id_uf As Long) As DataSet
         Try
-            obtenerIngresosMes = BRLIngresos.obtenerIngresosMes(mes, año)
+            obtenerIngresosMes = brlIngresos.obtenerIngresosMes(mes, año, id_uf)
         Catch ex As Exception
             obtenerIngresosMes = Nothing
             MsgBox(ex.Message)
@@ -17,39 +19,30 @@ Public Class PwiIngresos
         Try
 
             objCoef.Clear()
+            objIngresos.Clear()
 
             objCoef = brlCoef.obtenerListaUf(-1)
+
+            objIngresos = obtenerIngresosMes(-1, -1, -1)
+            For i = 0 To 1
+                objIngresos.Tables(0).Columns.RemoveAt(0)
+            Next
             Dim column As DataColumn
+            objAuxIngresos.Merge(objCoef)
+
+            For Each columns As DataColumn In objIngresos.Tables(0).Columns
+                column = New DataColumn
+                With column
+                    .ColumnName = columns.ColumnName
+                    .DataType = System.Type.GetType("System.Double")
+                    .DefaultValue = 0
+                    objAuxIngresos.Tables(0).Columns.Add(column)
+                End With
+            Next
 
 
-            objCoef.Tables(0).Columns.Add("mes")
-            objCoef.Tables(0).Columns.Add("anio")
-            objCoef.Tables(0).Columns.Add("expMes")
-            objCoef.Tables(0).Columns.Add("expExtra")
-            objCoef.Tables(0).Columns.Add("mantEdif")
-            column = New DataColumn
-            With column
-                .ColumnName = "subTotal"
-                .DataType = System.Type.GetType("System.Int32")
-                .DefaultValue = 0
-                objCoef.Tables(0).Columns.Add(column)
-            End With
-            column = New DataColumn
-            With column
-                .ColumnName = "reondeo"
-                .DefaultValue = 0
-            End With
-            objCoef.Tables(0).Columns.Add(column)
-            column = New DataColumn
-            With column
-                .ColumnName = "total"
-                .DataType = System.Type.GetType("System.Int32")
-                .DefaultValue = 0
-                objCoef.Tables(0).Columns.Add(column)
-            End With
 
-
-            NuevoIngresoMes = objCoef
+            NuevoIngresoMes = objAuxIngresos
             '3. Calcular los valores, segun el importe exp. mes y cargarlos junto a exp extra mant edif total redonde total
             '3.1 Pedi valores de exp mes exp extra y mant edif.
             '3.2 desarrollar la funcion redonde.
@@ -87,28 +80,29 @@ Public Class PwiIngresos
 
     End Function
 
-    Public Sub montoExp(ByVal importe As Integer, ByRef intDefine As Integer)
+    Public Sub MontoExp(ByVal importe As Integer, ByRef intDefine As Integer)
 
-        For Each row As DataRow In objCoef.Tables(0).Rows()
+        For Each row As DataRow In objAuxIngresos.Tables(0).Rows()
 
             Select Case intDefine
 
                 Case 1
-                    row.Item(6) = importe * row(2)
+                    row("expMes") = importe * row("coef")
+
                 Case 2
-                    If row(2) > 0.03 Then
-                        row.Item(7) = importe / 15
+                    If row("coef") > 0.03 Then
+                        row("expExtra") = importe / 15
                     Else
-                        row.Item(7) = 0
+                        row("expExtra") = 0
                     End If
                 Case 3
-                    row.Item(8) = importe / 20
+                    row("mantEdif") = importe / 20
             End Select
 
-            row.Item(9) = CInt(row.Item(6)) + CInt(row.Item(7)) + CInt(row.Item(8))
+            row("subTotal") = Decimal.Round(row("expMes") + row("expExtra") + row("mantEdif"), 1)
+            row("redondeo") = CInt(row("subTotal")) - CDec(row("subTotal"))
+            row("total") = Decimal.Round(row("subTotal") + row("redondeo"), 1)
 
-            'row.Item(10) = 0
-            'row.Item(11) = 0
         Next
 
     End Sub

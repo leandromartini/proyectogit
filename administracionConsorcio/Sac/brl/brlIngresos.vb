@@ -1,10 +1,10 @@
 ﻿Imports dtl
 Public Class brlIngresos
     Dim objIngresos As New dtlIngresos
-    Public Function obtenerIngresosMes(ByVal mes As Long, ByVal año As Long) As DataSet
+    Public Function obtenerIngresosMes(ByVal mes As Long, ByVal año As Long, ByVal id_uf As Long) As DataSet
         Try
 
-            obtenerIngresosMes = objIngresos.obtenerIngresosMes(mes, año)
+            obtenerIngresosMes = objIngresos.obtenerIngresosMes(mes, año, id_uf)
 
         Catch ex As Exception
             obtenerIngresosMes = Nothing
