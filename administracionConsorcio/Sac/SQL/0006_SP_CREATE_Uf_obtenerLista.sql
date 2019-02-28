@@ -21,8 +21,6 @@ as
 
 select * from UF 
 
-
-
 GO
 
 

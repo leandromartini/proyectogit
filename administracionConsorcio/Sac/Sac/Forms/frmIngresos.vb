@@ -141,7 +141,7 @@ Public Class frmIngresos
 
     End Sub
     Sub setearControles()
-        DtpMesIngreso.Value = Date.Now
+        ''DtpMesIngreso.Value = Date.Now
     End Sub
 
     Private Sub TextBox1_Leave(sender As Object, e As EventArgs) Handles TextBox1.Leave
@@ -185,7 +185,7 @@ Public Class frmIngresos
             MsgBox(ex.Message)
         End Try
     End Sub
-    Sub totales() Handles TextBox4.TextChanged
+    Sub totales() Handles TextBox1.LostFocus, TextBox2.LostFocus, TextBox3.LostFocus
         ''Probar con subtotal y buscar una lugar donde instanciar la suma para los campos de totales
         TextBox4.Text = objPwiComun.SumarColumnaDatagrid(dgIngresos, "subTotal")
         TextBox5.Text = objPwiComun.SumarColumnaDatagrid(dgIngresos, "redondeo")

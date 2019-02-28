@@ -1,4 +1,5 @@
 ﻿Imports brl
+Imports System.Math
 Public Class PwiIngresos
     Dim objAuxIngresos As DataSet
 
@@ -63,7 +64,7 @@ Public Class PwiIngresos
             End If
 
             For Each row As DataGridViewRow In auxDatagid.Rows
-                actualizarIngresosMes = brlIngresos.actualizarIngresosMes(row.Cells(1).Value, 2, 2019, row.Cells(6).Value, row.Cells(7).Value, row.Cells(8).Value, row.Cells(9).Value, row.Cells(10).Value, row.Cells(11).Value)
+                actualizarIngresosMes = brlIngresos.actualizarIngresosMes(row.Cells("id_uf").Value, 2, 2019, row.Cells("expMes").Value, row.Cells("expExtra").Value, row.Cells("mantEdif").Value, row.Cells("subTotal").Value, row.Cells("redondeo").Value, row.Cells("total").Value)
 
             Next
 
@@ -93,7 +94,7 @@ Public Class PwiIngresos
             End Select
 
             row("subTotal") = Decimal.Round(row("expMes") + row("expExtra") + row("mantEdif"), 1)
-            row("redondeo") = CInt(row("subTotal")) - CDec(row("subTotal"))
+            row("redondeo") = IIf(Decimal.Round(row("subTotal")) - CDec(row("subTotal")) = -0.5, 0.5, Decimal.Round(row("subTotal")) - CDec(row("subTotal")))
             row("total") = Decimal.Round(row("subTotal") + row("redondeo"), 1)
 
         Next
