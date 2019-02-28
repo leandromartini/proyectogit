@@ -4,13 +4,15 @@
     '    lblfechahora.Text = fechayhora.ToString("dddd dd 'de' MMMM ") + TimeOfDay
     'End Sub
 
-    Private Sub IngresosToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles IngresosToolStripMenuItem.Click
-        frmIngresos.ShowDialog()
-    End Sub
-
     Private Sub SalirToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles SalirToolStripMenuItem.Click
         Me.Close()
     End Sub
 
+    Private Sub VerToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles VerToolStripMenuItem.Click
+        frmIngresos.ShowDialog()
+    End Sub
 
+    Private Sub CobranzasToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles CobranzasToolStripMenuItem.Click
+        FrmCobranzas.ShowDialog()
+    End Sub
 End Class

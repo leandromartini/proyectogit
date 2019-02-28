@@ -36,7 +36,7 @@ Partial Class frmPruebas
         Me.Button1.BackColor = System.Drawing.SystemColors.Control
         Me.Button1.ForeColor = System.Drawing.SystemColors.ControlText
         Me.Button1.Image = CType(resources.GetObject("Button1.Image"), System.Drawing.Image)
-        Me.Button1.Location = New System.Drawing.Point(12, 12)
+        Me.Button1.Location = New System.Drawing.Point(601, 38)
         Me.Button1.Name = "Button1"
         Me.Button1.Size = New System.Drawing.Size(41, 41)
         Me.Button1.TabIndex = 0
@@ -58,7 +58,7 @@ Partial Class frmPruebas
         Me.Button3.BackColor = System.Drawing.SystemColors.Control
         Me.Button3.ForeColor = System.Drawing.SystemColors.ControlText
         Me.Button3.Image = CType(resources.GetObject("Button3.Image"), System.Drawing.Image)
-        Me.Button3.Location = New System.Drawing.Point(153, 12)
+        Me.Button3.Location = New System.Drawing.Point(554, 38)
         Me.Button3.Name = "Button3"
         Me.Button3.Size = New System.Drawing.Size(41, 41)
         Me.Button3.TabIndex = 2
@@ -80,7 +80,7 @@ Partial Class frmPruebas
         Me.Button5.BackColor = System.Drawing.SystemColors.Control
         Me.Button5.ForeColor = System.Drawing.SystemColors.ControlText
         Me.Button5.Image = CType(resources.GetObject("Button5.Image"), System.Drawing.Image)
-        Me.Button5.Location = New System.Drawing.Point(59, 12)
+        Me.Button5.Location = New System.Drawing.Point(648, 38)
         Me.Button5.Name = "Button5"
         Me.Button5.Size = New System.Drawing.Size(41, 41)
         Me.Button5.TabIndex = 4

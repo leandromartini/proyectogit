@@ -186,6 +186,7 @@ Public Class frmIngresos
         End Try
     End Sub
     Sub totales() Handles TextBox4.TextChanged
+        ''Probar con subtotal y buscar una lugar donde instanciar la suma para los campos de totales
         TextBox4.Text = objPwiComun.SumarColumnaDatagrid(dgIngresos, "subTotal")
         TextBox5.Text = objPwiComun.SumarColumnaDatagrid(dgIngresos, "redondeo")
         TextBox6.Text = objPwiComun.SumarColumnaDatagrid(dgIngresos, "total")
