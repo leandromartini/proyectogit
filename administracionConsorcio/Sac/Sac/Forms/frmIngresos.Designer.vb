@@ -51,15 +51,20 @@ Partial Class frmIngresos
         '
         'DtpMesIngreso
         '
+        Me.DtpMesIngreso.CalendarForeColor = System.Drawing.SystemColors.ButtonShadow
+        Me.DtpMesIngreso.CalendarMonthBackground = System.Drawing.SystemColors.InactiveBorder
+        Me.DtpMesIngreso.CalendarTitleForeColor = System.Drawing.SystemColors.ActiveCaption
+        Me.DtpMesIngreso.CalendarTrailingForeColor = System.Drawing.SystemColors.ButtonShadow
         Me.DtpMesIngreso.CustomFormat = "MMMM"
         Me.DtpMesIngreso.Format = System.Windows.Forms.DateTimePickerFormat.Custom
         Me.DtpMesIngreso.Location = New System.Drawing.Point(12, 21)
         Me.DtpMesIngreso.Name = "DtpMesIngreso"
-        Me.DtpMesIngreso.Size = New System.Drawing.Size(74, 20)
+        Me.DtpMesIngreso.Size = New System.Drawing.Size(96, 20)
         Me.DtpMesIngreso.TabIndex = 1
         '
         'btnVolver
         '
+        Me.btnVolver.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnVolver.Location = New System.Drawing.Point(12, 445)
         Me.btnVolver.Name = "btnVolver"
         Me.btnVolver.Size = New System.Drawing.Size(96, 30)
@@ -148,6 +153,8 @@ Partial Class frmIngresos
         '
         'btnGuardar
         '
+        Me.btnGuardar.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnGuardar.ForeColor = System.Drawing.SystemColors.ActiveCaptionText
         Me.btnGuardar.Location = New System.Drawing.Point(734, 445)
         Me.btnGuardar.Name = "btnGuardar"
         Me.btnGuardar.Size = New System.Drawing.Size(96, 30)
@@ -160,6 +167,7 @@ Partial Class frmIngresos
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
+        Me.BackColor = System.Drawing.SystemColors.ActiveCaption
         Me.ClientSize = New System.Drawing.Size(842, 482)
         Me.Controls.Add(Me.TextBox6)
         Me.Controls.Add(Me.TextBox5)
@@ -170,8 +178,9 @@ Partial Class frmIngresos
         Me.Controls.Add(Me.btnVolver)
         Me.Controls.Add(Me.DtpMesIngreso)
         Me.Controls.Add(Me.dgIngresos)
-        Me.Controls.Add(Me.btnGuardar)
         Me.Controls.Add(Me.btnNuevoIngreso)
+        Me.Controls.Add(Me.btnGuardar)
+        Me.ForeColor = System.Drawing.SystemColors.ActiveCaptionText
         Me.MaximizeBox = False
         Me.Name = "frmIngresos"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
