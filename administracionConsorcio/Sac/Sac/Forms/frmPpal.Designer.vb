@@ -23,6 +23,7 @@ Partial Class frmPpal
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(frmPpal))
         Me.MenuStrip1 = New System.Windows.Forms.MenuStrip()
         Me.IngresosToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.VerToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
@@ -35,6 +36,7 @@ Partial Class frmPpal
         Me.SalirToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.lblfechahora = New System.Windows.Forms.Label()
         Me.Timer1 = New System.Windows.Forms.Timer(Me.components)
+        Me.PropietariosToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.MenuStrip1.SuspendLayout()
         Me.SuspendLayout()
         '
@@ -82,7 +84,7 @@ Partial Class frmPpal
         '
         'ExpensasToolStripMenuItem
         '
-        Me.ExpensasToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.CobranzasToolStripMenuItem, Me.RecibosEmitidosToolStripMenuItem})
+        Me.ExpensasToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.CobranzasToolStripMenuItem, Me.RecibosEmitidosToolStripMenuItem, Me.PropietariosToolStripMenuItem})
         Me.ExpensasToolStripMenuItem.Name = "ExpensasToolStripMenuItem"
         Me.ExpensasToolStripMenuItem.Size = New System.Drawing.Size(74, 21)
         Me.ExpensasToolStripMenuItem.Text = "Expensas"
@@ -120,6 +122,12 @@ Partial Class frmPpal
         Me.Timer1.Enabled = True
         Me.Timer1.Interval = 1000
         '
+        'PropietariosToolStripMenuItem
+        '
+        Me.PropietariosToolStripMenuItem.Name = "PropietariosToolStripMenuItem"
+        Me.PropietariosToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
+        Me.PropietariosToolStripMenuItem.Text = "Propietarios"
+        '
         'frmPpal
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -128,6 +136,7 @@ Partial Class frmPpal
         Me.ClientSize = New System.Drawing.Size(670, 399)
         Me.Controls.Add(Me.lblfechahora)
         Me.Controls.Add(Me.MenuStrip1)
+        Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.MainMenuStrip = Me.MenuStrip1
         Me.MaximizeBox = False
         Me.Name = "frmPpal"
@@ -151,4 +160,5 @@ Partial Class frmPpal
     Friend WithEvents ExpensasToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents CobranzasToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents RecibosEmitidosToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents PropietariosToolStripMenuItem As ToolStripMenuItem
 End Class
