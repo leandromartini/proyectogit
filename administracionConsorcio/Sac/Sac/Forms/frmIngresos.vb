@@ -181,7 +181,7 @@ Public Class frmIngresos
         TextBox5.Text = objPwiComun.SumarColumnaDatagrid(dgIngresos, "redondeo")
         TextBox6.Text = objPwiComun.SumarColumnaDatagrid(dgIngresos, "total")
     End Sub
-    Private Sub btnVolver_Click(sender As Object, e As EventArgs) Handles btnVolver.Click
+    Private Sub btnVolver_Click(sender As Object, e As EventArgs)
         'Las variables o controles que haya que limpiar.
         controlesNuevoIngreso(False)
 

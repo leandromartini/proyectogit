@@ -23,7 +23,6 @@ Partial Class frmIngresos
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(frmIngresos))
-        Me.btnVolver = New System.Windows.Forms.Button()
         Me.btnNuevoIngreso = New System.Windows.Forms.Button()
         Me.btnGuardar = New System.Windows.Forms.Button()
         Me.TextBox1 = New System.Windows.Forms.TextBox()
@@ -37,38 +36,35 @@ Partial Class frmIngresos
         Me.btnActualizar = New System.Windows.Forms.Button()
         Me.cboPropietario = New System.Windows.Forms.ComboBox()
         Me.cboConsorcio = New System.Windows.Forms.ComboBox()
+        Me.Button1 = New System.Windows.Forms.Button()
         CType(Me.dgIngresos, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
-        '
-        'btnVolver
-        '
-        Me.btnVolver.Font = New System.Drawing.Font("Segoe UI", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnVolver.Location = New System.Drawing.Point(12, 445)
-        Me.btnVolver.Name = "btnVolver"
-        Me.btnVolver.Size = New System.Drawing.Size(96, 30)
-        Me.btnVolver.TabIndex = 3
-        Me.btnVolver.Text = "Volver"
-        Me.btnVolver.UseVisualStyleBackColor = True
         '
         'btnNuevoIngreso
         '
         Me.btnNuevoIngreso.Font = New System.Drawing.Font("Segoe UI", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnNuevoIngreso.Location = New System.Drawing.Point(734, 445)
+        Me.btnNuevoIngreso.Image = CType(resources.GetObject("btnNuevoIngreso.Image"), System.Drawing.Image)
+        Me.btnNuevoIngreso.ImageAlign = System.Drawing.ContentAlignment.MiddleRight
+        Me.btnNuevoIngreso.Location = New System.Drawing.Point(732, 436)
         Me.btnNuevoIngreso.Name = "btnNuevoIngreso"
-        Me.btnNuevoIngreso.Size = New System.Drawing.Size(96, 30)
+        Me.btnNuevoIngreso.Size = New System.Drawing.Size(98, 34)
         Me.btnNuevoIngreso.TabIndex = 4
         Me.btnNuevoIngreso.Text = "Nuevo Ingresos"
+        Me.btnNuevoIngreso.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
         Me.btnNuevoIngreso.UseVisualStyleBackColor = True
         '
         'btnGuardar
         '
-        Me.btnGuardar.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnGuardar.Font = New System.Drawing.Font("Segoe UI", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnGuardar.ForeColor = System.Drawing.SystemColors.ActiveCaptionText
-        Me.btnGuardar.Location = New System.Drawing.Point(734, 445)
+        Me.btnGuardar.Image = CType(resources.GetObject("btnGuardar.Image"), System.Drawing.Image)
+        Me.btnGuardar.ImageAlign = System.Drawing.ContentAlignment.MiddleRight
+        Me.btnGuardar.Location = New System.Drawing.Point(732, 436)
         Me.btnGuardar.Name = "btnGuardar"
-        Me.btnGuardar.Size = New System.Drawing.Size(96, 30)
+        Me.btnGuardar.Size = New System.Drawing.Size(98, 34)
         Me.btnGuardar.TabIndex = 13
         Me.btnGuardar.Text = "Guardar"
+        Me.btnGuardar.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
         Me.btnGuardar.UseVisualStyleBackColor = True
         Me.btnGuardar.Visible = False
         '
@@ -164,9 +160,9 @@ Partial Class frmIngresos
         '
         'btnActualizar
         '
-        Me.btnActualizar.Location = New System.Drawing.Point(302, 12)
+        Me.btnActualizar.Location = New System.Drawing.Point(300, 5)
         Me.btnActualizar.Name = "btnActualizar"
-        Me.btnActualizar.Size = New System.Drawing.Size(92, 22)
+        Me.btnActualizar.Size = New System.Drawing.Size(98, 32)
         Me.btnActualizar.TabIndex = 17
         Me.btnActualizar.Text = "Actualizar"
         Me.btnActualizar.UseVisualStyleBackColor = True
@@ -187,12 +183,26 @@ Partial Class frmIngresos
         Me.cboConsorcio.Size = New System.Drawing.Size(146, 21)
         Me.cboConsorcio.TabIndex = 15
         '
+        'Button1
+        '
+        Me.Button1.Font = New System.Drawing.Font("Segoe UI", 11.25!)
+        Me.Button1.Image = CType(resources.GetObject("Button1.Image"), System.Drawing.Image)
+        Me.Button1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.Button1.Location = New System.Drawing.Point(12, 436)
+        Me.Button1.Name = "Button1"
+        Me.Button1.Size = New System.Drawing.Size(98, 34)
+        Me.Button1.TabIndex = 18
+        Me.Button1.Text = "Volver"
+        Me.Button1.TextAlign = System.Drawing.ContentAlignment.MiddleRight
+        Me.Button1.UseVisualStyleBackColor = True
+        '
         'frmIngresos
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.SystemColors.ActiveCaption
         Me.ClientSize = New System.Drawing.Size(842, 482)
+        Me.Controls.Add(Me.Button1)
         Me.Controls.Add(Me.btnActualizar)
         Me.Controls.Add(Me.cboPropietario)
         Me.Controls.Add(Me.cboConsorcio)
@@ -203,7 +213,6 @@ Partial Class frmIngresos
         Me.Controls.Add(Me.TextBox3)
         Me.Controls.Add(Me.TextBox2)
         Me.Controls.Add(Me.TextBox1)
-        Me.Controls.Add(Me.btnVolver)
         Me.Controls.Add(Me.dgIngresos)
         Me.Controls.Add(Me.btnNuevoIngreso)
         Me.Controls.Add(Me.btnGuardar)
@@ -218,7 +227,6 @@ Partial Class frmIngresos
         Me.PerformLayout()
 
     End Sub
-    Friend WithEvents btnVolver As Button
     Friend WithEvents btnNuevoIngreso As Button
     Friend WithEvents btnGuardar As Button
     Friend WithEvents TextBox1 As TextBox
@@ -232,4 +240,5 @@ Partial Class frmIngresos
     Friend WithEvents btnActualizar As Button
     Friend WithEvents cboPropietario As ComboBox
     Friend WithEvents cboConsorcio As ComboBox
+    Friend WithEvents Button1 As Button
 End Class

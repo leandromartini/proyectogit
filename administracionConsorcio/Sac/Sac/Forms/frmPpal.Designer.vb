@@ -33,10 +33,12 @@ Partial Class frmPpal
         Me.ExpensasToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.CobranzasToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.RecibosEmitidosToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.PropietariosToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.VerToolStripMenuItem1 = New System.Windows.Forms.ToolStripMenuItem()
+        Me.ActualizarToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.SalirToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.lblfechahora = New System.Windows.Forms.Label()
         Me.Timer1 = New System.Windows.Forms.Timer(Me.components)
-        Me.PropietariosToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.MenuStrip1.SuspendLayout()
         Me.SuspendLayout()
         '
@@ -60,7 +62,7 @@ Partial Class frmPpal
         'VerToolStripMenuItem
         '
         Me.VerToolStripMenuItem.Name = "VerToolStripMenuItem"
-        Me.VerToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
+        Me.VerToolStripMenuItem.Size = New System.Drawing.Size(146, 22)
         Me.VerToolStripMenuItem.Text = "Ver / Nuevo"
         '
         'InformesToolStripMenuItem
@@ -101,6 +103,25 @@ Partial Class frmPpal
         Me.RecibosEmitidosToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
         Me.RecibosEmitidosToolStripMenuItem.Text = "Recibos Emitidos"
         '
+        'PropietariosToolStripMenuItem
+        '
+        Me.PropietariosToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.VerToolStripMenuItem1, Me.ActualizarToolStripMenuItem})
+        Me.PropietariosToolStripMenuItem.Name = "PropietariosToolStripMenuItem"
+        Me.PropietariosToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
+        Me.PropietariosToolStripMenuItem.Text = "Propietarios"
+        '
+        'VerToolStripMenuItem1
+        '
+        Me.VerToolStripMenuItem1.Name = "VerToolStripMenuItem1"
+        Me.VerToolStripMenuItem1.Size = New System.Drawing.Size(180, 22)
+        Me.VerToolStripMenuItem1.Text = "Ver"
+        '
+        'ActualizarToolStripMenuItem
+        '
+        Me.ActualizarToolStripMenuItem.Name = "ActualizarToolStripMenuItem"
+        Me.ActualizarToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
+        Me.ActualizarToolStripMenuItem.Text = "Nuevo"
+        '
         'SalirToolStripMenuItem
         '
         Me.SalirToolStripMenuItem.Name = "SalirToolStripMenuItem"
@@ -121,12 +142,6 @@ Partial Class frmPpal
         '
         Me.Timer1.Enabled = True
         Me.Timer1.Interval = 1000
-        '
-        'PropietariosToolStripMenuItem
-        '
-        Me.PropietariosToolStripMenuItem.Name = "PropietariosToolStripMenuItem"
-        Me.PropietariosToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
-        Me.PropietariosToolStripMenuItem.Text = "Propietarios"
         '
         'frmPpal
         '
@@ -161,4 +176,6 @@ Partial Class frmPpal
     Friend WithEvents CobranzasToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents RecibosEmitidosToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents PropietariosToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents VerToolStripMenuItem1 As ToolStripMenuItem
+    Friend WithEvents ActualizarToolStripMenuItem As ToolStripMenuItem
 End Class
