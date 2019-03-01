@@ -53,6 +53,7 @@ Public Class PwiIngresos
     Public Function actualizarIngresosMes(ByVal auxDatagid As DataGridView) As Boolean
 
         Dim brlIngresos As New brlIngresos
+        actualizarIngresosMes = False
 
         Try
 
@@ -65,8 +66,6 @@ Public Class PwiIngresos
                 actualizarIngresosMes = brlIngresos.actualizarIngresosMes(row.Cells(1).Value, 2, 2019, row.Cells(6).Value, row.Cells(7).Value, row.Cells(8).Value, row.Cells(9).Value, row.Cells(10).Value, row.Cells(11).Value)
 
             Next
-
-
 
         Catch ex As Exception
             actualizarIngresosMes = False

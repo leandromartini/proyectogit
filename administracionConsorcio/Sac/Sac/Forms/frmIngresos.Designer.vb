@@ -23,7 +23,6 @@ Partial Class frmIngresos
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
         Me.dgIngresos = New System.Windows.Forms.DataGridView()
-        Me.DtpMesIngreso = New System.Windows.Forms.DateTimePicker()
         Me.btnVolver = New System.Windows.Forms.Button()
         Me.btnNuevoIngreso = New System.Windows.Forms.Button()
         Me.TextBox1 = New System.Windows.Forms.TextBox()
@@ -43,23 +42,15 @@ Partial Class frmIngresos
         Me.dgIngresos.AllowUserToResizeColumns = False
         Me.dgIngresos.AllowUserToResizeRows = False
         Me.dgIngresos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.dgIngresos.Location = New System.Drawing.Point(12, 58)
+        Me.dgIngresos.Location = New System.Drawing.Point(12, 72)
         Me.dgIngresos.Name = "dgIngresos"
         Me.dgIngresos.ReadOnly = True
         Me.dgIngresos.Size = New System.Drawing.Size(818, 328)
         Me.dgIngresos.TabIndex = 0
         '
-        'DtpMesIngreso
-        '
-        Me.DtpMesIngreso.CustomFormat = "MMMM"
-        Me.DtpMesIngreso.Format = System.Windows.Forms.DateTimePickerFormat.Custom
-        Me.DtpMesIngreso.Location = New System.Drawing.Point(12, 21)
-        Me.DtpMesIngreso.Name = "DtpMesIngreso"
-        Me.DtpMesIngreso.Size = New System.Drawing.Size(74, 20)
-        Me.DtpMesIngreso.TabIndex = 1
-        '
         'btnVolver
         '
+        Me.btnVolver.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnVolver.Location = New System.Drawing.Point(12, 445)
         Me.btnVolver.Name = "btnVolver"
         Me.btnVolver.Size = New System.Drawing.Size(96, 30)
@@ -81,7 +72,7 @@ Partial Class frmIngresos
         Me.TextBox1.BackColor = System.Drawing.SystemColors.ScrollBar
         Me.TextBox1.Enabled = False
         Me.TextBox1.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TextBox1.Location = New System.Drawing.Point(284, 390)
+        Me.TextBox1.Location = New System.Drawing.Point(284, 404)
         Me.TextBox1.Name = "TextBox1"
         Me.TextBox1.Size = New System.Drawing.Size(87, 20)
         Me.TextBox1.TabIndex = 5
@@ -93,7 +84,7 @@ Partial Class frmIngresos
         Me.TextBox2.BackColor = System.Drawing.SystemColors.ScrollBar
         Me.TextBox2.Enabled = False
         Me.TextBox2.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TextBox2.Location = New System.Drawing.Point(371, 390)
+        Me.TextBox2.Location = New System.Drawing.Point(371, 404)
         Me.TextBox2.Name = "TextBox2"
         Me.TextBox2.Size = New System.Drawing.Size(87, 20)
         Me.TextBox2.TabIndex = 6
@@ -106,7 +97,7 @@ Partial Class frmIngresos
         Me.TextBox3.Cursor = System.Windows.Forms.Cursors.IBeam
         Me.TextBox3.Enabled = False
         Me.TextBox3.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TextBox3.Location = New System.Drawing.Point(458, 390)
+        Me.TextBox3.Location = New System.Drawing.Point(458, 404)
         Me.TextBox3.Name = "TextBox3"
         Me.TextBox3.Size = New System.Drawing.Size(87, 20)
         Me.TextBox3.TabIndex = 7
@@ -118,7 +109,7 @@ Partial Class frmIngresos
         Me.TextBox4.BackColor = System.Drawing.SystemColors.ScrollBar
         Me.TextBox4.Enabled = False
         Me.TextBox4.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TextBox4.Location = New System.Drawing.Point(545, 390)
+        Me.TextBox4.Location = New System.Drawing.Point(545, 404)
         Me.TextBox4.Name = "TextBox4"
         Me.TextBox4.Size = New System.Drawing.Size(87, 20)
         Me.TextBox4.TabIndex = 8
@@ -129,7 +120,7 @@ Partial Class frmIngresos
         Me.TextBox5.BackColor = System.Drawing.SystemColors.ScrollBar
         Me.TextBox5.Enabled = False
         Me.TextBox5.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TextBox5.Location = New System.Drawing.Point(632, 390)
+        Me.TextBox5.Location = New System.Drawing.Point(632, 404)
         Me.TextBox5.Name = "TextBox5"
         Me.TextBox5.Size = New System.Drawing.Size(87, 20)
         Me.TextBox5.TabIndex = 9
@@ -140,7 +131,7 @@ Partial Class frmIngresos
         Me.TextBox6.BackColor = System.Drawing.SystemColors.ScrollBar
         Me.TextBox6.Enabled = False
         Me.TextBox6.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TextBox6.Location = New System.Drawing.Point(719, 390)
+        Me.TextBox6.Location = New System.Drawing.Point(719, 404)
         Me.TextBox6.Name = "TextBox6"
         Me.TextBox6.Size = New System.Drawing.Size(87, 20)
         Me.TextBox6.TabIndex = 10
@@ -148,6 +139,8 @@ Partial Class frmIngresos
         '
         'btnGuardar
         '
+        Me.btnGuardar.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnGuardar.ForeColor = System.Drawing.SystemColors.ActiveCaptionText
         Me.btnGuardar.Location = New System.Drawing.Point(734, 445)
         Me.btnGuardar.Name = "btnGuardar"
         Me.btnGuardar.Size = New System.Drawing.Size(96, 30)
@@ -160,6 +153,7 @@ Partial Class frmIngresos
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
+        Me.BackColor = System.Drawing.SystemColors.ActiveCaption
         Me.ClientSize = New System.Drawing.Size(842, 482)
         Me.Controls.Add(Me.TextBox6)
         Me.Controls.Add(Me.TextBox5)
@@ -168,10 +162,10 @@ Partial Class frmIngresos
         Me.Controls.Add(Me.TextBox2)
         Me.Controls.Add(Me.TextBox1)
         Me.Controls.Add(Me.btnVolver)
-        Me.Controls.Add(Me.DtpMesIngreso)
         Me.Controls.Add(Me.dgIngresos)
-        Me.Controls.Add(Me.btnGuardar)
         Me.Controls.Add(Me.btnNuevoIngreso)
+        Me.Controls.Add(Me.btnGuardar)
+        Me.ForeColor = System.Drawing.SystemColors.ActiveCaptionText
         Me.MaximizeBox = False
         Me.Name = "frmIngresos"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
@@ -183,7 +177,6 @@ Partial Class frmIngresos
     End Sub
 
     Friend WithEvents dgIngresos As DataGridView
-    Friend WithEvents DtpMesIngreso As DateTimePicker
     Friend WithEvents btnVolver As Button
     Friend WithEvents btnNuevoIngreso As Button
     Friend WithEvents TextBox1 As TextBox

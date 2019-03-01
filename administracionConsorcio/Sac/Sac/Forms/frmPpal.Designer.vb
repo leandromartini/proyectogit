@@ -25,9 +25,13 @@ Partial Class frmPpal
         Me.components = New System.ComponentModel.Container()
         Me.MenuStrip1 = New System.Windows.Forms.MenuStrip()
         Me.IngresosToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.VerToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.InformesToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.DeDeudasToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.BalanceMensualToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.ExpensasToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.CobranzasToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.RecibosEmitidosToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.SalirToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.lblfechahora = New System.Windows.Forms.Label()
         Me.Timer1 = New System.Windows.Forms.Timer(Me.components)
@@ -36,42 +40,69 @@ Partial Class frmPpal
         '
         'MenuStrip1
         '
-        Me.MenuStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.IngresosToolStripMenuItem, Me.InformesToolStripMenuItem, Me.SalirToolStripMenuItem})
+        Me.MenuStrip1.Font = New System.Drawing.Font("Segoe UI", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.MenuStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.IngresosToolStripMenuItem, Me.InformesToolStripMenuItem, Me.ExpensasToolStripMenuItem, Me.SalirToolStripMenuItem})
         Me.MenuStrip1.Location = New System.Drawing.Point(0, 0)
         Me.MenuStrip1.Name = "MenuStrip1"
-        Me.MenuStrip1.Size = New System.Drawing.Size(670, 24)
+        Me.MenuStrip1.Size = New System.Drawing.Size(670, 25)
         Me.MenuStrip1.TabIndex = 2
         Me.MenuStrip1.Text = "MenuStrip1"
         '
         'IngresosToolStripMenuItem
         '
+        Me.IngresosToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.VerToolStripMenuItem})
         Me.IngresosToolStripMenuItem.Name = "IngresosToolStripMenuItem"
-        Me.IngresosToolStripMenuItem.Size = New System.Drawing.Size(63, 20)
+        Me.IngresosToolStripMenuItem.Size = New System.Drawing.Size(70, 21)
         Me.IngresosToolStripMenuItem.Text = "Ingresos"
+        '
+        'VerToolStripMenuItem
+        '
+        Me.VerToolStripMenuItem.Name = "VerToolStripMenuItem"
+        Me.VerToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
+        Me.VerToolStripMenuItem.Text = "Ver / Nuevo"
         '
         'InformesToolStripMenuItem
         '
         Me.InformesToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.DeDeudasToolStripMenuItem, Me.BalanceMensualToolStripMenuItem})
         Me.InformesToolStripMenuItem.Name = "InformesToolStripMenuItem"
-        Me.InformesToolStripMenuItem.Size = New System.Drawing.Size(66, 20)
-        Me.InformesToolStripMenuItem.Text = "Informes"
+        Me.InformesToolStripMenuItem.Size = New System.Drawing.Size(94, 21)
+        Me.InformesToolStripMenuItem.Text = "Contabilidad"
         '
         'DeDeudasToolStripMenuItem
         '
         Me.DeDeudasToolStripMenuItem.Name = "DeDeudasToolStripMenuItem"
-        Me.DeDeudasToolStripMenuItem.Size = New System.Drawing.Size(174, 22)
-        Me.DeDeudasToolStripMenuItem.Text = "Informe de Deudas"
+        Me.DeDeudasToolStripMenuItem.Size = New System.Drawing.Size(203, 22)
+        Me.DeDeudasToolStripMenuItem.Text = "Ingresar Movimientos"
         '
         'BalanceMensualToolStripMenuItem
         '
         Me.BalanceMensualToolStripMenuItem.Name = "BalanceMensualToolStripMenuItem"
-        Me.BalanceMensualToolStripMenuItem.Size = New System.Drawing.Size(174, 22)
-        Me.BalanceMensualToolStripMenuItem.Text = "Balance Mensual"
+        Me.BalanceMensualToolStripMenuItem.Size = New System.Drawing.Size(203, 22)
+        Me.BalanceMensualToolStripMenuItem.Text = "Ver Informes"
+        '
+        'ExpensasToolStripMenuItem
+        '
+        Me.ExpensasToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.CobranzasToolStripMenuItem, Me.RecibosEmitidosToolStripMenuItem})
+        Me.ExpensasToolStripMenuItem.Name = "ExpensasToolStripMenuItem"
+        Me.ExpensasToolStripMenuItem.Size = New System.Drawing.Size(74, 21)
+        Me.ExpensasToolStripMenuItem.Text = "Expensas"
+        '
+        'CobranzasToolStripMenuItem
+        '
+        Me.CobranzasToolStripMenuItem.Name = "CobranzasToolStripMenuItem"
+        Me.CobranzasToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
+        Me.CobranzasToolStripMenuItem.Text = "Cobranzas"
+        '
+        'RecibosEmitidosToolStripMenuItem
+        '
+        Me.RecibosEmitidosToolStripMenuItem.Name = "RecibosEmitidosToolStripMenuItem"
+        Me.RecibosEmitidosToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
+        Me.RecibosEmitidosToolStripMenuItem.Text = "Recibos Emitidos"
         '
         'SalirToolStripMenuItem
         '
         Me.SalirToolStripMenuItem.Name = "SalirToolStripMenuItem"
-        Me.SalirToolStripMenuItem.Size = New System.Drawing.Size(41, 20)
+        Me.SalirToolStripMenuItem.Size = New System.Drawing.Size(45, 21)
         Me.SalirToolStripMenuItem.Text = "Salir"
         '
         'lblfechahora
@@ -93,7 +124,7 @@ Partial Class frmPpal
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.BackColor = System.Drawing.SystemColors.ButtonShadow
+        Me.BackColor = System.Drawing.SystemColors.ActiveCaption
         Me.ClientSize = New System.Drawing.Size(670, 399)
         Me.Controls.Add(Me.lblfechahora)
         Me.Controls.Add(Me.MenuStrip1)
@@ -116,4 +147,8 @@ Partial Class frmPpal
     Friend WithEvents Timer1 As Timer
     Friend WithEvents DeDeudasToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents BalanceMensualToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents VerToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents ExpensasToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents CobranzasToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents RecibosEmitidosToolStripMenuItem As ToolStripMenuItem
 End Class

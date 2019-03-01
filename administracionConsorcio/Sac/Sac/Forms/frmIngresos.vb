@@ -33,6 +33,7 @@ Public Class frmIngresos
 
         Catch ex As Exception
             MsgBox(ex.Message)
+            Me.Close()
         End Try
     End Sub
 
@@ -73,10 +74,15 @@ Public Class frmIngresos
     End Sub
 
     Sub NuevoIngresos()
-
-        Dim lngNuevo As Long
-        lngNuevo = objPwiIngresos.actualizarIngresosMes(dgIngresos)
-
+        Try
+            Dim lngNuevo As Long
+            lngNuevo = objPwiIngresos.actualizarIngresosMes(dgIngresos)
+            If lngNuevo Then
+                MsgBox("Se guardaron con exito los cambios.")
+            End If
+        Catch ex As Exception
+            MsgBox(ex.Message)
+        End Try
     End Sub
 
     Private Sub btnVolver_Click(sender As Object, e As EventArgs) Handles btnVolver.Click
@@ -147,7 +153,6 @@ Public Class frmIngresos
                 Exit Sub
             End If
             objPwiIngresos.MontoExp(TextBox1.Text, CampoTotal.expMes)
-
         Catch ex As Exception
             MsgBox(ex.Message)
         End Try
@@ -162,7 +167,6 @@ Public Class frmIngresos
                 Exit Sub
             End If
             objPwiIngresos.MontoExp(TextBox2.Text, CampoTotal.expExt)
-
         Catch ex As Exception
             MsgBox(ex.Message)
         End Try
@@ -177,11 +181,14 @@ Public Class frmIngresos
                 Exit Sub
             End If
             objPwiIngresos.MontoExp(TextBox3.Text, CampoTotal.MantEdif)
-
         Catch ex As Exception
             MsgBox(ex.Message)
         End Try
     End Sub
-
-
+    Sub totales() Handles TextBox4.TextChanged
+        ''Probar con subtotal y buscar una lugar donde instanciar la suma para los campos de totales
+        TextBox4.Text = objPwiComun.SumarColumnaDatagrid(dgIngresos, "subTotal")
+        TextBox5.Text = objPwiComun.SumarColumnaDatagrid(dgIngresos, "redondeo")
+        TextBox6.Text = objPwiComun.SumarColumnaDatagrid(dgIngresos, "total")
+    End Sub
 End Class
