@@ -23,8 +23,8 @@ Partial Class frmPropietarios
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(frmPropietarios))
-        Me.TabControl1 = New System.Windows.Forms.TabControl()
-        Me.TabPage1 = New System.Windows.Forms.TabPage()
+        Me.tabPropietarios = New System.Windows.Forms.TabControl()
+        Me.tabPersonal = New System.Windows.Forms.TabPage()
         Me.btnCargar = New System.Windows.Forms.Button()
         Me.btnGuardar = New System.Windows.Forms.Button()
         Me.btnActualizar = New System.Windows.Forms.Button()
@@ -37,50 +37,59 @@ Partial Class frmPropietarios
         Me.txtApellido = New System.Windows.Forms.TextBox()
         Me.txtNombre = New System.Windows.Forms.TextBox()
         Me.PictureBox1 = New System.Windows.Forms.PictureBox()
-        Me.TabPage2 = New System.Windows.Forms.TabPage()
+        Me.tabAvanzado = New System.Windows.Forms.TabPage()
+        Me.ComboBox2 = New System.Windows.Forms.ComboBox()
+        Me.Label6 = New System.Windows.Forms.Label()
+        Me.Label5 = New System.Windows.Forms.Label()
+        Me.ComboBox1 = New System.Windows.Forms.ComboBox()
         Me.btnVolver = New System.Windows.Forms.Button()
-        Me.TabControl1.SuspendLayout()
-        Me.TabPage1.SuspendLayout()
+        Me.Button5 = New System.Windows.Forms.Button()
+        Me.Label7 = New System.Windows.Forms.Label()
+        Me.TextBox1 = New System.Windows.Forms.TextBox()
+        Me.tabPropietarios.SuspendLayout()
+        Me.tabPersonal.SuspendLayout()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.tabAvanzado.SuspendLayout()
         Me.SuspendLayout()
         '
-        'TabControl1
+        'tabPropietarios
         '
-        Me.TabControl1.Controls.Add(Me.TabPage1)
-        Me.TabControl1.Controls.Add(Me.TabPage2)
-        Me.TabControl1.Location = New System.Drawing.Point(12, 12)
-        Me.TabControl1.Name = "TabControl1"
-        Me.TabControl1.SelectedIndex = 0
-        Me.TabControl1.Size = New System.Drawing.Size(468, 258)
-        Me.TabControl1.TabIndex = 0
+        Me.tabPropietarios.Controls.Add(Me.tabPersonal)
+        Me.tabPropietarios.Controls.Add(Me.tabAvanzado)
+        Me.tabPropietarios.Location = New System.Drawing.Point(12, 12)
+        Me.tabPropietarios.Name = "tabPropietarios"
+        Me.tabPropietarios.SelectedIndex = 0
+        Me.tabPropietarios.Size = New System.Drawing.Size(521, 258)
+        Me.tabPropietarios.TabIndex = 0
         '
-        'TabPage1
+        'tabPersonal
         '
-        Me.TabPage1.BackColor = System.Drawing.SystemColors.ActiveCaption
-        Me.TabPage1.Controls.Add(Me.btnCargar)
-        Me.TabPage1.Controls.Add(Me.btnGuardar)
-        Me.TabPage1.Controls.Add(Me.btnActualizar)
-        Me.TabPage1.Controls.Add(Me.Label4)
-        Me.TabPage1.Controls.Add(Me.Label3)
-        Me.TabPage1.Controls.Add(Me.Label2)
-        Me.TabPage1.Controls.Add(Me.Label1)
-        Me.TabPage1.Controls.Add(Me.txtTelefono)
-        Me.TabPage1.Controls.Add(Me.txtDireccion)
-        Me.TabPage1.Controls.Add(Me.txtApellido)
-        Me.TabPage1.Controls.Add(Me.txtNombre)
-        Me.TabPage1.Controls.Add(Me.PictureBox1)
-        Me.TabPage1.Location = New System.Drawing.Point(4, 22)
-        Me.TabPage1.Name = "TabPage1"
-        Me.TabPage1.Padding = New System.Windows.Forms.Padding(3)
-        Me.TabPage1.Size = New System.Drawing.Size(460, 232)
-        Me.TabPage1.TabIndex = 0
-        Me.TabPage1.Text = "TabPage1"
+        Me.tabPersonal.BackColor = System.Drawing.SystemColors.ActiveCaption
+        Me.tabPersonal.Controls.Add(Me.Button5)
+        Me.tabPersonal.Controls.Add(Me.btnCargar)
+        Me.tabPersonal.Controls.Add(Me.btnGuardar)
+        Me.tabPersonal.Controls.Add(Me.btnActualizar)
+        Me.tabPersonal.Controls.Add(Me.Label4)
+        Me.tabPersonal.Controls.Add(Me.Label3)
+        Me.tabPersonal.Controls.Add(Me.Label2)
+        Me.tabPersonal.Controls.Add(Me.Label1)
+        Me.tabPersonal.Controls.Add(Me.txtTelefono)
+        Me.tabPersonal.Controls.Add(Me.txtDireccion)
+        Me.tabPersonal.Controls.Add(Me.txtApellido)
+        Me.tabPersonal.Controls.Add(Me.txtNombre)
+        Me.tabPersonal.Controls.Add(Me.PictureBox1)
+        Me.tabPersonal.Location = New System.Drawing.Point(4, 22)
+        Me.tabPersonal.Name = "tabPersonal"
+        Me.tabPersonal.Padding = New System.Windows.Forms.Padding(3)
+        Me.tabPersonal.Size = New System.Drawing.Size(513, 232)
+        Me.tabPersonal.TabIndex = 0
+        Me.tabPersonal.Text = "Datos Personales"
         '
         'btnCargar
         '
         Me.btnCargar.Image = CType(resources.GetObject("btnCargar.Image"), System.Drawing.Image)
         Me.btnCargar.ImageAlign = System.Drawing.ContentAlignment.TopCenter
-        Me.btnCargar.Location = New System.Drawing.Point(334, 167)
+        Me.btnCargar.Location = New System.Drawing.Point(375, 169)
         Me.btnCargar.Name = "btnCargar"
         Me.btnCargar.Size = New System.Drawing.Size(67, 52)
         Me.btnCargar.TabIndex = 26
@@ -104,11 +113,11 @@ Partial Class frmPropietarios
         '
         Me.btnActualizar.Image = CType(resources.GetObject("btnActualizar.Image"), System.Drawing.Image)
         Me.btnActualizar.ImageAlign = System.Drawing.ContentAlignment.TopCenter
-        Me.btnActualizar.Location = New System.Drawing.Point(199, 167)
+        Me.btnActualizar.Location = New System.Drawing.Point(235, 167)
         Me.btnActualizar.Name = "btnActualizar"
         Me.btnActualizar.Size = New System.Drawing.Size(67, 52)
         Me.btnActualizar.TabIndex = 24
-        Me.btnActualizar.Text = "Limpiar"
+        Me.btnActualizar.Text = "Nuevo"
         Me.btnActualizar.TextAlign = System.Drawing.ContentAlignment.BottomCenter
         Me.btnActualizar.UseVisualStyleBackColor = True
         '
@@ -156,28 +165,28 @@ Partial Class frmPropietarios
         '
         Me.txtTelefono.Location = New System.Drawing.Point(88, 138)
         Me.txtTelefono.Name = "txtTelefono"
-        Me.txtTelefono.Size = New System.Drawing.Size(179, 20)
+        Me.txtTelefono.Size = New System.Drawing.Size(214, 20)
         Me.txtTelefono.TabIndex = 19
         '
         'txtDireccion
         '
         Me.txtDireccion.Location = New System.Drawing.Point(87, 99)
         Me.txtDireccion.Name = "txtDireccion"
-        Me.txtDireccion.Size = New System.Drawing.Size(179, 20)
+        Me.txtDireccion.Size = New System.Drawing.Size(215, 20)
         Me.txtDireccion.TabIndex = 18
         '
         'txtApellido
         '
         Me.txtApellido.Location = New System.Drawing.Point(88, 57)
         Me.txtApellido.Name = "txtApellido"
-        Me.txtApellido.Size = New System.Drawing.Size(179, 20)
+        Me.txtApellido.Size = New System.Drawing.Size(214, 20)
         Me.txtApellido.TabIndex = 17
         '
         'txtNombre
         '
         Me.txtNombre.Location = New System.Drawing.Point(87, 16)
         Me.txtNombre.Name = "txtNombre"
-        Me.txtNombre.Size = New System.Drawing.Size(180, 20)
+        Me.txtNombre.Size = New System.Drawing.Size(215, 20)
         Me.txtNombre.TabIndex = 16
         '
         'PictureBox1
@@ -186,22 +195,64 @@ Partial Class frmPropietarios
         Me.PictureBox1.ErrorImage = CType(resources.GetObject("PictureBox1.ErrorImage"), System.Drawing.Image)
         Me.PictureBox1.Image = CType(resources.GetObject("PictureBox1.Image"), System.Drawing.Image)
         Me.PictureBox1.InitialImage = CType(resources.GetObject("PictureBox1.InitialImage"), System.Drawing.Image)
-        Me.PictureBox1.Location = New System.Drawing.Point(288, 14)
+        Me.PictureBox1.Location = New System.Drawing.Point(329, 16)
         Me.PictureBox1.Name = "PictureBox1"
         Me.PictureBox1.Size = New System.Drawing.Size(150, 144)
         Me.PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
         Me.PictureBox1.TabIndex = 15
         Me.PictureBox1.TabStop = False
         '
-        'TabPage2
+        'tabAvanzado
         '
-        Me.TabPage2.BackColor = System.Drawing.SystemColors.ActiveCaption
-        Me.TabPage2.Location = New System.Drawing.Point(4, 22)
-        Me.TabPage2.Name = "TabPage2"
-        Me.TabPage2.Padding = New System.Windows.Forms.Padding(3)
-        Me.TabPage2.Size = New System.Drawing.Size(460, 232)
-        Me.TabPage2.TabIndex = 1
-        Me.TabPage2.Text = "TabPage2"
+        Me.tabAvanzado.BackColor = System.Drawing.SystemColors.ActiveCaption
+        Me.tabAvanzado.Controls.Add(Me.TextBox1)
+        Me.tabAvanzado.Controls.Add(Me.Label7)
+        Me.tabAvanzado.Controls.Add(Me.ComboBox2)
+        Me.tabAvanzado.Controls.Add(Me.Label6)
+        Me.tabAvanzado.Controls.Add(Me.Label5)
+        Me.tabAvanzado.Controls.Add(Me.ComboBox1)
+        Me.tabAvanzado.Location = New System.Drawing.Point(4, 22)
+        Me.tabAvanzado.Name = "tabAvanzado"
+        Me.tabAvanzado.Padding = New System.Windows.Forms.Padding(3)
+        Me.tabAvanzado.Size = New System.Drawing.Size(513, 232)
+        Me.tabAvanzado.TabIndex = 1
+        Me.tabAvanzado.Text = "Avanzado"
+        '
+        'ComboBox2
+        '
+        Me.ComboBox2.FormattingEnabled = True
+        Me.ComboBox2.Location = New System.Drawing.Point(121, 87)
+        Me.ComboBox2.Name = "ComboBox2"
+        Me.ComboBox2.Size = New System.Drawing.Size(121, 21)
+        Me.ComboBox2.TabIndex = 4
+        '
+        'Label6
+        '
+        Me.Label6.AutoSize = True
+        Me.Label6.Font = New System.Drawing.Font("Segoe UI", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label6.Location = New System.Drawing.Point(16, 91)
+        Me.Label6.Name = "Label6"
+        Me.Label6.Size = New System.Drawing.Size(92, 17)
+        Me.Label6.TabIndex = 2
+        Me.Label6.Text = "Departamento"
+        '
+        'Label5
+        '
+        Me.Label5.AutoSize = True
+        Me.Label5.Font = New System.Drawing.Font("Segoe UI", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label5.Location = New System.Drawing.Point(17, 57)
+        Me.Label5.Name = "Label5"
+        Me.Label5.Size = New System.Drawing.Size(70, 17)
+        Me.Label5.TabIndex = 1
+        Me.Label5.Text = "Consorcio:"
+        '
+        'ComboBox1
+        '
+        Me.ComboBox1.FormattingEnabled = True
+        Me.ComboBox1.Location = New System.Drawing.Point(121, 53)
+        Me.ComboBox1.Name = "ComboBox1"
+        Me.ComboBox1.Size = New System.Drawing.Size(121, 21)
+        Me.ComboBox1.TabIndex = 0
         '
         'btnVolver
         '
@@ -216,27 +267,59 @@ Partial Class frmPropietarios
         Me.btnVolver.TextAlign = System.Drawing.ContentAlignment.MiddleRight
         Me.btnVolver.UseVisualStyleBackColor = True
         '
+        'Button5
+        '
+        Me.Button5.Image = CType(resources.GetObject("Button5.Image"), System.Drawing.Image)
+        Me.Button5.ImageAlign = System.Drawing.ContentAlignment.TopCenter
+        Me.Button5.Location = New System.Drawing.Point(164, 167)
+        Me.Button5.Name = "Button5"
+        Me.Button5.Size = New System.Drawing.Size(61, 52)
+        Me.Button5.TabIndex = 27
+        Me.Button5.Text = "Eliminar"
+        Me.Button5.TextAlign = System.Drawing.ContentAlignment.BottomCenter
+        Me.Button5.UseVisualStyleBackColor = True
+        '
+        'Label7
+        '
+        Me.Label7.AutoSize = True
+        Me.Label7.Font = New System.Drawing.Font("Segoe UI", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label7.Location = New System.Drawing.Point(17, 23)
+        Me.Label7.Name = "Label7"
+        Me.Label7.Size = New System.Drawing.Size(91, 17)
+        Me.Label7.TabIndex = 5
+        Me.Label7.Text = "Identificadoar:"
+        '
+        'TextBox1
+        '
+        Me.TextBox1.Enabled = False
+        Me.TextBox1.Location = New System.Drawing.Point(121, 20)
+        Me.TextBox1.Name = "TextBox1"
+        Me.TextBox1.Size = New System.Drawing.Size(121, 20)
+        Me.TextBox1.TabIndex = 6
+        '
         'frmPropietarios
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.SystemColors.ActiveCaption
-        Me.ClientSize = New System.Drawing.Size(489, 311)
+        Me.ClientSize = New System.Drawing.Size(549, 311)
         Me.Controls.Add(Me.btnVolver)
-        Me.Controls.Add(Me.TabControl1)
+        Me.Controls.Add(Me.tabPropietarios)
         Me.Name = "frmPropietarios"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "frmPropietariosvb"
-        Me.TabControl1.ResumeLayout(False)
-        Me.TabPage1.ResumeLayout(False)
-        Me.TabPage1.PerformLayout()
+        Me.tabPropietarios.ResumeLayout(False)
+        Me.tabPersonal.ResumeLayout(False)
+        Me.tabPersonal.PerformLayout()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.tabAvanzado.ResumeLayout(False)
+        Me.tabAvanzado.PerformLayout()
         Me.ResumeLayout(False)
 
     End Sub
 
-    Friend WithEvents TabControl1 As TabControl
-    Friend WithEvents TabPage1 As TabPage
+    Friend WithEvents tabPropietarios As TabControl
+    Friend WithEvents tabPersonal As TabPage
     Friend WithEvents btnCargar As Button
     Friend WithEvents btnGuardar As Button
     Friend WithEvents btnActualizar As Button
@@ -249,6 +332,13 @@ Partial Class frmPropietarios
     Friend WithEvents txtApellido As TextBox
     Friend WithEvents txtNombre As TextBox
     Friend WithEvents PictureBox1 As PictureBox
-    Friend WithEvents TabPage2 As TabPage
+    Friend WithEvents tabAvanzado As TabPage
     Friend WithEvents btnVolver As Button
+    Friend WithEvents ComboBox2 As ComboBox
+    Friend WithEvents Label6 As Label
+    Friend WithEvents Label5 As Label
+    Friend WithEvents ComboBox1 As ComboBox
+    Friend WithEvents Button5 As Button
+    Friend WithEvents TextBox1 As TextBox
+    Friend WithEvents Label7 As Label
 End Class

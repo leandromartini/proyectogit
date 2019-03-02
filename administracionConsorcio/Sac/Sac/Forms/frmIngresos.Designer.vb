@@ -36,7 +36,7 @@ Partial Class frmIngresos
         Me.btnActualizar = New System.Windows.Forms.Button()
         Me.cboPropietario = New System.Windows.Forms.ComboBox()
         Me.cboConsorcio = New System.Windows.Forms.ComboBox()
-        Me.Button1 = New System.Windows.Forms.Button()
+        Me.btnVolver = New System.Windows.Forms.Button()
         CType(Me.dgIngresos, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
@@ -109,6 +109,7 @@ Partial Class frmIngresos
         Me.TextBox4.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.TextBox4.Location = New System.Drawing.Point(545, 382)
         Me.TextBox4.Name = "TextBox4"
+        Me.TextBox4.ReadOnly = True
         Me.TextBox4.Size = New System.Drawing.Size(87, 23)
         Me.TextBox4.TabIndex = 8
         Me.TextBox4.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
@@ -120,6 +121,7 @@ Partial Class frmIngresos
         Me.TextBox5.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.TextBox5.Location = New System.Drawing.Point(632, 382)
         Me.TextBox5.Name = "TextBox5"
+        Me.TextBox5.ReadOnly = True
         Me.TextBox5.Size = New System.Drawing.Size(87, 23)
         Me.TextBox5.TabIndex = 9
         Me.TextBox5.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
@@ -131,6 +133,7 @@ Partial Class frmIngresos
         Me.TextBox6.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.TextBox6.Location = New System.Drawing.Point(719, 382)
         Me.TextBox6.Name = "TextBox6"
+        Me.TextBox6.ReadOnly = True
         Me.TextBox6.Size = New System.Drawing.Size(87, 23)
         Me.TextBox6.TabIndex = 10
         Me.TextBox6.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
@@ -183,18 +186,18 @@ Partial Class frmIngresos
         Me.cboConsorcio.Size = New System.Drawing.Size(146, 21)
         Me.cboConsorcio.TabIndex = 15
         '
-        'Button1
+        'btnVolver
         '
-        Me.Button1.Font = New System.Drawing.Font("Segoe UI", 11.25!)
-        Me.Button1.Image = CType(resources.GetObject("Button1.Image"), System.Drawing.Image)
-        Me.Button1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.Button1.Location = New System.Drawing.Point(12, 436)
-        Me.Button1.Name = "Button1"
-        Me.Button1.Size = New System.Drawing.Size(98, 34)
-        Me.Button1.TabIndex = 18
-        Me.Button1.Text = "Volver"
-        Me.Button1.TextAlign = System.Drawing.ContentAlignment.MiddleRight
-        Me.Button1.UseVisualStyleBackColor = True
+        Me.btnVolver.Font = New System.Drawing.Font("Segoe UI", 11.25!)
+        Me.btnVolver.Image = CType(resources.GetObject("btnVolver.Image"), System.Drawing.Image)
+        Me.btnVolver.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.btnVolver.Location = New System.Drawing.Point(12, 436)
+        Me.btnVolver.Name = "btnVolver"
+        Me.btnVolver.Size = New System.Drawing.Size(98, 34)
+        Me.btnVolver.TabIndex = 18
+        Me.btnVolver.Text = "Volver"
+        Me.btnVolver.TextAlign = System.Drawing.ContentAlignment.MiddleRight
+        Me.btnVolver.UseVisualStyleBackColor = True
         '
         'frmIngresos
         '
@@ -202,7 +205,7 @@ Partial Class frmIngresos
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.SystemColors.ActiveCaption
         Me.ClientSize = New System.Drawing.Size(842, 482)
-        Me.Controls.Add(Me.Button1)
+        Me.Controls.Add(Me.btnVolver)
         Me.Controls.Add(Me.btnActualizar)
         Me.Controls.Add(Me.cboPropietario)
         Me.Controls.Add(Me.cboConsorcio)
@@ -240,5 +243,5 @@ Partial Class frmIngresos
     Friend WithEvents btnActualizar As Button
     Friend WithEvents cboPropietario As ComboBox
     Friend WithEvents cboConsorcio As ComboBox
-    Friend WithEvents Button1 As Button
+    Friend WithEvents btnVolver As Button
 End Class

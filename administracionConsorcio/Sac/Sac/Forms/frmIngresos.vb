@@ -1,8 +1,9 @@
 ﻿
 Public Class frmIngresos
-    Dim objDS As DataSet
+    Dim objDS As New DataSet
     Dim objPwiIngresos As New PwiIngresos
     Dim objPwiComun As New pwiComun
+    Dim pvtFecha As Date
     Enum CampoTotal
         expMes = 1
         expExt = 2
@@ -12,7 +13,7 @@ Public Class frmIngresos
     Sub abrirFormulario(ByVal mes As String, ByVal año As String, ByVal id_uf As Long)
         Try
             verIngresos(mes, año, id_uf)
-
+            Actualizartotales()
         Catch ex As Exception
             MsgBox(ex.Message)
         End Try
@@ -21,16 +22,16 @@ Public Class frmIngresos
     Private Sub frmIngresos_Load(sender As Object, e As EventArgs) Handles MyBase.Load
 
         Try
-            Dim fecha As Date = Date.Now
+            pvtFecha = Date.Now
+            Dim mes As String = Format(pvtFecha, "MM")
             setearControles()
-            If Not Format(fecha, "dd") = 1 Then
-                abrirFormulario(Format(fecha, "MM"), Format(fecha, "yyyy"), -1)
+            If Not Format(pvtFecha, "dd") = 1 Then
+                abrirFormulario(Format(pvtFecha, "MM"), Format(pvtFecha, "yyyy"), -1)
             Else
-                If vbYes = MsgBox("Desea cargar la tabla de ingresos del mes de " & Format(fecha, "MMMM"), vbYesNo, "status") Then
-                    NuevoIngresos()
-                    abrirFormulario(Format(fecha, "MM"), Format(fecha, "yyyy"), -1)
+                If vbYes = MsgBox("Desea cargar la tabla de ingresos del mes de " & Format(pvtFecha, "MMMM"), vbYesNo, "status") Then
+                    NuevoIngreso()
                 Else
-                    abrirFormulario(Format(fecha, "MM"), (Format(fecha, "yyyy")) - 1, -1)
+                    abrirFormulario(Format(pvtFecha, "MM") - 1, (Format(pvtFecha, "yyyy")), -1)
                 End If
             End If
 
@@ -40,7 +41,8 @@ Public Class frmIngresos
         End Try
     End Sub
     Sub setearControles()
-        ''DtpMesIngreso.Value = Date.Now
+        dgIngresos.DataSource = Nothing
+        'objDS.Clear()
     End Sub
 
     Sub verIngresos(ByVal mes As Long, ByVal año As Long, ByVal id_uf As Long)
@@ -67,11 +69,10 @@ Public Class frmIngresos
             MsgBox(ex.Message)
         End Try
     End Sub
-
-    Sub NuevoIngresos()
+    Sub GuardarIngresos()
         Try
             Dim lngNuevo As Long
-            lngNuevo = objPwiIngresos.actualizarIngresosMes(dgIngresos)
+            lngNuevo = objPwiIngresos.actualizarIngresosMes(dgIngresos, Format(pvtFecha, "MM"), Format(pvtFecha, "yyyy"))
             If lngNuevo Then
                 MsgBox("Se guardaron con exito los cambios.")
             End If
@@ -79,7 +80,7 @@ Public Class frmIngresos
             MsgBox(ex.Message)
         End Try
     End Sub
-    Private Sub btnNuevoIngreso_Click(sender As Object, e As EventArgs) Handles btnNuevoIngreso.Click
+    Sub NuevoIngreso()
         Try
             Dim objNuevoIngreso As DataSet
             controlesNuevoIngreso(True)
@@ -109,10 +110,12 @@ Public Class frmIngresos
         Catch ex As Exception
             MsgBox(ex.Message)
         End Try
-
+    End Sub
+    Private Sub btnNuevoIngreso_Click(sender As Object, e As EventArgs) Handles btnNuevoIngreso.Click
+        NuevoIngreso()
     End Sub
     Private Sub btnGuardar_Click(sender As Object, e As EventArgs) Handles btnGuardar.Click
-        NuevoIngresos()
+        GuardarIngresos()
         controlesNuevoIngreso(False)
 
     End Sub
@@ -122,12 +125,11 @@ Public Class frmIngresos
         For Each tb As TextBox In Me.Controls.OfType(Of TextBox)()
             tb.Enabled = bool
             tb.Clear()
-            tb.Text = "00.0"
         Next
         TextBox1.Focus()
-        TextBox4.ReadOnly = bool
-        TextBox5.ReadOnly = bool
-        TextBox6.ReadOnly = bool
+        'TextBox4.ReadOnly = bool
+        'TextBox5.ReadOnly = bool
+        'TextBox6.ReadOnly = bool
     End Sub
 
 
@@ -174,21 +176,26 @@ Public Class frmIngresos
     End Sub
     Sub Actualizartotales() Handles TextBox1.LostFocus, TextBox2.LostFocus, TextBox3.LostFocus
         'Probar este diseño para carga de vista de ingresos y carga de nuevo ingreso
-        'TextBox1.Text = objPwiComun.SumarColumnaDatagrid(dgIngresos, "expMes")
-        'TextBox2.Text = objPwiComun.SumarColumnaDatagrid(dgIngresos, "expExtra")
-        'TextBox3.Text = objPwiComun.SumarColumnaDatagrid(dgIngresos, "redondeo")
+        TextBox1.Text = objPwiComun.SumarColumnaDatagrid(dgIngresos, "expMes")
+        TextBox2.Text = objPwiComun.SumarColumnaDatagrid(dgIngresos, "expExtra")
+        TextBox3.Text = objPwiComun.SumarColumnaDatagrid(dgIngresos, "mantEdif")
         TextBox4.Text = objPwiComun.SumarColumnaDatagrid(dgIngresos, "subTotal")
         TextBox5.Text = objPwiComun.SumarColumnaDatagrid(dgIngresos, "redondeo")
         TextBox6.Text = objPwiComun.SumarColumnaDatagrid(dgIngresos, "total")
     End Sub
-    Private Sub btnVolver_Click(sender As Object, e As EventArgs)
-        'Las variables o controles que haya que limpiar.
-        controlesNuevoIngreso(False)
-
-        Me.Close()
-    End Sub
 
     Private Sub Actualizartotales(sender As Object, e As EventArgs) Handles TextBox3.LostFocus, TextBox2.LostFocus, TextBox1.LostFocus
 
+    End Sub
+
+    Private Sub btnVolver_Click(sender As Object, e As EventArgs) Handles btnVolver.Click
+        setearControles()
+        controlesNuevoIngreso(False)
+        Me.Close()
+
+    End Sub
+
+    Private Sub btnActualizar_Click(sender As Object, e As EventArgs) Handles btnActualizar.Click
+        verIngresos(2, 2019, -1)
     End Sub
 End Class

@@ -34,7 +34,7 @@ Partial Class frmPruebas
         '
         Me.Button1.Image = CType(resources.GetObject("Button1.Image"), System.Drawing.Image)
         Me.Button1.ImageAlign = System.Drawing.ContentAlignment.TopCenter
-        Me.Button1.Location = New System.Drawing.Point(403, 308)
+        Me.Button1.Location = New System.Drawing.Point(262, 116)
         Me.Button1.Name = "Button1"
         Me.Button1.Size = New System.Drawing.Size(61, 52)
         Me.Button1.TabIndex = 0
@@ -46,7 +46,7 @@ Partial Class frmPruebas
         '
         Me.Button2.Image = CType(resources.GetObject("Button2.Image"), System.Drawing.Image)
         Me.Button2.ImageAlign = System.Drawing.ContentAlignment.TopCenter
-        Me.Button2.Location = New System.Drawing.Point(474, 308)
+        Me.Button2.Location = New System.Drawing.Point(333, 116)
         Me.Button2.Name = "Button2"
         Me.Button2.Size = New System.Drawing.Size(61, 52)
         Me.Button2.TabIndex = 1
@@ -58,7 +58,7 @@ Partial Class frmPruebas
         '
         Me.Button3.Image = CType(resources.GetObject("Button3.Image"), System.Drawing.Image)
         Me.Button3.ImageAlign = System.Drawing.ContentAlignment.TopCenter
-        Me.Button3.Location = New System.Drawing.Point(546, 308)
+        Me.Button3.Location = New System.Drawing.Point(405, 116)
         Me.Button3.Name = "Button3"
         Me.Button3.Size = New System.Drawing.Size(61, 52)
         Me.Button3.TabIndex = 2
@@ -70,7 +70,7 @@ Partial Class frmPruebas
         '
         Me.Button4.Image = CType(resources.GetObject("Button4.Image"), System.Drawing.Image)
         Me.Button4.ImageAlign = System.Drawing.ContentAlignment.TopCenter
-        Me.Button4.Location = New System.Drawing.Point(617, 308)
+        Me.Button4.Location = New System.Drawing.Point(476, 116)
         Me.Button4.Name = "Button4"
         Me.Button4.Size = New System.Drawing.Size(61, 52)
         Me.Button4.TabIndex = 3
@@ -82,7 +82,7 @@ Partial Class frmPruebas
         '
         Me.Button5.Image = CType(resources.GetObject("Button5.Image"), System.Drawing.Image)
         Me.Button5.ImageAlign = System.Drawing.ContentAlignment.TopCenter
-        Me.Button5.Location = New System.Drawing.Point(687, 308)
+        Me.Button5.Location = New System.Drawing.Point(546, 116)
         Me.Button5.Name = "Button5"
         Me.Button5.Size = New System.Drawing.Size(61, 52)
         Me.Button5.TabIndex = 4
@@ -95,7 +95,7 @@ Partial Class frmPruebas
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.SystemColors.ActiveCaption
-        Me.ClientSize = New System.Drawing.Size(1117, 617)
+        Me.ClientSize = New System.Drawing.Size(884, 338)
         Me.Controls.Add(Me.Button5)
         Me.Controls.Add(Me.Button4)
         Me.Controls.Add(Me.Button3)
