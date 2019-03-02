@@ -34,7 +34,7 @@ Partial Class frmIngresos
         Me.dgIngresos = New System.Windows.Forms.DataGridView()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.btnActualizar = New System.Windows.Forms.Button()
-        Me.cboPropietario = New System.Windows.Forms.ComboBox()
+        Me.cboMes = New System.Windows.Forms.ComboBox()
         Me.cboConsorcio = New System.Windows.Forms.ComboBox()
         Me.btnVolver = New System.Windows.Forms.Button()
         CType(Me.dgIngresos, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -73,7 +73,7 @@ Partial Class frmIngresos
         Me.TextBox1.BackColor = System.Drawing.SystemColors.ScrollBar
         Me.TextBox1.Enabled = False
         Me.TextBox1.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TextBox1.Location = New System.Drawing.Point(284, 382)
+        Me.TextBox1.Location = New System.Drawing.Point(284, 403)
         Me.TextBox1.Name = "TextBox1"
         Me.TextBox1.Size = New System.Drawing.Size(87, 23)
         Me.TextBox1.TabIndex = 5
@@ -84,7 +84,7 @@ Partial Class frmIngresos
         Me.TextBox2.BackColor = System.Drawing.SystemColors.ScrollBar
         Me.TextBox2.Enabled = False
         Me.TextBox2.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TextBox2.Location = New System.Drawing.Point(371, 382)
+        Me.TextBox2.Location = New System.Drawing.Point(371, 403)
         Me.TextBox2.Name = "TextBox2"
         Me.TextBox2.Size = New System.Drawing.Size(87, 23)
         Me.TextBox2.TabIndex = 6
@@ -96,7 +96,7 @@ Partial Class frmIngresos
         Me.TextBox3.Cursor = System.Windows.Forms.Cursors.IBeam
         Me.TextBox3.Enabled = False
         Me.TextBox3.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TextBox3.Location = New System.Drawing.Point(458, 382)
+        Me.TextBox3.Location = New System.Drawing.Point(458, 403)
         Me.TextBox3.Name = "TextBox3"
         Me.TextBox3.Size = New System.Drawing.Size(87, 23)
         Me.TextBox3.TabIndex = 7
@@ -107,7 +107,7 @@ Partial Class frmIngresos
         Me.TextBox4.BackColor = System.Drawing.SystemColors.ScrollBar
         Me.TextBox4.Enabled = False
         Me.TextBox4.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TextBox4.Location = New System.Drawing.Point(545, 382)
+        Me.TextBox4.Location = New System.Drawing.Point(545, 403)
         Me.TextBox4.Name = "TextBox4"
         Me.TextBox4.ReadOnly = True
         Me.TextBox4.Size = New System.Drawing.Size(87, 23)
@@ -119,7 +119,7 @@ Partial Class frmIngresos
         Me.TextBox5.BackColor = System.Drawing.SystemColors.ScrollBar
         Me.TextBox5.Enabled = False
         Me.TextBox5.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TextBox5.Location = New System.Drawing.Point(632, 382)
+        Me.TextBox5.Location = New System.Drawing.Point(632, 403)
         Me.TextBox5.Name = "TextBox5"
         Me.TextBox5.ReadOnly = True
         Me.TextBox5.Size = New System.Drawing.Size(87, 23)
@@ -131,7 +131,7 @@ Partial Class frmIngresos
         Me.TextBox6.BackColor = System.Drawing.SystemColors.ScrollBar
         Me.TextBox6.Enabled = False
         Me.TextBox6.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TextBox6.Location = New System.Drawing.Point(719, 382)
+        Me.TextBox6.Location = New System.Drawing.Point(719, 403)
         Me.TextBox6.Name = "TextBox6"
         Me.TextBox6.ReadOnly = True
         Me.TextBox6.Size = New System.Drawing.Size(87, 23)
@@ -145,7 +145,7 @@ Partial Class frmIngresos
         Me.dgIngresos.AllowUserToResizeColumns = False
         Me.dgIngresos.AllowUserToResizeRows = False
         Me.dgIngresos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.dgIngresos.Location = New System.Drawing.Point(12, 50)
+        Me.dgIngresos.Location = New System.Drawing.Point(12, 71)
         Me.dgIngresos.Name = "dgIngresos"
         Me.dgIngresos.ReadOnly = True
         Me.dgIngresos.Size = New System.Drawing.Size(818, 328)
@@ -155,7 +155,7 @@ Partial Class frmIngresos
         '
         Me.Label1.AutoSize = True
         Me.Label1.Font = New System.Drawing.Font("Segoe UI", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label1.Location = New System.Drawing.Point(204, 385)
+        Me.Label1.Location = New System.Drawing.Point(204, 406)
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(74, 20)
         Me.Label1.TabIndex = 14
@@ -163,25 +163,26 @@ Partial Class frmIngresos
         '
         'btnActualizar
         '
-        Me.btnActualizar.Location = New System.Drawing.Point(300, 5)
+        Me.btnActualizar.Location = New System.Drawing.Point(295, 10)
         Me.btnActualizar.Name = "btnActualizar"
-        Me.btnActualizar.Size = New System.Drawing.Size(98, 32)
+        Me.btnActualizar.Size = New System.Drawing.Size(63, 21)
         Me.btnActualizar.TabIndex = 17
         Me.btnActualizar.Text = "Actualizar"
         Me.btnActualizar.UseVisualStyleBackColor = True
         '
-        'cboPropietario
+        'cboMes
         '
-        Me.cboPropietario.FormattingEnabled = True
-        Me.cboPropietario.Location = New System.Drawing.Point(164, 12)
-        Me.cboPropietario.Name = "cboPropietario"
-        Me.cboPropietario.Size = New System.Drawing.Size(121, 21)
-        Me.cboPropietario.TabIndex = 16
+        Me.cboMes.FormattingEnabled = True
+        Me.cboMes.Items.AddRange(New Object() {"Enero", "Febreo", "Marzo", "Abril", "Mayo", "Junio", "Julio", "Agosto", "Septiembre", "Octubre", "Noviembre", "Diciembre"})
+        Me.cboMes.Location = New System.Drawing.Point(180, 10)
+        Me.cboMes.Name = "cboMes"
+        Me.cboMes.Size = New System.Drawing.Size(98, 21)
+        Me.cboMes.TabIndex = 16
         '
         'cboConsorcio
         '
         Me.cboConsorcio.FormattingEnabled = True
-        Me.cboConsorcio.Location = New System.Drawing.Point(12, 12)
+        Me.cboConsorcio.Location = New System.Drawing.Point(12, 10)
         Me.cboConsorcio.Name = "cboConsorcio"
         Me.cboConsorcio.Size = New System.Drawing.Size(146, 21)
         Me.cboConsorcio.TabIndex = 15
@@ -207,7 +208,7 @@ Partial Class frmIngresos
         Me.ClientSize = New System.Drawing.Size(842, 482)
         Me.Controls.Add(Me.btnVolver)
         Me.Controls.Add(Me.btnActualizar)
-        Me.Controls.Add(Me.cboPropietario)
+        Me.Controls.Add(Me.cboMes)
         Me.Controls.Add(Me.cboConsorcio)
         Me.Controls.Add(Me.Label1)
         Me.Controls.Add(Me.TextBox6)
@@ -241,7 +242,7 @@ Partial Class frmIngresos
     Friend WithEvents dgIngresos As DataGridView
     Friend WithEvents Label1 As Label
     Friend WithEvents btnActualizar As Button
-    Friend WithEvents cboPropietario As ComboBox
+    Friend WithEvents cboMes As ComboBox
     Friend WithEvents cboConsorcio As ComboBox
     Friend WithEvents btnVolver As Button
 End Class

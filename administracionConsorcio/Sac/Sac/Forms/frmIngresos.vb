@@ -12,6 +12,7 @@ Public Class frmIngresos
 
     Sub abrirFormulario(ByVal mes As String, ByVal año As String, ByVal id_uf As Long)
         Try
+
             verIngresos(mes, año, id_uf)
             Actualizartotales()
         Catch ex As Exception
@@ -22,6 +23,9 @@ Public Class frmIngresos
     Private Sub frmIngresos_Load(sender As Object, e As EventArgs) Handles MyBase.Load
 
         Try
+            Dim datetimeFormat = Threading.Thread.CurrentThread.CurrentCulture.DateTimeFormat
+            Me.cboMes.DataSource = datetimeFormat.MonthNames()
+            Me.cboMes.SelectedItem = datetimeFormat.GetMonthName(Date.Today.Month)
             pvtFecha = Date.Now
             Dim mes As String = Format(pvtFecha, "MM")
             setearControles()
@@ -31,7 +35,8 @@ Public Class frmIngresos
                 If vbYes = MsgBox("Desea cargar la tabla de ingresos del mes de " & Format(pvtFecha, "MMMM"), vbYesNo, "status") Then
                     NuevoIngreso()
                 Else
-                    abrirFormulario(Format(pvtFecha, "MM") - 1, (Format(pvtFecha, "yyyy")), -1)
+                    Me.cboMes.SelectedItem = datetimeFormat.GetMonthName(Date.Today.Month - 1)
+                    abrirFormulario(cboMes.SelectedIndex + 1, (Format(pvtFecha, "yyyy")), -1)
                 End If
             End If
 
@@ -72,7 +77,7 @@ Public Class frmIngresos
     Sub GuardarIngresos()
         Try
             Dim lngNuevo As Long
-            lngNuevo = objPwiIngresos.actualizarIngresosMes(dgIngresos, Format(pvtFecha, "MM"), Format(pvtFecha, "yyyy"))
+            lngNuevo = objPwiIngresos.actualizarIngresosMes(dgIngresos, cboMes.SelectedIndex + 1, Format(pvtFecha, "yyyy"))
             If lngNuevo Then
                 MsgBox("Se guardaron con exito los cambios.")
             End If
@@ -196,6 +201,6 @@ Public Class frmIngresos
     End Sub
 
     Private Sub btnActualizar_Click(sender As Object, e As EventArgs) Handles btnActualizar.Click
-        verIngresos(2, 2019, -1)
+        verIngresos(cboMes.SelectedIndex + 1, 2019, -1)
     End Sub
 End Class
