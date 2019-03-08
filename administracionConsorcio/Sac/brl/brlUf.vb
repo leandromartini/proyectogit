@@ -6,7 +6,6 @@ Public Class brlUf
 
             obtenerListaUf = objIngresos.obtenerListaUf(id_uf)
 
-
         Catch ex As Exception
             MsgBox(ex.Message)
             obtenerListaUf = Nothing

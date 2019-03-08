@@ -24,6 +24,9 @@ Partial Class FrmCobranzas
     Private Sub InitializeComponent()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(FrmCobranzas))
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
+        Me.btnPersonaCargar = New System.Windows.Forms.Button()
+        Me.btnPersonaGuardar = New System.Windows.Forms.Button()
+        Me.btnPersonaActualizar = New System.Windows.Forms.Button()
         Me.Label4 = New System.Windows.Forms.Label()
         Me.Label3 = New System.Windows.Forms.Label()
         Me.Label2 = New System.Windows.Forms.Label()
@@ -34,22 +37,19 @@ Partial Class FrmCobranzas
         Me.TextBox1 = New System.Windows.Forms.TextBox()
         Me.PictureBox1 = New System.Windows.Forms.PictureBox()
         Me.GroupBox2 = New System.Windows.Forms.GroupBox()
+        Me.btnRecibo = New System.Windows.Forms.Button()
+        Me.btnImputar = New System.Windows.Forms.Button()
         Me.GroupBox3 = New System.Windows.Forms.GroupBox()
+        Me.dgHistorico = New System.Windows.Forms.DataGridView()
         Me.Button1 = New System.Windows.Forms.Button()
         Me.cboConsorcio = New System.Windows.Forms.ComboBox()
         Me.cboPropietario = New System.Windows.Forms.ComboBox()
         Me.btnActualizar = New System.Windows.Forms.Button()
-        Me.btnImputar = New System.Windows.Forms.Button()
-        Me.btnRecibo = New System.Windows.Forms.Button()
-        Me.DataGridView1 = New System.Windows.Forms.DataGridView()
-        Me.btnPersonaActualizar = New System.Windows.Forms.Button()
-        Me.btnPersonaGuardar = New System.Windows.Forms.Button()
-        Me.btnPersonaCargar = New System.Windows.Forms.Button()
         Me.GroupBox1.SuspendLayout()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GroupBox2.SuspendLayout()
         Me.GroupBox3.SuspendLayout()
-        CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.dgHistorico, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'GroupBox1
@@ -73,6 +73,42 @@ Partial Class FrmCobranzas
         Me.GroupBox1.TabIndex = 0
         Me.GroupBox1.TabStop = False
         Me.GroupBox1.Text = "Datos de la persona"
+        '
+        'btnPersonaCargar
+        '
+        Me.btnPersonaCargar.Image = CType(resources.GetObject("btnPersonaCargar.Image"), System.Drawing.Image)
+        Me.btnPersonaCargar.ImageAlign = System.Drawing.ContentAlignment.TopCenter
+        Me.btnPersonaCargar.Location = New System.Drawing.Point(320, 170)
+        Me.btnPersonaCargar.Name = "btnPersonaCargar"
+        Me.btnPersonaCargar.Size = New System.Drawing.Size(67, 52)
+        Me.btnPersonaCargar.TabIndex = 14
+        Me.btnPersonaCargar.Text = "Cargar"
+        Me.btnPersonaCargar.TextAlign = System.Drawing.ContentAlignment.BottomCenter
+        Me.btnPersonaCargar.UseVisualStyleBackColor = True
+        '
+        'btnPersonaGuardar
+        '
+        Me.btnPersonaGuardar.Image = CType(resources.GetObject("btnPersonaGuardar.Image"), System.Drawing.Image)
+        Me.btnPersonaGuardar.ImageAlign = System.Drawing.ContentAlignment.TopCenter
+        Me.btnPersonaGuardar.Location = New System.Drawing.Point(185, 170)
+        Me.btnPersonaGuardar.Name = "btnPersonaGuardar"
+        Me.btnPersonaGuardar.Size = New System.Drawing.Size(67, 52)
+        Me.btnPersonaGuardar.TabIndex = 13
+        Me.btnPersonaGuardar.Text = "Guardar"
+        Me.btnPersonaGuardar.TextAlign = System.Drawing.ContentAlignment.BottomCenter
+        Me.btnPersonaGuardar.UseVisualStyleBackColor = True
+        '
+        'btnPersonaActualizar
+        '
+        Me.btnPersonaActualizar.Image = CType(resources.GetObject("btnPersonaActualizar.Image"), System.Drawing.Image)
+        Me.btnPersonaActualizar.ImageAlign = System.Drawing.ContentAlignment.TopCenter
+        Me.btnPersonaActualizar.Location = New System.Drawing.Point(74, 170)
+        Me.btnPersonaActualizar.Name = "btnPersonaActualizar"
+        Me.btnPersonaActualizar.Size = New System.Drawing.Size(67, 52)
+        Me.btnPersonaActualizar.TabIndex = 12
+        Me.btnPersonaActualizar.Text = "Actualizar"
+        Me.btnPersonaActualizar.TextAlign = System.Drawing.ContentAlignment.BottomCenter
+        Me.btnPersonaActualizar.UseVisualStyleBackColor = True
         '
         'Label4
         '
@@ -167,9 +203,35 @@ Partial Class FrmCobranzas
         Me.GroupBox2.TabStop = False
         Me.GroupBox2.Text = "Obligaciones"
         '
+        'btnRecibo
+        '
+        Me.btnRecibo.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnRecibo.Image = CType(resources.GetObject("btnRecibo.Image"), System.Drawing.Image)
+        Me.btnRecibo.ImageAlign = System.Drawing.ContentAlignment.TopCenter
+        Me.btnRecibo.Location = New System.Drawing.Point(458, 169)
+        Me.btnRecibo.Name = "btnRecibo"
+        Me.btnRecibo.Size = New System.Drawing.Size(55, 52)
+        Me.btnRecibo.TabIndex = 1
+        Me.btnRecibo.Text = "Recibo"
+        Me.btnRecibo.TextAlign = System.Drawing.ContentAlignment.BottomCenter
+        Me.btnRecibo.UseVisualStyleBackColor = True
+        '
+        'btnImputar
+        '
+        Me.btnImputar.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnImputar.Image = CType(resources.GetObject("btnImputar.Image"), System.Drawing.Image)
+        Me.btnImputar.ImageAlign = System.Drawing.ContentAlignment.TopCenter
+        Me.btnImputar.Location = New System.Drawing.Point(397, 169)
+        Me.btnImputar.Name = "btnImputar"
+        Me.btnImputar.Size = New System.Drawing.Size(55, 52)
+        Me.btnImputar.TabIndex = 0
+        Me.btnImputar.Text = "Imputar"
+        Me.btnImputar.TextAlign = System.Drawing.ContentAlignment.BottomCenter
+        Me.btnImputar.UseVisualStyleBackColor = True
+        '
         'GroupBox3
         '
-        Me.GroupBox3.Controls.Add(Me.DataGridView1)
+        Me.GroupBox3.Controls.Add(Me.dgHistorico)
         Me.GroupBox3.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.GroupBox3.Location = New System.Drawing.Point(13, 281)
         Me.GroupBox3.Name = "GroupBox3"
@@ -177,6 +239,17 @@ Partial Class FrmCobranzas
         Me.GroupBox3.TabIndex = 2
         Me.GroupBox3.TabStop = False
         Me.GroupBox3.Text = "Historia "
+        '
+        'dgHistorico
+        '
+        Me.dgHistorico.AllowUserToAddRows = False
+        Me.dgHistorico.AllowUserToDeleteRows = False
+        Me.dgHistorico.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.dgHistorico.Location = New System.Drawing.Point(6, 22)
+        Me.dgHistorico.Name = "dgHistorico"
+        Me.dgHistorico.ReadOnly = True
+        Me.dgHistorico.Size = New System.Drawing.Size(953, 195)
+        Me.dgHistorico.TabIndex = 0
         '
         'Button1
         '
@@ -217,76 +290,6 @@ Partial Class FrmCobranzas
         Me.btnActualizar.Text = "Actualizar"
         Me.btnActualizar.UseVisualStyleBackColor = True
         '
-        'btnImputar
-        '
-        Me.btnImputar.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnImputar.Image = CType(resources.GetObject("btnImputar.Image"), System.Drawing.Image)
-        Me.btnImputar.ImageAlign = System.Drawing.ContentAlignment.TopCenter
-        Me.btnImputar.Location = New System.Drawing.Point(397, 169)
-        Me.btnImputar.Name = "btnImputar"
-        Me.btnImputar.Size = New System.Drawing.Size(55, 52)
-        Me.btnImputar.TabIndex = 0
-        Me.btnImputar.Text = "Imputar"
-        Me.btnImputar.TextAlign = System.Drawing.ContentAlignment.BottomCenter
-        Me.btnImputar.UseVisualStyleBackColor = True
-        '
-        'btnRecibo
-        '
-        Me.btnRecibo.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnRecibo.Image = CType(resources.GetObject("btnRecibo.Image"), System.Drawing.Image)
-        Me.btnRecibo.ImageAlign = System.Drawing.ContentAlignment.TopCenter
-        Me.btnRecibo.Location = New System.Drawing.Point(458, 169)
-        Me.btnRecibo.Name = "btnRecibo"
-        Me.btnRecibo.Size = New System.Drawing.Size(55, 52)
-        Me.btnRecibo.TabIndex = 1
-        Me.btnRecibo.Text = "Recibo"
-        Me.btnRecibo.TextAlign = System.Drawing.ContentAlignment.BottomCenter
-        Me.btnRecibo.UseVisualStyleBackColor = True
-        '
-        'DataGridView1
-        '
-        Me.DataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.DataGridView1.Location = New System.Drawing.Point(6, 22)
-        Me.DataGridView1.Name = "DataGridView1"
-        Me.DataGridView1.Size = New System.Drawing.Size(953, 195)
-        Me.DataGridView1.TabIndex = 0
-        '
-        'btnPersonaActualizar
-        '
-        Me.btnPersonaActualizar.Image = CType(resources.GetObject("btnPersonaActualizar.Image"), System.Drawing.Image)
-        Me.btnPersonaActualizar.ImageAlign = System.Drawing.ContentAlignment.TopCenter
-        Me.btnPersonaActualizar.Location = New System.Drawing.Point(74, 170)
-        Me.btnPersonaActualizar.Name = "btnPersonaActualizar"
-        Me.btnPersonaActualizar.Size = New System.Drawing.Size(67, 52)
-        Me.btnPersonaActualizar.TabIndex = 12
-        Me.btnPersonaActualizar.Text = "Actualizar"
-        Me.btnPersonaActualizar.TextAlign = System.Drawing.ContentAlignment.BottomCenter
-        Me.btnPersonaActualizar.UseVisualStyleBackColor = True
-        '
-        'btnPersonaGuardar
-        '
-        Me.btnPersonaGuardar.Image = CType(resources.GetObject("btnPersonaGuardar.Image"), System.Drawing.Image)
-        Me.btnPersonaGuardar.ImageAlign = System.Drawing.ContentAlignment.TopCenter
-        Me.btnPersonaGuardar.Location = New System.Drawing.Point(185, 170)
-        Me.btnPersonaGuardar.Name = "btnPersonaGuardar"
-        Me.btnPersonaGuardar.Size = New System.Drawing.Size(67, 52)
-        Me.btnPersonaGuardar.TabIndex = 13
-        Me.btnPersonaGuardar.Text = "Guardar"
-        Me.btnPersonaGuardar.TextAlign = System.Drawing.ContentAlignment.BottomCenter
-        Me.btnPersonaGuardar.UseVisualStyleBackColor = True
-        '
-        'btnPersonaCargar
-        '
-        Me.btnPersonaCargar.Image = CType(resources.GetObject("btnPersonaCargar.Image"), System.Drawing.Image)
-        Me.btnPersonaCargar.ImageAlign = System.Drawing.ContentAlignment.TopCenter
-        Me.btnPersonaCargar.Location = New System.Drawing.Point(320, 170)
-        Me.btnPersonaCargar.Name = "btnPersonaCargar"
-        Me.btnPersonaCargar.Size = New System.Drawing.Size(67, 52)
-        Me.btnPersonaCargar.TabIndex = 14
-        Me.btnPersonaCargar.Text = "Cargar"
-        Me.btnPersonaCargar.TextAlign = System.Drawing.ContentAlignment.BottomCenter
-        Me.btnPersonaCargar.UseVisualStyleBackColor = True
-        '
         'FrmCobranzas
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -310,7 +313,7 @@ Partial Class FrmCobranzas
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.GroupBox2.ResumeLayout(False)
         Me.GroupBox3.ResumeLayout(False)
-        CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.dgHistorico, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub
@@ -333,7 +336,7 @@ Partial Class FrmCobranzas
     Friend WithEvents btnActualizar As Button
     Friend WithEvents btnImputar As Button
     Friend WithEvents btnRecibo As Button
-    Friend WithEvents DataGridView1 As DataGridView
+    Friend WithEvents dgHistorico As DataGridView
     Friend WithEvents btnPersonaActualizar As Button
     Friend WithEvents btnPersonaGuardar As Button
     Friend WithEvents btnPersonaCargar As Button

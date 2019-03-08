@@ -30,17 +30,17 @@ SELECT @sQuery = ' '
 
 
 	if (not @id_uf = -1) begin
-	select @sWhere = @sWhere + @sOpe +  'id_uf  = ' + CONVERT(varchar,@id_uf ) 
+	select @sWhere = @sWhere + @sOpe +  'i.id_uf  = ' + CONVERT(varchar,@id_uf ) 
 	select @sOpe = ' AND ' 
 	end
 
 	if (not @anio = -1) begin
-	select @sWhere = @sWhere + @sOpe + 'anio  = ' + CONVERT(varchar,@anio ) 
+	select @sWhere = @sWhere + @sOpe + 'i.anio  = ' + CONVERT(varchar,@anio ) 
 	select @sOpe = ' AND ' 
 	end
 
 	if (not @mes = -1) begin
-	select @sWhere = @sWhere + @sOpe + 'mes  = ' + CONVERT(varchar,@mes ) 
+	select @sWhere = @sWhere + @sOpe + 'i.mes  = ' + CONVERT(varchar,@mes ) 
 	select @sOpe = ' AND ' 
 	end
 

@@ -1,4 +1,5 @@
-﻿Imports System.Text.RegularExpressions
+﻿Imports brl
+Imports System.Text.RegularExpressions
 
 Public Class pwiComun
     Public Function ValidarNumericoDecimal(ByVal number As String) As Boolean
@@ -18,6 +19,18 @@ Public Class pwiComun
             Next
         Catch ex As Exception
             SumarColumnaDatagrid = 0
+            MsgBox(ex.Message)
+        End Try
+    End Function
+
+    Public Function obtenerListaUf(ByVal id_uf As Long) As DataSet
+        Dim brlUf As New brlUf
+        Try
+
+            obtenerListaUf = brlUf.obtenerListaUf(id_uf)
+
+        Catch ex As Exception
+            obtenerListaUf = Nothing
             MsgBox(ex.Message)
         End Try
     End Function

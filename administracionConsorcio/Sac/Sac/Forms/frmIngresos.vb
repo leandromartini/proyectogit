@@ -1,6 +1,6 @@
 ﻿
 Public Class frmIngresos
-    Dim objDS As New DataSet
+    ' Dim objDS As New DataSet
     Dim objPwiIngresos As New PwiIngresos
     Dim objPwiComun As New pwiComun
     Dim pvtFecha As Date
@@ -47,11 +47,14 @@ Public Class frmIngresos
     End Sub
     Sub setearControles()
         dgIngresos.DataSource = Nothing
-        'objDS.Clear()
+
+
     End Sub
 
     Sub verIngresos(ByVal mes As Long, ByVal año As Long, ByVal id_uf As Long)
+        Dim objDS As New DataSet
         Try
+            dgIngresos.DataSource = Nothing
             objDS = objPwiIngresos.obtenerIngresosMes(mes, año, id_uf)
             If objDS Is Nothing Then
                 MsgBox("Error Dataset es nothing")
@@ -69,6 +72,7 @@ Public Class frmIngresos
                 dgIngresos.Columns("redondeo").Width = 87
                 dgIngresos.Columns("total").Width = 87
             End If
+            Actualizartotales()
 
         Catch ex As Exception
             MsgBox(ex.Message)
@@ -80,23 +84,29 @@ Public Class frmIngresos
             lngNuevo = objPwiIngresos.actualizarIngresosMes(dgIngresos, cboMes.SelectedIndex + 1, Format(pvtFecha, "yyyy"))
             If lngNuevo Then
                 MsgBox("Se guardaron con exito los cambios.")
+                'verIngresos(cboMes.SelectedIndex + 1, Format(pvtFecha, "yyyy"), -1)
+                controlesNuevoIngreso(False)
             End If
+
+
         Catch ex As Exception
             MsgBox(ex.Message)
         End Try
     End Sub
     Sub NuevoIngreso()
         Try
-            Dim objNuevoIngreso As DataSet
+            Dim objNuevoIngreso As New DataSet
             controlesNuevoIngreso(True)
 
+            dgIngresos.DataSource = Nothing
+
             objNuevoIngreso = objPwiIngresos.NuevoIngresoMes()
-            If objDS Is Nothing Then
+            If objNuevoIngreso Is Nothing Then
                 MsgBox("Error Dataset es nothing")
                 Exit Sub
             End If
 
-            If Not objDS.Tables Is Nothing Then
+            If Not objNuevoIngreso.Tables Is Nothing Then
                 dgIngresos.DataSource = objNuevoIngreso.Tables(0)
                 dgIngresos.Columns("id_uf").Visible = False
                 dgIngresos.Columns("descrip").Visible = False
@@ -129,7 +139,7 @@ Public Class frmIngresos
         btnGuardar.Visible = bool
         For Each tb As TextBox In Me.Controls.OfType(Of TextBox)()
             tb.Enabled = bool
-            tb.Clear()
+            'tb.Clear()
         Next
         TextBox1.Focus()
         'TextBox4.ReadOnly = bool
