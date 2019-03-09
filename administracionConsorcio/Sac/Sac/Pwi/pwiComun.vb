@@ -26,11 +26,19 @@ Public Class pwiComun
     Public Function obtenerListaUf(ByVal id_uf As Long) As DataSet
         Dim brlUf As New brlUf
         Try
-
             obtenerListaUf = brlUf.obtenerListaUf(id_uf)
-
         Catch ex As Exception
             obtenerListaUf = Nothing
+            MsgBox(ex.Message)
+        End Try
+    End Function
+
+    Public Function obtenerListaConsorcio(ByVal id_uf As Long) As DataSet
+        Dim brlConsorcio As New brlConsorcio
+        Try
+            obtenerListaConsorcio = brlConsorcio.obtenerListaConsorcio(id_uf)
+        Catch ex As Exception
+            obtenerListaConsorcio = Nothing
             MsgBox(ex.Message)
         End Try
     End Function

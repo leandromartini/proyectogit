@@ -3,10 +3,10 @@ Imports System.Math
 Public Class PwiIngresos
     Dim objAuxIngresos As DataSet
 
-    Public Function obtenerIngresosMes(ByVal mes As Long, ByVal año As Long, ByVal id_uf As Long) As DataSet
+    Public Function obtenerIngresosMes(ByVal id_cons As Long, ByVal mes As Long, ByVal año As Long, ByVal id_uf As Long) As DataSet
         Try
             Dim brlIngresos As New brlIngresos
-            obtenerIngresosMes = brlIngresos.obtenerIngresosMes(mes, año, id_uf)
+            obtenerIngresosMes = brlIngresos.obtenerIngresosMes(id_cons, mes, año, id_uf)
         Catch ex As Exception
             obtenerIngresosMes = Nothing
             MsgBox(ex.Message)
@@ -25,8 +25,8 @@ Public Class PwiIngresos
 
             objCoef = brlCoef.obtenerListaUf(-1)
 
-            objIngresos = obtenerIngresosMes(-1, -1, -1)
-            For i = 0 To 1
+            objIngresos = obtenerIngresosMes(-1, -1, -1, -1)
+            For i = 0 To 2
                 objIngresos.Tables(0).Columns.RemoveAt(0)
             Next
             Dim column As DataColumn
@@ -64,7 +64,7 @@ Public Class PwiIngresos
             End If
 
             For Each row As DataGridViewRow In auxDatagid.Rows
-                actualizarIngresosMes = brlIngresos.actualizarIngresosMes(row.Cells("id_uf").Value, mes, año, row.Cells("expMes").Value, row.Cells("expExtra").Value, row.Cells("mantEdif").Value, row.Cells("subTotal").Value, row.Cells("redondeo").Value, row.Cells("total").Value)
+                actualizarIngresosMes = brlIngresos.actualizarIngresosMes(row.Cells("id_uf").Value, row.Cells("id_cons").Value, mes, año, row.Cells("expMes").Value, row.Cells("expExtra").Value, row.Cells("mantEdif").Value, row.Cells("subTotal").Value, row.Cells("redondeo").Value, row.Cells("total").Value)
 
             Next
 

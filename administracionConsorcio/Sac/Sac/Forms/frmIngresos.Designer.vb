@@ -163,7 +163,7 @@ Partial Class frmIngresos
         '
         'btnActualizar
         '
-        Me.btnActualizar.Location = New System.Drawing.Point(295, 10)
+        Me.btnActualizar.Location = New System.Drawing.Point(281, 10)
         Me.btnActualizar.Name = "btnActualizar"
         Me.btnActualizar.Size = New System.Drawing.Size(63, 21)
         Me.btnActualizar.TabIndex = 17
@@ -174,7 +174,7 @@ Partial Class frmIngresos
         '
         Me.cboMes.FormattingEnabled = True
         Me.cboMes.Items.AddRange(New Object() {"Enero", "Febreo", "Marzo", "Abril", "Mayo", "Junio", "Julio", "Agosto", "Septiembre", "Octubre", "Noviembre", "Diciembre"})
-        Me.cboMes.Location = New System.Drawing.Point(180, 10)
+        Me.cboMes.Location = New System.Drawing.Point(166, 10)
         Me.cboMes.Name = "cboMes"
         Me.cboMes.Size = New System.Drawing.Size(98, 21)
         Me.cboMes.TabIndex = 16

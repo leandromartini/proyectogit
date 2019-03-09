@@ -8,8 +8,11 @@ GO
 SET QUOTED_IDENTIFIER ON
 GO
 
+IF OBJECT_ID('dbo.ingresos', 'U') IS NOT NULL  DROP TABLE [dbo].[ingresos]; 
+
 CREATE TABLE [dbo].[ingresos](
 	[id_uf] [int] NOT NULL,
+	[id_cons] [int] NOT NULL,
 	[mes] [int] NOT NULL,
 	[anio] [int] NOT NULL,
 	[expMes] [decimal](6, 2) NOT NULL,
@@ -21,6 +24,7 @@ CREATE TABLE [dbo].[ingresos](
  CONSTRAINT [PK_ingresos] PRIMARY KEY CLUSTERED 
 (
 	[id_uf] ASC,
+	[id_cons] ASC,
 	[mes] ASC,
 	[anio] ASC
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]

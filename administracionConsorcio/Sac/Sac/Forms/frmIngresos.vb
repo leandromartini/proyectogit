@@ -3,6 +3,7 @@ Public Class frmIngresos
     ' Dim objDS As New DataSet
     Dim objPwiIngresos As New PwiIngresos
     Dim objPwiComun As New pwiComun
+    Dim objDS As New DataSet
     Dim pvtFecha As Date
     Enum CampoTotal
         expMes = 1
@@ -10,10 +11,9 @@ Public Class frmIngresos
         MantEdif = 3
     End Enum
 
-    Sub abrirFormulario(ByVal mes As String, ByVal año As String, ByVal id_uf As Long)
+    Sub abrirFormulario(ByVal id_cons As Long, ByVal mes As String, ByVal año As String, ByVal id_uf As Long)
         Try
-
-            verIngresos(mes, año, id_uf)
+            verIngresos(id_cons, mes, año, id_uf)
             Actualizartotales()
         Catch ex As Exception
             MsgBox(ex.Message)
@@ -23,20 +23,31 @@ Public Class frmIngresos
     Private Sub frmIngresos_Load(sender As Object, e As EventArgs) Handles MyBase.Load
 
         Try
+            setearControles()
+
+            objDS = objPwiComun.obtenerListaConsorcio(-1)
+            If Not objDS.Tables Is Nothing Then
+                cboConsorcio.DataSource = objDS.Tables(0)
+                cboConsorcio.DisplayMember = "descrip"
+                cboConsorcio.ValueMember = "id_cons"
+                cboConsorcio.SelectedIndex = -1
+                cboConsorcio.Text = "Seleccine un Consorcio"
+            End If
+
             Dim datetimeFormat = Threading.Thread.CurrentThread.CurrentCulture.DateTimeFormat
             Me.cboMes.DataSource = datetimeFormat.MonthNames()
             Me.cboMes.SelectedItem = datetimeFormat.GetMonthName(Date.Today.Month)
             pvtFecha = Date.Now
+
             Dim mes As String = Format(pvtFecha, "MM")
-            setearControles()
             If Not Format(pvtFecha, "dd") = 1 Then
-                abrirFormulario(Format(pvtFecha, "MM"), Format(pvtFecha, "yyyy"), -1)
+                abrirFormulario(cboConsorcio.SelectedItem("id_cons"), Format(pvtFecha, "MM"), Format(pvtFecha, "yyyy"), -1)
             Else
                 If vbYes = MsgBox("Desea cargar la tabla de ingresos del mes de " & Format(pvtFecha, "MMMM"), vbYesNo, "status") Then
                     NuevoIngreso()
                 Else
                     Me.cboMes.SelectedItem = datetimeFormat.GetMonthName(Date.Today.Month - 1)
-                    abrirFormulario(cboMes.SelectedIndex + 1, (Format(pvtFecha, "yyyy")), -1)
+                    abrirFormulario(cboConsorcio.SelectedIndex, cboMes.SelectedIndex + 1, (Format(pvtFecha, "yyyy")), -1)
                 End If
             End If
 
@@ -47,21 +58,20 @@ Public Class frmIngresos
     End Sub
     Sub setearControles()
         dgIngresos.DataSource = Nothing
-
-
+        cboConsorcio.DataSource = Nothing
     End Sub
 
-    Sub verIngresos(ByVal mes As Long, ByVal año As Long, ByVal id_uf As Long)
+    Sub verIngresos(ByVal id_cons As Long, ByVal mes As Long, ByVal año As Long, ByVal id_uf As Long)
         Dim objDS As New DataSet
         Try
             dgIngresos.DataSource = Nothing
-            objDS = objPwiIngresos.obtenerIngresosMes(mes, año, id_uf)
+            objDS = objPwiIngresos.obtenerIngresosMes(id_cons, mes, año, id_uf)
             If objDS Is Nothing Then
-                MsgBox("Error Dataset es nothing")
+                MsgBox("Error: No se cargo la tabla Ingresos")
                 Exit Sub
             End If
 
-            If Not objDS.Tables Is Nothing Then
+            If Not objDS.Tables(0).Rows.Count = 0 Then
                 dgIngresos.DataSource = objDS.Tables(0)
                 dgIngresos.Columns("dpto").Width = 115
                 dgIngresos.Columns("coef").Width = 115
@@ -71,8 +81,8 @@ Public Class frmIngresos
                 dgIngresos.Columns("subTotal").Width = 87
                 dgIngresos.Columns("redondeo").Width = 87
                 dgIngresos.Columns("total").Width = 87
+                Actualizartotales()
             End If
-            Actualizartotales()
 
         Catch ex As Exception
             MsgBox(ex.Message)
@@ -96,17 +106,16 @@ Public Class frmIngresos
     Sub NuevoIngreso()
         Try
             Dim objNuevoIngreso As New DataSet
-            controlesNuevoIngreso(True)
 
             dgIngresos.DataSource = Nothing
 
             objNuevoIngreso = objPwiIngresos.NuevoIngresoMes()
             If objNuevoIngreso Is Nothing Then
-                MsgBox("Error Dataset es nothing")
+                MsgBox("Error: No se cargo la tabla Ingresos")
                 Exit Sub
             End If
 
-            If Not objNuevoIngreso.Tables Is Nothing Then
+            If Not objNuevoIngreso.Tables(0).Rows.Count = 0 Then
                 dgIngresos.DataSource = objNuevoIngreso.Tables(0)
                 dgIngresos.Columns("id_uf").Visible = False
                 dgIngresos.Columns("descrip").Visible = False
@@ -119,8 +128,10 @@ Public Class frmIngresos
                 dgIngresos.Columns("subTotal").Width = 87
                 dgIngresos.Columns("redondeo").Width = 87
                 dgIngresos.Columns("total").Width = 87
+                Actualizartotales()
             End If
-            Actualizartotales()
+
+            controlesNuevoIngreso(True)
 
         Catch ex As Exception
             MsgBox(ex.Message)
@@ -211,6 +222,6 @@ Public Class frmIngresos
     End Sub
 
     Private Sub btnActualizar_Click(sender As Object, e As EventArgs) Handles btnActualizar.Click
-        verIngresos(cboMes.SelectedIndex + 1, 2019, -1)
+        verIngresos(cboConsorcio.SelectedIndex, cboMes.SelectedIndex + 1, 2019, -1)
     End Sub
 End Class

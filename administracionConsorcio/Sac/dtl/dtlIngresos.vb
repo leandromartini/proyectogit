@@ -1,6 +1,6 @@
 ﻿Imports System.Data.SqlClient
 Public Class dtlIngresos
-    Public Function obtenerIngresosMes(ByVal mes As Long, ByVal año As Long, Optional ByVal id_uf As Long = -1) As DataSet
+    Public Function obtenerIngresosMes(ByVal id_cons As Long, ByVal mes As Long, ByVal año As Long, Optional ByVal id_uf As Long = -1) As DataSet
         Try
 
             Dim sProdString As String = "[dbo].[ingresos_obtenerLista]"
@@ -8,6 +8,7 @@ Public Class dtlIngresos
             Dim dataset As New DataSet
             With command
                 command.CommandType = CommandType.StoredProcedure
+                command.Parameters.AddWithValue("@id_cons", id_cons)
                 command.Parameters.AddWithValue("@mes", mes)
                 command.Parameters.AddWithValue("@anio", año)
                 command.Parameters.AddWithValue("@id_uf", id_uf)
@@ -22,7 +23,7 @@ Public Class dtlIngresos
             obtenerIngresosMes = Nothing
         End Try
     End Function
-    Public Function actualizarRegistroIngresos(ByVal id_uf As Long, ByVal mes As Long, ByVal año As Long, ByVal expMes As Double, ByVal expExtra As Double,
+    Public Function actualizarRegistroIngresos(ByVal id_uf As Integer, ByVal id_cons As Long, ByVal mes As Long, ByVal año As Long, ByVal expMes As Double, ByVal expExtra As Double,
                                                ByVal mantEdif As Double, ByVal subTotal As Double, ByVal redondeo As Double, ByVal total As Double) As Integer
         Try
 
@@ -31,6 +32,7 @@ Public Class dtlIngresos
             With command
                 command.CommandType = CommandType.StoredProcedure
                 command.Parameters.AddWithValue("@id_uf", id_uf)
+                command.Parameters.AddWithValue("@id_cons", id_cons)
                 command.Parameters.AddWithValue("@mes", mes)
                 command.Parameters.AddWithValue("@anio", año)
                 command.Parameters.AddWithValue("@expMes", expMes)

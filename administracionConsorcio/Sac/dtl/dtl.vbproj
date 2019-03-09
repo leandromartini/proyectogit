@@ -64,6 +64,7 @@
     <Import Include="System.Threading.Tasks" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="dtlConsorcio.vb" />
     <Compile Include="dtlIngresos.vb" />
     <Compile Include="conexion.vb" />
     <Compile Include="dtlUF.vb" />

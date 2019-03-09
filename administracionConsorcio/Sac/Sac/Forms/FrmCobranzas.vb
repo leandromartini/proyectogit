@@ -10,7 +10,7 @@
             cboPropietario.SelectedIndex = -1
             cboPropietario.Text = "Seleccine una UF"
         End If
-        verIngresos(-1, -1, 1)
+        verIngresos(-1, -1, -1, 1)
     End Sub
     Private Sub FrmCobranzas_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         abrirFormulario()
@@ -26,13 +26,13 @@
         Me.Close()
     End Sub
 
-    Sub verIngresos(ByVal mes As Long, ByVal año As Long, ByVal id_uf As Long)
+    Sub verIngresos(ByVal id_cons As Long, ByVal mes As Long, ByVal año As Long, ByVal id_uf As Long)
 
         Dim objDS As New DataSet
         Dim objPwiIngresos As New PwiIngresos
         Try
 
-            objDS = objPwiIngresos.obtenerIngresosMes(mes, año, id_uf)
+            objDS = objPwiIngresos.obtenerIngresosMes(id_cons, mes, año, id_uf)
             If objDS Is Nothing Then
                 MsgBox("Error Dataset es nothing")
                 Exit Sub
