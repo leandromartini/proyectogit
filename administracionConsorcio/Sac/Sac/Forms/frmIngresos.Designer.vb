@@ -34,9 +34,9 @@ Partial Class frmIngresos
         Me.dgIngresos = New System.Windows.Forms.DataGridView()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.btnActualizar = New System.Windows.Forms.Button()
-        Me.cboMes = New System.Windows.Forms.ComboBox()
         Me.cboConsorcio = New System.Windows.Forms.ComboBox()
         Me.btnVolver = New System.Windows.Forms.Button()
+        Me.cbomes = New System.Windows.Forms.ComboBox()
         CType(Me.dgIngresos, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
@@ -48,7 +48,7 @@ Partial Class frmIngresos
         Me.btnNuevoIngreso.Location = New System.Drawing.Point(732, 436)
         Me.btnNuevoIngreso.Name = "btnNuevoIngreso"
         Me.btnNuevoIngreso.Size = New System.Drawing.Size(98, 34)
-        Me.btnNuevoIngreso.TabIndex = 4
+        Me.btnNuevoIngreso.TabIndex = 11
         Me.btnNuevoIngreso.Text = "Nuevo Ingresos"
         Me.btnNuevoIngreso.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
         Me.btnNuevoIngreso.UseVisualStyleBackColor = True
@@ -76,7 +76,7 @@ Partial Class frmIngresos
         Me.TextBox1.Location = New System.Drawing.Point(284, 403)
         Me.TextBox1.Name = "TextBox1"
         Me.TextBox1.Size = New System.Drawing.Size(87, 23)
-        Me.TextBox1.TabIndex = 5
+        Me.TextBox1.TabIndex = 4
         Me.TextBox1.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
         '
         'TextBox2
@@ -87,7 +87,7 @@ Partial Class frmIngresos
         Me.TextBox2.Location = New System.Drawing.Point(371, 403)
         Me.TextBox2.Name = "TextBox2"
         Me.TextBox2.Size = New System.Drawing.Size(87, 23)
-        Me.TextBox2.TabIndex = 6
+        Me.TextBox2.TabIndex = 5
         Me.TextBox2.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
         '
         'TextBox3
@@ -99,7 +99,7 @@ Partial Class frmIngresos
         Me.TextBox3.Location = New System.Drawing.Point(458, 403)
         Me.TextBox3.Name = "TextBox3"
         Me.TextBox3.Size = New System.Drawing.Size(87, 23)
-        Me.TextBox3.TabIndex = 7
+        Me.TextBox3.TabIndex = 6
         Me.TextBox3.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
         '
         'TextBox4
@@ -111,7 +111,7 @@ Partial Class frmIngresos
         Me.TextBox4.Name = "TextBox4"
         Me.TextBox4.ReadOnly = True
         Me.TextBox4.Size = New System.Drawing.Size(87, 23)
-        Me.TextBox4.TabIndex = 8
+        Me.TextBox4.TabIndex = 7
         Me.TextBox4.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
         '
         'TextBox5
@@ -123,7 +123,7 @@ Partial Class frmIngresos
         Me.TextBox5.Name = "TextBox5"
         Me.TextBox5.ReadOnly = True
         Me.TextBox5.Size = New System.Drawing.Size(87, 23)
-        Me.TextBox5.TabIndex = 9
+        Me.TextBox5.TabIndex = 8
         Me.TextBox5.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
         '
         'TextBox6
@@ -135,7 +135,7 @@ Partial Class frmIngresos
         Me.TextBox6.Name = "TextBox6"
         Me.TextBox6.ReadOnly = True
         Me.TextBox6.Size = New System.Drawing.Size(87, 23)
-        Me.TextBox6.TabIndex = 10
+        Me.TextBox6.TabIndex = 9
         Me.TextBox6.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
         '
         'dgIngresos
@@ -163,21 +163,12 @@ Partial Class frmIngresos
         '
         'btnActualizar
         '
-        Me.btnActualizar.Location = New System.Drawing.Point(281, 10)
+        Me.btnActualizar.Location = New System.Drawing.Point(308, 10)
         Me.btnActualizar.Name = "btnActualizar"
         Me.btnActualizar.Size = New System.Drawing.Size(63, 21)
-        Me.btnActualizar.TabIndex = 17
+        Me.btnActualizar.TabIndex = 3
         Me.btnActualizar.Text = "Actualizar"
         Me.btnActualizar.UseVisualStyleBackColor = True
-        '
-        'cboMes
-        '
-        Me.cboMes.FormattingEnabled = True
-        Me.cboMes.Items.AddRange(New Object() {"Enero", "Febreo", "Marzo", "Abril", "Mayo", "Junio", "Julio", "Agosto", "Septiembre", "Octubre", "Noviembre", "Diciembre"})
-        Me.cboMes.Location = New System.Drawing.Point(166, 10)
-        Me.cboMes.Name = "cboMes"
-        Me.cboMes.Size = New System.Drawing.Size(98, 21)
-        Me.cboMes.TabIndex = 16
         '
         'cboConsorcio
         '
@@ -185,7 +176,7 @@ Partial Class frmIngresos
         Me.cboConsorcio.Location = New System.Drawing.Point(12, 10)
         Me.cboConsorcio.Name = "cboConsorcio"
         Me.cboConsorcio.Size = New System.Drawing.Size(146, 21)
-        Me.cboConsorcio.TabIndex = 15
+        Me.cboConsorcio.TabIndex = 1
         '
         'btnVolver
         '
@@ -195,10 +186,19 @@ Partial Class frmIngresos
         Me.btnVolver.Location = New System.Drawing.Point(12, 436)
         Me.btnVolver.Name = "btnVolver"
         Me.btnVolver.Size = New System.Drawing.Size(98, 34)
-        Me.btnVolver.TabIndex = 18
+        Me.btnVolver.TabIndex = 10
         Me.btnVolver.Text = "Volver"
         Me.btnVolver.TextAlign = System.Drawing.ContentAlignment.MiddleRight
         Me.btnVolver.UseVisualStyleBackColor = True
+        '
+        'cbomes
+        '
+        Me.cbomes.FormattingEnabled = True
+        Me.cbomes.Items.AddRange(New Object() {"Seleccione un mes", "Enero", "Febrero", "Marzo", "Abril"})
+        Me.cbomes.Location = New System.Drawing.Point(181, 10)
+        Me.cbomes.Name = "cbomes"
+        Me.cbomes.Size = New System.Drawing.Size(121, 21)
+        Me.cbomes.TabIndex = 15
         '
         'frmIngresos
         '
@@ -206,9 +206,9 @@ Partial Class frmIngresos
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.SystemColors.ActiveCaption
         Me.ClientSize = New System.Drawing.Size(842, 482)
+        Me.Controls.Add(Me.cbomes)
         Me.Controls.Add(Me.btnVolver)
         Me.Controls.Add(Me.btnActualizar)
-        Me.Controls.Add(Me.cboMes)
         Me.Controls.Add(Me.cboConsorcio)
         Me.Controls.Add(Me.Label1)
         Me.Controls.Add(Me.TextBox6)
@@ -242,7 +242,7 @@ Partial Class frmIngresos
     Friend WithEvents dgIngresos As DataGridView
     Friend WithEvents Label1 As Label
     Friend WithEvents btnActualizar As Button
-    Friend WithEvents cboMes As ComboBox
     Friend WithEvents cboConsorcio As ComboBox
     Friend WithEvents btnVolver As Button
+    Friend WithEvents cbomes As ComboBox
 End Class

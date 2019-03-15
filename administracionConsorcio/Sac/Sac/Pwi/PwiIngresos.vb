@@ -51,7 +51,7 @@ Public Class PwiIngresos
         End Try
     End Function
 
-    Public Function actualizarIngresosMes(ByVal auxDatagid As DataGridView, ByVal mes As Long, ByVal año As Long) As Boolean
+    Public Function actualizarIngresosMes(ByVal auxDatagid As DataGridView, ByVal id_cons As Long, ByVal mes As Long, ByVal año As Long) As Boolean
 
         Dim brlIngresos As New brlIngresos
         actualizarIngresosMes = False
@@ -64,7 +64,7 @@ Public Class PwiIngresos
             End If
 
             For Each row As DataGridViewRow In auxDatagid.Rows
-                actualizarIngresosMes = brlIngresos.actualizarIngresosMes(row.Cells("id_uf").Value, row.Cells("id_cons").Value, mes, año, row.Cells("expMes").Value, row.Cells("expExtra").Value, row.Cells("mantEdif").Value, row.Cells("subTotal").Value, row.Cells("redondeo").Value, row.Cells("total").Value)
+                actualizarIngresosMes = brlIngresos.actualizarIngresosMes(row.Cells("id_uf").Value, id_cons, mes, año, row.Cells("expMes").Value, row.Cells("expExtra").Value, row.Cells("mantEdif").Value, row.Cells("subTotal").Value, row.Cells("redondeo").Value, row.Cells("total").Value)
 
             Next
 

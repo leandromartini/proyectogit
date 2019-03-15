@@ -35,19 +35,18 @@ Public Class frmIngresos
             End If
 
             Dim datetimeFormat = Threading.Thread.CurrentThread.CurrentCulture.DateTimeFormat
-            Me.cboMes.DataSource = datetimeFormat.MonthNames()
-            Me.cboMes.SelectedItem = datetimeFormat.GetMonthName(Date.Today.Month)
+            cbomes.DataSource = datetimeFormat.MonthNames()
+            cbomes.SelectedItem = datetimeFormat.GetMonthName(Date.Today.Month)
             pvtFecha = Date.Now
 
-            Dim mes As String = Format(pvtFecha, "MM")
             If Not Format(pvtFecha, "dd") = 1 Then
-                abrirFormulario(cboConsorcio.SelectedItem("id_cons"), Format(pvtFecha, "MM"), Format(pvtFecha, "yyyy"), -1)
+                abrirFormulario(cboConsorcio.SelectedValue, Format(pvtFecha, "MM"), Format(pvtFecha, "yyyy"), -1)
             Else
                 If vbYes = MsgBox("Desea cargar la tabla de ingresos del mes de " & Format(pvtFecha, "MMMM"), vbYesNo, "status") Then
                     NuevoIngreso()
                 Else
                     Me.cboMes.SelectedItem = datetimeFormat.GetMonthName(Date.Today.Month - 1)
-                    abrirFormulario(cboConsorcio.SelectedIndex, cboMes.SelectedIndex + 1, (Format(pvtFecha, "yyyy")), -1)
+                    abrirFormulario(cboConsorcio.SelectedIndex, Format(pvtFecha, "MM"), (Format(pvtFecha, "yyyy")), -1)
                 End If
             End If
 
@@ -90,8 +89,12 @@ Public Class frmIngresos
     End Sub
     Sub GuardarIngresos()
         Try
+            If cboConsorcio.SelectedValue = 0 Then
+                MsgBox("Seleccione un consorcio")
+                Exit Sub
+            End If
             Dim lngNuevo As Long
-            lngNuevo = objPwiIngresos.actualizarIngresosMes(dgIngresos, cboMes.SelectedIndex + 1, Format(pvtFecha, "yyyy"))
+            lngNuevo = objPwiIngresos.actualizarIngresosMes(dgIngresos, cboConsorcio.SelectedValue, cbomes.SelectedIndex + 1, Format(pvtFecha, "yyyy"))
             If lngNuevo Then
                 MsgBox("Se guardaron con exito los cambios.")
                 'verIngresos(cboMes.SelectedIndex + 1, Format(pvtFecha, "yyyy"), -1)
@@ -210,10 +213,6 @@ Public Class frmIngresos
         TextBox6.Text = objPwiComun.SumarColumnaDatagrid(dgIngresos, "total")
     End Sub
 
-    Private Sub Actualizartotales(sender As Object, e As EventArgs) Handles TextBox3.LostFocus, TextBox2.LostFocus, TextBox1.LostFocus
-
-    End Sub
-
     Private Sub btnVolver_Click(sender As Object, e As EventArgs) Handles btnVolver.Click
         setearControles()
         controlesNuevoIngreso(False)
@@ -222,6 +221,6 @@ Public Class frmIngresos
     End Sub
 
     Private Sub btnActualizar_Click(sender As Object, e As EventArgs) Handles btnActualizar.Click
-        verIngresos(cboConsorcio.SelectedIndex, cboMes.SelectedIndex + 1, 2019, -1)
+        verIngresos(cboConsorcio.SelectedValue, cbomes.SelectedIndex + 1, 2019, -1)
     End Sub
 End Class
