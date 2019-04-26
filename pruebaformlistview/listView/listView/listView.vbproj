@@ -73,11 +73,21 @@
     <Import Include="System.Threading.Tasks" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="MaterialesAgrega.vb">
+    <Compile Include="capaFlujodeTrabajo\cftProductos.vb" />
+    <Compile Include="capaNegocio\cnAgregarProductos.vb" />
+    <Compile Include="clases\productoCantidad.vb" />
+    <Compile Include="clases\productos.vb" />
+    <Compile Include="frmMaterialesAgrega.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="MaterialesAgrega.Designer.vb">
-      <DependentUpon>MaterialesAgrega.vb</DependentUpon>
+    <Compile Include="frmMaterialesAgrega.Designer.vb">
+      <DependentUpon>frmMaterialesAgrega.vb</DependentUpon>
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmPrincipal.Designer.vb">
+      <DependentUpon>frmPrincipal.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmPrincipal.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="My Project\AssemblyInfo.vb" />
@@ -97,8 +107,11 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="MaterialesAgrega.resx">
-      <DependentUpon>MaterialesAgrega.vb</DependentUpon>
+    <EmbeddedResource Include="frmMaterialesAgrega.resx">
+      <DependentUpon>frmMaterialesAgrega.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmPrincipal.resx">
+      <DependentUpon>frmPrincipal.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="My Project\Resources.resx">
       <Generator>VbMyResourcesResXFileCodeGenerator</Generator>
@@ -145,6 +158,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\cancel.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="capaDatos\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
 </Project>

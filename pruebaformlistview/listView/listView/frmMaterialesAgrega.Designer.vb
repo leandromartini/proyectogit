@@ -1,5 +1,5 @@
 ﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()> _
-Partial Class MaterialesAgrega
+Partial Class frmMaterialesAgrega
     Inherits System.Windows.Forms.Form
 
     'Form reemplaza a Dispose para limpiar la lista de componentes.
@@ -28,30 +28,30 @@ Partial Class MaterialesAgrega
         Me.Col_Precio = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
         Me.col_PrecioTotal = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
         Me.grupoAgregarProducto = New System.Windows.Forms.GroupBox()
+        Me.grupoNuevoProducto = New System.Windows.Forms.GroupBox()
+        Me.btnProdGuardar = New System.Windows.Forms.Button()
+        Me.BtnBorrar = New System.Windows.Forms.Button()
+        Me.BtnNuevo = New System.Windows.Forms.Button()
+        Me.Label5 = New System.Windows.Forms.Label()
+        Me.txtProdDescrip = New System.Windows.Forms.TextBox()
+        Me.txtPrecioProd = New System.Windows.Forms.TextBox()
+        Me.Label4 = New System.Windows.Forms.Label()
+        Me.Label3 = New System.Windows.Forms.Label()
+        Me.txtNombreProd = New System.Windows.Forms.TextBox()
+        Me.btnModificaPrecio = New System.Windows.Forms.Button()
+        Me.btnReset = New System.Windows.Forms.Button()
+        Me.btnQuitar = New System.Windows.Forms.Button()
+        Me.btnAgregar = New System.Windows.Forms.Button()
         Me.txtPrecioUnidad = New System.Windows.Forms.TextBox()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.numCantidad = New System.Windows.Forms.NumericUpDown()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.cboMateriales = New System.Windows.Forms.ComboBox()
-        Me.grupoNuevoProducto = New System.Windows.Forms.GroupBox()
-        Me.txtNombreProd = New System.Windows.Forms.TextBox()
-        Me.Label3 = New System.Windows.Forms.Label()
-        Me.Label4 = New System.Windows.Forms.Label()
-        Me.txtPrecioProd = New System.Windows.Forms.TextBox()
-        Me.txtProdDescrip = New System.Windows.Forms.TextBox()
-        Me.Label5 = New System.Windows.Forms.Label()
         Me.btnVolver = New System.Windows.Forms.Button()
         Me.btnGuardar = New System.Windows.Forms.Button()
-        Me.btnProdGuardar = New System.Windows.Forms.Button()
-        Me.BtnBorrar = New System.Windows.Forms.Button()
-        Me.BtnNuevo = New System.Windows.Forms.Button()
-        Me.btnModificaPrecio = New System.Windows.Forms.Button()
-        Me.btnReset = New System.Windows.Forms.Button()
-        Me.btnQuitar = New System.Windows.Forms.Button()
-        Me.btnAgregar = New System.Windows.Forms.Button()
         Me.grupoAgregarProducto.SuspendLayout()
-        CType(Me.numCantidad, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.grupoNuevoProducto.SuspendLayout()
+        CType(Me.numCantidad, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'listaMateriales
@@ -103,6 +103,144 @@ Partial Class MaterialesAgrega
         Me.grupoAgregarProducto.TabStop = False
         Me.grupoAgregarProducto.Text = "Agregar Productos"
         '
+        'grupoNuevoProducto
+        '
+        Me.grupoNuevoProducto.Controls.Add(Me.btnProdGuardar)
+        Me.grupoNuevoProducto.Controls.Add(Me.BtnBorrar)
+        Me.grupoNuevoProducto.Controls.Add(Me.BtnNuevo)
+        Me.grupoNuevoProducto.Controls.Add(Me.Label5)
+        Me.grupoNuevoProducto.Controls.Add(Me.txtProdDescrip)
+        Me.grupoNuevoProducto.Controls.Add(Me.txtPrecioProd)
+        Me.grupoNuevoProducto.Controls.Add(Me.Label4)
+        Me.grupoNuevoProducto.Controls.Add(Me.Label3)
+        Me.grupoNuevoProducto.Controls.Add(Me.txtNombreProd)
+        Me.grupoNuevoProducto.Location = New System.Drawing.Point(9, 122)
+        Me.grupoNuevoProducto.Name = "grupoNuevoProducto"
+        Me.grupoNuevoProducto.Size = New System.Drawing.Size(302, 196)
+        Me.grupoNuevoProducto.TabIndex = 10
+        Me.grupoNuevoProducto.TabStop = False
+        Me.grupoNuevoProducto.Text = "Nuevo Producto"
+        '
+        'btnProdGuardar
+        '
+        Me.btnProdGuardar.Enabled = False
+        Me.btnProdGuardar.Image = Global.listView.My.Resources.Resources.save1
+        Me.btnProdGuardar.Location = New System.Drawing.Point(247, 146)
+        Me.btnProdGuardar.Name = "btnProdGuardar"
+        Me.btnProdGuardar.Size = New System.Drawing.Size(45, 40)
+        Me.btnProdGuardar.TabIndex = 18
+        Me.btnProdGuardar.UseVisualStyleBackColor = True
+        '
+        'BtnBorrar
+        '
+        Me.BtnBorrar.Enabled = False
+        Me.BtnBorrar.Image = Global.listView.My.Resources.Resources.cancel
+        Me.BtnBorrar.Location = New System.Drawing.Point(172, 146)
+        Me.BtnBorrar.Name = "BtnBorrar"
+        Me.BtnBorrar.Size = New System.Drawing.Size(45, 40)
+        Me.BtnBorrar.TabIndex = 17
+        Me.BtnBorrar.UseVisualStyleBackColor = True
+        '
+        'BtnNuevo
+        '
+        Me.BtnNuevo.Image = Global.listView.My.Resources.Resources.add
+        Me.BtnNuevo.Location = New System.Drawing.Point(99, 146)
+        Me.BtnNuevo.Name = "BtnNuevo"
+        Me.BtnNuevo.Size = New System.Drawing.Size(45, 40)
+        Me.BtnNuevo.TabIndex = 16
+        Me.BtnNuevo.UseVisualStyleBackColor = True
+        '
+        'Label5
+        '
+        Me.Label5.AutoSize = True
+        Me.Label5.Enabled = False
+        Me.Label5.Location = New System.Drawing.Point(27, 91)
+        Me.Label5.Name = "Label5"
+        Me.Label5.Size = New System.Drawing.Size(66, 13)
+        Me.Label5.TabIndex = 15
+        Me.Label5.Text = "Drescripcion"
+        '
+        'txtProdDescrip
+        '
+        Me.txtProdDescrip.Enabled = False
+        Me.txtProdDescrip.Location = New System.Drawing.Point(99, 88)
+        Me.txtProdDescrip.Multiline = True
+        Me.txtProdDescrip.Name = "txtProdDescrip"
+        Me.txtProdDescrip.Size = New System.Drawing.Size(193, 49)
+        Me.txtProdDescrip.TabIndex = 14
+        '
+        'txtPrecioProd
+        '
+        Me.txtPrecioProd.Enabled = False
+        Me.txtPrecioProd.Location = New System.Drawing.Point(99, 55)
+        Me.txtPrecioProd.Name = "txtPrecioProd"
+        Me.txtPrecioProd.Size = New System.Drawing.Size(71, 20)
+        Me.txtPrecioProd.TabIndex = 13
+        '
+        'Label4
+        '
+        Me.Label4.AutoSize = True
+        Me.Label4.Enabled = False
+        Me.Label4.Location = New System.Drawing.Point(36, 58)
+        Me.Label4.Name = "Label4"
+        Me.Label4.Size = New System.Drawing.Size(52, 13)
+        Me.Label4.TabIndex = 12
+        Me.Label4.Text = "Precio ($)"
+        '
+        'Label3
+        '
+        Me.Label3.AutoSize = True
+        Me.Label3.Enabled = False
+        Me.Label3.Location = New System.Drawing.Point(3, 27)
+        Me.Label3.Name = "Label3"
+        Me.Label3.Size = New System.Drawing.Size(90, 13)
+        Me.Label3.TabIndex = 11
+        Me.Label3.Text = "Nombre Producto"
+        '
+        'txtNombreProd
+        '
+        Me.txtNombreProd.Enabled = False
+        Me.txtNombreProd.Location = New System.Drawing.Point(99, 24)
+        Me.txtNombreProd.Name = "txtNombreProd"
+        Me.txtNombreProd.Size = New System.Drawing.Size(193, 20)
+        Me.txtNombreProd.TabIndex = 0
+        '
+        'btnModificaPrecio
+        '
+        Me.btnModificaPrecio.Image = Global.listView.My.Resources.Resources.edit
+        Me.btnModificaPrecio.Location = New System.Drawing.Point(272, 61)
+        Me.btnModificaPrecio.Name = "btnModificaPrecio"
+        Me.btnModificaPrecio.Size = New System.Drawing.Size(39, 36)
+        Me.btnModificaPrecio.TabIndex = 9
+        Me.btnModificaPrecio.UseVisualStyleBackColor = True
+        '
+        'btnReset
+        '
+        Me.btnReset.Image = Global.listView.My.Resources.Resources.refresh
+        Me.btnReset.Location = New System.Drawing.Point(331, 197)
+        Me.btnReset.Name = "btnReset"
+        Me.btnReset.Size = New System.Drawing.Size(45, 40)
+        Me.btnReset.TabIndex = 8
+        Me.btnReset.UseVisualStyleBackColor = True
+        '
+        'btnQuitar
+        '
+        Me.btnQuitar.Image = Global.listView.My.Resources.Resources.undo
+        Me.btnQuitar.Location = New System.Drawing.Point(331, 140)
+        Me.btnQuitar.Name = "btnQuitar"
+        Me.btnQuitar.Size = New System.Drawing.Size(45, 40)
+        Me.btnQuitar.TabIndex = 7
+        Me.btnQuitar.UseVisualStyleBackColor = True
+        '
+        'btnAgregar
+        '
+        Me.btnAgregar.Image = Global.listView.My.Resources.Resources.redo
+        Me.btnAgregar.Location = New System.Drawing.Point(331, 84)
+        Me.btnAgregar.Name = "btnAgregar"
+        Me.btnAgregar.Size = New System.Drawing.Size(45, 40)
+        Me.btnAgregar.TabIndex = 6
+        Me.btnAgregar.UseVisualStyleBackColor = True
+        '
         'txtPrecioUnidad
         '
         Me.txtPrecioUnidad.Enabled = False
@@ -144,84 +282,11 @@ Partial Class MaterialesAgrega
         'cboMateriales
         '
         Me.cboMateriales.FormattingEnabled = True
-        Me.cboMateriales.Items.AddRange(New Object() {"Arena", "Cal", "Cementa"})
+        Me.cboMateriales.Items.AddRange(New Object() {"Arena", "Cal", "Cemento"})
         Me.cboMateriales.Location = New System.Drawing.Point(6, 19)
         Me.cboMateriales.Name = "cboMateriales"
         Me.cboMateriales.Size = New System.Drawing.Size(305, 21)
         Me.cboMateriales.TabIndex = 1
-        '
-        'grupoNuevoProducto
-        '
-        Me.grupoNuevoProducto.Controls.Add(Me.btnProdGuardar)
-        Me.grupoNuevoProducto.Controls.Add(Me.BtnBorrar)
-        Me.grupoNuevoProducto.Controls.Add(Me.BtnNuevo)
-        Me.grupoNuevoProducto.Controls.Add(Me.Label5)
-        Me.grupoNuevoProducto.Controls.Add(Me.txtProdDescrip)
-        Me.grupoNuevoProducto.Controls.Add(Me.txtPrecioProd)
-        Me.grupoNuevoProducto.Controls.Add(Me.Label4)
-        Me.grupoNuevoProducto.Controls.Add(Me.Label3)
-        Me.grupoNuevoProducto.Controls.Add(Me.txtNombreProd)
-        Me.grupoNuevoProducto.Location = New System.Drawing.Point(9, 122)
-        Me.grupoNuevoProducto.Name = "grupoNuevoProducto"
-        Me.grupoNuevoProducto.Size = New System.Drawing.Size(302, 196)
-        Me.grupoNuevoProducto.TabIndex = 10
-        Me.grupoNuevoProducto.TabStop = False
-        Me.grupoNuevoProducto.Text = "Nuevo Producto"
-        '
-        'txtNombreProd
-        '
-        Me.txtNombreProd.Enabled = False
-        Me.txtNombreProd.Location = New System.Drawing.Point(99, 24)
-        Me.txtNombreProd.Name = "txtNombreProd"
-        Me.txtNombreProd.Size = New System.Drawing.Size(193, 20)
-        Me.txtNombreProd.TabIndex = 0
-        '
-        'Label3
-        '
-        Me.Label3.AutoSize = True
-        Me.Label3.Enabled = False
-        Me.Label3.Location = New System.Drawing.Point(3, 27)
-        Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(90, 13)
-        Me.Label3.TabIndex = 11
-        Me.Label3.Text = "Nombre Producto"
-        '
-        'Label4
-        '
-        Me.Label4.AutoSize = True
-        Me.Label4.Enabled = False
-        Me.Label4.Location = New System.Drawing.Point(36, 58)
-        Me.Label4.Name = "Label4"
-        Me.Label4.Size = New System.Drawing.Size(52, 13)
-        Me.Label4.TabIndex = 12
-        Me.Label4.Text = "Precio ($)"
-        '
-        'txtPrecioProd
-        '
-        Me.txtPrecioProd.Enabled = False
-        Me.txtPrecioProd.Location = New System.Drawing.Point(99, 55)
-        Me.txtPrecioProd.Name = "txtPrecioProd"
-        Me.txtPrecioProd.Size = New System.Drawing.Size(71, 20)
-        Me.txtPrecioProd.TabIndex = 13
-        '
-        'txtProdDescrip
-        '
-        Me.txtProdDescrip.Enabled = False
-        Me.txtProdDescrip.Location = New System.Drawing.Point(99, 88)
-        Me.txtProdDescrip.Multiline = True
-        Me.txtProdDescrip.Name = "txtProdDescrip"
-        Me.txtProdDescrip.Size = New System.Drawing.Size(193, 49)
-        Me.txtProdDescrip.TabIndex = 14
-        '
-        'Label5
-        '
-        Me.Label5.AutoSize = True
-        Me.Label5.Enabled = False
-        Me.Label5.Location = New System.Drawing.Point(27, 91)
-        Me.Label5.Name = "Label5"
-        Me.Label5.Size = New System.Drawing.Size(66, 13)
-        Me.Label5.TabIndex = 15
-        Me.Label5.Text = "Drescripcion"
         '
         'btnVolver
         '
@@ -247,72 +312,7 @@ Partial Class MaterialesAgrega
         Me.btnGuardar.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
         Me.btnGuardar.UseVisualStyleBackColor = True
         '
-        'btnProdGuardar
-        '
-        Me.btnProdGuardar.Enabled = False
-        Me.btnProdGuardar.Image = Global.listView.My.Resources.Resources.save1
-        Me.btnProdGuardar.Location = New System.Drawing.Point(247, 146)
-        Me.btnProdGuardar.Name = "btnProdGuardar"
-        Me.btnProdGuardar.Size = New System.Drawing.Size(45, 40)
-        Me.btnProdGuardar.TabIndex = 18
-        Me.btnProdGuardar.UseVisualStyleBackColor = True
-        '
-        'BtnBorrar
-        '
-        Me.BtnBorrar.Enabled = False
-        Me.BtnBorrar.Image = Global.listView.My.Resources.Resources.cancel
-        Me.BtnBorrar.Location = New System.Drawing.Point(172, 146)
-        Me.BtnBorrar.Name = "BtnBorrar"
-        Me.BtnBorrar.Size = New System.Drawing.Size(45, 40)
-        Me.BtnBorrar.TabIndex = 17
-        Me.BtnBorrar.UseVisualStyleBackColor = True
-        '
-        'BtnNuevo
-        '
-        Me.BtnNuevo.Image = Global.listView.My.Resources.Resources.add
-        Me.BtnNuevo.Location = New System.Drawing.Point(99, 146)
-        Me.BtnNuevo.Name = "BtnNuevo"
-        Me.BtnNuevo.Size = New System.Drawing.Size(45, 40)
-        Me.BtnNuevo.TabIndex = 16
-        Me.BtnNuevo.UseVisualStyleBackColor = True
-        '
-        'btnModificaPrecio
-        '
-        Me.btnModificaPrecio.Image = Global.listView.My.Resources.Resources.edit
-        Me.btnModificaPrecio.Location = New System.Drawing.Point(272, 61)
-        Me.btnModificaPrecio.Name = "btnModificaPrecio"
-        Me.btnModificaPrecio.Size = New System.Drawing.Size(39, 36)
-        Me.btnModificaPrecio.TabIndex = 9
-        Me.btnModificaPrecio.UseVisualStyleBackColor = True
-        '
-        'btnReset
-        '
-        Me.btnReset.Image = Global.listView.My.Resources.Resources.refresh
-        Me.btnReset.Location = New System.Drawing.Point(331, 197)
-        Me.btnReset.Name = "btnReset"
-        Me.btnReset.Size = New System.Drawing.Size(45, 40)
-        Me.btnReset.TabIndex = 8
-        Me.btnReset.UseVisualStyleBackColor = True
-        '
-        'btnQuitar
-        '
-        Me.btnQuitar.Image = Global.listView.My.Resources.Resources.undo
-        Me.btnQuitar.Location = New System.Drawing.Point(331, 140)
-        Me.btnQuitar.Name = "btnQuitar"
-        Me.btnQuitar.Size = New System.Drawing.Size(45, 40)
-        Me.btnQuitar.TabIndex = 7
-        Me.btnQuitar.UseVisualStyleBackColor = True
-        '
-        'btnAgregar
-        '
-        Me.btnAgregar.Image = Global.listView.My.Resources.Resources.redo
-        Me.btnAgregar.Location = New System.Drawing.Point(331, 84)
-        Me.btnAgregar.Name = "btnAgregar"
-        Me.btnAgregar.Size = New System.Drawing.Size(45, 40)
-        Me.btnAgregar.TabIndex = 6
-        Me.btnAgregar.UseVisualStyleBackColor = True
-        '
-        'MaterialesAgrega
+        'frmMaterialesAgrega
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
@@ -320,14 +320,14 @@ Partial Class MaterialesAgrega
         Me.Controls.Add(Me.btnVolver)
         Me.Controls.Add(Me.btnGuardar)
         Me.Controls.Add(Me.grupoAgregarProducto)
-        Me.Name = "MaterialesAgrega"
+        Me.Name = "frmMaterialesAgrega"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Carga de Materiales"
         Me.grupoAgregarProducto.ResumeLayout(False)
         Me.grupoAgregarProducto.PerformLayout()
-        CType(Me.numCantidad, System.ComponentModel.ISupportInitialize).EndInit()
         Me.grupoNuevoProducto.ResumeLayout(False)
         Me.grupoNuevoProducto.PerformLayout()
+        CType(Me.numCantidad, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub
