@@ -34,9 +34,9 @@ Partial Class frmMaterialesStock
         Me.Column1 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Column2 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Column3 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.btnVolver = New System.Windows.Forms.Button()
-        Me.btnImprimir = New System.Windows.Forms.Button()
         Me.Button1 = New System.Windows.Forms.Button()
+        Me.btnImprimir = New System.Windows.Forms.Button()
+        Me.btnVolver = New System.Windows.Forms.Button()
         Me.gbMateriales.SuspendLayout()
         CType(Me.dgMaterialesStock, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
@@ -140,6 +140,30 @@ Partial Class frmMaterialesStock
         Me.Column3.HeaderText = "Column3"
         Me.Column3.Name = "Column3"
         '
+        'Button1
+        '
+        Me.Button1.Image = Global.listView.My.Resources.Resources.print_preview
+        Me.Button1.ImageAlign = System.Drawing.ContentAlignment.MiddleRight
+        Me.Button1.Location = New System.Drawing.Point(580, 394)
+        Me.Button1.Name = "Button1"
+        Me.Button1.Size = New System.Drawing.Size(98, 40)
+        Me.Button1.TabIndex = 8
+        Me.Button1.Text = "Vista Previa"
+        Me.Button1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.Button1.UseVisualStyleBackColor = True
+        '
+        'btnImprimir
+        '
+        Me.btnImprimir.Image = Global.listView.My.Resources.Resources.print
+        Me.btnImprimir.ImageAlign = System.Drawing.ContentAlignment.MiddleRight
+        Me.btnImprimir.Location = New System.Drawing.Point(690, 394)
+        Me.btnImprimir.Name = "btnImprimir"
+        Me.btnImprimir.Size = New System.Drawing.Size(98, 40)
+        Me.btnImprimir.TabIndex = 7
+        Me.btnImprimir.Text = "Imprimir"
+        Me.btnImprimir.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.btnImprimir.UseVisualStyleBackColor = True
+        '
         'btnVolver
         '
         Me.btnVolver.Image = Global.listView.My.Resources.Resources.back
@@ -152,30 +176,6 @@ Partial Class frmMaterialesStock
         Me.btnVolver.TextAlign = System.Drawing.ContentAlignment.MiddleRight
         Me.btnVolver.UseVisualStyleBackColor = True
         '
-        'btnImprimir
-        '
-        Me.btnImprimir.Image = Global.listView.My.Resources.Resources.print
-        Me.btnImprimir.ImageAlign = System.Drawing.ContentAlignment.MiddleRight
-        Me.btnImprimir.Location = New System.Drawing.Point(693, 394)
-        Me.btnImprimir.Name = "btnImprimir"
-        Me.btnImprimir.Size = New System.Drawing.Size(95, 40)
-        Me.btnImprimir.TabIndex = 7
-        Me.btnImprimir.Text = "Imprimir"
-        Me.btnImprimir.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.btnImprimir.UseVisualStyleBackColor = True
-        '
-        'Button1
-        '
-        Me.Button1.Image = Global.listView.My.Resources.Resources.print
-        Me.Button1.ImageAlign = System.Drawing.ContentAlignment.MiddleRight
-        Me.Button1.Location = New System.Drawing.Point(583, 394)
-        Me.Button1.Name = "Button1"
-        Me.Button1.Size = New System.Drawing.Size(95, 40)
-        Me.Button1.TabIndex = 8
-        Me.Button1.Text = "Vista Previa"
-        Me.Button1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.Button1.UseVisualStyleBackColor = True
-        '
         'frmMaterialesStock
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -187,6 +187,7 @@ Partial Class frmMaterialesStock
         Me.Controls.Add(Me.gbMateriales)
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.Name = "frmMaterialesStock"
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Stock de Materiales"
         Me.gbMateriales.ResumeLayout(False)
         Me.gbMateriales.PerformLayout()

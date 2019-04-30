@@ -73,10 +73,12 @@
     <Import Include="System.Threading.Tasks" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="capaDatos\ccdProductos.vb" />
     <Compile Include="capaworkflow\wflProductos.vb" />
     <Compile Include="capaNegocio\cnAgregarProductos.vb" />
     <Compile Include="clases\productoCantidad.vb" />
     <Compile Include="clases\productos.vb" />
+    <Compile Include="conexion.vb" />
     <Compile Include="frmMaterialesAgrega.vb">
       <SubType>Form</SubType>
     </Compile>
@@ -168,11 +170,12 @@
   <ItemGroup>
     <None Include="Resources\cancel.ico" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="capaDatos\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <None Include="Resources\print.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\print_preview.ico" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
 </Project>

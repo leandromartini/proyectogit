@@ -18,20 +18,23 @@ Public Class frmMaterialesStock
 
     Private Sub limpiar()
         dgMaterialesStock.DataSource = Nothing
+        dgMaterialesStock = Nothing
     End Sub
 
     Private Sub PrintDocument1_PrintPage(sender As Object, e As Printing.PrintPageEventArgs) Handles PrintDocument1.PrintPage
         Try
             Dim rowfont As New Font("Arial", 11, FontStyle.Bold)
-            Dim blackPen As New Pen(Color.Black, 3)
-            Dim point1 As New PointF(100.0F, 100.0F)
-            Dim point2 As New PointF(500.0F, 100.0F)
+            Dim blackPen As New Pen(Color.Black, 1)
+            Dim point1 As New PointF(80, 40)
+            Dim point2 As New PointF(500, 40)
             Dim xpos As Integer = 80
             Dim ypos As Integer = 40
 
             For Each nombreColum As DataGridViewColumn In dgMaterialesStock.Columns
 
-                e.Graphics.DrawString(nombreColum.Name, rowfont, Brushes.Black, xpos + (xpos * nombreColum.DisplayIndex), ypos - 25)
+                e.Graphics.DrawString(nombreColum.Name, rowfont, Brushes.Black, xpos + (xpos * nombreColum.DisplayIndex), ypos - 20)
+                e.Graphics.DrawLine(blackPen, point1, point2)
+
             Next
 
             For i As Integer = 0 To dgMaterialesStock.RowCount - 1
@@ -47,7 +50,7 @@ Public Class frmMaterialesStock
                     'cantidad = 0
                     'contadorregistros = contadorregistros + 1
                 Next
-                e.Graphics.DrawLine(blackPen, point1, point2)
+                ' e.Graphics.DrawLine(blackPen, point1, point2)
 
             Next
             'If (contadorregistros < dgMaterialesStock.RowCount - 1) Then
