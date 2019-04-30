@@ -73,7 +73,7 @@
     <Import Include="System.Threading.Tasks" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="capaFlujodeTrabajo\cftProductos.vb" />
+    <Compile Include="capaworkflow\wflProductos.vb" />
     <Compile Include="capaNegocio\cnAgregarProductos.vb" />
     <Compile Include="clases\productoCantidad.vb" />
     <Compile Include="clases\productos.vb" />
@@ -82,6 +82,12 @@
     </Compile>
     <Compile Include="frmMaterialesAgrega.Designer.vb">
       <DependentUpon>frmMaterialesAgrega.vb</DependentUpon>
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmMaterialesStock.Designer.vb">
+      <DependentUpon>frmMaterialesStock.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmMaterialesStock.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="frmPrincipal.Designer.vb">
@@ -109,6 +115,9 @@
   <ItemGroup>
     <EmbeddedResource Include="frmMaterialesAgrega.resx">
       <DependentUpon>frmMaterialesAgrega.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmMaterialesStock.resx">
+      <DependentUpon>frmMaterialesStock.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmPrincipal.resx">
       <DependentUpon>frmPrincipal.vb</DependentUpon>
@@ -161,6 +170,9 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="capaDatos\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\print.ico" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
 </Project>

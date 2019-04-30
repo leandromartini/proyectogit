@@ -2,7 +2,7 @@
 
     Private Sub frmMaterialesAgrega_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         Dim objProd As New productos
-        objProd.obtenerProductos()
+        objProd.obtenerProductos(-1)
     End Sub
 
 
@@ -134,7 +134,7 @@
     End Sub
 
     Private Sub btnGuardar_Click(sender As Object, e As EventArgs) Handles btnGuardar.Click
-        Dim objcftProd As New cftProductos
+        Dim objcftProd As New wflProductos
 
         For Each item As ListViewItem In listaMateriales.Items
             objcftProd.AgregarProducto(item)
@@ -143,6 +143,4 @@
         'llamar a la capa flujo de trabajo y guardar los nuevos materiales que entraron
 
     End Sub
-
-
 End Class

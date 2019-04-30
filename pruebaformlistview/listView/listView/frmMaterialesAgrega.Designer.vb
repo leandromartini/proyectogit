@@ -1,9 +1,9 @@
-﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()> _
+﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()>
 Partial Class frmMaterialesAgrega
     Inherits System.Windows.Forms.Form
 
     'Form reemplaza a Dispose para limpiar la lista de componentes.
-    <System.Diagnostics.DebuggerNonUserCode()> _
+    <System.Diagnostics.DebuggerNonUserCode()>
     Protected Overrides Sub Dispose(ByVal disposing As Boolean)
         Try
             If disposing AndAlso components IsNot Nothing Then
@@ -20,7 +20,7 @@ Partial Class frmMaterialesAgrega
     'NOTA: el Diseñador de Windows Forms necesita el siguiente procedimiento
     'Se puede modificar usando el Diseñador de Windows Forms.  
     'No lo modifique con el editor de código.
-    <System.Diagnostics.DebuggerStepThrough()> _
+    <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
         Me.listaMateriales = New System.Windows.Forms.ListView()
         Me.Col_Producto = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
@@ -101,7 +101,7 @@ Partial Class frmMaterialesAgrega
         Me.grupoAgregarProducto.Size = New System.Drawing.Size(776, 337)
         Me.grupoAgregarProducto.TabIndex = 1
         Me.grupoAgregarProducto.TabStop = False
-        Me.grupoAgregarProducto.Text = "Agregar Productos"
+        Me.grupoAgregarProducto.Text = "Agregar a la lista"
         '
         'grupoNuevoProducto
         '

@@ -3,9 +3,10 @@
     Private descripcion As String
     Private precio As Double
 
-    Public Sub obtenerProductos()
+    Public Function obtenerProductos(ByVal idProd As Long) As DataSet
         'llamar a la capa de datos con su correspondiente clase de productos
-    End Sub
+
+    End Function
     Public Sub NuevoPruducto(ByVal nom As String, ByVal descrip As String, ByVal prec As Double)
         nombre = nom
         descripcion = descrip
@@ -19,10 +20,6 @@
     End Function
     Public Function obtenerprecio()
         Return precio
-    End Function
-
-    Public Function obtenerUnProducto(idProd)
-        Return 9
     End Function
     Public Sub actualizarProducto()
 

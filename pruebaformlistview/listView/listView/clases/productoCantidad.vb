@@ -11,4 +11,7 @@
         cantidadProducto = cant
     End Sub
 
+    Public Function obtenerInventario(ByVal idProd As String)
+        obtenerInventario = "prodcutos"
+    End Function
 End Class
