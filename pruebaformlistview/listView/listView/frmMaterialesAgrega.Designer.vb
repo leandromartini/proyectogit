@@ -49,6 +49,7 @@ Partial Class frmMaterialesAgrega
         Me.cboMateriales = New System.Windows.Forms.ComboBox()
         Me.btnVolver = New System.Windows.Forms.Button()
         Me.btnGuardar = New System.Windows.Forms.Button()
+        Me.btnImprimir = New System.Windows.Forms.Button()
         Me.grupoAgregarProducto.SuspendLayout()
         Me.grupoNuevoProducto.SuspendLayout()
         CType(Me.numCantidad, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -124,7 +125,6 @@ Partial Class frmMaterialesAgrega
         'btnProdGuardar
         '
         Me.btnProdGuardar.Enabled = False
-        Me.btnProdGuardar.Image = Global.listView.My.Resources.Resources.save1
         Me.btnProdGuardar.Location = New System.Drawing.Point(247, 146)
         Me.btnProdGuardar.Name = "btnProdGuardar"
         Me.btnProdGuardar.Size = New System.Drawing.Size(45, 40)
@@ -302,7 +302,6 @@ Partial Class frmMaterialesAgrega
         '
         'btnGuardar
         '
-        Me.btnGuardar.Image = Global.listView.My.Resources.Resources.save
         Me.btnGuardar.ImageAlign = System.Drawing.ContentAlignment.MiddleRight
         Me.btnGuardar.Location = New System.Drawing.Point(693, 355)
         Me.btnGuardar.Name = "btnGuardar"
@@ -312,11 +311,24 @@ Partial Class frmMaterialesAgrega
         Me.btnGuardar.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
         Me.btnGuardar.UseVisualStyleBackColor = True
         '
+        'btnImprimir
+        '
+        Me.btnImprimir.Image = Global.listView.My.Resources.Resources.print
+        Me.btnImprimir.ImageAlign = System.Drawing.ContentAlignment.MiddleRight
+        Me.btnImprimir.Location = New System.Drawing.Point(589, 355)
+        Me.btnImprimir.Name = "btnImprimir"
+        Me.btnImprimir.Size = New System.Drawing.Size(95, 40)
+        Me.btnImprimir.TabIndex = 8
+        Me.btnImprimir.Text = "Imprimir"
+        Me.btnImprimir.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.btnImprimir.UseVisualStyleBackColor = True
+        '
         'frmMaterialesAgrega
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(800, 407)
+        Me.Controls.Add(Me.btnImprimir)
         Me.Controls.Add(Me.btnVolver)
         Me.Controls.Add(Me.btnGuardar)
         Me.Controls.Add(Me.grupoAgregarProducto)
@@ -359,4 +371,5 @@ Partial Class frmMaterialesAgrega
     Friend WithEvents Label4 As Label
     Friend WithEvents Label3 As Label
     Friend WithEvents txtNombreProd As TextBox
+    Friend WithEvents btnImprimir As Button
 End Class

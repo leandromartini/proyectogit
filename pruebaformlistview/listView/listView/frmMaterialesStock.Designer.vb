@@ -31,12 +31,13 @@ Partial Class frmMaterialesStock
         Me.Label1 = New System.Windows.Forms.Label()
         Me.cboMateriales = New System.Windows.Forms.ComboBox()
         Me.dgMaterialesStock = New System.Windows.Forms.DataGridView()
-        Me.Column1 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Column2 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Column3 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Button1 = New System.Windows.Forms.Button()
+        Me.btnVistaPrevia = New System.Windows.Forms.Button()
         Me.btnImprimir = New System.Windows.Forms.Button()
         Me.btnVolver = New System.Windows.Forms.Button()
+        Me.Material = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Cantidad = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.PrecioUnitario = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Total = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.gbMateriales.SuspendLayout()
         CType(Me.dgMaterialesStock, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
@@ -119,38 +120,23 @@ Partial Class frmMaterialesStock
         'dgMaterialesStock
         '
         Me.dgMaterialesStock.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.dgMaterialesStock.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.Column1, Me.Column2, Me.Column3})
+        Me.dgMaterialesStock.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.Material, Me.Cantidad, Me.PrecioUnitario, Me.Total})
         Me.dgMaterialesStock.Location = New System.Drawing.Point(6, 92)
         Me.dgMaterialesStock.Name = "dgMaterialesStock"
         Me.dgMaterialesStock.Size = New System.Drawing.Size(764, 278)
         Me.dgMaterialesStock.TabIndex = 0
         '
-        'Column1
+        'btnVistaPrevia
         '
-        Me.Column1.HeaderText = "Column1"
-        Me.Column1.Name = "Column1"
-        '
-        'Column2
-        '
-        Me.Column2.HeaderText = "Column2"
-        Me.Column2.Name = "Column2"
-        '
-        'Column3
-        '
-        Me.Column3.HeaderText = "Column3"
-        Me.Column3.Name = "Column3"
-        '
-        'Button1
-        '
-        Me.Button1.Image = Global.listView.My.Resources.Resources.print_preview
-        Me.Button1.ImageAlign = System.Drawing.ContentAlignment.MiddleRight
-        Me.Button1.Location = New System.Drawing.Point(580, 394)
-        Me.Button1.Name = "Button1"
-        Me.Button1.Size = New System.Drawing.Size(98, 40)
-        Me.Button1.TabIndex = 8
-        Me.Button1.Text = "Vista Previa"
-        Me.Button1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.Button1.UseVisualStyleBackColor = True
+        Me.btnVistaPrevia.Image = Global.listView.My.Resources.Resources.print_preview
+        Me.btnVistaPrevia.ImageAlign = System.Drawing.ContentAlignment.MiddleRight
+        Me.btnVistaPrevia.Location = New System.Drawing.Point(580, 394)
+        Me.btnVistaPrevia.Name = "btnVistaPrevia"
+        Me.btnVistaPrevia.Size = New System.Drawing.Size(98, 40)
+        Me.btnVistaPrevia.TabIndex = 8
+        Me.btnVistaPrevia.Text = "Vista Previa"
+        Me.btnVistaPrevia.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.btnVistaPrevia.UseVisualStyleBackColor = True
         '
         'btnImprimir
         '
@@ -176,16 +162,39 @@ Partial Class frmMaterialesStock
         Me.btnVolver.TextAlign = System.Drawing.ContentAlignment.MiddleRight
         Me.btnVolver.UseVisualStyleBackColor = True
         '
+        'Material
+        '
+        Me.Material.HeaderText = "Materiales"
+        Me.Material.Name = "Material"
+        Me.Material.Width = 200
+        '
+        'Cantidad
+        '
+        Me.Cantidad.HeaderText = "Cantidad"
+        Me.Cantidad.Name = "Cantidad"
+        '
+        'PrecioUnitario
+        '
+        Me.PrecioUnitario.HeaderText = "Precio Unitario"
+        Me.PrecioUnitario.Name = "PrecioUnitario"
+        '
+        'Total
+        '
+        Me.Total.HeaderText = "Total"
+        Me.Total.Name = "Total"
+        '
         'frmMaterialesStock
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(800, 446)
-        Me.Controls.Add(Me.Button1)
+        Me.Controls.Add(Me.btnVistaPrevia)
         Me.Controls.Add(Me.btnImprimir)
         Me.Controls.Add(Me.btnVolver)
         Me.Controls.Add(Me.gbMateriales)
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
+        Me.MaximizeBox = False
+        Me.MinimizeBox = False
         Me.Name = "frmMaterialesStock"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Stock de Materiales"
@@ -206,8 +215,9 @@ Partial Class frmMaterialesStock
     Friend WithEvents Label1 As Label
     Friend WithEvents cboMateriales As ComboBox
     Friend WithEvents btnImprimir As Button
-    Friend WithEvents Column1 As DataGridViewTextBoxColumn
-    Friend WithEvents Column2 As DataGridViewTextBoxColumn
-    Friend WithEvents Column3 As DataGridViewTextBoxColumn
-    Friend WithEvents Button1 As Button
+    Friend WithEvents btnVistaPrevia As Button
+    Friend WithEvents Material As DataGridViewTextBoxColumn
+    Friend WithEvents Cantidad As DataGridViewTextBoxColumn
+    Friend WithEvents PrecioUnitario As DataGridViewTextBoxColumn
+    Friend WithEvents Total As DataGridViewTextBoxColumn
 End Class

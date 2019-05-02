@@ -74,8 +74,9 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="capaDatos\ccdProductos.vb" />
-    <Compile Include="capaworkflow\wflProductos.vb" />
+    <Compile Include="capaWorkflow\wflProductos.vb" />
     <Compile Include="capaNegocio\cnAgregarProductos.vb" />
+    <Compile Include="clases\imprimir.vb" />
     <Compile Include="clases\productoCantidad.vb" />
     <Compile Include="clases\productos.vb" />
     <Compile Include="conexion.vb" />
@@ -96,6 +97,12 @@
       <DependentUpon>frmPrincipal.vb</DependentUpon>
     </Compile>
     <Compile Include="frmPrincipal.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmSaldos.Designer.vb">
+      <DependentUpon>frmSaldos.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmSaldos.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="My Project\AssemblyInfo.vb" />
@@ -123,6 +130,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmPrincipal.resx">
       <DependentUpon>frmPrincipal.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmSaldos.resx">
+      <DependentUpon>frmSaldos.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="My Project\Resources.resx">
       <Generator>VbMyResourcesResXFileCodeGenerator</Generator>
@@ -163,9 +173,6 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\add.ico" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\save1.ico" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\cancel.ico" />
