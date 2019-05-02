@@ -1,6 +1,5 @@
 ﻿Imports listView.productos
 Public Class wflProductos
-
     'agregaProducto se refiere a los materiales que entraron en el dia y se tienen que cargar a datos
     Friend Sub AgregarProducto(item As ListViewItem)
         Dim objProducto As New productoCantidad

@@ -1,21 +1,27 @@
 ﻿Public Class frmMaterialesAgrega
 
     Private Sub frmMaterialesAgrega_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        Dim objProd As New productos
+        Dim objProd As New productos 'Ojo se instancia tambein al guardar productos
         objProd.obtenerProductos(-1)
     End Sub
 
 
     Private Sub btnAgregar_Click(sender As Object, e As EventArgs) Handles btnAgregar.Click
-        If Not validarAgregarProducto() Then
-            Exit Sub
-        End If
-        Dim item As ListViewItem = New ListViewItem(CStr(cboMateriales.SelectedItem))
-        item.SubItems.Add(numCantidad.Value)
-        item.SubItems.Add(txtPrecioUnidad.Text)
-        item.SubItems.Add(CDbl(txtPrecioUnidad.Text * numCantidad.Value))
-        listaMateriales.Items.Add(item)
-        limpiarControles()
+        Try
+
+            If Not validarAgregarProducto() Then
+                Exit Sub
+            End If
+            Dim item As ListViewItem = New ListViewItem(CStr(cboMateriales.SelectedItem))
+            item.SubItems.Add(numCantidad.Value)
+            item.SubItems.Add(txtPrecioUnidad.Text)
+            item.SubItems.Add(CDbl(txtPrecioUnidad.Text * numCantidad.Value))
+            listaMateriales.Items.Add(item)
+            limpiarControles()
+
+        Catch ex As Exception
+            MsgBox(ex.Message)
+        End Try
     End Sub
 
     Private Sub btnQuitar_Click(sender As Object, e As EventArgs) Handles btnQuitar.Click
@@ -53,9 +59,11 @@
             cboMateriales.Focus()
             Return False
         End If
-
-
     End Function
+
+    Private Sub txtPrecioUnidad_KeyPress(sender As Object, e As KeyPressEventArgs) Handles txtPrecioUnidad.KeyPress
+        e.Handled = Not IsNumeric(e.KeyChar) And Not Char.IsControl(e.KeyChar)
+    End Sub
 
     Sub limpiarControles()
         cboMateriales.SelectedIndex = -1
@@ -134,7 +142,7 @@
     End Function
 
     Private Sub btnVolver_Click(sender As Object, e As EventArgs) Handles btnVolver.Click
-        Me.Close()
+        Close()
     End Sub
 
     Private Sub btnGuardar_Click(sender As Object, e As EventArgs) Handles btnGuardar.Click
