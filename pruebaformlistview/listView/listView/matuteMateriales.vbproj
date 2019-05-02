@@ -11,9 +11,10 @@
     <AssemblyName>listView</AssemblyName>
     <FileAlignment>512</FileAlignment>
     <MyType>WindowsForms</MyType>
-    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
     <Deterministic>true</Deterministic>
+    <TargetFrameworkProfile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -75,7 +76,7 @@
   <ItemGroup>
     <Compile Include="capaDatos\ccdProductos.vb" />
     <Compile Include="capaworkflow\wflProductos.vb" />
-    <Compile Include="capaNegocio\cnAgregarProductos.vb" />
+    <Compile Include="capaNegocio\cnProductos.vb" />
     <Compile Include="clases\productoCantidad.vb" />
     <Compile Include="clases\productos.vb" />
     <Compile Include="conexion.vb" />

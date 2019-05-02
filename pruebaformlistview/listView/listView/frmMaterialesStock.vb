@@ -17,8 +17,8 @@ Public Class frmMaterialesStock
     End Sub
 
     Private Sub limpiar()
-        dgMaterialesStock.DataSource = Nothing
-        dgMaterialesStock = Nothing
+        'dgMaterialesStock.DataSource = Nothing
+        'dgMaterialesStock = Nothing
     End Sub
 
     Private Sub PrintDocument1_PrintPage(sender As Object, e As Printing.PrintPageEventArgs) Handles PrintDocument1.PrintPage

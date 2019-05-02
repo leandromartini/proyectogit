@@ -16,7 +16,7 @@
         Return nombre
     End Function
     Public Function obtenerdescripcion()
-        Return nombre
+        Return descripcion
     End Function
     Public Function obtenerprecio()
         Return precio

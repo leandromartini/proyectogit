@@ -93,6 +93,7 @@
     Private Sub btnProdGuardar_Click(sender As Object, e As EventArgs) Handles btnProdGuardar.Click
         Dim obj As Control
         Dim objProd As New productos
+        Dim objwflProd As New wflProductos
 
         If Not validarNuevoPoducto() Then
             Exit Sub
@@ -106,7 +107,10 @@
         Next
         BtnNuevo.Enabled = True
 
-        MsgBox("Se ha guardado el producto: " + objProd.obtenerNombre + " con el precio: " + CStr(objProd.obtenerprecio))
+        If objwflProd.ProductoNuevo <> 0 Then
+
+            MsgBox("Se ha guardado el producto: " + objProd.obtenerNombre + " con el precio: " + CStr(objProd.obtenerprecio))
+        End If
 
         objProd.limpiar()
         cboMateriales.Focus()
