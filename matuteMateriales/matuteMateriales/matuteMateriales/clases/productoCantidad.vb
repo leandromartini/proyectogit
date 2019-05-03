@@ -2,8 +2,8 @@
     Inherits productos
     Private cantidadProducto As Double
 
-    Public Sub agregarMateriales(ByVal nom As String, ByVal descrip As String, ByVal prec As Double, ByVal cant As Double)
-        NuevoPruducto(nom, descrip, prec)
+    Public Sub agregarMateriales(nom As String, unidad As String, descrip As String, prec As Double, cant As Double)
+        NuevoPruducto(nom, unidad, descrip, prec)
         cantidadProducto = cant
     End Sub
 

@@ -16,7 +16,7 @@ Public Class imprimir
             TituloDocumento = TitulosDoc
             PrintDocument1.Print()
         Catch ex As Exception
-            MsgBox("Error en debido a: " & ex.Message, MsgBoxStyle.Exclamation, "¡Advertencia!")
+            MsgBox("Error de impresion debido a: " & ex.Message, MsgBoxStyle.Exclamation, "¡Advertencia!")
         End Try
     End Sub
     Sub imprimirVistaPrevia(dgAux As DataGridView, ByVal TitulosDoc As String)
@@ -26,7 +26,7 @@ Public Class imprimir
             printPreviewDialog1.Document = PrintDocument1
             printPreviewDialog1.ShowDialog()
         Catch ex As Exception
-            MsgBox("Error en debido a: " & ex.Message, MsgBoxStyle.Exclamation, "¡Advertencia!")
+            MsgBox("Error de impresion debido a: " & ex.Message, MsgBoxStyle.Exclamation, "¡Advertencia!")
         End Try
     End Sub
     Friend Sub imprimirListaProductos(listaMateriales As Windows.Forms.ListView, ByVal TitulosDoc As String)
@@ -35,7 +35,7 @@ Public Class imprimir
             TituloDocumento = TitulosDoc
             PrintDocument2.Print()
         Catch ex As Exception
-            MsgBox("Error en debido a: " & ex.Message, MsgBoxStyle.Exclamation, "¡Advertencia!")
+            MsgBox("Error de impresion debido a: " & ex.Message, MsgBoxStyle.Exclamation, "¡Advertencia!")
         End Try
     End Sub
     Friend Sub VistaListaProductos(listaMateriales As Windows.Forms.ListView, titulosDoc As String)
@@ -45,7 +45,7 @@ Public Class imprimir
             printPreviewDialog2.Document = PrintDocument2
             printPreviewDialog2.ShowDialog()
         Catch ex As Exception
-            MsgBox("Error en debido a: " & ex.Message, MsgBoxStyle.Exclamation, "¡Advertencia!")
+            MsgBox("Error de impresion debido a: " & ex.Message, MsgBoxStyle.Exclamation, "¡Advertencia!")
         End Try
     End Sub
     Private Sub PrintDocument1_PrintPage(sender As Object, e As Printing.PrintPageEventArgs) Handles PrintDocument1.PrintPage

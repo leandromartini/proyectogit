@@ -1,5 +1,6 @@
 ﻿Public Class frmMaterialesAgrega
     Dim objImprimir As New imprimir
+    Private rdCheck As String
     Private TitulosDoc As String = "LISTA DE MATERIALES  "
     Private Sub frmMaterialesAgrega_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         Try
@@ -118,28 +119,25 @@
 
     Private Sub btnProdGuardar_Click(sender As Object, e As EventArgs) Handles btnProdGuardar.Click
         Dim obj As Control
-        Dim objProd As New productos
         Dim objwflProd As New wflProductos
 
         If Not validarNuevoPoducto() Then
             Exit Sub
         End If
-        objProd.NuevoPruducto(txtNombreProd.Text, txtProdDescrip.Text, txtPrecioProd.Text)
+
+        objwflProd.ProductoNuevo(txtNombreProd.Text, rdCheck, txtPrecioProd.Text, txtProdDescrip.Text)
 
         For Each obj In grupoNuevoProducto.Controls
             If Not obj.Name = "BtnNuevo" Then
                 obj.Enabled = False
             End If
         Next
+
         BtnNuevo.Enabled = True
-
-        'If objwflProd.ProductoNuevo <> 0 Then
-
-        MsgBox("Se ha guardado el producto: " + objProd.obtenerNombre + " con el precio: " + CStr(objProd.obtenerprecio))
-        'End If
-
-        objProd.limpiar()
         cboMateriales.Focus()
+
+        'MsgBox("Se ha guardado el producto: " + objProd.obtenerNombre + " con el precio: " + CStr(objProd.obtenerprecio))
+
     End Sub
 
     Private Function validarNuevoPoducto()
@@ -155,6 +153,7 @@
         For Each radio As RadioButton In grupoNuevoProducto.Controls.OfType(Of RadioButton)
             If radio.Checked Then
                 check = True
+                rdCheck = radio.Text
             End If
         Next
         If Not check Then
@@ -173,7 +172,7 @@
         Dim objcftProd As New wflProductos
 
         For Each item As ListViewItem In listaMateriales.Items
-            objcftProd.AgregarProducto(item)
+            objcftProd.AgregarProductodeLista(item)
         Next
 
         'llamar a la capa flujo de trabajo y guardar los nuevos materiales que entraron

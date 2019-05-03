@@ -2,10 +2,10 @@
 Public Class wflProductos
 
     'agregaProducto se refiere a los materiales que entraron en el dia y se tienen que cargar a datos
-    Friend Sub AgregarProducto(item As ListViewItem)
+    Friend Sub AgregarProductodeLista(item As ListViewItem)
         Dim objProducto As New productoCantidad
         'cargo clases correspondientes al producto
-        objProducto.NuevoPruducto(item.SubItems(0).Text, "", item.SubItems(2).Text)
+        objProducto.NuevoPruducto(item.SubItems(0).Text, "", "", item.SubItems(2).Text)
         objProducto.agregarCantidad(item.SubItems(1).Text)
 
         'en la tabla Prod_cantidad se incrementa el stock, 
@@ -18,13 +18,32 @@ Public Class wflProductos
         'entonces hay que modificarlo en la tabla Productos, y agregar en prod_historia el nuevo precio con su fecha de modificacion
     End Sub
 
-    Public Function ProductoNuevo() As Long
+    Public Function ProductoNuevo(nom As String, unidad As String, precio As Double, descrip As String) As Long
+        Try
+            Dim objcnProducto As New cnProductos
+            Dim objProductos As New productos
 
-        Dim objcnProducto As New cnProductos
-        ' Ver proque no puedo usar el objeto ya instanciado
+            objProductos.NuevoPruducto(nom, unidad, precio, descrip)
 
-        ' ProductoNuevo = objcnProducto.guardarNuevo(-1, obtenerNombre, objProducto.obtenerdescripcion, "")
+            beginTran()
 
+            ProductoNuevo = objcnProducto.guardarNuevo(-1, objProductos.obtenerNombre, objProductos.obtenerDescripcion, objProductos.obtenerUnidad)
 
+            If ProductoNuevo <> 0 Then
+                disposeTran()
+                Exit Function
+            End If
+            'Guardar el precio para el nuevo producto.
+
+            commitTran()
+            'Vaciar productos luego de realizar el proceso correspondiente
+            objProductos.limpiar()
+        Catch ex As Exception
+            If IsDBNull(esTran) Then
+                disposeTran()
+            End If
+            ProductoNuevo = 0
+            MsgBox("Error debido a: " & ex.Message, MsgBoxStyle.Exclamation, "¡Advertencia!")
+        End Try
     End Function
 End Class

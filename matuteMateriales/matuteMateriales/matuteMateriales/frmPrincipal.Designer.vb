@@ -54,19 +54,19 @@ Partial Class frmPrincipal
         'AgregarToolStripMenuItem
         '
         Me.AgregarToolStripMenuItem.Name = "AgregarToolStripMenuItem"
-        Me.AgregarToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
+        Me.AgregarToolStripMenuItem.Size = New System.Drawing.Size(127, 22)
         Me.AgregarToolStripMenuItem.Text = "Ingreso"
         '
         'EnStockToolStripMenuItem
         '
         Me.EnStockToolStripMenuItem.Name = "EnStockToolStripMenuItem"
-        Me.EnStockToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
+        Me.EnStockToolStripMenuItem.Size = New System.Drawing.Size(127, 22)
         Me.EnStockToolStripMenuItem.Text = "Inventario"
         '
         'SalidaToolStripMenuItem
         '
         Me.SalidaToolStripMenuItem.Name = "SalidaToolStripMenuItem"
-        Me.SalidaToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
+        Me.SalidaToolStripMenuItem.Size = New System.Drawing.Size(127, 22)
         Me.SalidaToolStripMenuItem.Text = "Salida"
         '
         'SaldosToolStripMenuItem
@@ -83,10 +83,11 @@ Partial Class frmPrincipal
         '
         'PictureBox1
         '
+        Me.PictureBox1.BackColor = System.Drawing.SystemColors.Control
         Me.PictureBox1.Image = CType(resources.GetObject("PictureBox1.Image"), System.Drawing.Image)
-        Me.PictureBox1.Location = New System.Drawing.Point(536, 304)
+        Me.PictureBox1.Location = New System.Drawing.Point(513, 325)
         Me.PictureBox1.Name = "PictureBox1"
-        Me.PictureBox1.Size = New System.Drawing.Size(252, 134)
+        Me.PictureBox1.Size = New System.Drawing.Size(275, 113)
         Me.PictureBox1.TabIndex = 1
         Me.PictureBox1.TabStop = False
         '
