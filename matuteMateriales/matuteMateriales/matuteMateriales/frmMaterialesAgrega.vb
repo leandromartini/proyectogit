@@ -85,6 +85,8 @@
         txtNombreProd.Text = ""
         txtPrecioProd.Text = ""
         txtProdDescrip.Text = ""
+        desCheck(False)
+
     End Sub
 
     Private Sub BtnNuevo_Click(sender As Object, e As EventArgs) Handles BtnNuevo.Click
@@ -95,6 +97,12 @@
         Next
         BtnNuevo.Enabled = False
         txtNombreProd.Focus()
+    End Sub
+
+    Sub desCheck(check)
+        For Each radio As RadioButton In grupoNuevoProducto.Controls.OfType(Of RadioButton)
+            radio.Checked = check
+        Next
     End Sub
 
     Private Sub BtnBorrar_Click(sender As Object, e As EventArgs) Handles BtnBorrar.Click
@@ -125,10 +133,10 @@
         Next
         BtnNuevo.Enabled = True
 
-        If objwflProd.ProductoNuevo <> 0 Then
+        'If objwflProd.ProductoNuevo <> 0 Then
 
-            MsgBox("Se ha guardado el producto: " + objProd.obtenerNombre + " con el precio: " + CStr(objProd.obtenerprecio))
-        End If
+        MsgBox("Se ha guardado el producto: " + objProd.obtenerNombre + " con el precio: " + CStr(objProd.obtenerprecio))
+        'End If
 
         objProd.limpiar()
         cboMateriales.Focus()
@@ -140,6 +148,17 @@
         If txtNombreProd.Text = "" Then
             MsgBox("Debe completar el campo nombre.", MsgBoxStyle.OkOnly, "Aviso")
             txtNombreProd.Focus()
+            Return False
+        End If
+
+        Dim check As Boolean = False
+        For Each radio As RadioButton In grupoNuevoProducto.Controls.OfType(Of RadioButton)
+            If radio.Checked Then
+                check = True
+            End If
+        Next
+        If Not check Then
+            MsgBox("Debe seleccionar una unidad de medida.", MsgBoxStyle.OkOnly, "Aviso")
             Return False
         End If
 
