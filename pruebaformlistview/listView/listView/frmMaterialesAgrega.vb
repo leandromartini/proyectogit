@@ -1,14 +1,16 @@
 ﻿Public Class frmMaterialesAgrega
-
+    Dim objImprimir As New imprimir
+    Private TitulosDoc As String = "LISTA DE MATERIALES  "
     Private Sub frmMaterialesAgrega_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        Dim objProd As New productos 'Ojo se instancia tambein al guardar productos
-        objProd.obtenerProductos(-1)
+        Try
+            Dim objProd As New productos 'Ojo se instancia tambein al guardar productos
+            objProd.obtenerProductos(-1)
+        Catch ex As Exception
+
+        End Try
     End Sub
-
-
     Private Sub btnAgregar_Click(sender As Object, e As EventArgs) Handles btnAgregar.Click
         Try
-
             If Not validarAgregarProducto() Then
                 Exit Sub
             End If
@@ -60,11 +62,19 @@
             Return False
         End If
     End Function
-
-    Private Sub txtPrecioUnidad_KeyPress(sender As Object, e As KeyPressEventArgs) Handles txtPrecioUnidad.KeyPress
-        e.Handled = Not IsNumeric(e.KeyChar) And Not Char.IsControl(e.KeyChar)
+    Private Sub SoloImportes_KeyPress(sender As Object, e As KeyPressEventArgs) Handles txtPrecioUnidad.KeyPress, txtPrecioProd.KeyPress
+        SoloImportes(e)
     End Sub
-
+    Sub SoloImportes(ByRef e As System.Windows.Forms.KeyPressEventArgs)
+        If Char.IsDigit(e.KeyChar) Or e.KeyChar = Chr(44) Then
+            e.Handled = False
+        ElseIf Char.IsControl(e.KeyChar) Then
+            e.Handled = False
+        Else
+            e.Handled = True
+            MsgBox("Solo se puede ingresar valores de tipo número.", MsgBoxStyle.Exclamation, "Ingreso de importe.")
+        End If
+    End Sub
     Sub limpiarControles()
         cboMateriales.SelectedIndex = -1
         txtPrecioUnidad.Text = "0,00"
@@ -140,11 +150,6 @@
         End If
 
     End Function
-
-    Private Sub btnVolver_Click(sender As Object, e As EventArgs) Handles btnVolver.Click
-        Close()
-    End Sub
-
     Private Sub btnGuardar_Click(sender As Object, e As EventArgs) Handles btnGuardar.Click
         Dim objcftProd As New wflProductos
 
@@ -156,4 +161,17 @@
 
     End Sub
 
+    Private Sub btnImprimir_Click(sender As Object, e As EventArgs) Handles btnImprimir.Click
+        objImprimir.imprimirListaProductos(listaMateriales, TitulosDoc)
+    End Sub
+
+    Private Sub btnVistaPevia_Click(sender As Object, e As EventArgs) Handles btnVistaPevia.Click
+        objImprimir.VistaListaProductos(listaMateriales, TitulosDoc)
+    End Sub
+    Private Sub btnVolver_Click(sender As Object, e As EventArgs) Handles btnVolver.Click
+        limpiaProductos()
+        limpiarControles()
+        listaMateriales.Items.Clear()
+        Close()
+    End Sub
 End Class

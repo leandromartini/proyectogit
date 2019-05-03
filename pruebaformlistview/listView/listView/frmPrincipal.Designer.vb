@@ -27,9 +27,9 @@ Partial Class frmPrincipal
         Me.ProductosToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.AgregarToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.EnStockToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.SalirToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.SaldosToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.SalidaToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.SaldosToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.SalirToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.PictureBox1 = New System.Windows.Forms.PictureBox()
         Me.MenuStrip1.SuspendLayout()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -63,11 +63,11 @@ Partial Class frmPrincipal
         Me.EnStockToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
         Me.EnStockToolStripMenuItem.Text = "Inventario"
         '
-        'SalirToolStripMenuItem
+        'SalidaToolStripMenuItem
         '
-        Me.SalirToolStripMenuItem.Name = "SalirToolStripMenuItem"
-        Me.SalirToolStripMenuItem.Size = New System.Drawing.Size(41, 20)
-        Me.SalirToolStripMenuItem.Text = "Salir"
+        Me.SalidaToolStripMenuItem.Name = "SalidaToolStripMenuItem"
+        Me.SalidaToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
+        Me.SalidaToolStripMenuItem.Text = "Salida"
         '
         'SaldosToolStripMenuItem
         '
@@ -75,11 +75,11 @@ Partial Class frmPrincipal
         Me.SaldosToolStripMenuItem.Size = New System.Drawing.Size(53, 20)
         Me.SaldosToolStripMenuItem.Text = "Saldos"
         '
-        'SalidaToolStripMenuItem
+        'SalirToolStripMenuItem
         '
-        Me.SalidaToolStripMenuItem.Name = "SalidaToolStripMenuItem"
-        Me.SalidaToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
-        Me.SalidaToolStripMenuItem.Text = "Salida"
+        Me.SalirToolStripMenuItem.Name = "SalirToolStripMenuItem"
+        Me.SalirToolStripMenuItem.Size = New System.Drawing.Size(41, 20)
+        Me.SalirToolStripMenuItem.Text = "Salir"
         '
         'PictureBox1
         '
@@ -97,6 +97,7 @@ Partial Class frmPrincipal
         Me.ClientSize = New System.Drawing.Size(800, 450)
         Me.Controls.Add(Me.PictureBox1)
         Me.Controls.Add(Me.MenuStrip1)
+        Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.MainMenuStrip = Me.MenuStrip1
         Me.Name = "frmPrincipal"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen

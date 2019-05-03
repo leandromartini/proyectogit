@@ -22,6 +22,7 @@ Partial Class frmMaterialesAgrega
     'No lo modifique con el editor de código.
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(frmMaterialesAgrega))
         Me.listaMateriales = New System.Windows.Forms.ListView()
         Me.Col_Producto = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
         Me.Col_ProductoCantidad = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
@@ -50,6 +51,12 @@ Partial Class frmMaterialesAgrega
         Me.btnVolver = New System.Windows.Forms.Button()
         Me.btnGuardar = New System.Windows.Forms.Button()
         Me.btnImprimir = New System.Windows.Forms.Button()
+        Me.btnVistaPevia = New System.Windows.Forms.Button()
+        Me.cbunidad = New System.Windows.Forms.CheckBox()
+        Me.cbmetros2 = New System.Windows.Forms.CheckBox()
+        Me.cbmetros = New System.Windows.Forms.CheckBox()
+        Me.cbKg = New System.Windows.Forms.CheckBox()
+        Me.lbUnidad = New System.Windows.Forms.Label()
         Me.grupoAgregarProducto.SuspendLayout()
         Me.grupoNuevoProducto.SuspendLayout()
         CType(Me.numCantidad, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -60,7 +67,7 @@ Partial Class frmMaterialesAgrega
         Me.listaMateriales.Columns.AddRange(New System.Windows.Forms.ColumnHeader() {Me.Col_Producto, Me.Col_ProductoCantidad, Me.Col_Precio, Me.col_PrecioTotal})
         Me.listaMateriales.Location = New System.Drawing.Point(391, 19)
         Me.listaMateriales.Name = "listaMateriales"
-        Me.listaMateriales.Size = New System.Drawing.Size(379, 299)
+        Me.listaMateriales.Size = New System.Drawing.Size(381, 317)
         Me.listaMateriales.TabIndex = 0
         Me.listaMateriales.UseCompatibleStateImageBehavior = False
         Me.listaMateriales.View = System.Windows.Forms.View.Details
@@ -86,6 +93,7 @@ Partial Class frmMaterialesAgrega
         '
         'grupoAgregarProducto
         '
+        Me.grupoAgregarProducto.Controls.Add(Me.lbUnidad)
         Me.grupoAgregarProducto.Controls.Add(Me.grupoNuevoProducto)
         Me.grupoAgregarProducto.Controls.Add(Me.btnModificaPrecio)
         Me.grupoAgregarProducto.Controls.Add(Me.btnReset)
@@ -99,13 +107,17 @@ Partial Class frmMaterialesAgrega
         Me.grupoAgregarProducto.Controls.Add(Me.listaMateriales)
         Me.grupoAgregarProducto.Location = New System.Drawing.Point(12, 12)
         Me.grupoAgregarProducto.Name = "grupoAgregarProducto"
-        Me.grupoAgregarProducto.Size = New System.Drawing.Size(776, 337)
+        Me.grupoAgregarProducto.Size = New System.Drawing.Size(779, 348)
         Me.grupoAgregarProducto.TabIndex = 1
         Me.grupoAgregarProducto.TabStop = False
         Me.grupoAgregarProducto.Text = "Agregar a la lista"
         '
         'grupoNuevoProducto
         '
+        Me.grupoNuevoProducto.Controls.Add(Me.cbunidad)
+        Me.grupoNuevoProducto.Controls.Add(Me.cbmetros2)
+        Me.grupoNuevoProducto.Controls.Add(Me.cbmetros)
+        Me.grupoNuevoProducto.Controls.Add(Me.cbKg)
         Me.grupoNuevoProducto.Controls.Add(Me.btnProdGuardar)
         Me.grupoNuevoProducto.Controls.Add(Me.BtnBorrar)
         Me.grupoNuevoProducto.Controls.Add(Me.BtnNuevo)
@@ -115,9 +127,9 @@ Partial Class frmMaterialesAgrega
         Me.grupoNuevoProducto.Controls.Add(Me.Label4)
         Me.grupoNuevoProducto.Controls.Add(Me.Label3)
         Me.grupoNuevoProducto.Controls.Add(Me.txtNombreProd)
-        Me.grupoNuevoProducto.Location = New System.Drawing.Point(9, 122)
+        Me.grupoNuevoProducto.Location = New System.Drawing.Point(9, 97)
         Me.grupoNuevoProducto.Name = "grupoNuevoProducto"
-        Me.grupoNuevoProducto.Size = New System.Drawing.Size(302, 196)
+        Me.grupoNuevoProducto.Size = New System.Drawing.Size(319, 239)
         Me.grupoNuevoProducto.TabIndex = 10
         Me.grupoNuevoProducto.TabStop = False
         Me.grupoNuevoProducto.Text = "Nuevo Producto"
@@ -125,7 +137,8 @@ Partial Class frmMaterialesAgrega
         'btnProdGuardar
         '
         Me.btnProdGuardar.Enabled = False
-        Me.btnProdGuardar.Location = New System.Drawing.Point(247, 146)
+        Me.btnProdGuardar.Image = Global.listView.My.Resources.Resources.save
+        Me.btnProdGuardar.Location = New System.Drawing.Point(264, 187)
         Me.btnProdGuardar.Name = "btnProdGuardar"
         Me.btnProdGuardar.Size = New System.Drawing.Size(45, 40)
         Me.btnProdGuardar.TabIndex = 18
@@ -135,7 +148,7 @@ Partial Class frmMaterialesAgrega
         '
         Me.BtnBorrar.Enabled = False
         Me.BtnBorrar.Image = Global.listView.My.Resources.Resources.cancel
-        Me.BtnBorrar.Location = New System.Drawing.Point(172, 146)
+        Me.BtnBorrar.Location = New System.Drawing.Point(188, 187)
         Me.BtnBorrar.Name = "BtnBorrar"
         Me.BtnBorrar.Size = New System.Drawing.Size(45, 40)
         Me.BtnBorrar.TabIndex = 17
@@ -144,7 +157,7 @@ Partial Class frmMaterialesAgrega
         'BtnNuevo
         '
         Me.BtnNuevo.Image = Global.listView.My.Resources.Resources.add
-        Me.BtnNuevo.Location = New System.Drawing.Point(99, 146)
+        Me.BtnNuevo.Location = New System.Drawing.Point(112, 187)
         Me.BtnNuevo.Name = "BtnNuevo"
         Me.BtnNuevo.Size = New System.Drawing.Size(45, 40)
         Me.BtnNuevo.TabIndex = 16
@@ -154,16 +167,17 @@ Partial Class frmMaterialesAgrega
         '
         Me.Label5.AutoSize = True
         Me.Label5.Enabled = False
-        Me.Label5.Location = New System.Drawing.Point(27, 91)
+        Me.Label5.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label5.Location = New System.Drawing.Point(34, 126)
         Me.Label5.Name = "Label5"
-        Me.Label5.Size = New System.Drawing.Size(66, 13)
+        Me.Label5.Size = New System.Drawing.Size(76, 15)
         Me.Label5.TabIndex = 15
         Me.Label5.Text = "Drescripcion"
         '
         'txtProdDescrip
         '
         Me.txtProdDescrip.Enabled = False
-        Me.txtProdDescrip.Location = New System.Drawing.Point(99, 88)
+        Me.txtProdDescrip.Location = New System.Drawing.Point(112, 126)
         Me.txtProdDescrip.Multiline = True
         Me.txtProdDescrip.Name = "txtProdDescrip"
         Me.txtProdDescrip.Size = New System.Drawing.Size(193, 49)
@@ -172,7 +186,7 @@ Partial Class frmMaterialesAgrega
         'txtPrecioProd
         '
         Me.txtPrecioProd.Enabled = False
-        Me.txtPrecioProd.Location = New System.Drawing.Point(99, 55)
+        Me.txtPrecioProd.Location = New System.Drawing.Point(112, 94)
         Me.txtPrecioProd.Name = "txtPrecioProd"
         Me.txtPrecioProd.Size = New System.Drawing.Size(71, 20)
         Me.txtPrecioProd.TabIndex = 13
@@ -181,9 +195,10 @@ Partial Class frmMaterialesAgrega
         '
         Me.Label4.AutoSize = True
         Me.Label4.Enabled = False
-        Me.Label4.Location = New System.Drawing.Point(36, 58)
+        Me.Label4.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label4.Location = New System.Drawing.Point(50, 94)
         Me.Label4.Name = "Label4"
-        Me.Label4.Size = New System.Drawing.Size(52, 13)
+        Me.Label4.Size = New System.Drawing.Size(60, 15)
         Me.Label4.TabIndex = 12
         Me.Label4.Text = "Precio ($)"
         '
@@ -191,24 +206,25 @@ Partial Class frmMaterialesAgrega
         '
         Me.Label3.AutoSize = True
         Me.Label3.Enabled = False
-        Me.Label3.Location = New System.Drawing.Point(3, 27)
+        Me.Label3.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label3.Location = New System.Drawing.Point(6, 31)
         Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(90, 13)
+        Me.Label3.Size = New System.Drawing.Size(104, 15)
         Me.Label3.TabIndex = 11
         Me.Label3.Text = "Nombre Producto"
         '
         'txtNombreProd
         '
         Me.txtNombreProd.Enabled = False
-        Me.txtNombreProd.Location = New System.Drawing.Point(99, 24)
+        Me.txtNombreProd.Location = New System.Drawing.Point(112, 31)
         Me.txtNombreProd.Name = "txtNombreProd"
-        Me.txtNombreProd.Size = New System.Drawing.Size(193, 20)
+        Me.txtNombreProd.Size = New System.Drawing.Size(197, 20)
         Me.txtNombreProd.TabIndex = 0
         '
         'btnModificaPrecio
         '
         Me.btnModificaPrecio.Image = Global.listView.My.Resources.Resources.edit
-        Me.btnModificaPrecio.Location = New System.Drawing.Point(272, 61)
+        Me.btnModificaPrecio.Location = New System.Drawing.Point(289, 48)
         Me.btnModificaPrecio.Name = "btnModificaPrecio"
         Me.btnModificaPrecio.Size = New System.Drawing.Size(39, 36)
         Me.btnModificaPrecio.TabIndex = 9
@@ -217,7 +233,7 @@ Partial Class frmMaterialesAgrega
         'btnReset
         '
         Me.btnReset.Image = Global.listView.My.Resources.Resources.refresh
-        Me.btnReset.Location = New System.Drawing.Point(331, 197)
+        Me.btnReset.Location = New System.Drawing.Point(337, 210)
         Me.btnReset.Name = "btnReset"
         Me.btnReset.Size = New System.Drawing.Size(45, 40)
         Me.btnReset.TabIndex = 8
@@ -226,7 +242,7 @@ Partial Class frmMaterialesAgrega
         'btnQuitar
         '
         Me.btnQuitar.Image = Global.listView.My.Resources.Resources.undo
-        Me.btnQuitar.Location = New System.Drawing.Point(331, 140)
+        Me.btnQuitar.Location = New System.Drawing.Point(337, 153)
         Me.btnQuitar.Name = "btnQuitar"
         Me.btnQuitar.Size = New System.Drawing.Size(45, 40)
         Me.btnQuitar.TabIndex = 7
@@ -235,7 +251,7 @@ Partial Class frmMaterialesAgrega
         'btnAgregar
         '
         Me.btnAgregar.Image = Global.listView.My.Resources.Resources.redo
-        Me.btnAgregar.Location = New System.Drawing.Point(331, 84)
+        Me.btnAgregar.Location = New System.Drawing.Point(337, 97)
         Me.btnAgregar.Name = "btnAgregar"
         Me.btnAgregar.Size = New System.Drawing.Size(45, 40)
         Me.btnAgregar.TabIndex = 6
@@ -245,7 +261,7 @@ Partial Class frmMaterialesAgrega
         '
         Me.txtPrecioUnidad.Enabled = False
         Me.txtPrecioUnidad.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtPrecioUnidad.Location = New System.Drawing.Point(196, 70)
+        Me.txtPrecioUnidad.Location = New System.Drawing.Point(213, 57)
         Me.txtPrecioUnidad.Multiline = True
         Me.txtPrecioUnidad.Name = "txtPrecioUnidad"
         Me.txtPrecioUnidad.Size = New System.Drawing.Size(70, 19)
@@ -256,15 +272,16 @@ Partial Class frmMaterialesAgrega
         'Label2
         '
         Me.Label2.AutoSize = True
-        Me.Label2.Location = New System.Drawing.Point(153, 73)
+        Me.Label2.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label2.Location = New System.Drawing.Point(168, 58)
         Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(37, 13)
+        Me.Label2.Size = New System.Drawing.Size(42, 15)
         Me.Label2.TabIndex = 4
         Me.Label2.Text = "Precio"
         '
         'numCantidad
         '
-        Me.numCantidad.Location = New System.Drawing.Point(61, 69)
+        Me.numCantidad.Location = New System.Drawing.Point(67, 56)
         Me.numCantidad.Name = "numCantidad"
         Me.numCantidad.Size = New System.Drawing.Size(52, 20)
         Me.numCantidad.TabIndex = 3
@@ -273,9 +290,10 @@ Partial Class frmMaterialesAgrega
         'Label1
         '
         Me.Label1.AutoSize = True
-        Me.Label1.Location = New System.Drawing.Point(6, 73)
+        Me.Label1.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label1.Location = New System.Drawing.Point(10, 58)
         Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(49, 13)
+        Me.Label1.Size = New System.Drawing.Size(56, 15)
         Me.Label1.TabIndex = 2
         Me.Label1.Text = "Cantidad"
         '
@@ -283,16 +301,16 @@ Partial Class frmMaterialesAgrega
         '
         Me.cboMateriales.FormattingEnabled = True
         Me.cboMateriales.Items.AddRange(New Object() {"Arena", "Cal", "Cemento"})
-        Me.cboMateriales.Location = New System.Drawing.Point(6, 19)
+        Me.cboMateriales.Location = New System.Drawing.Point(10, 19)
         Me.cboMateriales.Name = "cboMateriales"
-        Me.cboMateriales.Size = New System.Drawing.Size(305, 21)
+        Me.cboMateriales.Size = New System.Drawing.Size(318, 21)
         Me.cboMateriales.TabIndex = 1
         '
         'btnVolver
         '
         Me.btnVolver.Image = Global.listView.My.Resources.Resources.back
         Me.btnVolver.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.btnVolver.Location = New System.Drawing.Point(12, 355)
+        Me.btnVolver.Location = New System.Drawing.Point(12, 368)
         Me.btnVolver.Name = "btnVolver"
         Me.btnVolver.Size = New System.Drawing.Size(95, 40)
         Me.btnVolver.TabIndex = 4
@@ -302,8 +320,9 @@ Partial Class frmMaterialesAgrega
         '
         'btnGuardar
         '
+        Me.btnGuardar.Image = Global.listView.My.Resources.Resources.save
         Me.btnGuardar.ImageAlign = System.Drawing.ContentAlignment.MiddleRight
-        Me.btnGuardar.Location = New System.Drawing.Point(693, 355)
+        Me.btnGuardar.Location = New System.Drawing.Point(693, 368)
         Me.btnGuardar.Name = "btnGuardar"
         Me.btnGuardar.Size = New System.Drawing.Size(95, 40)
         Me.btnGuardar.TabIndex = 3
@@ -315,7 +334,7 @@ Partial Class frmMaterialesAgrega
         '
         Me.btnImprimir.Image = Global.listView.My.Resources.Resources.print
         Me.btnImprimir.ImageAlign = System.Drawing.ContentAlignment.MiddleRight
-        Me.btnImprimir.Location = New System.Drawing.Point(589, 355)
+        Me.btnImprimir.Location = New System.Drawing.Point(592, 368)
         Me.btnImprimir.Name = "btnImprimir"
         Me.btnImprimir.Size = New System.Drawing.Size(95, 40)
         Me.btnImprimir.TabIndex = 8
@@ -323,15 +342,83 @@ Partial Class frmMaterialesAgrega
         Me.btnImprimir.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
         Me.btnImprimir.UseVisualStyleBackColor = True
         '
+        'btnVistaPevia
+        '
+        Me.btnVistaPevia.Image = Global.listView.My.Resources.Resources.print_preview
+        Me.btnVistaPevia.ImageAlign = System.Drawing.ContentAlignment.MiddleRight
+        Me.btnVistaPevia.Location = New System.Drawing.Point(487, 368)
+        Me.btnVistaPevia.Name = "btnVistaPevia"
+        Me.btnVistaPevia.Size = New System.Drawing.Size(98, 40)
+        Me.btnVistaPevia.TabIndex = 9
+        Me.btnVistaPevia.Text = "Vista Previa"
+        Me.btnVistaPevia.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.btnVistaPevia.UseVisualStyleBackColor = True
+        '
+        'cbunidad
+        '
+        Me.cbunidad.AutoSize = True
+        Me.cbunidad.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.cbunidad.Location = New System.Drawing.Point(247, 64)
+        Me.cbunidad.Name = "cbunidad"
+        Me.cbunidad.Size = New System.Drawing.Size(66, 19)
+        Me.cbunidad.TabIndex = 26
+        Me.cbunidad.Text = "Unidad"
+        Me.cbunidad.UseVisualStyleBackColor = True
+        '
+        'cbmetros2
+        '
+        Me.cbmetros2.AutoSize = True
+        Me.cbmetros2.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.cbmetros2.Location = New System.Drawing.Point(200, 64)
+        Me.cbmetros2.Name = "cbmetros2"
+        Me.cbmetros2.Size = New System.Drawing.Size(47, 19)
+        Me.cbmetros2.TabIndex = 25
+        Me.cbmetros2.Text = "[m²]"
+        Me.cbmetros2.UseVisualStyleBackColor = True
+        '
+        'cbmetros
+        '
+        Me.cbmetros.AutoSize = True
+        Me.cbmetros.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.cbmetros.Location = New System.Drawing.Point(157, 64)
+        Me.cbmetros.Name = "cbmetros"
+        Me.cbmetros.Size = New System.Drawing.Size(43, 19)
+        Me.cbmetros.TabIndex = 24
+        Me.cbmetros.Text = "[m]"
+        Me.cbmetros.UseVisualStyleBackColor = True
+        '
+        'cbKg
+        '
+        Me.cbKg.AutoSize = True
+        Me.cbKg.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.cbKg.Location = New System.Drawing.Point(112, 63)
+        Me.cbKg.Name = "cbKg"
+        Me.cbKg.Size = New System.Drawing.Size(45, 19)
+        Me.cbKg.TabIndex = 23
+        Me.cbKg.Text = "[kg]"
+        Me.cbKg.UseVisualStyleBackColor = True
+        '
+        'lbUnidad
+        '
+        Me.lbUnidad.AutoSize = True
+        Me.lbUnidad.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lbUnidad.Location = New System.Drawing.Point(121, 58)
+        Me.lbUnidad.Name = "lbUnidad"
+        Me.lbUnidad.Size = New System.Drawing.Size(27, 15)
+        Me.lbUnidad.TabIndex = 11
+        Me.lbUnidad.Text = "[un]"
+        '
         'frmMaterialesAgrega
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(800, 407)
+        Me.ClientSize = New System.Drawing.Size(803, 418)
+        Me.Controls.Add(Me.btnVistaPevia)
         Me.Controls.Add(Me.btnImprimir)
         Me.Controls.Add(Me.btnVolver)
         Me.Controls.Add(Me.btnGuardar)
         Me.Controls.Add(Me.grupoAgregarProducto)
+        Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.Name = "frmMaterialesAgrega"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Carga de Materiales"
@@ -372,4 +459,10 @@ Partial Class frmMaterialesAgrega
     Friend WithEvents Label3 As Label
     Friend WithEvents txtNombreProd As TextBox
     Friend WithEvents btnImprimir As Button
+    Friend WithEvents btnVistaPevia As Button
+    Friend WithEvents cbunidad As CheckBox
+    Friend WithEvents cbmetros2 As CheckBox
+    Friend WithEvents cbmetros As CheckBox
+    Friend WithEvents cbKg As CheckBox
+    Friend WithEvents lbUnidad As Label
 End Class
