@@ -57,6 +57,7 @@ Partial Class frmMaterialesAgrega
         Me.btnGuardar = New System.Windows.Forms.Button()
         Me.btnImprimir = New System.Windows.Forms.Button()
         Me.btnVistaPevia = New System.Windows.Forms.Button()
+        Me.col_Identificador = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
         Me.grupoAgregarProducto.SuspendLayout()
         Me.grupoNuevoProducto.SuspendLayout()
         CType(Me.numCantidad, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -64,7 +65,7 @@ Partial Class frmMaterialesAgrega
         '
         'listaMateriales
         '
-        Me.listaMateriales.Columns.AddRange(New System.Windows.Forms.ColumnHeader() {Me.Col_Producto, Me.Col_ProductoCantidad, Me.Col_Precio, Me.col_PrecioTotal})
+        Me.listaMateriales.Columns.AddRange(New System.Windows.Forms.ColumnHeader() {Me.Col_Producto, Me.Col_ProductoCantidad, Me.Col_Precio, Me.col_PrecioTotal, Me.col_Identificador})
         Me.listaMateriales.Location = New System.Drawing.Point(391, 19)
         Me.listaMateriales.Name = "listaMateriales"
         Me.listaMateriales.Size = New System.Drawing.Size(381, 317)
@@ -80,11 +81,11 @@ Partial Class frmMaterialesAgrega
         'Col_ProductoCantidad
         '
         Me.Col_ProductoCantidad.Text = "Cantidad"
-        Me.Col_ProductoCantidad.Width = 62
+        Me.Col_ProductoCantidad.Width = 76
         '
         'Col_Precio
         '
-        Me.Col_Precio.Text = "Precio Unidad"
+        Me.Col_Precio.Text = "Precio"
         Me.Col_Precio.Width = 88
         '
         'col_PrecioTotal
@@ -116,10 +117,11 @@ Partial Class frmMaterialesAgrega
         '
         Me.lbUnidad.AutoSize = True
         Me.lbUnidad.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lbUnidad.Location = New System.Drawing.Point(170, 70)
+        Me.lbUnidad.Location = New System.Drawing.Point(117, 57)
         Me.lbUnidad.Name = "lbUnidad"
-        Me.lbUnidad.Size = New System.Drawing.Size(0, 15)
+        Me.lbUnidad.Size = New System.Drawing.Size(28, 15)
         Me.lbUnidad.TabIndex = 11
+        Me.lbUnidad.Text = "[Kg]"
         '
         'grupoNuevoProducto
         '
@@ -330,11 +332,11 @@ Partial Class frmMaterialesAgrega
         '
         Me.Label2.AutoSize = True
         Me.Label2.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label2.Location = New System.Drawing.Point(158, 55)
+        Me.Label2.Location = New System.Drawing.Point(172, 57)
         Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(51, 15)
+        Me.Label2.Size = New System.Drawing.Size(42, 15)
         Me.Label2.TabIndex = 4
-        Me.Label2.Text = "Precio x"
+        Me.Label2.Text = "Precio"
         '
         'numCantidad
         '
@@ -411,6 +413,10 @@ Partial Class frmMaterialesAgrega
         Me.btnVistaPevia.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
         Me.btnVistaPevia.UseVisualStyleBackColor = True
         '
+        'col_Identificador
+        '
+        Me.col_Identificador.Text = "Identificador"
+        '
         'frmMaterialesAgrega
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -468,4 +474,5 @@ Partial Class frmMaterialesAgrega
     Friend WithEvents RadioButton3 As RadioButton
     Friend WithEvents RadioButton2 As RadioButton
     Friend WithEvents RadioButton1 As RadioButton
+    Friend WithEvents col_Identificador As ColumnHeader
 End Class

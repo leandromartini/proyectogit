@@ -1,4 +1,4 @@
-﻿Public Class productos
+﻿Public Class producto
     Private nombre As String
     Private unidad As String
     Private descripcion As String
@@ -14,18 +14,25 @@
             MsgBox(ex.Message)
         End Try
     End Sub
+    Public Function verNombre()
+        Return nombre
+    End Function
+    Public Function verUnidad()
+        Return unidad
+    End Function
+    Public Function verPrecio()
+        Return precio
+    End Function
+    Public Function verDescripcion()
+        Return descripcion
+    End Function
     Function obtenerProductos(id_prod) As DataSet
         Dim objccProd As New ccdProducto
         obtenerProductos = objccProd.obtenerProductos(id_prod)
     End Function
-    Public Function obtenerNombre()
-        Return nombre
-    End Function
-    Public Function obtenerDescripcion()
-        Return descripcion
-    End Function
-    Public Function obtenerPrecio()
-        Return precio
+    Public Function obtenerPrecio(id_prod As Double) As Double
+        Dim objcnProd As New cnProductos
+        obtenerPrecio = objcnProd.obtenerPrecio(id_prod)
     End Function
     Public Function obtenerUnidad()
         Return unidad
@@ -35,7 +42,7 @@
     End Sub
     Friend Sub limpiar()
         nombre = ""
-        descripcion = ""
         precio = 0
+        descripcion = ""
     End Sub
 End Class

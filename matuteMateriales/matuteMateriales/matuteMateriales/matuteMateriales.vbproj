@@ -74,13 +74,15 @@
     <Import Include="System.Threading.Tasks" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="capaDatos\ccdProductoCantidad.vb" />
     <Compile Include="capaDatos\ccdProductoPrecio.vb" />
     <Compile Include="capaDatos\ccdProducto.vb" />
+    <Compile Include="capaDatos\ccdProductoPrecioHist.vb" />
     <Compile Include="capaworkflow\wflProductos.vb" />
     <Compile Include="capaNegocio\cnProductos.vb" />
     <Compile Include="clases\imprimir.vb" />
     <Compile Include="clases\productoCantidad.vb" />
-    <Compile Include="clases\productos.vb" />
+    <Compile Include="clases\producto.vb" />
     <Compile Include="conexion.vb" />
     <Compile Include="frmMaterialesAgrega.vb">
       <SubType>Form</SubType>

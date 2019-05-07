@@ -12,7 +12,7 @@
 
     Private Sub cargarComboMateriales()
         Try
-            Dim objWflProd As New wflProductos 'Ojo se instancia tambein al guardar productos
+            Dim objWflProd As New wflProductos 'Ojo se instancia tambienn al guardar productos
             Dim objDS As New DataSet
 
             objDS = objWflProd.obtenerProductos()
@@ -24,7 +24,6 @@
         Catch ex As Exception
             MsgBox(ex.Message)
         End Try
-
     End Sub
 
     Private Sub btnAgregar_Click(sender As Object, e As EventArgs) Handles btnAgregar.Click
@@ -35,15 +34,27 @@
             Dim item As ListViewItem = New ListViewItem(CStr(cboMateriales.Text))
             item.SubItems.Add(numCantidad.Value)
             item.SubItems.Add(txtPrecioUnidad.Text)
-            item.SubItems.Add(CDbl(txtPrecioUnidad.Text * numCantidad.Value))
+            item.SubItems.Add(totalProduc(lbUnidad.Text, txtPrecioUnidad.Text, numCantidad.Value))
             listaMateriales.Items.Add(item)
+            listaMateriales.Items.Add(cboMateriales.SelectedValue)
             limpiarControles()
 
         Catch ex As Exception
             MsgBox(ex.Message)
         End Try
     End Sub
-
+    Function totalProduc(unidad, precio, cantidad) As Double
+        Select Case unidad ' creo esta funcion por si hay que agregar algun calculo
+            Case "unidad"
+                Return (precio * cantidad)
+            Case "[Kg]"
+                Return (precio * cantidad)
+            Case "[m]"
+                Return (precio * cantidad)
+            Case "[m²]"
+                Return (precio * cantidad)
+        End Select
+    End Function
     Private Sub btnQuitar_Click(sender As Object, e As EventArgs) Handles btnQuitar.Click
         For Each item As ListViewItem In listaMateriales.SelectedItems
             item.Remove()
@@ -140,17 +151,14 @@
         If Not validarNuevoPoducto() Then
             Exit Sub
         End If
-
         If objwflProd.ProductoNuevo(txtNombreProd.Text, rdCheck, txtPrecioProd.Text, txtProdDescrip.Text) Then
             MsgBox("El producto guardo con exito")
         End If
-
         For Each obj In grupoNuevoProducto.Controls
             If Not obj.Name = "BtnNuevo" Then
                 obj.Enabled = False
             End If
         Next
-
         BtnNuevo.Enabled = True
         cargarComboMateriales()
         cboMateriales.Focus()
@@ -206,7 +214,7 @@
         objImprimir.VistaListaProductos(listaMateriales, TitulosDoc)
     End Sub
     Private Sub cboMateriales_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cboMateriales.SelectedIndexChanged
-        Dim objProductos As New productos
+        Dim objProductos As New producto
         Dim objProdCant As New productoCantidad
         Dim DSprod As New DataSet
         Try
@@ -220,7 +228,7 @@
                     objProdCant.agregarMateriales(DSprod.Tables(0).Rows(0).Item(1), DSprod.Tables(0).Rows(0).Item(3), DSprod.Tables(0).Rows(0).Item(2),
                                           DSprod.Tables(0).Rows(0).Item(4), 1)
                     lbUnidad.Text = objProdCant.obtenerUnidad
-                    txtPrecioUnidad.Text = objProdCant.obtenerPrecio
+                    txtPrecioUnidad.Text = objProdCant.verPrecio
                 End If
             End If
         Catch ex As Exception
