@@ -35,17 +35,17 @@
             item.SubItems.Add(numCantidad.Value)
             item.SubItems.Add(txtPrecioUnidad.Text)
             item.SubItems.Add(totalProduc(lbUnidad.Text, txtPrecioUnidad.Text, numCantidad.Value))
+            item.SubItems.Add(cboMateriales.SelectedValue)
             listaMateriales.Items.Add(item)
-            listaMateriales.Items.Add(cboMateriales.SelectedValue)
-            limpiarControles()
 
+            limpiarControles()
         Catch ex As Exception
             MsgBox(ex.Message)
         End Try
     End Sub
     Function totalProduc(unidad, precio, cantidad) As Double
         Select Case unidad ' creo esta funcion por si hay que agregar algun calculo
-            Case "unidad"
+            Case "Unidad"
                 Return (precio * cantidad)
             Case "[Kg]"
                 Return (precio * cantidad)
@@ -151,7 +151,7 @@
         If Not validarNuevoPoducto() Then
             Exit Sub
         End If
-        If objwflProd.ProductoNuevo(txtNombreProd.Text, rdCheck, txtPrecioProd.Text, txtProdDescrip.Text) Then
+        If Not objwflProd.ProductoNuevo(txtNombreProd.Text, rdCheck, txtPrecioProd.Text, txtProdDescrip.Text) = "01/01/1900" Then
             MsgBox("El producto guardo con exito")
         End If
         For Each obj In grupoNuevoProducto.Controls
@@ -160,6 +160,7 @@
             End If
         Next
         BtnNuevo.Enabled = True
+        cboMateriales.ValueMember = Nothing
         cargarComboMateriales()
         cboMateriales.Focus()
 
@@ -201,8 +202,10 @@
         For Each item As ListViewItem In listaMateriales.Items
             objcftProd.AgregarProductodeLista(item)
         Next
-
-        'llamar a la capa flujo de trabajo y guardar los nuevos materiales que entraron
+        listaMateriales.Items.Clear()
+        cboMateriales.ValueMember = Nothing
+        cargarComboMateriales()
+        cboMateriales.Focus()
 
     End Sub
 

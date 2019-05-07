@@ -5,7 +5,7 @@ Public Class ccdProductoPrecioHist
             'DECLARE @MyDate date
             'set @MyDate = GETDATE()
             'Print(Convert(varchar,@MyDate, 3))
-            Dim sProdString As String = "[dbo].[productosPrecio_actualizarRegistro]"
+            Dim sProdString As String = "[dbo].[productosPrecioHist_actualizarRegistro]"
             Dim command As New SqlCommand(sProdString, objConn)
             With command
                 command.CommandType = CommandType.StoredProcedure
@@ -14,8 +14,7 @@ Public Class ccdProductoPrecioHist
                 command.Parameters.AddWithValue("@precioiva", precioIVA)
                 command.Parameters.AddWithValue("@fecAct", fecAct)
                 conn()
-                'actualizarPrecio = command.ExecuteNonQuery()
-                actualizarPrecioHist = 1
+                actualizarPrecioHist = command.ExecuteNonQuery()
             End With
             disconect()
         Catch ex As Exception

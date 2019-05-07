@@ -10,7 +10,7 @@
         obtenerProductos = objccdProducto.obtenerProductos(id_prod)
     End Function
 
-    Public Function guardarPrecio(id, precio, precioIVA)
+    Public Function guardarPrecio(id, precio, precioIVA) As Date
         Dim objccdProductoPrecio As New ccdProductoPrecio
         guardarPrecio = objccdProductoPrecio.actualizarPrecio(id, precio, precioIVA)
     End Function
@@ -24,7 +24,8 @@
     End Function
     Public Function actulizarProd_cantidad(id As Integer, cant As Double) As Integer
         Dim objccdProductoCantidad As New ccdProductoCantidad
-        actulizarProd_cantidad = objccdProductoCantidad.actualizarCantidad(id, cant)
-    End Function
 
+        actulizarProd_cantidad = objccdProductoCantidad.actualizarCantidad(id, objccdProductoCantidad.obtenerCantidad(id) + cant)
+
+    End Function
 End Class

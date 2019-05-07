@@ -16,10 +16,10 @@ Public Class wflProductos
                 'Si el precio de lista es nuevo actualizo en tabla ProductosPrecio...
                 If Not objProductoCantidad.verPrecio = objProductos.obtenerPrecio(item.SubItems(4).Text) Then
                     FechaPrecio = objcnProducto.guardarPrecio(item.SubItems(4).Text, item.SubItems(2).Text, -1)
-                    If Not FechaPrecio = "" Then
-                        'y agregar en prod_historia el nuevo precio con su fecha de modificacion
-                        objcnProducto.guardarPrecioHist(item.SubItems(4).Text, item.SubItems(2).Text, -1, FechaPrecio)
-                    End If
+                    'If Not FechaPrecio = "" Then
+                    'y agregar en prod_historia el nuevo precio con su fecha de modificacion
+                    objcnProducto.guardarPrecioHist(item.SubItems(4).Text, item.SubItems(2).Text, -1, FechaPrecio.ToShortDateString)
+                    'End If
                 End If
             Catch ex As Exception
                 MsgBox(ex.Message)
@@ -30,12 +30,12 @@ Public Class wflProductos
 
     End Sub
 
-    Public Function ProductoNuevo(nom As String, unidad As String, precio As Double, descrip As String) As Long
+    Public Function ProductoNuevo(nom As String, unidad As String, precio As Double, descrip As String) As Date
         Dim objProductos As New producto
         Dim objcnProducto As New cnProductos
         Try
             Dim idproducto As New Integer
-            ProductoNuevo = 0
+            ProductoNuevo = "01/01/1900"
             objProductos.NuevoPruducto(nom, unidad, precio, descrip)
             'Primero guardo el producto
             idproducto = objcnProducto.guardarNuevo(-1, objProductos.verNombre, objProductos.verDescripcion, objProductos.obtenerUnidad)
@@ -47,7 +47,7 @@ Public Class wflProductos
             'Vaciar productos luego de realizar el proceso correspondiente
             objProductos.limpiar()
         Catch ex As Exception
-            ProductoNuevo = 0
+            ProductoNuevo = "01/01/1900"
             MsgBox("Error debido a: " & ex.Message, MsgBoxStyle.Exclamation, "¡Advertencia!")
         End Try
     End Function

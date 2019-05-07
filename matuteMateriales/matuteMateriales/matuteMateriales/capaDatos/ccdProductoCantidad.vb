@@ -8,13 +8,31 @@ Public Class ccdProductoCantidad
             With command
                 command.CommandType = CommandType.StoredProcedure
                 command.Parameters.AddWithValue("@id_prod", id_prod)
+                command.Parameters.AddWithValue("@cant", cant)
                 conn()
-                actualizarCantidad = CInt(command.ExecuteScalar())
+                actualizarCantidad = command.ExecuteNonQuery()
             End With
             disconect()
         Catch ex As Exception
             MsgBox(ex.Message)
             actualizarCantidad = Nothing
+        End Try
+    End Function
+    Public Function obtenerCantidad(ByVal id_prod As Integer) As Double
+        Try
+            Dim dataset As New DataSet
+            Dim sProdString As String = "[dbo].[productosCantidad_obtenerCantidad]"
+            Dim command As New SqlCommand(sProdString, objConn)
+            With command
+                command.CommandType = CommandType.StoredProcedure
+                command.Parameters.AddWithValue("@id_prod", id_prod)
+                conn()
+                obtenerCantidad = CDbl(command.ExecuteScalar())
+            End With
+            disconect()
+        Catch ex As Exception
+            MsgBox(ex.Message)
+            obtenerCantidad = 0
         End Try
     End Function
 End Class

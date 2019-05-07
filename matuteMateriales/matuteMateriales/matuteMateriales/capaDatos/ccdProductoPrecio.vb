@@ -1,6 +1,6 @@
 ﻿Imports System.Data.SqlClient
 Public Class ccdProductoPrecio
-    Public Function actualizarPrecio(ByVal id_prod As Integer, precio As Double, precioIVA As Double) As Integer
+    Public Function actualizarPrecio(ByVal id_prod As Integer, precio As Double, precioIVA As Double) As Date
         Try
             'DECLARE @MyDate date
             'set @MyDate = GETDATE()
@@ -13,8 +13,7 @@ Public Class ccdProductoPrecio
                 command.Parameters.AddWithValue("@precio", precio)
                 command.Parameters.AddWithValue("@precioiva", precioIVA)
                 conn()
-                'actualizarPrecio = command.ExecuteNonQuery()
-                actualizarPrecio = "07/05/2019"
+                actualizarPrecio = command.ExecuteScalar()
             End With
             disconect()
         Catch ex As Exception

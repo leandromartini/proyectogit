@@ -28,6 +28,7 @@ Partial Class frmMaterialesAgrega
         Me.Col_ProductoCantidad = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
         Me.Col_Precio = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
         Me.col_PrecioTotal = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
+        Me.col_Identificador = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
         Me.grupoAgregarProducto = New System.Windows.Forms.GroupBox()
         Me.lbUnidad = New System.Windows.Forms.Label()
         Me.grupoNuevoProducto = New System.Windows.Forms.GroupBox()
@@ -57,7 +58,6 @@ Partial Class frmMaterialesAgrega
         Me.btnGuardar = New System.Windows.Forms.Button()
         Me.btnImprimir = New System.Windows.Forms.Button()
         Me.btnVistaPevia = New System.Windows.Forms.Button()
-        Me.col_Identificador = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
         Me.grupoAgregarProducto.SuspendLayout()
         Me.grupoNuevoProducto.SuspendLayout()
         CType(Me.numCantidad, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -91,6 +91,10 @@ Partial Class frmMaterialesAgrega
         'col_PrecioTotal
         '
         Me.col_PrecioTotal.Text = "Total"
+        '
+        'col_Identificador
+        '
+        Me.col_Identificador.Text = "Identificador"
         '
         'grupoAgregarProducto
         '
@@ -359,7 +363,6 @@ Partial Class frmMaterialesAgrega
         'cboMateriales
         '
         Me.cboMateriales.FormattingEnabled = True
-        Me.cboMateriales.Items.AddRange(New Object() {"Arena", "Cal", "Cemento"})
         Me.cboMateriales.Location = New System.Drawing.Point(10, 19)
         Me.cboMateriales.Name = "cboMateriales"
         Me.cboMateriales.Size = New System.Drawing.Size(318, 21)
@@ -412,10 +415,6 @@ Partial Class frmMaterialesAgrega
         Me.btnVistaPevia.Text = "Vista Previa"
         Me.btnVistaPevia.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
         Me.btnVistaPevia.UseVisualStyleBackColor = True
-        '
-        'col_Identificador
-        '
-        Me.col_Identificador.Text = "Identificador"
         '
         'frmMaterialesAgrega
         '
