@@ -29,10 +29,15 @@ Partial Class frmMaterialesAgrega
         Me.Col_Precio = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
         Me.col_PrecioTotal = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
         Me.grupoAgregarProducto = New System.Windows.Forms.GroupBox()
+        Me.lbUnidad = New System.Windows.Forms.Label()
         Me.grupoNuevoProducto = New System.Windows.Forms.GroupBox()
+        Me.RadioButton4 = New System.Windows.Forms.RadioButton()
         Me.btnProdGuardar = New System.Windows.Forms.Button()
+        Me.RadioButton3 = New System.Windows.Forms.RadioButton()
         Me.BtnBorrar = New System.Windows.Forms.Button()
+        Me.RadioButton2 = New System.Windows.Forms.RadioButton()
         Me.BtnNuevo = New System.Windows.Forms.Button()
+        Me.RadioButton1 = New System.Windows.Forms.RadioButton()
         Me.Label5 = New System.Windows.Forms.Label()
         Me.txtProdDescrip = New System.Windows.Forms.TextBox()
         Me.txtPrecioProd = New System.Windows.Forms.TextBox()
@@ -52,11 +57,6 @@ Partial Class frmMaterialesAgrega
         Me.btnGuardar = New System.Windows.Forms.Button()
         Me.btnImprimir = New System.Windows.Forms.Button()
         Me.btnVistaPevia = New System.Windows.Forms.Button()
-        Me.lbUnidad = New System.Windows.Forms.Label()
-        Me.RadioButton1 = New System.Windows.Forms.RadioButton()
-        Me.RadioButton2 = New System.Windows.Forms.RadioButton()
-        Me.RadioButton3 = New System.Windows.Forms.RadioButton()
-        Me.RadioButton4 = New System.Windows.Forms.RadioButton()
         Me.grupoAgregarProducto.SuspendLayout()
         Me.grupoNuevoProducto.SuspendLayout()
         CType(Me.numCantidad, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -112,6 +112,15 @@ Partial Class frmMaterialesAgrega
         Me.grupoAgregarProducto.TabStop = False
         Me.grupoAgregarProducto.Text = "Agregar a la lista"
         '
+        'lbUnidad
+        '
+        Me.lbUnidad.AutoSize = True
+        Me.lbUnidad.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lbUnidad.Location = New System.Drawing.Point(170, 70)
+        Me.lbUnidad.Name = "lbUnidad"
+        Me.lbUnidad.Size = New System.Drawing.Size(0, 15)
+        Me.lbUnidad.TabIndex = 11
+        '
         'grupoNuevoProducto
         '
         Me.grupoNuevoProducto.Controls.Add(Me.RadioButton4)
@@ -134,6 +143,18 @@ Partial Class frmMaterialesAgrega
         Me.grupoNuevoProducto.TabStop = False
         Me.grupoNuevoProducto.Text = "Nuevo Producto"
         '
+        'RadioButton4
+        '
+        Me.RadioButton4.AutoSize = True
+        Me.RadioButton4.Enabled = False
+        Me.RadioButton4.Location = New System.Drawing.Point(254, 64)
+        Me.RadioButton4.Name = "RadioButton4"
+        Me.RadioButton4.Size = New System.Drawing.Size(59, 17)
+        Me.RadioButton4.TabIndex = 30
+        Me.RadioButton4.TabStop = True
+        Me.RadioButton4.Text = "Unidad"
+        Me.RadioButton4.UseVisualStyleBackColor = True
+        '
         'btnProdGuardar
         '
         Me.btnProdGuardar.Enabled = False
@@ -143,6 +164,18 @@ Partial Class frmMaterialesAgrega
         Me.btnProdGuardar.Size = New System.Drawing.Size(45, 40)
         Me.btnProdGuardar.TabIndex = 18
         Me.btnProdGuardar.UseVisualStyleBackColor = True
+        '
+        'RadioButton3
+        '
+        Me.RadioButton3.AutoSize = True
+        Me.RadioButton3.Enabled = False
+        Me.RadioButton3.Location = New System.Drawing.Point(206, 64)
+        Me.RadioButton3.Name = "RadioButton3"
+        Me.RadioButton3.Size = New System.Drawing.Size(42, 17)
+        Me.RadioButton3.TabIndex = 29
+        Me.RadioButton3.TabStop = True
+        Me.RadioButton3.Text = "[m²]"
+        Me.RadioButton3.UseVisualStyleBackColor = True
         '
         'BtnBorrar
         '
@@ -154,6 +187,18 @@ Partial Class frmMaterialesAgrega
         Me.BtnBorrar.TabIndex = 17
         Me.BtnBorrar.UseVisualStyleBackColor = True
         '
+        'RadioButton2
+        '
+        Me.RadioButton2.AutoSize = True
+        Me.RadioButton2.Enabled = False
+        Me.RadioButton2.Location = New System.Drawing.Point(161, 64)
+        Me.RadioButton2.Name = "RadioButton2"
+        Me.RadioButton2.Size = New System.Drawing.Size(39, 17)
+        Me.RadioButton2.TabIndex = 28
+        Me.RadioButton2.TabStop = True
+        Me.RadioButton2.Text = "[m]"
+        Me.RadioButton2.UseVisualStyleBackColor = True
+        '
         'BtnNuevo
         '
         Me.BtnNuevo.Image = Global.listView.My.Resources.Resources.add
@@ -162,6 +207,18 @@ Partial Class frmMaterialesAgrega
         Me.BtnNuevo.Size = New System.Drawing.Size(45, 40)
         Me.BtnNuevo.TabIndex = 16
         Me.BtnNuevo.UseVisualStyleBackColor = True
+        '
+        'RadioButton1
+        '
+        Me.RadioButton1.AutoSize = True
+        Me.RadioButton1.Enabled = False
+        Me.RadioButton1.Location = New System.Drawing.Point(112, 64)
+        Me.RadioButton1.Name = "RadioButton1"
+        Me.RadioButton1.Size = New System.Drawing.Size(43, 17)
+        Me.RadioButton1.TabIndex = 27
+        Me.RadioButton1.TabStop = True
+        Me.RadioButton1.Text = "[kg]"
+        Me.RadioButton1.UseVisualStyleBackColor = True
         '
         'Label5
         '
@@ -180,7 +237,7 @@ Partial Class frmMaterialesAgrega
         Me.txtProdDescrip.Location = New System.Drawing.Point(112, 126)
         Me.txtProdDescrip.Multiline = True
         Me.txtProdDescrip.Name = "txtProdDescrip"
-        Me.txtProdDescrip.Size = New System.Drawing.Size(193, 49)
+        Me.txtProdDescrip.Size = New System.Drawing.Size(197, 49)
         Me.txtProdDescrip.TabIndex = 14
         '
         'txtPrecioProd
@@ -261,7 +318,7 @@ Partial Class frmMaterialesAgrega
         '
         Me.txtPrecioUnidad.Enabled = False
         Me.txtPrecioUnidad.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtPrecioUnidad.Location = New System.Drawing.Point(213, 57)
+        Me.txtPrecioUnidad.Location = New System.Drawing.Point(215, 56)
         Me.txtPrecioUnidad.Multiline = True
         Me.txtPrecioUnidad.Name = "txtPrecioUnidad"
         Me.txtPrecioUnidad.Size = New System.Drawing.Size(70, 19)
@@ -273,15 +330,15 @@ Partial Class frmMaterialesAgrega
         '
         Me.Label2.AutoSize = True
         Me.Label2.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label2.Location = New System.Drawing.Point(168, 58)
+        Me.Label2.Location = New System.Drawing.Point(158, 55)
         Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(42, 15)
+        Me.Label2.Size = New System.Drawing.Size(51, 15)
         Me.Label2.TabIndex = 4
-        Me.Label2.Text = "Precio"
+        Me.Label2.Text = "Precio x"
         '
         'numCantidad
         '
-        Me.numCantidad.Location = New System.Drawing.Point(67, 56)
+        Me.numCantidad.Location = New System.Drawing.Point(64, 55)
         Me.numCantidad.Name = "numCantidad"
         Me.numCantidad.Size = New System.Drawing.Size(52, 20)
         Me.numCantidad.TabIndex = 3
@@ -291,7 +348,7 @@ Partial Class frmMaterialesAgrega
         '
         Me.Label1.AutoSize = True
         Me.Label1.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label1.Location = New System.Drawing.Point(10, 58)
+        Me.Label1.Location = New System.Drawing.Point(7, 57)
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(56, 15)
         Me.Label1.TabIndex = 2
@@ -353,64 +410,6 @@ Partial Class frmMaterialesAgrega
         Me.btnVistaPevia.Text = "Vista Previa"
         Me.btnVistaPevia.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
         Me.btnVistaPevia.UseVisualStyleBackColor = True
-        '
-        'lbUnidad
-        '
-        Me.lbUnidad.AutoSize = True
-        Me.lbUnidad.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lbUnidad.Location = New System.Drawing.Point(121, 58)
-        Me.lbUnidad.Name = "lbUnidad"
-        Me.lbUnidad.Size = New System.Drawing.Size(27, 15)
-        Me.lbUnidad.TabIndex = 11
-        Me.lbUnidad.Text = "[un]"
-        '
-        'RadioButton1
-        '
-        Me.RadioButton1.AutoSize = True
-        Me.RadioButton1.Enabled = False
-        Me.RadioButton1.Location = New System.Drawing.Point(112, 64)
-        Me.RadioButton1.Name = "RadioButton1"
-        Me.RadioButton1.Size = New System.Drawing.Size(43, 17)
-        Me.RadioButton1.TabIndex = 27
-        Me.RadioButton1.TabStop = True
-        Me.RadioButton1.Text = "[kg]"
-        Me.RadioButton1.UseVisualStyleBackColor = True
-        '
-        'RadioButton2
-        '
-        Me.RadioButton2.AutoSize = True
-        Me.RadioButton2.Enabled = False
-        Me.RadioButton2.Location = New System.Drawing.Point(161, 64)
-        Me.RadioButton2.Name = "RadioButton2"
-        Me.RadioButton2.Size = New System.Drawing.Size(39, 17)
-        Me.RadioButton2.TabIndex = 28
-        Me.RadioButton2.TabStop = True
-        Me.RadioButton2.Text = "[m]"
-        Me.RadioButton2.UseVisualStyleBackColor = True
-        '
-        'RadioButton3
-        '
-        Me.RadioButton3.AutoSize = True
-        Me.RadioButton3.Enabled = False
-        Me.RadioButton3.Location = New System.Drawing.Point(206, 64)
-        Me.RadioButton3.Name = "RadioButton3"
-        Me.RadioButton3.Size = New System.Drawing.Size(42, 17)
-        Me.RadioButton3.TabIndex = 29
-        Me.RadioButton3.TabStop = True
-        Me.RadioButton3.Text = "[m²]"
-        Me.RadioButton3.UseVisualStyleBackColor = True
-        '
-        'RadioButton4
-        '
-        Me.RadioButton4.AutoSize = True
-        Me.RadioButton4.Enabled = False
-        Me.RadioButton4.Location = New System.Drawing.Point(254, 64)
-        Me.RadioButton4.Name = "RadioButton4"
-        Me.RadioButton4.Size = New System.Drawing.Size(59, 17)
-        Me.RadioButton4.TabIndex = 30
-        Me.RadioButton4.TabStop = True
-        Me.RadioButton4.Text = "Unidad"
-        Me.RadioButton4.UseVisualStyleBackColor = True
         '
         'frmMaterialesAgrega
         '

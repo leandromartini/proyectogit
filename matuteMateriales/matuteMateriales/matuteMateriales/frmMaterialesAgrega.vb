@@ -4,18 +4,35 @@
     Private TitulosDoc As String = "LISTA DE MATERIALES  "
     Private Sub frmMaterialesAgrega_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         Try
-            Dim objProd As New productos 'Ojo se instancia tambein al guardar productos
-            objProd.obtenerProductos(-1)
+            cargarComboMateriales()
         Catch ex As Exception
-
+            MsgBox(ex.Message)
         End Try
     End Sub
+
+    Private Sub cargarComboMateriales()
+        Try
+            Dim objWflProd As New wflProductos 'Ojo se instancia tambein al guardar productos
+            Dim objDS As New DataSet
+
+            objDS = objWflProd.obtenerProductos()
+            cboMateriales.DataSource = objDS.Tables(0)
+            cboMateriales.DisplayMember = "nombre"
+            cboMateriales.SelectedIndex = -1
+            cboMateriales.Text = "Seleccionar un producto"
+            cboMateriales.ValueMember = "id_prod"
+        Catch ex As Exception
+            MsgBox(ex.Message)
+        End Try
+
+    End Sub
+
     Private Sub btnAgregar_Click(sender As Object, e As EventArgs) Handles btnAgregar.Click
         Try
             If Not validarAgregarProducto() Then
                 Exit Sub
             End If
-            Dim item As ListViewItem = New ListViewItem(CStr(cboMateriales.SelectedItem))
+            Dim item As ListViewItem = New ListViewItem(CStr(cboMateriales.Text))
             item.SubItems.Add(numCantidad.Value)
             item.SubItems.Add(txtPrecioUnidad.Text)
             item.SubItems.Add(CDbl(txtPrecioUnidad.Text * numCantidad.Value))
@@ -77,7 +94,6 @@
         End If
     End Sub
     Sub limpiarControles()
-        cboMateriales.SelectedIndex = -1
         txtPrecioUnidad.Text = "0,00"
         txtPrecioUnidad.Enabled = False
         numCantidad.Value = 0
@@ -125,7 +141,9 @@
             Exit Sub
         End If
 
-        objwflProd.ProductoNuevo(txtNombreProd.Text, rdCheck, txtPrecioProd.Text, txtProdDescrip.Text)
+        If objwflProd.ProductoNuevo(txtNombreProd.Text, rdCheck, txtPrecioProd.Text, txtProdDescrip.Text) Then
+            MsgBox("El producto guardo con exito")
+        End If
 
         For Each obj In grupoNuevoProducto.Controls
             If Not obj.Name = "BtnNuevo" Then
@@ -134,6 +152,7 @@
         Next
 
         BtnNuevo.Enabled = True
+        cargarComboMateriales()
         cboMateriales.Focus()
 
         'MsgBox("Se ha guardado el producto: " + objProd.obtenerNombre + " con el precio: " + CStr(objProd.obtenerprecio))
@@ -186,10 +205,34 @@
     Private Sub btnVistaPevia_Click(sender As Object, e As EventArgs) Handles btnVistaPevia.Click
         objImprimir.VistaListaProductos(listaMateriales, TitulosDoc)
     End Sub
+    Private Sub cboMateriales_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cboMateriales.SelectedIndexChanged
+        Dim objProductos As New productos
+        Dim objProdCant As New productoCantidad
+        Dim DSprod As New DataSet
+        Try
+
+            If cboMateriales.ValueMember = "" Then
+                Exit Sub
+            End If
+            If cboMateriales.SelectedValue > 0 Then
+                DSprod = objProductos.obtenerProductos(cboMateriales.SelectedValue)
+                If Not DSprod.Tables.Count = 0 Then
+                    objProdCant.agregarMateriales(DSprod.Tables(0).Rows(0).Item(1), DSprod.Tables(0).Rows(0).Item(3), DSprod.Tables(0).Rows(0).Item(2),
+                                          DSprod.Tables(0).Rows(0).Item(4), 1)
+                    lbUnidad.Text = objProdCant.obtenerUnidad
+                    txtPrecioUnidad.Text = objProdCant.obtenerPrecio
+                End If
+            End If
+        Catch ex As Exception
+            MsgBox(ex.Message)
+        End Try
+    End Sub
     Private Sub btnVolver_Click(sender As Object, e As EventArgs) Handles btnVolver.Click
         limpiaProductos()
         limpiarControles()
         listaMateriales.Items.Clear()
+        cboMateriales.ValueMember = Nothing
         Close()
     End Sub
+
 End Class

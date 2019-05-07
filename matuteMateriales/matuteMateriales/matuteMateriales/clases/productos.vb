@@ -4,10 +4,6 @@
     Private descripcion As String
     Private precio As Double
 
-    Public Function obtenerProductos(ByVal idProd As Long) As DataSet
-        'llamar a la capa de datos con su correspondiente clase de productos
-
-    End Function
     Public Sub NuevoPruducto(nom As String, uni As String, prec As Double, descrip As String)
         Try
             nombre = nom
@@ -18,6 +14,10 @@
             MsgBox(ex.Message)
         End Try
     End Sub
+    Function obtenerProductos(id_prod) As DataSet
+        Dim objccProd As New ccdProducto
+        obtenerProductos = objccProd.obtenerProductos(id_prod)
+    End Function
     Public Function obtenerNombre()
         Return nombre
     End Function

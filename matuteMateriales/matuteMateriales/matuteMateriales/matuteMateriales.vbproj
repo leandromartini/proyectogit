@@ -74,7 +74,8 @@
     <Import Include="System.Threading.Tasks" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="capaDatos\ccdProductos.vb" />
+    <Compile Include="capaDatos\ccdProductoPrecio.vb" />
+    <Compile Include="capaDatos\ccdProducto.vb" />
     <Compile Include="capaworkflow\wflProductos.vb" />
     <Compile Include="capaNegocio\cnProductos.vb" />
     <Compile Include="clases\imprimir.vb" />
