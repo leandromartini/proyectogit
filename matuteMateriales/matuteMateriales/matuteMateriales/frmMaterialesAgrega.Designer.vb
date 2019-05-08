@@ -345,6 +345,7 @@ Partial Class frmMaterialesAgrega
         'numCantidad
         '
         Me.numCantidad.Location = New System.Drawing.Point(67, 62)
+        Me.numCantidad.Maximum = New Decimal(New Integer() {1000000, 0, 0, 0})
         Me.numCantidad.Name = "numCantidad"
         Me.numCantidad.Size = New System.Drawing.Size(64, 20)
         Me.numCantidad.TabIndex = 3

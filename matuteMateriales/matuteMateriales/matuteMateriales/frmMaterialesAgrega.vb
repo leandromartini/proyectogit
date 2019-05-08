@@ -41,6 +41,9 @@
             listaMateriales.Items.Add(item)
 
             limpiarControles()
+            cboMateriales.ValueMember = Nothing
+            cargarComboMateriales()
+            cboMateriales.Focus()
         Catch ex As Exception
             agregar_error(ex)
         End Try
@@ -48,23 +51,29 @@
     Function totalProduc(unidad, precio, cantidad) As Double
         Select Case unidad ' creo esta funcion por si hay que agregar algun calculo
             Case "Unidad"
-                Return (precio * cantidad)
-            Case "[Kg]"
-                Return (precio * cantidad)
+                Return CDbl(precio * cantidad)
+            Case "[kg]"
+                Return CDbl((precio * cantidad) / 1000)
             Case "[m]"
-                Return (precio * cantidad)
+                Return CDbl(precio * cantidad)
             Case "[m²]"
-                Return (precio * cantidad)
+                Return CDbl(precio * cantidad)
         End Select
     End Function
     Private Sub btnQuitar_Click(sender As Object, e As EventArgs) Handles btnQuitar.Click
         For Each item As ListViewItem In listaMateriales.SelectedItems
             item.Remove()
         Next
+        cboMateriales.ValueMember = Nothing
+        cargarComboMateriales()
+        cboMateriales.Focus()
     End Sub
 
     Private Sub btnReset_Click(sender As Object, e As EventArgs) Handles btnReset.Click
         listaMateriales.Items.Clear()
+        cboMateriales.ValueMember = Nothing
+        cargarComboMateriales()
+        cboMateriales.Focus()
     End Sub
     Private Sub btnModificaPrecio_Click(sender As Object, e As EventArgs) Handles btnModificaPrecio.Click
         txtPrecioUnidad.Enabled = True
@@ -204,6 +213,7 @@
         For Each item As ListViewItem In listaMateriales.Items
             objcftProd.AgregarProductodeLista(item)
         Next
+        MsgBox("Se guardaron los materiales que ingresaron en la fecha: " & Date.Now & " hs.")
         listaMateriales.Items.Clear()
         cboMateriales.ValueMember = Nothing
         cargarComboMateriales()

@@ -16,8 +16,11 @@ CREATE PROCEDURE [dbo].[productos_actualizarRegistro]
 AS
 BEGIN 
 	if not exists (select * from [dbo].[productos] where id_prod = @id_prod)
+	begin
 	INSERT INTO [dbo].[productos] ([nombre], [descrip], [unidad])
-     VALUES(@nombre, @descrip, @unidad)
+    VALUES(@nombre, @descrip, @unidad)
+	select @@IDENTITY
+	end
 else
 	UPDATE [dbo].[productos] SET [nombre] = @nombre , [descrip] = @descrip
 	where id_prod = @id_prod 
