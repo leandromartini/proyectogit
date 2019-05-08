@@ -1,5 +1,4 @@
-﻿
-Imports System.Data.SqlClient
+﻿Imports System.Data.SqlClient
 Public Class ccdProducto
     Public Function actualizarProducto(ByVal id_prod As Integer, ByVal nombre As String, ByVal descrip As String, ByVal unidad As String) As Integer
         Try
@@ -17,13 +16,12 @@ Public Class ccdProducto
             End With
             disconect()
         Catch ex As Exception
-            MsgBox(ex.Message)
-            actualizarProducto = Nothing
+            agregar_error(ex)
+            actualizarProducto = 0
         End Try
     End Function
     Public Function obtenerProductos(id_prod) As DataSet
         Try
-
             Dim sProdString As String = "[dbo].[productos_obtenerLista]"
             Dim command As New SqlCommand(sProdString, objConn)
             Dim dataset As New DataSet
@@ -37,7 +35,7 @@ Public Class ccdProducto
             disconect()
             obtenerProductos = dataset
         Catch ex As Exception
-            MsgBox(ex.Message)
+            agregar_error(ex)
             obtenerProductos = Nothing
             disconect()
         End Try

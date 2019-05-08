@@ -74,6 +74,7 @@
     <Import Include="System.Threading.Tasks" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="capaDatos\ccdErrores.vb" />
     <Compile Include="capaDatos\ccdProductoCantidad.vb" />
     <Compile Include="capaDatos\ccdProductoPrecio.vb" />
     <Compile Include="capaDatos\ccdProducto.vb" />
@@ -84,6 +85,13 @@
     <Compile Include="clases\productoCantidad.vb" />
     <Compile Include="clases\producto.vb" />
     <Compile Include="conexion.vb" />
+    <Compile Include="errores.vb" />
+    <Compile Include="frmGastos.Designer.vb">
+      <DependentUpon>frmGastos.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmGastos.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="frmMaterialesAgrega.vb">
       <SubType>Form</SubType>
     </Compile>
@@ -103,10 +111,10 @@
     <Compile Include="frmPrincipal.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmSaldos.Designer.vb">
-      <DependentUpon>frmSaldos.vb</DependentUpon>
+    <Compile Include="frmVentas.Designer.vb">
+      <DependentUpon>frmVentas.vb</DependentUpon>
     </Compile>
-    <Compile Include="frmSaldos.vb">
+    <Compile Include="frmVentas.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="My Project\AssemblyInfo.vb" />
@@ -126,6 +134,9 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="frmGastos.resx">
+      <DependentUpon>frmGastos.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmMaterialesAgrega.resx">
       <DependentUpon>frmMaterialesAgrega.vb</DependentUpon>
     </EmbeddedResource>
@@ -135,8 +146,8 @@
     <EmbeddedResource Include="frmPrincipal.resx">
       <DependentUpon>frmPrincipal.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmSaldos.resx">
-      <DependentUpon>frmSaldos.vb</DependentUpon>
+    <EmbeddedResource Include="frmVentas.resx">
+      <DependentUpon>frmVentas.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="My Project\Resources.resx">
       <Generator>VbMyResourcesResXFileCodeGenerator</Generator>

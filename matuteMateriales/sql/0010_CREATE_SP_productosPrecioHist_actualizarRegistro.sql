@@ -7,16 +7,30 @@ SET QUOTED_IDENTIFIER ON
 GO
 -- =============================================
 -- Author:		<Author,,Leandro Martini Lacrouts>
--- Create date: <3/05/2019 19:13>
+-- Create date: <08/05/2019 19:13>
 -- Description:	<Este SP agrega o actuliza la tabla productosPrecio>
 -- =============================================
-CREATE PROCEDURE [dbo].[productosPrecioHist_actualizarRegistro]
+CREATE PROCEDURE [dbo].[productosPrecioHist_actualizarRegistro]--15,12.3,15.6,'16/06/2019'
  @id_prod smallint, 
  @precio decimal(8,2), 
  @precioiva decimal(8,2),
  @fecAct date 	
 AS
-BEGIN 	
-	INSERT INTO [dbo].[productosPrecioHist] ([id_prod], [precio], [precioIVA],[fecAct])
-    VALUES(@id_prod, @precio, @precioiva,@fecAct)
-END 
+declare @resu int
+declare @sis_usu varchar(8000)
+Declare @huboerror int
+
+INSERT INTO [dbo].[productosPrecioHist] ([id_prod], [precio], [precioIVA],[fecAct])
+VALUES(@id_prod, @precio, @precioiva,@fecAct)
+
+SET @huboerror= @@ERROR
+IF @huboerror <> 0 
+	begin
+	set @sis_usu =system_user
+	raiserror(60000,9,1,'insert en productosPrecioHist','productosPrecioHist_actualizarRegistro', @sis_usu, @huboerror, @resu)
+	return isnull(@resu,60000)
+	end
+
+---Ver cual hay que usar
+--set @id_prod = @@identity
+--select @@identity

@@ -14,8 +14,8 @@ Public Class ccdProductoCantidad
             End With
             disconect()
         Catch ex As Exception
-            MsgBox(ex.Message)
-            actualizarCantidad = Nothing
+            agregar_error(ex)
+            actualizarCantidad = 0
         End Try
     End Function
     Public Function obtenerCantidad(ByVal id_prod As Integer) As Double
@@ -31,7 +31,7 @@ Public Class ccdProductoCantidad
             End With
             disconect()
         Catch ex As Exception
-            MsgBox(ex.Message)
+            agregar_error(ex)
             obtenerCantidad = 0
         End Try
     End Function

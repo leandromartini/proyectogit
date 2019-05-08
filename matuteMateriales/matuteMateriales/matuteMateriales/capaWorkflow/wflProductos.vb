@@ -10,22 +10,22 @@ Public Class wflProductos
             objProductoCantidad.agregarMateriales(item.SubItems(0).Text, "", "", item.SubItems(2).Text, item.SubItems(1).Text)
             Try
                 Dim objcnProducto As New cnProductos
-                Dim FechaPrecio As Date
+                Dim FechaPrecio As Date = "01/01/1900"
                 'en la tabla Prod_cantidad se incrementa el stock, 
                 objcnProducto.actulizarProd_cantidad(item.SubItems(4).Text, item.SubItems(1).Text)
                 'Si el precio de lista es nuevo actualizo en tabla ProductosPrecio...
                 If Not objProductoCantidad.verPrecio = objProductos.obtenerPrecio(item.SubItems(4).Text) Then
                     FechaPrecio = objcnProducto.guardarPrecio(item.SubItems(4).Text, item.SubItems(2).Text, -1)
-                    'If Not FechaPrecio = "" Then
-                    'y agregar en prod_historia el nuevo precio con su fecha de modificacion
-                    objcnProducto.guardarPrecioHist(item.SubItems(4).Text, item.SubItems(2).Text, -1, FechaPrecio.ToShortDateString)
-                    'End If
+                    If Not FechaPrecio = "01/01/1900" Then
+                        'y agregar en prod_historia el nuevo precio con su fecha de modificacion
+                        objcnProducto.guardarPrecioHist(item.SubItems(4).Text, item.SubItems(2).Text, -1, FechaPrecio.ToShortDateString)
+                    End If
                 End If
             Catch ex As Exception
-                MsgBox(ex.Message)
+                agregar_error(ex)
             End Try
         Catch ex As Exception
-            MsgBox(ex.Message)
+            agregar_error(ex)
         End Try
 
     End Sub
@@ -33,9 +33,9 @@ Public Class wflProductos
     Public Function ProductoNuevo(nom As String, unidad As String, precio As Double, descrip As String) As Date
         Dim objProductos As New producto
         Dim objcnProducto As New cnProductos
+        ProductoNuevo = "01/01/1900"
         Try
             Dim idproducto As New Integer
-            ProductoNuevo = "01/01/1900"
             objProductos.NuevoPruducto(nom, unidad, precio, descrip)
             'Primero guardo el producto
             idproducto = objcnProducto.guardarNuevo(-1, objProductos.verNombre, objProductos.verDescripcion, objProductos.obtenerUnidad)
@@ -47,8 +47,7 @@ Public Class wflProductos
             'Vaciar productos luego de realizar el proceso correspondiente
             objProductos.limpiar()
         Catch ex As Exception
-            ProductoNuevo = "01/01/1900"
-            MsgBox("Error debido a: " & ex.Message, MsgBoxStyle.Exclamation, "¡Advertencia!")
+            agregar_error(ex)
         End Try
     End Function
 
@@ -57,7 +56,7 @@ Public Class wflProductos
         Try
             obtenerProductos = objwflProductos.obtenerProductos(-1)
         Catch ex As Exception
-            MsgBox(ex.Message)
+            agregar_error(ex)
             obtenerProductos = Nothing
         End Try
     End Function

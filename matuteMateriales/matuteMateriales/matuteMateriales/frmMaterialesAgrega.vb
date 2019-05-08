@@ -6,7 +6,7 @@
         Try
             cargarComboMateriales()
         Catch ex As Exception
-            MsgBox(ex.Message)
+            agregar_error(ex)
         End Try
     End Sub
 
@@ -16,13 +16,15 @@
             Dim objDS As New DataSet
 
             objDS = objWflProd.obtenerProductos()
-            cboMateriales.DataSource = objDS.Tables(0)
-            cboMateriales.DisplayMember = "nombre"
-            cboMateriales.SelectedIndex = -1
-            cboMateriales.Text = "Seleccionar un producto"
-            cboMateriales.ValueMember = "id_prod"
+            If Not IsNothing(objDS) Then
+                cboMateriales.DataSource = objDS.Tables(0)
+                cboMateriales.DisplayMember = "nombre"
+                cboMateriales.SelectedIndex = -1
+                cboMateriales.Text = "Seleccionar un producto"
+                cboMateriales.ValueMember = "id_prod"
+            End If
         Catch ex As Exception
-            MsgBox(ex.Message)
+            agregar_error(ex)
         End Try
     End Sub
 
@@ -40,7 +42,7 @@
 
             limpiarControles()
         Catch ex As Exception
-            MsgBox(ex.Message)
+            agregar_error(ex)
         End Try
     End Sub
     Function totalProduc(unidad, precio, cantidad) As Double
@@ -235,7 +237,7 @@
                 End If
             End If
         Catch ex As Exception
-            MsgBox(ex.Message)
+            agregar_error(ex)
         End Try
     End Sub
     Private Sub btnVolver_Click(sender As Object, e As EventArgs) Handles btnVolver.Click

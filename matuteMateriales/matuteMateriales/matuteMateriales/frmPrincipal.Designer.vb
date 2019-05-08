@@ -28,6 +28,7 @@ Partial Class frmPrincipal
         Me.AgregarToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.EnStockToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.SalidaToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.GastosVariosToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.SaldosToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.SalirToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.PictureBox1 = New System.Windows.Forms.PictureBox()
@@ -46,7 +47,7 @@ Partial Class frmPrincipal
         '
         'ProductosToolStripMenuItem
         '
-        Me.ProductosToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.AgregarToolStripMenuItem, Me.EnStockToolStripMenuItem, Me.SalidaToolStripMenuItem})
+        Me.ProductosToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.AgregarToolStripMenuItem, Me.EnStockToolStripMenuItem, Me.SalidaToolStripMenuItem, Me.GastosVariosToolStripMenuItem})
         Me.ProductosToolStripMenuItem.Name = "ProductosToolStripMenuItem"
         Me.ProductosToolStripMenuItem.Size = New System.Drawing.Size(73, 20)
         Me.ProductosToolStripMenuItem.Text = "Productos"
@@ -54,20 +55,26 @@ Partial Class frmPrincipal
         'AgregarToolStripMenuItem
         '
         Me.AgregarToolStripMenuItem.Name = "AgregarToolStripMenuItem"
-        Me.AgregarToolStripMenuItem.Size = New System.Drawing.Size(127, 22)
+        Me.AgregarToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
         Me.AgregarToolStripMenuItem.Text = "Ingreso"
         '
         'EnStockToolStripMenuItem
         '
         Me.EnStockToolStripMenuItem.Name = "EnStockToolStripMenuItem"
-        Me.EnStockToolStripMenuItem.Size = New System.Drawing.Size(127, 22)
+        Me.EnStockToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
         Me.EnStockToolStripMenuItem.Text = "Inventario"
         '
         'SalidaToolStripMenuItem
         '
         Me.SalidaToolStripMenuItem.Name = "SalidaToolStripMenuItem"
-        Me.SalidaToolStripMenuItem.Size = New System.Drawing.Size(127, 22)
-        Me.SalidaToolStripMenuItem.Text = "Salida"
+        Me.SalidaToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
+        Me.SalidaToolStripMenuItem.Text = "Ventas"
+        '
+        'GastosVariosToolStripMenuItem
+        '
+        Me.GastosVariosToolStripMenuItem.Name = "GastosVariosToolStripMenuItem"
+        Me.GastosVariosToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
+        Me.GastosVariosToolStripMenuItem.Text = "Gastos"
         '
         'SaldosToolStripMenuItem
         '
@@ -119,4 +126,5 @@ Partial Class frmPrincipal
     Friend WithEvents SaldosToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents SalidaToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents PictureBox1 As PictureBox
+    Friend WithEvents GastosVariosToolStripMenuItem As ToolStripMenuItem
 End Class

@@ -121,7 +121,7 @@ Partial Class frmMaterialesAgrega
         '
         Me.lbUnidad.AutoSize = True
         Me.lbUnidad.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lbUnidad.Location = New System.Drawing.Point(117, 57)
+        Me.lbUnidad.Location = New System.Drawing.Point(133, 65)
         Me.lbUnidad.Name = "lbUnidad"
         Me.lbUnidad.Size = New System.Drawing.Size(28, 15)
         Me.lbUnidad.TabIndex = 11
@@ -287,9 +287,9 @@ Partial Class frmMaterialesAgrega
         'btnModificaPrecio
         '
         Me.btnModificaPrecio.Image = Global.listView.My.Resources.Resources.edit
-        Me.btnModificaPrecio.Location = New System.Drawing.Point(289, 48)
+        Me.btnModificaPrecio.Location = New System.Drawing.Point(289, 47)
         Me.btnModificaPrecio.Name = "btnModificaPrecio"
-        Me.btnModificaPrecio.Size = New System.Drawing.Size(39, 36)
+        Me.btnModificaPrecio.Size = New System.Drawing.Size(39, 39)
         Me.btnModificaPrecio.TabIndex = 9
         Me.btnModificaPrecio.UseVisualStyleBackColor = True
         '
@@ -324,10 +324,10 @@ Partial Class frmMaterialesAgrega
         '
         Me.txtPrecioUnidad.Enabled = False
         Me.txtPrecioUnidad.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtPrecioUnidad.Location = New System.Drawing.Point(215, 56)
+        Me.txtPrecioUnidad.Location = New System.Drawing.Point(197, 63)
         Me.txtPrecioUnidad.Multiline = True
         Me.txtPrecioUnidad.Name = "txtPrecioUnidad"
-        Me.txtPrecioUnidad.Size = New System.Drawing.Size(70, 19)
+        Me.txtPrecioUnidad.Size = New System.Drawing.Size(86, 19)
         Me.txtPrecioUnidad.TabIndex = 5
         Me.txtPrecioUnidad.Text = "0,00"
         Me.txtPrecioUnidad.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
@@ -336,17 +336,17 @@ Partial Class frmMaterialesAgrega
         '
         Me.Label2.AutoSize = True
         Me.Label2.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label2.Location = New System.Drawing.Point(172, 57)
+        Me.Label2.Location = New System.Drawing.Point(194, 47)
         Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(42, 15)
+        Me.Label2.Size = New System.Drawing.Size(91, 15)
         Me.Label2.TabIndex = 4
-        Me.Label2.Text = "Precio"
+        Me.Label2.Text = "Precio de venta"
         '
         'numCantidad
         '
-        Me.numCantidad.Location = New System.Drawing.Point(64, 55)
+        Me.numCantidad.Location = New System.Drawing.Point(67, 62)
         Me.numCantidad.Name = "numCantidad"
-        Me.numCantidad.Size = New System.Drawing.Size(52, 20)
+        Me.numCantidad.Size = New System.Drawing.Size(64, 20)
         Me.numCantidad.TabIndex = 3
         Me.numCantidad.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
         '
@@ -354,7 +354,7 @@ Partial Class frmMaterialesAgrega
         '
         Me.Label1.AutoSize = True
         Me.Label1.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label1.Location = New System.Drawing.Point(7, 57)
+        Me.Label1.Location = New System.Drawing.Point(8, 65)
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(56, 15)
         Me.Label1.TabIndex = 2
@@ -363,7 +363,7 @@ Partial Class frmMaterialesAgrega
         'cboMateriales
         '
         Me.cboMateriales.FormattingEnabled = True
-        Me.cboMateriales.Location = New System.Drawing.Point(10, 19)
+        Me.cboMateriales.Location = New System.Drawing.Point(10, 18)
         Me.cboMateriales.Name = "cboMateriales"
         Me.cboMateriales.Size = New System.Drawing.Size(318, 21)
         Me.cboMateriales.TabIndex = 1

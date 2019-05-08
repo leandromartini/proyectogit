@@ -18,7 +18,7 @@ Public Class ccdProductoPrecioHist
             End With
             disconect()
         Catch ex As Exception
-            MsgBox(ex.Message)
+            agregar_error(ex)
             actualizarPrecioHist = 0
         End Try
     End Function

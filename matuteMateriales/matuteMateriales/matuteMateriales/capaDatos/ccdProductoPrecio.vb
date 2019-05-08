@@ -2,9 +2,6 @@
 Public Class ccdProductoPrecio
     Public Function actualizarPrecio(ByVal id_prod As Integer, precio As Double, precioIVA As Double) As Date
         Try
-            'DECLARE @MyDate date
-            'set @MyDate = GETDATE()
-            'Print(Convert(varchar,@MyDate, 3))
             Dim sProdString As String = "[dbo].[productosPrecio_actualizarRegistro]"
             Dim command As New SqlCommand(sProdString, objConn)
             With command
@@ -17,8 +14,7 @@ Public Class ccdProductoPrecio
             End With
             disconect()
         Catch ex As Exception
-            MsgBox(ex.Message)
-            actualizarPrecio = Nothing
+            agregar_error(ex)
         End Try
     End Function
     Public Function obtenerPrecio(id_prod As Integer) As Double
@@ -34,8 +30,8 @@ Public Class ccdProductoPrecio
             End With
             disconect()
         Catch ex As Exception
-            MsgBox(ex.Message)
-            obtenerPrecio = Nothing
+            agregar_error(ex)
+            obtenerPrecio = 0
         End Try
     End Function
 End Class

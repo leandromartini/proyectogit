@@ -15,7 +15,7 @@ Public Class frmMaterialesStock
             dgMaterialesStock.DataSource = Nothing
             dgMaterialesStock = Nothing
         Catch ex As Exception
-            MsgBox(ex.Message)
+            agregar_error(ex)
         End Try
     End Sub
     Private Sub btnVolver_Click(sender As Object, e As EventArgs) Handles btnVolver.Click

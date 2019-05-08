@@ -11,7 +11,7 @@
             precio = prec
             descripcion = descrip
         Catch ex As Exception
-            MsgBox(ex.Message)
+            agregar_error(ex)
         End Try
     End Sub
     Public Function verNombre()

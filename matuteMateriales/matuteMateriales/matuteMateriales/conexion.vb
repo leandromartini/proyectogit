@@ -8,28 +8,28 @@ Module conexion
         Try
             objConn.Open()
         Catch ex As Exception
-            MsgBox(ex.Message)
+            agregar_error(ex)
         End Try
     End Sub
     Sub disconect()
         Try
             objConn.Close()
         Catch ex As Exception
-            MsgBox(ex.Message)
+            agregar_error(ex)
         End Try
     End Sub
     Sub beginTran()
         Try
             transaction = objConn.BeginTransaction()
         Catch ex As Exception
-            MsgBox(ex.Message)
+            agregar_error(ex)
         End Try
     End Sub
     Sub commitTran()
         Try
             transaction.Commit()
         Catch ex As Exception
-            MsgBox(ex.Message)
+            agregar_error(ex)
         End Try
     End Sub
     Sub disposeTran()
