@@ -1,3 +1,4 @@
+USE [MatuteMateriales]
 GO
 -- =============================================
 -- Author:		<Author,,Leandro Martini Lacrouts>
@@ -5,7 +6,7 @@ GO
 -- Description:	<Este SP agrega o actuliza la tabla productosPrecio>
 -- =============================================
 CREATE PROCEDURE [dbo].[productosPrecio_obtenerPrecio]
- @id_prod smallint
+ @id_prod int
 AS
 BEGIN 
 

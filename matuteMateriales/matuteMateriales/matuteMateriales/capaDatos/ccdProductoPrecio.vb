@@ -15,6 +15,7 @@ Public Class ccdProductoPrecio
             disconect()
         Catch ex As Exception
             agregar_error(ex)
+            disconect()
         End Try
     End Function
     Public Function obtenerPrecio(id_prod As Integer) As Double

@@ -11,7 +11,7 @@ GO
 -- Description:	<Este SP agrega o actuliza la tabla productosPrecio>
 -- =============================================
 CREATE PROCEDURE [dbo].[productosPrecioHist_actualizarRegistro]--15,12.3,15.6,'16/06/2019'
- @id_prod smallint, 
+ @id_prod int, 
  @precio decimal(8,2), 
  @precioiva decimal(8,2),
  @fecAct date 	

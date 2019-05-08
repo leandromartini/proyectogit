@@ -39,7 +39,7 @@ Public Class wflProductos
             objProductos.NuevoPruducto(nom, unidad, precio, descrip)
             'Primero guardo el producto
             idproducto = objcnProducto.guardarNuevo(-1, objProductos.verNombre, objProductos.verDescripcion, objProductos.obtenerUnidad)
-            If IsNothing(idproducto) Then
+            If idproducto < 1 Then
                 Exit Function
             End If
             'Luego guardo su precio el precio para el nuevo producto.

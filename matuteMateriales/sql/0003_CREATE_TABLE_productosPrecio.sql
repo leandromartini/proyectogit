@@ -9,7 +9,7 @@ SET QUOTED_IDENTIFIER ON
 GO
 
 CREATE TABLE [dbo].[productosPrecio](
-	[id_prod] [smallint] NOT NULL,
+	[id_prod] [int] NOT NULL,
 	[precio] [decimal](8, 2) NOT NULL,
 	[precioIVA] [decimal](8, 2) NOT NULL,
  CONSTRAINT [PK_productosPrecio] PRIMARY KEY CLUSTERED 

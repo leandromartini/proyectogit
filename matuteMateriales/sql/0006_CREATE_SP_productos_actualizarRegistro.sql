@@ -9,7 +9,7 @@ GO
 -- Description:	<Este SP agrega o actuliza la tabla productos>
 -- =============================================
 CREATE PROCEDURE [dbo].[productos_actualizarRegistro]
- @id_prod smallint, 
+ @id_prod int, 
  @nombre varchar(50), 
  @descrip varchar(150), 
  @unidad varchar(9) 	

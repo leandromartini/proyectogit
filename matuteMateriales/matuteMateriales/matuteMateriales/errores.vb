@@ -1,6 +1,6 @@
 ﻿Module errores
     Sub agregar_error(ex As Exception)
-        guardar(ex)
+        'guardar(ex)
         MsgBox(ex.Message)
     End Sub
     Sub guardar(ex As Exception)
