@@ -10,7 +10,9 @@ Public Class ccdErrores
                 command.Parameters.AddWithValue("@id_error", -1)
                 command.Parameters.AddWithValue("@mensaje", mensaje)
                 command.Parameters.AddWithValue("@namefrm", namefrm)
-                conn()
+                If esConn() = 0 Then
+                    conn()
+                End If
                 command.ExecuteNonQuery()
             End With
             disconect()

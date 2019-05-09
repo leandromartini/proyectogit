@@ -35,9 +35,9 @@ Public Class ccdProducto
             disconect()
             obtenerProductos = dataset
         Catch ex As Exception
+            disconect()
             agregar_error(ex, "obtenerProductos")
             obtenerProductos = Nothing
-            disconect()
         End Try
     End Function
 
@@ -56,9 +56,9 @@ Public Class ccdProducto
             disconect()
             obtenerProductosInventario = dataset
         Catch ex As Exception
+            disconect()
             agregar_error(ex, "obtenerProductosInventario")
             obtenerProductosInventario = Nothing
-            disconect()
         End Try
     End Function
 End Class

@@ -35,6 +35,10 @@ Module conexion
     Sub disposeTran()
         transaction.Dispose()
     End Sub
+    Function esConn() As Integer
+        Return objConn.State
+    End Function
+
     Function esTran()
         Return transaction.Connection
     End Function
