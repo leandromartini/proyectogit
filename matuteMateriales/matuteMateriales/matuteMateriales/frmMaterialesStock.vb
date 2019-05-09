@@ -37,7 +37,7 @@ Public Class frmMaterialesStock
             If Not IsNothing(objDSGrid) Then
                 dgMaterialesStock.DataSource = objDSGrid.Tables(0)
                 For Each item As DataGridViewRow In dgMaterialesStock.Rows
-                    costoInv = costoInv + objComun.totalProduc(item.Cells(1).Value, item.Cells(2).Value, item.Cells(3).Value)
+                    costoInv = costoInv + objComun.totalProduc(item.Cells(1).Value, item.Cells(2).Value, IIf(IsDBNull(item.Cells(3).Value), 0, item.Cells(3).Value))
                     If IsDBNull(item.Cells(3).Value) Then
                         item.Cells(3).Value = 0
                     End If
