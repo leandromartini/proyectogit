@@ -52,13 +52,22 @@ Public Class wflProductos
     End Function
 
     Function obtenerProductos() As DataSet
-        Dim objwflProductos As New cnProductos
+        Dim objcnProductos As New cnProductos
         Try
-            obtenerProductos = objwflProductos.obtenerProductos(-1)
+            obtenerProductos = objcnProductos.obtenerProductos(-1)
         Catch ex As Exception
             agregar_error(ex)
             obtenerProductos = Nothing
         End Try
     End Function
 
+    Function obtenerProductosInventario(id_prod) As DataSet
+        Dim objcnProductos As New cnProductos
+        Try
+            obtenerProductosInventario = objcnProductos.obtenerProductosInventario(id_prod)
+        Catch ex As Exception
+            agregar_error(ex)
+            obtenerProductosInventario = Nothing
+        End Try
+    End Function
 End Class

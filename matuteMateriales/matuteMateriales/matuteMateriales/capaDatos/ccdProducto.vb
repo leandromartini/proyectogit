@@ -40,4 +40,25 @@ Public Class ccdProducto
             disconect()
         End Try
     End Function
+
+    Friend Function obtenerProductosInventario(id_prod As Object) As DataSet
+        Try
+            Dim sProdString As String = "[dbo].[productos_obtenerListaInventario]"
+            Dim command As New SqlCommand(sProdString, objConn)
+            Dim dataset As New DataSet
+            With command
+                command.Parameters.AddWithValue("@id_prod", id_prod)
+                command.CommandType = CommandType.StoredProcedure
+                conn()
+            End With
+            Dim da As New SqlDataAdapter(command)
+            da.Fill(dataset)
+            disconect()
+            obtenerProductosInventario = dataset
+        Catch ex As Exception
+            agregar_error(ex)
+            obtenerProductosInventario = Nothing
+            disconect()
+        End Try
+    End Function
 End Class

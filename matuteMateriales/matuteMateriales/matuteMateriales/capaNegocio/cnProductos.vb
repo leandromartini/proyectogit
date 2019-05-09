@@ -28,4 +28,9 @@
         actulizarProd_cantidad = objccdProductoCantidad.actualizarCantidad(id, objccdProductoCantidad.obtenerCantidad(id) + cant)
 
     End Function
+
+    Friend Function obtenerProductosInventario(id_prod As Object) As DataSet
+        Dim objccdProducto As New ccdProducto
+        obtenerProductosInventario = objccdProducto.obtenerProductosInventario(id_prod)
+    End Function
 End Class

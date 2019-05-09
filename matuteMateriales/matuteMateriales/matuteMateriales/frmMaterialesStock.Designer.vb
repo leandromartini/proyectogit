@@ -25,8 +25,8 @@ Partial Class frmMaterialesStock
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(frmMaterialesStock))
         Me.gbMateriales = New System.Windows.Forms.GroupBox()
         Me.Label5 = New System.Windows.Forms.Label()
-        Me.Label4 = New System.Windows.Forms.Label()
-        Me.Label3 = New System.Windows.Forms.Label()
+        Me.lblcanprod = New System.Windows.Forms.Label()
+        Me.lblCostoInventario = New System.Windows.Forms.Label()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.cboMateriales = New System.Windows.Forms.ComboBox()
@@ -34,10 +34,6 @@ Partial Class frmMaterialesStock
         Me.btnVistaPrevia = New System.Windows.Forms.Button()
         Me.btnImprimir = New System.Windows.Forms.Button()
         Me.btnVolver = New System.Windows.Forms.Button()
-        Me.Material = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Cantidad = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.PrecioUnitario = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Total = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.gbMateriales.SuspendLayout()
         CType(Me.dgMaterialesStock, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
@@ -45,8 +41,8 @@ Partial Class frmMaterialesStock
         'gbMateriales
         '
         Me.gbMateriales.Controls.Add(Me.Label5)
-        Me.gbMateriales.Controls.Add(Me.Label4)
-        Me.gbMateriales.Controls.Add(Me.Label3)
+        Me.gbMateriales.Controls.Add(Me.lblcanprod)
+        Me.gbMateriales.Controls.Add(Me.lblCostoInventario)
         Me.gbMateriales.Controls.Add(Me.Label2)
         Me.gbMateriales.Controls.Add(Me.Label1)
         Me.gbMateriales.Controls.Add(Me.cboMateriales)
@@ -68,25 +64,25 @@ Partial Class frmMaterialesStock
         Me.Label5.TabIndex = 7
         Me.Label5.Text = "$"
         '
-        'Label4
+        'lblcanprod
         '
-        Me.Label4.AutoSize = True
-        Me.Label4.Font = New System.Drawing.Font("Trebuchet MS", 11.25!, System.Drawing.FontStyle.Bold)
-        Me.Label4.Location = New System.Drawing.Point(610, 47)
-        Me.Label4.Name = "Label4"
-        Me.Label4.Size = New System.Drawing.Size(18, 20)
-        Me.Label4.TabIndex = 6
-        Me.Label4.Text = "0"
+        Me.lblcanprod.AutoSize = True
+        Me.lblcanprod.Font = New System.Drawing.Font("Trebuchet MS", 11.25!, System.Drawing.FontStyle.Bold)
+        Me.lblcanprod.Location = New System.Drawing.Point(610, 47)
+        Me.lblcanprod.Name = "lblcanprod"
+        Me.lblcanprod.Size = New System.Drawing.Size(18, 20)
+        Me.lblcanprod.TabIndex = 6
+        Me.lblcanprod.Text = "0"
         '
-        'Label3
+        'lblCostoInventario
         '
-        Me.Label3.AutoSize = True
-        Me.Label3.Font = New System.Drawing.Font("Trebuchet MS", 11.25!, System.Drawing.FontStyle.Bold)
-        Me.Label3.Location = New System.Drawing.Point(374, 47)
-        Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(42, 20)
-        Me.Label3.TabIndex = 5
-        Me.Label3.Text = "0.00"
+        Me.lblCostoInventario.AutoSize = True
+        Me.lblCostoInventario.Font = New System.Drawing.Font("Trebuchet MS", 11.25!, System.Drawing.FontStyle.Bold)
+        Me.lblCostoInventario.Location = New System.Drawing.Point(374, 47)
+        Me.lblCostoInventario.Name = "lblCostoInventario"
+        Me.lblCostoInventario.Size = New System.Drawing.Size(42, 20)
+        Me.lblCostoInventario.TabIndex = 5
+        Me.lblCostoInventario.Text = "0.00"
         '
         'Label2
         '
@@ -119,10 +115,12 @@ Partial Class frmMaterialesStock
         '
         'dgMaterialesStock
         '
+        Me.dgMaterialesStock.AllowUserToAddRows = False
+        Me.dgMaterialesStock.AllowUserToDeleteRows = False
         Me.dgMaterialesStock.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.dgMaterialesStock.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.Material, Me.Cantidad, Me.PrecioUnitario, Me.Total})
         Me.dgMaterialesStock.Location = New System.Drawing.Point(6, 92)
         Me.dgMaterialesStock.Name = "dgMaterialesStock"
+        Me.dgMaterialesStock.ReadOnly = True
         Me.dgMaterialesStock.Size = New System.Drawing.Size(764, 278)
         Me.dgMaterialesStock.TabIndex = 0
         '
@@ -162,27 +160,6 @@ Partial Class frmMaterialesStock
         Me.btnVolver.TextAlign = System.Drawing.ContentAlignment.MiddleRight
         Me.btnVolver.UseVisualStyleBackColor = True
         '
-        'Material
-        '
-        Me.Material.HeaderText = "Materiales"
-        Me.Material.Name = "Material"
-        Me.Material.Width = 200
-        '
-        'Cantidad
-        '
-        Me.Cantidad.HeaderText = "Cantidad"
-        Me.Cantidad.Name = "Cantidad"
-        '
-        'PrecioUnitario
-        '
-        Me.PrecioUnitario.HeaderText = "Precio Unitario"
-        Me.PrecioUnitario.Name = "PrecioUnitario"
-        '
-        'Total
-        '
-        Me.Total.HeaderText = "Total"
-        Me.Total.Name = "Total"
-        '
         'frmMaterialesStock
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -209,15 +186,11 @@ Partial Class frmMaterialesStock
     Friend WithEvents btnVolver As Button
     Friend WithEvents dgMaterialesStock As DataGridView
     Friend WithEvents Label5 As Label
-    Friend WithEvents Label4 As Label
-    Friend WithEvents Label3 As Label
+    Friend WithEvents lblcanprod As Label
+    Friend WithEvents lblCostoInventario As Label
     Friend WithEvents Label2 As Label
     Friend WithEvents Label1 As Label
     Friend WithEvents cboMateriales As ComboBox
     Friend WithEvents btnImprimir As Button
     Friend WithEvents btnVistaPrevia As Button
-    Friend WithEvents Material As DataGridViewTextBoxColumn
-    Friend WithEvents Cantidad As DataGridViewTextBoxColumn
-    Friend WithEvents PrecioUnitario As DataGridViewTextBoxColumn
-    Friend WithEvents Total As DataGridViewTextBoxColumn
 End Class
