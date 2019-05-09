@@ -1,6 +1,6 @@
 ﻿Imports System.Data.SqlClient
 Public Class ccdErrores
-    Public Sub actualizarErrores(ByVal mensaje As String)
+    Public Sub actualizarErrores(ByVal mensaje As String, namefrm As String)
         Try
             Dim dataset As New DataSet
             Dim sProdString As String = "[dbo].[errores_actualizarRegistro]"
@@ -9,6 +9,7 @@ Public Class ccdErrores
                 command.CommandType = CommandType.StoredProcedure
                 command.Parameters.AddWithValue("@id_error", -1)
                 command.Parameters.AddWithValue("@mensaje", mensaje)
+                command.Parameters.AddWithValue("@namefrm", namefrm)
                 conn()
                 command.ExecuteNonQuery()
             End With

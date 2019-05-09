@@ -6,7 +6,7 @@
         Try
             cargarComboMateriales()
         Catch ex As Exception
-            agregar_error(ex)
+            agregar_error(ex, Name)
         End Try
     End Sub
 
@@ -15,7 +15,7 @@
             Dim objWflProd As New wflProductos 'Ojo se instancia tambienn al guardar productos
             Dim objDS As New DataSet
 
-            objDS = objWflProd.obtenerProductos()
+            objDS = objWflProd.obtenerProductos(-1)
             If Not IsNothing(objDS) Then
                 cboMateriales.DataSource = objDS.Tables(0)
                 cboMateriales.DisplayMember = "nombre"
@@ -24,11 +24,12 @@
                 cboMateriales.ValueMember = "id_prod"
             End If
         Catch ex As Exception
-            agregar_error(ex)
+            agregar_error(ex, Name)
         End Try
     End Sub
 
     Private Sub btnAgregar_Click(sender As Object, e As EventArgs) Handles btnAgregar.Click
+        Dim objComun As New Comun
         Try
             If Not validarAgregarProducto() Then
                 Exit Sub
@@ -36,7 +37,7 @@
             Dim item As ListViewItem = New ListViewItem(CStr(cboMateriales.Text))
             item.SubItems.Add(numCantidad.Value)
             item.SubItems.Add(txtPrecioUnidad.Text)
-            item.SubItems.Add(totalProduc(lbUnidad.Text, txtPrecioUnidad.Text, numCantidad.Value))
+            item.SubItems.Add(objComun.totalProduc(lbUnidad.Text, txtPrecioUnidad.Text, numCantidad.Value))
             item.SubItems.Add(cboMateriales.SelectedValue)
             listaMateriales.Items.Add(item)
 
@@ -45,21 +46,10 @@
             cargarComboMateriales()
             cboMateriales.Focus()
         Catch ex As Exception
-            agregar_error(ex)
+            agregar_error(ex, Name)
         End Try
     End Sub
-    Function totalProduc(unidad, precio, cantidad) As Double
-        Select Case unidad ' creo esta funcion por si hay que agregar algun calculo
-            Case "Unidad"
-                Return CDbl(precio * cantidad)
-            Case "[kg]"
-                Return CDbl((precio * cantidad) / 1000)
-            Case "[m]"
-                Return CDbl(precio * cantidad)
-            Case "[m²]"
-                Return CDbl(precio * cantidad)
-        End Select
-    End Function
+
     Private Sub btnQuitar_Click(sender As Object, e As EventArgs) Handles btnQuitar.Click
         For Each item As ListViewItem In listaMateriales.SelectedItems
             item.Remove()
@@ -233,7 +223,6 @@
         Dim objProdCant As New productoCantidad
         Dim DSprod As New DataSet
         Try
-
             If cboMateriales.ValueMember = "" Then
                 Exit Sub
             End If
@@ -247,7 +236,7 @@
                 End If
             End If
         Catch ex As Exception
-            agregar_error(ex)
+            agregar_error(ex, Name)
         End Try
     End Sub
     Private Sub btnVolver_Click(sender As Object, e As EventArgs) Handles btnVolver.Click

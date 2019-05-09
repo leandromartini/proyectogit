@@ -14,7 +14,7 @@ Public Class ccdProductoCantidad
             End With
             disconect()
         Catch ex As Exception
-            agregar_error(ex)
+            agregar_error(ex, "actualizarCantidad")
             actualizarCantidad = 0
         End Try
     End Function
@@ -31,7 +31,7 @@ Public Class ccdProductoCantidad
             End With
             disconect()
         Catch ex As Exception
-            agregar_error(ex)
+            agregar_error(ex, "obtenerCantidad")
             obtenerCantidad = 0
         End Try
     End Function

@@ -18,7 +18,7 @@ Public Class ccdProductoPrecioHist
             End With
             disconect()
         Catch ex As Exception
-            agregar_error(ex)
+            agregar_error(ex, "ccdProductoPrecioHist")
             actualizarPrecioHist = 0
         End Try
     End Function

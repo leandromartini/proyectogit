@@ -17,6 +17,7 @@ Public Class imprimir
             PrintDocument1.Print()
         Catch ex As Exception
             MsgBox("Error de impresion debido a: " & ex.Message, MsgBoxStyle.Exclamation, "¡Advertencia!")
+            guardar(ex, "imprimir imprimir")
         End Try
     End Sub
     Sub imprimirVistaPrevia(dgAux As DataGridView, ByVal TitulosDoc As String)
@@ -27,6 +28,7 @@ Public Class imprimir
             printPreviewDialog1.ShowDialog()
         Catch ex As Exception
             MsgBox("Error de impresion debido a: " & ex.Message, MsgBoxStyle.Exclamation, "¡Advertencia!")
+            guardar(ex, "imprimir imprimirVistaPrevia")
         End Try
     End Sub
     Friend Sub imprimirListaProductos(listaMateriales As Windows.Forms.ListView, ByVal TitulosDoc As String)
@@ -36,6 +38,7 @@ Public Class imprimir
             PrintDocument2.Print()
         Catch ex As Exception
             MsgBox("Error de impresion debido a: " & ex.Message, MsgBoxStyle.Exclamation, "¡Advertencia!")
+            guardar(ex, "imprimir imprimirListaProductos")
         End Try
     End Sub
     Friend Sub VistaListaProductos(listaMateriales As Windows.Forms.ListView, titulosDoc As String)
@@ -46,6 +49,7 @@ Public Class imprimir
             printPreviewDialog2.ShowDialog()
         Catch ex As Exception
             MsgBox("Error de impresion debido a: " & ex.Message, MsgBoxStyle.Exclamation, "¡Advertencia!")
+            guardar(ex, "imprimir VistaListaProductos")
         End Try
     End Sub
     Private Sub PrintDocument1_PrintPage(sender As Object, e As Printing.PrintPageEventArgs) Handles PrintDocument1.PrintPage
@@ -79,6 +83,7 @@ Public Class imprimir
 
         Catch ex As Exception
             MsgBox("Error de impresion debido a: " & ex.Message, MsgBoxStyle.Exclamation, "¡Advertencia!")
+            guardar(ex, "imprimir PrintDocument1_PrintPage")
         End Try
     End Sub
     Private Sub PrintDocument2_PrintPage(sender As Object, e As Printing.PrintPageEventArgs) Handles PrintDocument2.PrintPage
@@ -114,6 +119,7 @@ Public Class imprimir
 
         Catch ex As Exception
             MsgBox("Error de impresion debido a: " & ex.Message, MsgBoxStyle.Exclamation, "¡Advertencia!")
+            guardar(ex, "imprimir PrintDocument2_PrintPage")
         End Try
     End Sub
 

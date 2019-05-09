@@ -22,10 +22,10 @@ Public Class wflProductos
                     End If
                 End If
             Catch ex As Exception
-                agregar_error(ex)
+                agregar_error(ex, "wflProductos AgregarProductodeLista")
             End Try
         Catch ex As Exception
-            agregar_error(ex)
+            agregar_error(ex, "wflProductos AgregarProductodeLista")
         End Try
 
     End Sub
@@ -47,16 +47,16 @@ Public Class wflProductos
             'Vaciar productos luego de realizar el proceso correspondiente
             objProductos.limpiar()
         Catch ex As Exception
-            agregar_error(ex)
+            agregar_error(ex, "wflProductos ProductoNuevo")
         End Try
     End Function
 
-    Function obtenerProductos() As DataSet
+    Function obtenerProductos(id_prod) As DataSet
         Dim objcnProductos As New cnProductos
         Try
-            obtenerProductos = objcnProductos.obtenerProductos(-1)
+            obtenerProductos = objcnProductos.obtenerProductos(id_prod)
         Catch ex As Exception
-            agregar_error(ex)
+            agregar_error(ex, "wflProductos obtenerProductos")
             obtenerProductos = Nothing
         End Try
     End Function
@@ -66,7 +66,7 @@ Public Class wflProductos
         Try
             obtenerProductosInventario = objcnProductos.obtenerProductosInventario(id_prod)
         Catch ex As Exception
-            agregar_error(ex)
+            agregar_error(ex, "wflProductos obtenerProductos")
             obtenerProductosInventario = Nothing
         End Try
     End Function

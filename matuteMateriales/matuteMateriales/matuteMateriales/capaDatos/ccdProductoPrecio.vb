@@ -14,7 +14,7 @@ Public Class ccdProductoPrecio
             End With
             disconect()
         Catch ex As Exception
-            agregar_error(ex)
+            agregar_error(ex, "ccdProductoPrecio actualizarPrecio")
             disconect()
         End Try
     End Function
@@ -31,7 +31,7 @@ Public Class ccdProductoPrecio
             End With
             disconect()
         Catch ex As Exception
-            agregar_error(ex)
+            agregar_error(ex, "ccdProductoPrecio obtenerPrecio")
             obtenerPrecio = 0
         End Try
     End Function

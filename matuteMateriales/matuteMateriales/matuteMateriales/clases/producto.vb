@@ -11,7 +11,7 @@
             precio = prec
             descripcion = descrip
         Catch ex As Exception
-            agregar_error(ex)
+            agregar_error(ex, "producto NuevoPruducto")
         End Try
     End Sub
     Public Function verNombre()

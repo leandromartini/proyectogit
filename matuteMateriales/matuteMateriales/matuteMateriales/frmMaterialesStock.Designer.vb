@@ -34,12 +34,14 @@ Partial Class frmMaterialesStock
         Me.btnVistaPrevia = New System.Windows.Forms.Button()
         Me.btnImprimir = New System.Windows.Forms.Button()
         Me.btnVolver = New System.Windows.Forms.Button()
+        Me.CheckBox1 = New System.Windows.Forms.CheckBox()
         Me.gbMateriales.SuspendLayout()
         CType(Me.dgMaterialesStock, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'gbMateriales
         '
+        Me.gbMateriales.Controls.Add(Me.CheckBox1)
         Me.gbMateriales.Controls.Add(Me.Label5)
         Me.gbMateriales.Controls.Add(Me.lblcanprod)
         Me.gbMateriales.Controls.Add(Me.lblCostoInventario)
@@ -160,6 +162,16 @@ Partial Class frmMaterialesStock
         Me.btnVolver.TextAlign = System.Drawing.ContentAlignment.MiddleRight
         Me.btnVolver.UseVisualStyleBackColor = True
         '
+        'CheckBox1
+        '
+        Me.CheckBox1.AutoSize = True
+        Me.CheckBox1.Location = New System.Drawing.Point(6, 51)
+        Me.CheckBox1.Name = "CheckBox1"
+        Me.CheckBox1.Size = New System.Drawing.Size(70, 17)
+        Me.CheckBox1.TabIndex = 8
+        Me.CheckBox1.Text = "Ver Todo"
+        Me.CheckBox1.UseVisualStyleBackColor = True
+        '
         'frmMaterialesStock
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -193,4 +205,5 @@ Partial Class frmMaterialesStock
     Friend WithEvents cboMateriales As ComboBox
     Friend WithEvents btnImprimir As Button
     Friend WithEvents btnVistaPrevia As Button
+    Friend WithEvents CheckBox1 As CheckBox
 End Class

@@ -94,7 +94,7 @@ Partial Class frmMaterialesAgrega
         '
         'col_Identificador
         '
-        Me.col_Identificador.Text = "Identificador"
+        Me.col_Identificador.Text = "Id"
         '
         'grupoAgregarProducto
         '

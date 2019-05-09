@@ -30,7 +30,3 @@ IF @huboerror <> 0
 	raiserror(60000,9,1,'insert en productosPrecioHist','productosPrecioHist_actualizarRegistro', @sis_usu, @huboerror, @resu)
 	return isnull(@resu,60000)
 	end
-
----Ver cual hay que usar
---set @id_prod = @@identity
---select @@identity

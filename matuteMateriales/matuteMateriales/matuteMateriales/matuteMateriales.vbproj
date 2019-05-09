@@ -50,6 +50,7 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
+    <Reference Include="System.Configuration" />
     <Reference Include="System.Data" />
     <Reference Include="System.Deployment" />
     <Reference Include="System.Drawing" />
@@ -84,6 +85,7 @@
     <Compile Include="clases\imprimir.vb" />
     <Compile Include="clases\productoCantidad.vb" />
     <Compile Include="clases\producto.vb" />
+    <Compile Include="Comun.vb" />
     <Compile Include="conexion.vb" />
     <Compile Include="errores.vb" />
     <Compile Include="frmGastos.Designer.vb">
@@ -192,7 +194,6 @@
   <ItemGroup>
     <None Include="Resources\cancel.ico" />
   </ItemGroup>
-  <ItemGroup />
   <ItemGroup>
     <None Include="Resources\print.ico" />
   </ItemGroup>
