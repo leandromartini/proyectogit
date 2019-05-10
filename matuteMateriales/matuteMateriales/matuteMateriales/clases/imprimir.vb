@@ -65,7 +65,7 @@ Public Class imprimir
 
             For Each nombreColum As DataGridViewColumn In datagrid.Columns
                 If nombreColum.DisplayIndex <> 0 Then
-                    xpos = 150
+                    xpos = 100
                 End If
                 e.Graphics.DrawString(nombreColum.Name, rowfont, Brushes.Black, xpos + (xpos * nombreColum.DisplayIndex), ypos - 20)
                 e.Graphics.DrawLine(blackPen, point1, point2)
@@ -75,7 +75,7 @@ Public Class imprimir
                 xpos = 50
                 For j As Integer = 0 To datagrid.ColumnCount - 1
                     If j <> 0 Then
-                        xpos = 150
+                        xpos = 100
                     End If
                     e.Graphics.DrawString(datagrid(j, i).Value, rowfont, Brushes.Black, xpos + (xpos * j), ypos + (25 * i))
                 Next
@@ -100,7 +100,7 @@ Public Class imprimir
 
             For i = 0 To auxlista.Columns.Count - 1
                 If i <> 0 Then
-                    xpos = 150
+                    xpos = 100
                 End If
                 e.Graphics.DrawString(auxlista.Columns.Item(i).Text, rowfont, Brushes.Black, xpos + (xpos * i), ypos - 20)
                 e.Graphics.DrawLine(blackPen, point1, point2)
@@ -110,7 +110,7 @@ Public Class imprimir
                 xpos = 50
                 For j = 0 To item.SubItems.Count - 1
                     If j <> 0 Then
-                        xpos = 150
+                        xpos = 100
                     End If
                     e.Graphics.DrawString(item.SubItems(j).Text, rowfont, Brushes.Black, xpos + (xpos * j), ypos + (25 * fila))
                 Next

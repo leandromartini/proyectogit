@@ -7,18 +7,18 @@ Public Class wflProductos
 
         Try
             'cargo clases correspondientes al producto
-            objProductoCantidad.agregarMateriales(item.SubItems(0).Text, "", "", item.SubItems(2).Text, item.SubItems(1).Text)
+            objProductoCantidad.agregarMateriales(item.SubItems(0).Text, "", "", item.SubItems(1).Text, item.SubItems(2).Text)
             Try
                 Dim objcnProducto As New cnProductos
                 Dim FechaPrecio As Date = "01/01/1900"
                 'en la tabla Prod_cantidad se incrementa el stock, 
-                objcnProducto.actulizarProd_cantidad(item.SubItems(4).Text, item.SubItems(1).Text)
+                objcnProducto.actulizarProd_cantidad(item.SubItems(6).Text, item.SubItems(2).Text, item.SubItems(3).Text, item.SubItems(5).Text)
                 'Si el precio de lista es nuevo actualizo en tabla ProductosPrecio...
-                If Not objProductoCantidad.verPrecio = objProductos.obtenerPrecio(item.SubItems(4).Text) Then
-                    FechaPrecio = objcnProducto.guardarPrecio(item.SubItems(4).Text, item.SubItems(2).Text, -1)
+                If Not objProductoCantidad.verPrecio = objProductos.obtenerPrecio(item.SubItems(6).Text) Then
+                    FechaPrecio = objcnProducto.guardarPrecio(item.SubItems(6).Text, item.SubItems(1).Text, -1)
                     If Not FechaPrecio = "01/01/1900" Then
                         'y agregar en prod_historia el nuevo precio con su fecha de modificacion
-                        objcnProducto.guardarPrecioHist(item.SubItems(4).Text, item.SubItems(2).Text, -1, FechaPrecio.ToShortDateString)
+                        objcnProducto.guardarPrecioHist(item.SubItems(6).Text, item.SubItems(1).Text, -1, FechaPrecio.ToShortDateString)
                     End If
                 End If
             Catch ex As Exception

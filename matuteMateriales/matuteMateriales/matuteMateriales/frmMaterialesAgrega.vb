@@ -1,6 +1,7 @@
 ﻿Public Class frmMaterialesAgrega
     Dim objImprimir As New imprimir
     Private rdCheck As String
+    Private rdCheckForma As String
     Private TitulosDoc As String = "LISTA DE MATERIALES  "
     Private Sub frmMaterialesAgrega_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         Try
@@ -35,9 +36,11 @@
                 Exit Sub
             End If
             Dim item As ListViewItem = New ListViewItem(CStr(cboMateriales.Text))
-            item.SubItems.Add(numCantidad.Value)
             item.SubItems.Add(txtPrecioUnidad.Text)
+            item.SubItems.Add(numCantidad.Value)
             item.SubItems.Add(objComun.totalProduc(lbUnidad.Text, txtPrecioUnidad.Text, numCantidad.Value))
+            item.SubItems.Add(numTransp.Value)
+            item.SubItems.Add(rdCheckForma)
             item.SubItems.Add(cboMateriales.SelectedValue)
             listaMateriales.Items.Add(item)
 
@@ -91,6 +94,18 @@
             cboMateriales.Focus()
             Return False
         End If
+        Dim check As Boolean = False
+        For Each radio As RadioButton In grupoAgregarProducto.Controls.OfType(Of RadioButton)
+            If radio.Checked Then
+                check = True
+                rdCheckForma = radio.Text
+            End If
+        Next
+        If Not check Then
+            MsgBox("Debe seleccionar una forma de pago.", MsgBoxStyle.OkOnly, "Aviso")
+            Return False
+        End If
+
     End Function
     Private Sub SoloImportes_KeyPress(sender As Object, e As KeyPressEventArgs) Handles txtPrecioUnidad.KeyPress, txtPrecioProd.KeyPress
         SoloImportes(e)
@@ -109,6 +124,10 @@
         txtPrecioUnidad.Text = "0,00"
         txtPrecioUnidad.Enabled = False
         numCantidad.Value = 0
+        lbUnidad.Text = ""
+        numTransp.Value = 0
+        rdCheckForma = ""
+        desCheckAgrega(False)
     End Sub
     Sub limpiaProductos()
         txtNombreProd.Text = ""
@@ -127,7 +146,11 @@
         BtnNuevo.Enabled = False
         txtNombreProd.Focus()
     End Sub
-
+    Sub desCheckAgrega(check)
+        For Each radio As RadioButton In grupoAgregarProducto.Controls.OfType(Of RadioButton)
+            radio.Checked = check
+        Next
+    End Sub
     Sub desCheck(check)
         For Each radio As RadioButton In grupoNuevoProducto.Controls.OfType(Of RadioButton)
             radio.Checked = check
@@ -200,6 +223,10 @@
     Private Sub btnGuardar_Click(sender As Object, e As EventArgs) Handles btnGuardar.Click
         Dim objcftProd As New wflProductos
 
+        If listaMateriales.Items.Count = 0 Then
+            MsgBox("No hay productos para guardar.")
+            Exit Sub
+        End If
         For Each item As ListViewItem In listaMateriales.Items
             objcftProd.AgregarProductodeLista(item)
         Next
