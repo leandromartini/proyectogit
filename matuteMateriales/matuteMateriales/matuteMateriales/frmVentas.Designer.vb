@@ -24,6 +24,9 @@ Partial Class frmVentas
     Private Sub InitializeComponent()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(frmVentas))
         Me.grupoAgregarProducto = New System.Windows.Forms.GroupBox()
+        Me.RadioButton3 = New System.Windows.Forms.RadioButton()
+        Me.RadioButton2 = New System.Windows.Forms.RadioButton()
+        Me.RadioButton1 = New System.Windows.Forms.RadioButton()
         Me.lbUnidad = New System.Windows.Forms.Label()
         Me.btnModificaPrecio = New System.Windows.Forms.Button()
         Me.btnReset = New System.Windows.Forms.Button()
@@ -39,15 +42,12 @@ Partial Class frmVentas
         Me.Col_ProductoCantidad = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
         Me.Col_Precio = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
         Me.col_PrecioTotal = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
-        Me.col_Identificador = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
         Me.TipoPago = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
+        Me.col_Identificador = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
         Me.btnVistaPevia = New System.Windows.Forms.Button()
         Me.btnImprimir = New System.Windows.Forms.Button()
         Me.btnVolver = New System.Windows.Forms.Button()
         Me.btnGuardar = New System.Windows.Forms.Button()
-        Me.RadioButton3 = New System.Windows.Forms.RadioButton()
-        Me.RadioButton2 = New System.Windows.Forms.RadioButton()
-        Me.RadioButton1 = New System.Windows.Forms.RadioButton()
         Me.grupoAgregarProducto.SuspendLayout()
         CType(Me.numCantidad, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
@@ -74,6 +74,42 @@ Partial Class frmVentas
         Me.grupoAgregarProducto.TabIndex = 2
         Me.grupoAgregarProducto.TabStop = False
         Me.grupoAgregarProducto.Text = "Agregar a la lista"
+        '
+        'RadioButton3
+        '
+        Me.RadioButton3.AutoSize = True
+        Me.RadioButton3.Enabled = False
+        Me.RadioButton3.Location = New System.Drawing.Point(145, 143)
+        Me.RadioButton3.Name = "RadioButton3"
+        Me.RadioButton3.Size = New System.Drawing.Size(62, 17)
+        Me.RadioButton3.TabIndex = 32
+        Me.RadioButton3.TabStop = True
+        Me.RadioButton3.Text = "Cheque"
+        Me.RadioButton3.UseVisualStyleBackColor = True
+        '
+        'RadioButton2
+        '
+        Me.RadioButton2.AutoSize = True
+        Me.RadioButton2.Enabled = False
+        Me.RadioButton2.Location = New System.Drawing.Point(81, 143)
+        Me.RadioButton2.Name = "RadioButton2"
+        Me.RadioButton2.Size = New System.Drawing.Size(58, 17)
+        Me.RadioButton2.TabIndex = 31
+        Me.RadioButton2.TabStop = True
+        Me.RadioButton2.Text = "Tarjeta"
+        Me.RadioButton2.UseVisualStyleBackColor = True
+        '
+        'RadioButton1
+        '
+        Me.RadioButton1.AutoSize = True
+        Me.RadioButton1.Enabled = False
+        Me.RadioButton1.Location = New System.Drawing.Point(10, 143)
+        Me.RadioButton1.Name = "RadioButton1"
+        Me.RadioButton1.Size = New System.Drawing.Size(65, 17)
+        Me.RadioButton1.TabIndex = 30
+        Me.RadioButton1.TabStop = True
+        Me.RadioButton1.Text = "Contado"
+        Me.RadioButton1.UseVisualStyleBackColor = True
         '
         'lbUnidad
         '
@@ -198,15 +234,15 @@ Partial Class frmVentas
         '
         Me.col_PrecioTotal.Text = "Total"
         '
-        'col_Identificador
-        '
-        Me.col_Identificador.DisplayIndex = 4
-        Me.col_Identificador.Text = "Identificador"
-        '
         'TipoPago
         '
         Me.TipoPago.DisplayIndex = 5
         Me.TipoPago.Text = "col_TipoPago"
+        '
+        'col_Identificador
+        '
+        Me.col_Identificador.DisplayIndex = 4
+        Me.col_Identificador.Text = "Identificador"
         '
         'btnVistaPevia
         '
@@ -255,42 +291,6 @@ Partial Class frmVentas
         Me.btnGuardar.Text = "Guardar"
         Me.btnGuardar.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
         Me.btnGuardar.UseVisualStyleBackColor = True
-        '
-        'RadioButton3
-        '
-        Me.RadioButton3.AutoSize = True
-        Me.RadioButton3.Enabled = False
-        Me.RadioButton3.Location = New System.Drawing.Point(145, 143)
-        Me.RadioButton3.Name = "RadioButton3"
-        Me.RadioButton3.Size = New System.Drawing.Size(62, 17)
-        Me.RadioButton3.TabIndex = 32
-        Me.RadioButton3.TabStop = True
-        Me.RadioButton3.Text = "Cheque"
-        Me.RadioButton3.UseVisualStyleBackColor = True
-        '
-        'RadioButton2
-        '
-        Me.RadioButton2.AutoSize = True
-        Me.RadioButton2.Enabled = False
-        Me.RadioButton2.Location = New System.Drawing.Point(81, 143)
-        Me.RadioButton2.Name = "RadioButton2"
-        Me.RadioButton2.Size = New System.Drawing.Size(58, 17)
-        Me.RadioButton2.TabIndex = 31
-        Me.RadioButton2.TabStop = True
-        Me.RadioButton2.Text = "Tarjeta"
-        Me.RadioButton2.UseVisualStyleBackColor = True
-        '
-        'RadioButton1
-        '
-        Me.RadioButton1.AutoSize = True
-        Me.RadioButton1.Enabled = False
-        Me.RadioButton1.Location = New System.Drawing.Point(10, 143)
-        Me.RadioButton1.Name = "RadioButton1"
-        Me.RadioButton1.Size = New System.Drawing.Size(65, 17)
-        Me.RadioButton1.TabIndex = 30
-        Me.RadioButton1.TabStop = True
-        Me.RadioButton1.Text = "Contado"
-        Me.RadioButton1.UseVisualStyleBackColor = True
         '
         'frmVentas
         '
