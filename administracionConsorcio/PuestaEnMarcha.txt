@@ -1,3 +1,0 @@
-* Motor de base de datos, gestor.
-* Programa para la aplicacion, framework.
-* Solucion ejecutable.

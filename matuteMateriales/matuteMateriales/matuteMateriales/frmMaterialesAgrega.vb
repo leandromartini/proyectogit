@@ -15,7 +15,6 @@
         Try
             Dim objWflProd As New wflProductos 'Ojo se instancia tambienn al guardar productos
             Dim objDS As New DataSet
-
             objDS = objWflProd.obtenerProductos(-1)
             If Not IsNothing(objDS) Then
                 cboMateriales.DataSource = objDS.Tables(0)
