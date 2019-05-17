@@ -22,7 +22,7 @@
         Dim objccdProductoPrecio As New ccdProductoPrecioHist
         guardarPrecioHist = objccdProductoPrecio.actualizarPrecioHist(id, precio, precioIVA, fecAct)
     End Function
-    Public Function actulizarProd_cantidad(id As Integer, cant As Double, total As Double, formaPago As String) As Integer
+    Public Function actulizarProd_cantidad(id As Integer, precio As Double, cant As Double, total As Double, formaPago As String) As Integer
         Dim objccdProductoCantidad As New ccdProductoCantidad
         Dim objccdEgresos As New ccdEgresos
         Dim objccdPagos As New ccdPagosTpoPago
@@ -30,7 +30,7 @@
         Try
             objccdProductoCantidad.actualizarCantidad(id, objccdProductoCantidad.obtenerCantidad(id) + cant)
             'Agrego en la tabla egresos el id del producto total y la fecha
-            id_egreso = objccdEgresos.actualizarEgresos(id, total, Date.Now)
+            id_egreso = objccdEgresos.actualizarEgresos(id, precio, cant, total, Date.Now)
             If id_egreso = 0 Then
                 MsgBox("Error al cargar la tabla egresos")
                 Exit Function
@@ -41,8 +41,17 @@
         End Try
     End Function
 
-    Friend Function obtenerProductosInventario(id_prod As Object) As DataSet
+    Friend Function obtenerProductosInventario(id_prod As Integer) As DataSet
         Dim objccdProducto As New ccdProducto
         obtenerProductosInventario = objccdProducto.obtenerProductosInventario(id_prod)
+    End Function
+    Friend Function GuardarEgreso(id_prod As Integer, precio As Double, cant As Double, total As Double) As Integer
+        Dim objccdEgresos As New ccdEgresos
+        Try
+            GuardarEgreso = objccdEgresos.actualizarEgresos(id_prod, precio, cant, total, Date.Now)
+        Catch ex As Exception
+            GuardarEgreso = 0
+            agregar_error(ex, "cnProductos GuardarEgreso")
+        End Try
     End Function
 End Class

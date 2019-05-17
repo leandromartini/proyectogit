@@ -12,7 +12,11 @@ Public Class wflProductos
                 Dim objcnProducto As New cnProductos
                 Dim FechaPrecio As Date = "01/01/1900"
                 'en la tabla Prod_cantidad se incrementa el stock, 
-                objcnProducto.actulizarProd_cantidad(item.SubItems(6).Text, item.SubItems(2).Text, item.SubItems(3).Text, item.SubItems(5).Text)
+                objcnProducto.actulizarProd_cantidad(item.SubItems(6).Text, item.SubItems(1).Text, item.SubItems(2).Text, item.SubItems(3).Text, item.SubItems(5).Text)
+                'si existe gasto de transporte lo guardo
+                If item.SubItems(4).Text <> 0 Then
+                    objcnProducto.GuardarEgreso(-1, item.SubItems(4).Text, 1, item.SubItems(4).Text)
+                End If
                 'Si el precio de lista es nuevo actualizo en tabla ProductosPrecio...
                 If Not objProductoCantidad.verPrecio = objProductos.obtenerPrecio(item.SubItems(6).Text) Then
                     FechaPrecio = objcnProducto.guardarPrecio(item.SubItems(6).Text, item.SubItems(1).Text, -1)

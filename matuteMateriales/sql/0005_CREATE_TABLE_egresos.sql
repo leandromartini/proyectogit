@@ -14,6 +14,8 @@ GO
 CREATE TABLE [dbo].[egresos](
 	[id_egreso] [int] IDENTITY(1,1) NOT NULL,
 	[id_con] [int] NOT NULL,
+	[precio] [decimal](8, 2) NOT NULL,
+	[cant] [decimal](10, 2) NOT NULL,
 	[total] [decimal](10, 2) NOT NULL,
 	[fec] [date] NOT NULL
  CONSTRAINT [PK_egresos] PRIMARY KEY CLUSTERED 
