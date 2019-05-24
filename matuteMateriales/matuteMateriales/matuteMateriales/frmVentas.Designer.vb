@@ -42,7 +42,7 @@ Partial Class frmVentas
         Me.Col_ProductoCantidad = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
         Me.Col_Precio = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
         Me.col_PrecioTotal = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
-        Me.TipoPago = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
+        Me.col_TipoPago = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
         Me.col_Identificador = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
         Me.btnVistaPevia = New System.Windows.Forms.Button()
         Me.btnImprimir = New System.Windows.Forms.Button()
@@ -78,8 +78,7 @@ Partial Class frmVentas
         'RadioButton3
         '
         Me.RadioButton3.AutoSize = True
-        Me.RadioButton3.Enabled = False
-        Me.RadioButton3.Location = New System.Drawing.Point(145, 143)
+        Me.RadioButton3.Location = New System.Drawing.Point(215, 97)
         Me.RadioButton3.Name = "RadioButton3"
         Me.RadioButton3.Size = New System.Drawing.Size(62, 17)
         Me.RadioButton3.TabIndex = 32
@@ -90,8 +89,7 @@ Partial Class frmVentas
         'RadioButton2
         '
         Me.RadioButton2.AutoSize = True
-        Me.RadioButton2.Enabled = False
-        Me.RadioButton2.Location = New System.Drawing.Point(81, 143)
+        Me.RadioButton2.Location = New System.Drawing.Point(151, 97)
         Me.RadioButton2.Name = "RadioButton2"
         Me.RadioButton2.Size = New System.Drawing.Size(58, 17)
         Me.RadioButton2.TabIndex = 31
@@ -102,8 +100,7 @@ Partial Class frmVentas
         'RadioButton1
         '
         Me.RadioButton1.AutoSize = True
-        Me.RadioButton1.Enabled = False
-        Me.RadioButton1.Location = New System.Drawing.Point(10, 143)
+        Me.RadioButton1.Location = New System.Drawing.Point(80, 97)
         Me.RadioButton1.Name = "RadioButton1"
         Me.RadioButton1.Size = New System.Drawing.Size(65, 17)
         Me.RadioButton1.TabIndex = 30
@@ -207,7 +204,7 @@ Partial Class frmVentas
         '
         'listaMateriales
         '
-        Me.listaMateriales.Columns.AddRange(New System.Windows.Forms.ColumnHeader() {Me.Col_Producto, Me.Col_ProductoCantidad, Me.Col_Precio, Me.col_PrecioTotal, Me.TipoPago, Me.col_Identificador})
+        Me.listaMateriales.Columns.AddRange(New System.Windows.Forms.ColumnHeader() {Me.Col_Producto, Me.Col_ProductoCantidad, Me.Col_Precio, Me.col_PrecioTotal, Me.col_TipoPago, Me.col_Identificador})
         Me.listaMateriales.Location = New System.Drawing.Point(391, 19)
         Me.listaMateriales.Name = "listaMateriales"
         Me.listaMateriales.Size = New System.Drawing.Size(381, 317)
@@ -234,15 +231,17 @@ Partial Class frmVentas
         '
         Me.col_PrecioTotal.Text = "Total"
         '
-        'TipoPago
+        'col_TipoPago
         '
-        Me.TipoPago.DisplayIndex = 5
-        Me.TipoPago.Text = "col_TipoPago"
+        Me.col_TipoPago.DisplayIndex = 5
+        Me.col_TipoPago.Text = "Tipo Pago"
+        Me.col_TipoPago.Width = 65
         '
         'col_Identificador
         '
         Me.col_Identificador.DisplayIndex = 4
         Me.col_Identificador.Text = "Identificador"
+        Me.col_Identificador.Width = 70
         '
         'btnVistaPevia
         '
@@ -329,7 +328,7 @@ Partial Class frmVentas
     Friend WithEvents Col_ProductoCantidad As ColumnHeader
     Friend WithEvents Col_Precio As ColumnHeader
     Friend WithEvents col_PrecioTotal As ColumnHeader
-    Friend WithEvents TipoPago As ColumnHeader
+    Friend WithEvents col_TipoPago As ColumnHeader
     Friend WithEvents col_Identificador As ColumnHeader
     Friend WithEvents btnVistaPevia As Button
     Friend WithEvents btnImprimir As Button
