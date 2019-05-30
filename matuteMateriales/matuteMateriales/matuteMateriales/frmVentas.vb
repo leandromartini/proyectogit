@@ -140,7 +140,20 @@
         objImprimir.VistaListaProductos(listaMateriales, TitulosDoc)
     End Sub
     Private Sub btnGuardar_Click(sender As Object, e As EventArgs) Handles btnGuardar.Click
+        Dim objcftProd As New wflProductos
 
+        If listaMateriales.Items.Count = 0 Then
+            MsgBox("No hay productos en la lista.")
+            Exit Sub
+        End If
+        For Each item As ListViewItem In listaMateriales.Items
+            objcftProd.AgregarProductodeListaVentas(item)
+        Next
+        MsgBox("Se guardaron las ventas a la fecha: " & Date.Now & " hs.")
+        listaMateriales.Items.Clear()
+        cboMateriales.ValueMember = Nothing
+        cargarComboMateriales()
+        cboMateriales.Focus()
     End Sub
     Private Sub btnVolver_Click(sender As Object, e As EventArgs) Handles btnVolver.Click
         Me.Close()

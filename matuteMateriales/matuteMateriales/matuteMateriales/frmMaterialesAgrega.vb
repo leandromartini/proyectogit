@@ -227,7 +227,7 @@
             Exit Sub
         End If
         For Each item As ListViewItem In listaMateriales.Items
-            objcftProd.AgregarProductodeLista(item)
+            objcftProd.AgregarProductodeListaIngresa(item)
         Next
         MsgBox("Se guardaron los materiales que ingresaron en la fecha: " & Date.Now & " hs.")
         listaMateriales.Items.Clear()

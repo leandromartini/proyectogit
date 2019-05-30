@@ -1,7 +1,7 @@
 ﻿
 Public Class wflProductos
     'agregaProducto se refiere a los materiales que entraron en el dia y se tienen que cargar a datos
-    Friend Sub AgregarProductodeLista(item As ListViewItem)
+    Friend Sub AgregarProductodeListaIngresa(item As ListViewItem)
         Dim objProductoCantidad As New productoCantidad
         Dim objProductos As New producto
 
@@ -10,12 +10,15 @@ Public Class wflProductos
             objProductoCantidad.agregarMateriales(item.SubItems(0).Text, "", "", item.SubItems(1).Text, item.SubItems(2).Text)
             Try
                 Dim objcnProducto As New cnProductos
+                Dim objcdEgresos As New cnEgresos
                 Dim FechaPrecio As Date = "01/01/1900"
                 'en la tabla Prod_cantidad se incrementa el stock, 
-                objcnProducto.actulizarProd_cantidad(item.SubItems(6).Text, item.SubItems(1).Text, item.SubItems(2).Text, item.SubItems(3).Text, item.SubItems(5).Text)
+                objcnProducto.actulizarProd_cantidad(item.SubItems(6).Text, item.SubItems(2).Text, "+")
+                'Agrego en la tabla egresos el id del producto total y la fecha
+                objcdEgresos.NuevoEgreso(item.SubItems(6).Text, item.SubItems(1).Text, item.SubItems(2).Text, item.SubItems(3).Text, item.SubItems(5).Text)
                 'si existe gasto de transporte lo guardo
                 If item.SubItems(4).Text <> 0 Then
-                    objcnProducto.GuardarEgreso(-1, item.SubItems(4).Text, 1, item.SubItems(4).Text)
+                    objcdEgresos.NuevoEgreso(-1, item.SubItems(4).Text, 1, item.SubItems(4).Text, item.SubItems(5).Text)
                 End If
                 'Si el precio de lista es nuevo actualizo en tabla ProductosPrecio...
                 If Not objProductoCantidad.verPrecio = objProductos.obtenerPrecio(item.SubItems(6).Text) Then
@@ -74,4 +77,22 @@ Public Class wflProductos
             obtenerProductosInventario = Nothing
         End Try
     End Function
+
+    Friend Sub AgregarProductodeListaVentas(item As ListViewItem)
+        Try
+            Dim objcnIngresos As New cnIngresos
+            Dim objcnProducto As New cnProductos
+
+            objcnIngresos.GuardarIngreso(item.SubItems(5).Text, item.SubItems(2).Text, item.SubItems(1).Text, item.SubItems(3).Text, item.SubItems(4).Text)
+
+            objcnProducto.actulizarProd_cantidad(item.SubItems(5).Text, item.SubItems(1).Text, "-")
+            'cuando guarde un producto que vendí, entonces vamos a tener un ingreso puede ser efectivo, tarjeta, cheque
+            'de todas formas es un ingreso (haber), luego debemos quitar en (cantidad de productos), lo que hemos vendido
+            'que pasa si vendo mas de lo que tengo? deberia poder validar antes.
+            '
+
+        Catch ex As Exception
+            agregar_error(ex, "wflProductos AgregarProductodeListaVentas")
+        End Try
+    End Sub
 End Class

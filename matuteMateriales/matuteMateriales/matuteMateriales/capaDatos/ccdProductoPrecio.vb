@@ -16,6 +16,7 @@ Public Class ccdProductoPrecio
         Catch ex As Exception
             agregar_error(ex, "ccdProductoPrecio actualizarPrecio")
             disconect()
+            actualizarPrecio = "01/01/1900"
         End Try
     End Function
     Public Function obtenerPrecio(id_prod As Integer) As Double

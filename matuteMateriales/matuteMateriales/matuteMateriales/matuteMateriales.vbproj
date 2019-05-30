@@ -77,11 +77,14 @@
   <ItemGroup>
     <Compile Include="capaDatos\ccdEgresos.vb" />
     <Compile Include="capaDatos\ccdErrores.vb" />
+    <Compile Include="capaDatos\ccdIngresos.vb" />
     <Compile Include="capaDatos\ccdPagosTpoPago.vb" />
     <Compile Include="capaDatos\ccdProductoCantidad.vb" />
     <Compile Include="capaDatos\ccdProductoPrecio.vb" />
     <Compile Include="capaDatos\ccdProducto.vb" />
     <Compile Include="capaDatos\ccdProductoPrecioHist.vb" />
+    <Compile Include="capaNegocio\cnEgresos.vb" />
+    <Compile Include="capaNegocio\cnIngresos.vb" />
     <Compile Include="capaworkflow\wflProductos.vb" />
     <Compile Include="capaNegocio\cnProductos.vb" />
     <Compile Include="clases\imprimir.vb" />

@@ -1,13 +1,13 @@
 ﻿Imports System.Data.SqlClient
 Public Class ccdPagosTpoPago
-    Public Sub actualizarProducto(ByVal id_egreso As Integer, ByVal formaPago As String, ByVal fec As Date)
+    Public Sub actualizarpagosTpoPago(ByVal id_egreso As Integer, ByVal formaPago As String, ByVal fec As Date)
         Try
             Dim dataset As New DataSet
             Dim sProdString As String = "[dbo].[pagosTpoPago_actualizarRegistro]"
             Dim command As New SqlCommand(sProdString, objConn)
             With command
                 command.CommandType = CommandType.StoredProcedure
-                command.Parameters.AddWithValue("@id_egreso", id_egreso)
+                command.Parameters.AddWithValue("@id_tran", id_egreso)
                 command.Parameters.AddWithValue("@formaPago", formaPago)
                 command.Parameters.AddWithValue("@fec", fec)
 
