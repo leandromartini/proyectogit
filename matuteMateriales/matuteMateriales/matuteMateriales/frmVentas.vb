@@ -55,8 +55,8 @@
                 Exit Sub
             End If
             Dim item As ListViewItem = New ListViewItem(CStr(cboMateriales.Text))
-            item.SubItems.Add(txtPrecioUnidad.Text)
             item.SubItems.Add(numCantidad.Value)
+            item.SubItems.Add(txtPrecioUnidad.Text)
             item.SubItems.Add(objComun.totalProduc(lbUnidad.Text, txtPrecioUnidad.Text, numCantidad.Value))
             item.SubItems.Add(rdCheckForma)
             item.SubItems.Add(cboMateriales.SelectedValue)
