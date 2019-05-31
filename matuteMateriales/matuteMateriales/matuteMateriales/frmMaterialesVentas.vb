@@ -1,4 +1,4 @@
-﻿Public Class frmVentas
+﻿Public Class frmMaterialesVentas
     Private TitulosDoc As String = "LISTA DE MATERIALES VENDIDOS "
     Private rdCheckForma As String
     Dim objImprimir As New imprimir

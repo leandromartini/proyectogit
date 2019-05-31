@@ -9,9 +9,9 @@
         frmMaterialesStock.ShowDialog()
     End Sub
     Private Sub SalidaToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles SalidaToolStripMenuItem.Click
-        frmVentas.ShowDialog()
+        frmMaterialesVentas.ShowDialog()
     End Sub
-    Private Sub GastosVariosToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles GastosVariosToolStripMenuItem.Click
-
+    Private Sub SaldosToolStripMenuItem1_Click(sender As Object, e As EventArgs) Handles SaldosToolStripMenuItem1.Click
+        frmContableSaldos.ShowDialog()
     End Sub
 End Class

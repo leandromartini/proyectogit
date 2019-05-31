@@ -22,6 +22,29 @@ Public Class ccdIngresos
             agregar_error(ex, "actualizarEgresos")
         End Try
     End Function
+
+    Friend Function ObtenerIngresos(id_ingreso As Integer, fecDede As Date, fecHasta As Date) As DataSet
+        Try
+            Dim sProdString As String = "[dbo].[ingresos_obtenerLista]"
+            Dim command As New SqlCommand(sProdString, objConn)
+            Dim dataset As New DataSet
+            With command
+                command.Parameters.AddWithValue("@id_egreso", id_ingreso)
+                command.Parameters.AddWithValue("@fecDede", fecDede)
+                command.Parameters.AddWithValue("@fecHasta", fecHasta)
+                command.CommandType = CommandType.StoredProcedure
+                conn()
+            End With
+            Dim da As New SqlDataAdapter(command)
+            da.Fill(dataset)
+            disconect()
+            ObtenerIngresos = dataset
+        Catch ex As Exception
+            disconect()
+            agregar_error(ex, "ObtenerEgreso")
+            ObtenerIngresos = Nothing
+        End Try
+    End Function
 End Class
 
 

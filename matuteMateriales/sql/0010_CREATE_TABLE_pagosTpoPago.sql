@@ -15,6 +15,7 @@ CREATE TABLE [dbo].[pagosTpoPago](
 	[id_tpoPago] [int] IDENTITY(1,1) NOT NULL,
 	[id_tran] [int] NOT NULL,
 	[formaPago] [varchar](20) NOT NULL,
+	[tipoTran] [char](1) NOT NULL,
 	[fec] [date] NOT NULL,
  CONSTRAINT [PK_PagosTpoPago] PRIMARY KEY CLUSTERED 
 (

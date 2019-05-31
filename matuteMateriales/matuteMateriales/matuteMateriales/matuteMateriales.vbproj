@@ -83,22 +83,16 @@
     <Compile Include="capaDatos\ccdProductoPrecio.vb" />
     <Compile Include="capaDatos\ccdProducto.vb" />
     <Compile Include="capaDatos\ccdProductoPrecioHist.vb" />
-    <Compile Include="capaNegocio\cnEgresos.vb" />
-    <Compile Include="capaNegocio\cnIngresos.vb" />
+    <Compile Include="capaNegocio\cnContable.vb" />
     <Compile Include="capaworkflow\wflProductos.vb" />
     <Compile Include="capaNegocio\cnProductos.vb" />
+    <Compile Include="capaworkflow\wflContable.vb" />
     <Compile Include="clases\imprimir.vb" />
     <Compile Include="clases\productoCantidad.vb" />
     <Compile Include="clases\producto.vb" />
     <Compile Include="Comun.vb" />
     <Compile Include="conexion.vb" />
     <Compile Include="errores.vb" />
-    <Compile Include="frmGastos.Designer.vb">
-      <DependentUpon>frmGastos.vb</DependentUpon>
-    </Compile>
-    <Compile Include="frmGastos.vb">
-      <SubType>Form</SubType>
-    </Compile>
     <Compile Include="frmMaterialesAgrega.vb">
       <SubType>Form</SubType>
     </Compile>
@@ -118,10 +112,16 @@
     <Compile Include="frmPrincipal.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmVentas.Designer.vb">
-      <DependentUpon>frmVentas.vb</DependentUpon>
+    <Compile Include="frmContableSaldos.Designer.vb">
+      <DependentUpon>frmContableSaldos.vb</DependentUpon>
     </Compile>
-    <Compile Include="frmVentas.vb">
+    <Compile Include="frmContableSaldos.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmMaterialesVentas.Designer.vb">
+      <DependentUpon>frmMaterialesVentas.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmMaterialesVentas.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="My Project\AssemblyInfo.vb" />
@@ -141,9 +141,6 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="frmGastos.resx">
-      <DependentUpon>frmGastos.vb</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="frmMaterialesAgrega.resx">
       <DependentUpon>frmMaterialesAgrega.vb</DependentUpon>
     </EmbeddedResource>
@@ -153,8 +150,11 @@
     <EmbeddedResource Include="frmPrincipal.resx">
       <DependentUpon>frmPrincipal.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmVentas.resx">
-      <DependentUpon>frmVentas.vb</DependentUpon>
+    <EmbeddedResource Include="frmContableSaldos.resx">
+      <DependentUpon>frmContableSaldos.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmMaterialesVentas.resx">
+      <DependentUpon>frmMaterialesVentas.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="My Project\Resources.resx">
       <Generator>VbMyResourcesResXFileCodeGenerator</Generator>
