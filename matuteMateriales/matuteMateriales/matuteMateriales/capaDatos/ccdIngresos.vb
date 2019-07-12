@@ -25,12 +25,12 @@ Public Class ccdIngresos
 
     Friend Function ObtenerIngresos(id_ingreso As Integer, fecDede As Date, fecHasta As Date) As DataSet
         Try
-            Dim sProdString As String = "[dbo].[ingresos_obtenerLista]"
+            Dim sProdString As String = "[dbo].[ingresos_ObtenerLista]"
             Dim command As New SqlCommand(sProdString, objConn)
             Dim dataset As New DataSet
             With command
-                command.Parameters.AddWithValue("@id_egreso", id_ingreso)
-                command.Parameters.AddWithValue("@fecDede", fecDede)
+                command.Parameters.AddWithValue("@id_con", id_ingreso)
+                command.Parameters.AddWithValue("@fecDesde", fecDede)
                 command.Parameters.AddWithValue("@fecHasta", fecHasta)
                 command.CommandType = CommandType.StoredProcedure
                 conn()

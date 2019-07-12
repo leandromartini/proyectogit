@@ -45,15 +45,17 @@ Partial Class frmMaterialesVentas
         Me.col_PrecioTotal = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
         Me.col_TipoPago = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
         Me.col_Identificador = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
+        Me.GroupBox1 = New System.Windows.Forms.GroupBox()
+        Me.TextBox2 = New System.Windows.Forms.TextBox()
+        Me.Label5 = New System.Windows.Forms.Label()
+        Me.TextBox1 = New System.Windows.Forms.TextBox()
+        Me.Label4 = New System.Windows.Forms.Label()
         Me.btnVistaPevia = New System.Windows.Forms.Button()
         Me.btnImprimir = New System.Windows.Forms.Button()
         Me.btnVolver = New System.Windows.Forms.Button()
         Me.btnGuardar = New System.Windows.Forms.Button()
-        Me.TextBox1 = New System.Windows.Forms.TextBox()
-        Me.Label4 = New System.Windows.Forms.Label()
-        Me.TextBox2 = New System.Windows.Forms.TextBox()
-        Me.Label5 = New System.Windows.Forms.Label()
-        Me.GroupBox1 = New System.Windows.Forms.GroupBox()
+        Me.Label6 = New System.Windows.Forms.Label()
+        Me.TextBox3 = New System.Windows.Forms.TextBox()
         Me.grupoAgregarProducto.SuspendLayout()
         CType(Me.numCantidad, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GroupBox1.SuspendLayout()
@@ -262,6 +264,58 @@ Partial Class frmMaterialesVentas
         Me.col_Identificador.Text = "Identificador"
         Me.col_Identificador.Width = 70
         '
+        'GroupBox1
+        '
+        Me.GroupBox1.Controls.Add(Me.TextBox3)
+        Me.GroupBox1.Controls.Add(Me.Label6)
+        Me.GroupBox1.Controls.Add(Me.TextBox2)
+        Me.GroupBox1.Controls.Add(Me.Label5)
+        Me.GroupBox1.Controls.Add(Me.TextBox1)
+        Me.GroupBox1.Controls.Add(Me.Label4)
+        Me.GroupBox1.Enabled = False
+        Me.GroupBox1.Location = New System.Drawing.Point(12, 150)
+        Me.GroupBox1.Name = "GroupBox1"
+        Me.GroupBox1.Size = New System.Drawing.Size(378, 237)
+        Me.GroupBox1.TabIndex = 38
+        Me.GroupBox1.TabStop = False
+        Me.GroupBox1.Text = "Cliente"
+        '
+        'TextBox2
+        '
+        Me.TextBox2.Enabled = False
+        Me.TextBox2.Location = New System.Drawing.Point(90, 59)
+        Me.TextBox2.Name = "TextBox2"
+        Me.TextBox2.Size = New System.Drawing.Size(278, 23)
+        Me.TextBox2.TabIndex = 36
+        '
+        'Label5
+        '
+        Me.Label5.AutoSize = True
+        Me.Label5.Enabled = False
+        Me.Label5.Location = New System.Drawing.Point(27, 62)
+        Me.Label5.Name = "Label5"
+        Me.Label5.Size = New System.Drawing.Size(60, 15)
+        Me.Label5.TabIndex = 37
+        Me.Label5.Text = "Direccion:"
+        '
+        'TextBox1
+        '
+        Me.TextBox1.Enabled = False
+        Me.TextBox1.Location = New System.Drawing.Point(90, 25)
+        Me.TextBox1.Name = "TextBox1"
+        Me.TextBox1.Size = New System.Drawing.Size(278, 23)
+        Me.TextBox1.TabIndex = 34
+        '
+        'Label4
+        '
+        Me.Label4.AutoSize = True
+        Me.Label4.Enabled = False
+        Me.Label4.Location = New System.Drawing.Point(27, 28)
+        Me.Label4.Name = "Label4"
+        Me.Label4.Size = New System.Drawing.Size(54, 15)
+        Me.Label4.TabIndex = 35
+        Me.Label4.Text = "Apellido:"
+        '
         'btnVistaPevia
         '
         Me.btnVistaPevia.Image = Global.listView.My.Resources.Resources.print_preview
@@ -310,53 +364,28 @@ Partial Class frmMaterialesVentas
         Me.btnGuardar.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
         Me.btnGuardar.UseVisualStyleBackColor = True
         '
-        'TextBox1
+        'Label6
         '
-        Me.TextBox1.Location = New System.Drawing.Point(90, 25)
-        Me.TextBox1.Name = "TextBox1"
-        Me.TextBox1.Size = New System.Drawing.Size(278, 23)
-        Me.TextBox1.TabIndex = 34
+        Me.Label6.AutoSize = True
+        Me.Label6.Location = New System.Drawing.Point(16, 108)
+        Me.Label6.Name = "Label6"
+        Me.Label6.Size = New System.Drawing.Size(0, 15)
+        Me.Label6.TabIndex = 38
         '
-        'Label4
+        'TextBox3
         '
-        Me.Label4.AutoSize = True
-        Me.Label4.Location = New System.Drawing.Point(27, 28)
-        Me.Label4.Name = "Label4"
-        Me.Label4.Size = New System.Drawing.Size(54, 15)
-        Me.Label4.TabIndex = 35
-        Me.Label4.Text = "Apellido:"
+        Me.TextBox3.Enabled = False
+        Me.TextBox3.Font = New System.Drawing.Font("Segoe UI", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.TextBox3.Location = New System.Drawing.Point(40, 108)
+        Me.TextBox3.Multiline = True
+        Me.TextBox3.Name = "TextBox3"
+        Me.TextBox3.ReadOnly = True
+        Me.TextBox3.Size = New System.Drawing.Size(310, 71)
+        Me.TextBox3.TabIndex = 39
+        Me.TextBox3.Text = "Proximamente.. La idea seria tener un crontrol de ubicaciones, para repartir o se" &
+    "guimiento."
         '
-        'TextBox2
-        '
-        Me.TextBox2.Location = New System.Drawing.Point(90, 59)
-        Me.TextBox2.Name = "TextBox2"
-        Me.TextBox2.Size = New System.Drawing.Size(278, 23)
-        Me.TextBox2.TabIndex = 36
-        '
-        'Label5
-        '
-        Me.Label5.AutoSize = True
-        Me.Label5.Location = New System.Drawing.Point(27, 62)
-        Me.Label5.Name = "Label5"
-        Me.Label5.Size = New System.Drawing.Size(60, 15)
-        Me.Label5.TabIndex = 37
-        Me.Label5.Text = "Direccion:"
-        '
-        'GroupBox1
-        '
-        Me.GroupBox1.Controls.Add(Me.TextBox2)
-        Me.GroupBox1.Controls.Add(Me.Label5)
-        Me.GroupBox1.Controls.Add(Me.TextBox1)
-        Me.GroupBox1.Controls.Add(Me.Label4)
-        Me.GroupBox1.Location = New System.Drawing.Point(12, 150)
-        Me.GroupBox1.Name = "GroupBox1"
-        Me.GroupBox1.Size = New System.Drawing.Size(378, 237)
-        Me.GroupBox1.TabIndex = 38
-        Me.GroupBox1.TabStop = False
-        Me.GroupBox1.Text = "Cliente"
-        Me.GroupBox1.Visible = False
-        '
-        'frmVentas
+        'frmMaterialesVentas
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(7.0!, 15.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
@@ -368,7 +397,7 @@ Partial Class frmMaterialesVentas
         Me.Controls.Add(Me.btnGuardar)
         Me.Font = New System.Drawing.Font("Segoe UI", 9.0!)
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
-        Me.Name = "frmVentas"
+        Me.Name = "frmMaterialesVentas"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Ventas"
         Me.grupoAgregarProducto.ResumeLayout(False)
@@ -411,4 +440,6 @@ Partial Class frmMaterialesVentas
     Friend WithEvents Label5 As Label
     Friend WithEvents TextBox1 As TextBox
     Friend WithEvents Label4 As Label
+    Friend WithEvents TextBox3 As TextBox
+    Friend WithEvents Label6 As Label
 End Class

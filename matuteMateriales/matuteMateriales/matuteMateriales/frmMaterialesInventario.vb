@@ -1,5 +1,5 @@
 ﻿
-Public Class frmMaterialesStock
+Public Class frmMaterialesInventario
     Dim objImprimir As New imprimir
     Private TitulosDoc As String = "CONTROL DE INVENTARIO "
     Private Sub frmMaterialesStock_Load(sender As Object, e As EventArgs) Handles MyBase.Load

@@ -3,10 +3,10 @@
         Me.Close()
     End Sub
     Private Sub AgregarToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles AgregarToolStripMenuItem.Click
-        frmMaterialesAgrega.ShowDialog()
+        frmMaterialesIngreso.ShowDialog()
     End Sub
     Private Sub EnStockToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles EnStockToolStripMenuItem.Click
-        frmMaterialesStock.ShowDialog()
+        frmMaterialesInventario.ShowDialog()
     End Sub
     Private Sub SalidaToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles SalidaToolStripMenuItem.Click
         frmMaterialesVentas.ShowDialog()

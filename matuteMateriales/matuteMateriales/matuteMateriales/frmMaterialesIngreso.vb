@@ -1,4 +1,4 @@
-﻿Public Class frmMaterialesAgrega
+﻿Public Class frmMaterialesIngreso
     Dim objImprimir As New imprimir
     Private rdCheck As String
     Private rdCheckForma As String

@@ -15,6 +15,21 @@
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
     <Deterministic>true</Deterministic>
     <TargetFrameworkProfile />
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -35,6 +50,7 @@
     <OutputPath>bin\Release\</OutputPath>
     <DocumentationFile>listView.xml</DocumentationFile>
     <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022</NoWarn>
+    <Prefer32Bit>true</Prefer32Bit>
   </PropertyGroup>
   <PropertyGroup>
     <OptionExplicit>On</OptionExplicit>
@@ -47,6 +63,24 @@
   </PropertyGroup>
   <PropertyGroup>
     <OptionInfer>On</OptionInfer>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationManifest>My Project\app.manifest</ApplicationManifest>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignManifests>false</SignManifests>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignAssembly>false</SignAssembly>
+  </PropertyGroup>
+  <PropertyGroup>
+    <DelaySign>false</DelaySign>
+  </PropertyGroup>
+  <PropertyGroup>
+    <TargetZone>LocalIntranet</TargetZone>
+  </PropertyGroup>
+  <PropertyGroup>
+    <GenerateManifests>false</GenerateManifests>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
@@ -93,17 +127,17 @@
     <Compile Include="Comun.vb" />
     <Compile Include="conexion.vb" />
     <Compile Include="errores.vb" />
-    <Compile Include="frmMaterialesAgrega.vb">
+    <Compile Include="frmMaterialesIngreso.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmMaterialesAgrega.Designer.vb">
-      <DependentUpon>frmMaterialesAgrega.vb</DependentUpon>
+    <Compile Include="frmMaterialesIngreso.Designer.vb">
+      <DependentUpon>frmMaterialesIngreso.vb</DependentUpon>
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmMaterialesStock.Designer.vb">
-      <DependentUpon>frmMaterialesStock.vb</DependentUpon>
+    <Compile Include="frmMaterialesInventario.Designer.vb">
+      <DependentUpon>frmMaterialesInventario.vb</DependentUpon>
     </Compile>
-    <Compile Include="frmMaterialesStock.vb">
+    <Compile Include="frmMaterialesInventario.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="frmPrincipal.Designer.vb">
@@ -141,11 +175,11 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="frmMaterialesAgrega.resx">
-      <DependentUpon>frmMaterialesAgrega.vb</DependentUpon>
+    <EmbeddedResource Include="frmMaterialesIngreso.resx">
+      <DependentUpon>frmMaterialesIngreso.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmMaterialesStock.resx">
-      <DependentUpon>frmMaterialesStock.vb</DependentUpon>
+    <EmbeddedResource Include="frmMaterialesInventario.resx">
+      <DependentUpon>frmMaterialesInventario.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmPrincipal.resx">
       <DependentUpon>frmPrincipal.vb</DependentUpon>
@@ -164,6 +198,7 @@
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
+    <None Include="My Project\app.manifest" />
     <None Include="My Project\Application.myapp">
       <Generator>MyApplicationCodeGenerator</Generator>
       <LastGenOutput>Application.Designer.vb</LastGenOutput>
@@ -204,6 +239,13 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\print_preview.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
 </Project>
