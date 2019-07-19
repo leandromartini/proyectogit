@@ -26,19 +26,18 @@ Partial Class frmContableSaldos
         Me.dtpDesde = New System.Windows.Forms.DateTimePicker()
         Me.dtpHasta = New System.Windows.Forms.DateTimePicker()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
+        Me.txtSaldoFinal = New System.Windows.Forms.TextBox()
+        Me.Label4 = New System.Windows.Forms.Label()
+        Me.Label3 = New System.Windows.Forms.Label()
+        Me.txtEgresos = New System.Windows.Forms.TextBox()
+        Me.txtIngresos = New System.Windows.Forms.TextBox()
         Me.btnGenerar = New System.Windows.Forms.Button()
         Me.dgBalance = New System.Windows.Forms.DataGridView()
         Me.GroupBox2 = New System.Windows.Forms.GroupBox()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.Label1 = New System.Windows.Forms.Label()
-        Me.btnVistaPevia = New System.Windows.Forms.Button()
         Me.btnImprimir = New System.Windows.Forms.Button()
         Me.btnVolver = New System.Windows.Forms.Button()
-        Me.txtIngresos = New System.Windows.Forms.TextBox()
-        Me.txtEgresos = New System.Windows.Forms.TextBox()
-        Me.Label3 = New System.Windows.Forms.Label()
-        Me.Label4 = New System.Windows.Forms.Label()
-        Me.txtSaldoFinal = New System.Windows.Forms.TextBox()
         Me.GroupBox1.SuspendLayout()
         CType(Me.dgBalance, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GroupBox2.SuspendLayout()
@@ -78,6 +77,56 @@ Partial Class frmContableSaldos
         Me.GroupBox1.TabIndex = 2
         Me.GroupBox1.TabStop = False
         Me.GroupBox1.Text = "Reporte de Flujo"
+        '
+        'txtSaldoFinal
+        '
+        Me.txtSaldoFinal.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtSaldoFinal.Location = New System.Drawing.Point(584, 419)
+        Me.txtSaldoFinal.Name = "txtSaldoFinal"
+        Me.txtSaldoFinal.Size = New System.Drawing.Size(201, 20)
+        Me.txtSaldoFinal.TabIndex = 9
+        Me.txtSaldoFinal.Text = "0.00"
+        Me.txtSaldoFinal.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
+        '
+        'Label4
+        '
+        Me.Label4.AutoSize = True
+        Me.Label4.Font = New System.Drawing.Font("Trebuchet MS", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label4.Location = New System.Drawing.Point(465, 421)
+        Me.Label4.Name = "Label4"
+        Me.Label4.Size = New System.Drawing.Size(113, 18)
+        Me.Label4.TabIndex = 8
+        Me.Label4.Text = "SALDO FINAL MES:"
+        '
+        'Label3
+        '
+        Me.Label3.AutoSize = True
+        Me.Label3.Font = New System.Drawing.Font("Trebuchet MS", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label3.Location = New System.Drawing.Point(530, 397)
+        Me.Label3.Name = "Label3"
+        Me.Label3.Size = New System.Drawing.Size(47, 18)
+        Me.Label3.TabIndex = 7
+        Me.Label3.Text = "TOTAL:"
+        '
+        'txtEgresos
+        '
+        Me.txtEgresos.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtEgresos.Location = New System.Drawing.Point(687, 395)
+        Me.txtEgresos.Name = "txtEgresos"
+        Me.txtEgresos.Size = New System.Drawing.Size(98, 20)
+        Me.txtEgresos.TabIndex = 6
+        Me.txtEgresos.Text = "0.00"
+        Me.txtEgresos.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
+        '
+        'txtIngresos
+        '
+        Me.txtIngresos.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtIngresos.Location = New System.Drawing.Point(584, 395)
+        Me.txtIngresos.Name = "txtIngresos"
+        Me.txtIngresos.Size = New System.Drawing.Size(98, 20)
+        Me.txtIngresos.TabIndex = 5
+        Me.txtIngresos.Text = "0.00"
+        Me.txtIngresos.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
         '
         'btnGenerar
         '
@@ -134,29 +183,16 @@ Partial Class frmContableSaldos
         Me.Label1.TabIndex = 4
         Me.Label1.Text = "Desde:"
         '
-        'btnVistaPevia
-        '
-        Me.btnVistaPevia.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnVistaPevia.Image = Global.listView.My.Resources.Resources.print_preview
-        Me.btnVistaPevia.ImageAlign = System.Drawing.ContentAlignment.MiddleRight
-        Me.btnVistaPevia.Location = New System.Drawing.Point(562, 461)
-        Me.btnVistaPevia.Name = "btnVistaPevia"
-        Me.btnVistaPevia.Size = New System.Drawing.Size(114, 46)
-        Me.btnVistaPevia.TabIndex = 19
-        Me.btnVistaPevia.Text = "Vista Previa"
-        Me.btnVistaPevia.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.btnVistaPevia.UseVisualStyleBackColor = True
-        '
         'btnImprimir
         '
         Me.btnImprimir.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnImprimir.Image = Global.listView.My.Resources.Resources.print
+        Me.btnImprimir.Image = Global.listView.My.Resources.Resources._01_Excel
         Me.btnImprimir.ImageAlign = System.Drawing.ContentAlignment.MiddleRight
         Me.btnImprimir.Location = New System.Drawing.Point(682, 461)
         Me.btnImprimir.Name = "btnImprimir"
         Me.btnImprimir.Size = New System.Drawing.Size(114, 46)
         Me.btnImprimir.TabIndex = 18
-        Me.btnImprimir.Text = "Imprimir"
+        Me.btnImprimir.Text = "Exp. Excel"
         Me.btnImprimir.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
         Me.btnImprimir.UseVisualStyleBackColor = True
         '
@@ -173,62 +209,11 @@ Partial Class frmContableSaldos
         Me.btnVolver.TextAlign = System.Drawing.ContentAlignment.MiddleRight
         Me.btnVolver.UseVisualStyleBackColor = True
         '
-        'txtIngresos
-        '
-        Me.txtIngresos.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtIngresos.Location = New System.Drawing.Point(584, 395)
-        Me.txtIngresos.Name = "txtIngresos"
-        Me.txtIngresos.Size = New System.Drawing.Size(98, 20)
-        Me.txtIngresos.TabIndex = 5
-        Me.txtIngresos.Text = "0.00"
-        Me.txtIngresos.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
-        '
-        'txtEgresos
-        '
-        Me.txtEgresos.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtEgresos.Location = New System.Drawing.Point(687, 395)
-        Me.txtEgresos.Name = "txtEgresos"
-        Me.txtEgresos.Size = New System.Drawing.Size(98, 20)
-        Me.txtEgresos.TabIndex = 6
-        Me.txtEgresos.Text = "0.00"
-        Me.txtEgresos.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
-        '
-        'Label3
-        '
-        Me.Label3.AutoSize = True
-        Me.Label3.Font = New System.Drawing.Font("Trebuchet MS", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label3.Location = New System.Drawing.Point(530, 397)
-        Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(47, 18)
-        Me.Label3.TabIndex = 7
-        Me.Label3.Text = "TOTAL:"
-        '
-        'Label4
-        '
-        Me.Label4.AutoSize = True
-        Me.Label4.Font = New System.Drawing.Font("Trebuchet MS", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label4.Location = New System.Drawing.Point(465, 421)
-        Me.Label4.Name = "Label4"
-        Me.Label4.Size = New System.Drawing.Size(113, 18)
-        Me.Label4.TabIndex = 8
-        Me.Label4.Text = "SALDO FINAL MES:"
-        '
-        'txtSaldoFinal
-        '
-        Me.txtSaldoFinal.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtSaldoFinal.Location = New System.Drawing.Point(584, 419)
-        Me.txtSaldoFinal.Name = "txtSaldoFinal"
-        Me.txtSaldoFinal.Size = New System.Drawing.Size(201, 20)
-        Me.txtSaldoFinal.TabIndex = 9
-        Me.txtSaldoFinal.Text = "0.00"
-        Me.txtSaldoFinal.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
-        '
         'frmContableSaldos
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(804, 519)
-        Me.Controls.Add(Me.btnVistaPevia)
         Me.Controls.Add(Me.btnImprimir)
         Me.Controls.Add(Me.btnVolver)
         Me.Controls.Add(Me.GroupBox1)
@@ -253,7 +238,6 @@ Partial Class frmContableSaldos
     Friend WithEvents Label2 As Label
     Friend WithEvents Label1 As Label
     Friend WithEvents btnGenerar As Button
-    Friend WithEvents btnVistaPevia As Button
     Friend WithEvents btnImprimir As Button
     Friend WithEvents btnVolver As Button
     Friend WithEvents Label4 As Label
