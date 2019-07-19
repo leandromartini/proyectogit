@@ -10,7 +10,7 @@ GO
 -- Create date: <30/04/2019 19:13>
 -- Description:	<Este SP obtiene egresos>
 -- =============================================
-ALTER PROCEDURE [dbo].[ingresos_ObtenerLista]--1, '2019-05-01' , '2019-06-28'
+CREATE PROCEDURE [dbo].[ingresos_ObtenerLista]--1, '2019-05-01' , '2019-06-28'
  @id_con as int, 
  @fecDesde as Datetime = '1900-01-01',
  @fecHasta as Datetime = '1900-01-01'
