@@ -1,6 +1,7 @@
 ﻿Imports System.ComponentModel
 
 Public Class frmContableSaldos
+
     Private Sub frmSaldos_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         dtpDesde.Value = DateSerial(Year(Date.Now), Month(Date.Now), 1)
         cargardgSaldos(dtpDesde.Value, Date.Now)
