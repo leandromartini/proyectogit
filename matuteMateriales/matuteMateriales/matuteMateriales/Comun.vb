@@ -9,6 +9,8 @@
                 Return precio * cantidad
             Case "[m²]"
                 Return precio * cantidad
+            Case "[tran]"
+                Return precio * cantidad
             Case Else
                 Return 0
         End Select

@@ -1,3 +1,4 @@
+use MatuteMateriales
 delete from [dbo].[ingresos]
 DBCC CHECKIDENT ([ingresos], RESEED,0)
 delete from [dbo].[egresos]

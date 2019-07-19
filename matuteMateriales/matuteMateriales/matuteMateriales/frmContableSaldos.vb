@@ -20,6 +20,7 @@ Public Class frmContableSaldos
                 dgBalance.Sort(dgBalance.Columns(0), ListSortDirection.Ascending)
                 dgBalance.Columns("tipoTran").Visible = False
                 dgBalance.Columns("id_con").Visible = False
+                dgBalance.Columns("unidad").Visible = False
                 dgBalance.Columns("concepto").Width = 238
             End If
 
@@ -34,14 +35,17 @@ Public Class frmContableSaldos
 
     Sub operarColumnas(objDSGrid)
         Try
+            Dim objComun As New Comun
             For Each item As DataGridViewRow In dgBalance.Rows
                 item.Cells("cant").Value = Math.Round(item.Cells("cant").Value)
                 If item.Cells("tipoTran").Value = "I" Then
-                    item.Cells("Ingreso (+)").Value = Math.Round(item.Cells("precio").Value * item.Cells("cant").Value)
+                    item.Cells("Ingreso (+)").Value = objComun.totalProduc(IIf(IsDBNull(item.Cells("unidad").Value), "[tran]", item.Cells("unidad").Value), item.Cells("precio").Value, item.Cells("cant").Value)
                     item.Cells("Egreso (-)").Value = 0
                 Else
                     item.Cells("Ingreso (+)").Value = 0
-                    item.Cells("Egreso (-)").Value = Math.Round(item.Cells("precio").Value * item.Cells("cant").Value)
+                    item.Cells("Egreso (-)").Value = objComun.totalProduc(IIf(IsDBNull(item.Cells("unidad").Value), "[tran]", item.Cells("unidad").Value), item.Cells("precio").Value, item.Cells("cant").Value)
+
+                    'Math.Round(item.Cells("precio").Value * item.Cells("cant").Value)
                 End If
             Next
             Dim Ingresos As Double
