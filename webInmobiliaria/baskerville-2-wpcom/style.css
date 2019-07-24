@@ -124,13 +124,13 @@ body {
 }
 
 body a {
-	color: #13c4a5;
+	color: #2987e4;
 	text-decoration: none;
 }
 
 body a:hover,
 body a:focus {
-	color: #13c4a5;
+	color: #2987e4;
 	text-decoration: none;
 }
 
@@ -984,7 +984,7 @@ a,
 
 .post-header .post-title a:hover,
 .post-header .post-title a:focus {
-	color: #13c4a5;
+	color: #2987e4;
 }
 
 
@@ -1480,7 +1480,7 @@ img.alignright,
 
 .post-content fieldset legend,
 .widget-content fieldset legend {
-	background: #13c4a5;
+	background: #2987e4;
 	color: #fff;
 	font-family: "Roboto Slab", sans-serif;
 	font-size: .9rem;
@@ -1591,7 +1591,7 @@ img.alignright,
 .widget-content input[type="reset"]:focus,
 .widget-content input[type="button"]:hover,
 .widget-content input[type="button"]:focus {
-	background: #13c4a5;
+	background: #2987e4;
 	color: #fff;
 	cursor: pointer;
 	text-decoration: none;
@@ -1875,7 +1875,7 @@ img.alignright,
 
 .post .mejs-audio .mejs-controls .mejs-horizontal-volume-slider .mejs-horizontal-volume-current,
 .page .mejs-audio .mejs-controls .mejs-horizontal-volume-slider .mejs-horizontal-volume-current {
-	background: #13c4a5;
+	background: #2987e4;
 	position: absolute;
 }
 
@@ -1907,7 +1907,7 @@ img.alignright,
 
 .post .mejs-audio .mejs-controls .mejs-time-rail .mejs-time-current,
 .page .mejs-audio .mejs-controls .mejs-time-rail .mejs-time-current {
-	background: #13c4a5;
+	background: #2987e4;
 	width: 0;
 }
 
@@ -2142,7 +2142,7 @@ img.alignright,
 
 .posts .post-meta a:hover,
 .posts .post-meta a:focus {
-	color: #13c4a5;
+	color: #2987e4;
 }
 
 .posts .post-meta a.post-date i.fa {
@@ -2269,7 +2269,7 @@ img.alignright,
 }
 
 .posts .format-link .link-header h2 a {
-	color: #13c4a5;
+	color: #2987e4;
 	font-size: .8em;
 	font-weight: 700;
 	letter-spacing: 1px;
@@ -2526,7 +2526,7 @@ body.single .content.center {
 
 .single .post-meta p a:hover,
 .single .post-meta p a:focus {
-	color: #13c4a5;
+	color: #2987e4;
 }
 
 .single .post-meta p:first-child {
@@ -2608,7 +2608,7 @@ body.single .content.center {
 }
 
 .entry-author:before {
-	background-color: #13c4a5;
+	background-color: #2987e4;
 	height: 70px;
 	top: 0;
 	width: 40px;
@@ -2617,8 +2617,8 @@ body.single .content.center {
 
 .entry-author:after {
 	border: 20px solid transparent;
-	border-left-color: #13c4a5;
-	border-right-color: #13c4a5;
+	border-left-color: #2987e4;
+	border-right-color: #2987e4;
 	top: 50px;
 }
 
@@ -2678,7 +2678,7 @@ body.single .content.center {
 .author-links a:focus,
 .author-links a:hover
  {
-	background-color: #13c4a5;
+	background-color: #2987e4;
 	color: #fff;
 }
 
@@ -2801,7 +2801,7 @@ div#disqus_thread {
 }
 
 .comment.bypostauthor:after {
-	background-color: #13c4a5;
+	background-color: #2987e4;
 	border-radius: 999px;
 	color: #fff;
 	content: "\f007";
@@ -2840,7 +2840,7 @@ div#disqus_thread {
 
 .comment-author .fn a:hover,
 .comment-author .fn a:focus {
-	color: #13c4a5;
+	color: #2987e4;
 	text-decoration: none;
 }
 .comment-metadata,
@@ -3045,7 +3045,7 @@ div#disqus_thread {
 .comment-edit-link:focus,
 .comment-reply-link:hover,
 .comment-reply-link:focus {
-	background-color: #13c4a5;
+	background-color: #2987e4;
 	color: #fff;
 	z-index: 10;
 }
@@ -3096,7 +3096,7 @@ div#disqus_thread {
 
 .pingbacklist .pingback a:hover,
 .pingbacklist .pingback a:focus {
-	color: #13c4a5;
+	color: #2987e4;
 }
 
 .pingbacklist .pingback:nth-of-type(2n) {
@@ -3295,7 +3295,7 @@ p.form-submit {
 
 .form-submit #submit:hover,
 .form-submit #submit:focus {
-	background: #13c4a5;
+	background: #2987e4;
 	cursor: pointer;
 }
 
@@ -3407,7 +3407,7 @@ p.form-submit {
 
 .author-info h4 a:hover,
 .author-info h4 a:focus {
-	color: #13c4a5;
+	color: #2987e4;
 }
 
 .author-info h5 {
@@ -3436,7 +3436,7 @@ p.form-submit {
 
 .author-info .author-links a:hover,
 .author-info .author-links a:focus {
-	background-color: #13c4a5;
+	background-color: #2987e4;
 }
 
 
@@ -3514,7 +3514,7 @@ p.form-submit {
 
 .posts-navigation a:hover,
 .posts-navigation a:focus {
-	background: #13c4a5;
+	background: #2987e4;
 	color: #fff;
 }
 
@@ -3577,7 +3577,7 @@ p.form-submit {
 
 #infinite-handle span:hover,
 #infinite-handle span:focus {
-	background: #13c4a5;
+	background: #2987e4;
 	color: #fff;
 
 }
@@ -3734,7 +3734,7 @@ p.form-submit {
 .widget_tag_cloud a:focus,
 .wp_widget_tag_cloud a:hover,
 .wp_widget_tag_cloud a:focus {
-	background: #13c4a5;
+	background: #2987e4;
 	color: #fff;
 	text-decoration: none;
 }
@@ -3928,7 +3928,7 @@ p.form-submit {
 
 .dribbble-shot:hover,
 .dribbble-shot:focus {
-	background-color: #13c4a5;
+	background-color: #2987e4;
 }
 
 .widgetmore {
@@ -3952,7 +3952,7 @@ p.form-submit {
 .widget_flickr #flickr_badge_uber_wrapper a:link,
 .widget_flickr #flickr_badge_uber_wrapper a:active,
 .widget_flickr #flickr_badge_uber_wrapper a:visited {
-	color: #13c4a5;
+	color: #2987e4;
 }
 
 .widget_flickr #flickr_badge_wrapper td {
@@ -4089,7 +4089,7 @@ div.gr_custom_container {
 }
 
 #content #menu_widget a {
-	color: #13c4a5;
+	color: #2987e4;
 }
 
 /* Widget - Recent Entries ------------------------- */
@@ -4197,7 +4197,7 @@ div.gr_custom_container {
 }
 
 #infinite-footer .blog-info a:hover {
-	color: #13c4a5;
+	color: #2987e4;
 }
 
 #infinite-footer .blog-credits {
@@ -4241,7 +4241,7 @@ div.gr_custom_container {
 .footer .widget_tag_cloud a:focus,
 .footer .wp_widget_tag_cloud a:hover,
 .footer .wp_widget_tag_cloud a:focus {
-	background: #13c4a5;
+	background: #2987e4;
 	text-decoration: none;
 }
 
@@ -5325,4 +5325,22 @@ img#wpstats {
 		display: block;
 	}
 
+}
+
+room-price {
+	display: block;
+	font-size: 18px;
+	font-weight: 600;
+	background: #fff;
+	text-align: center;
+	padding: 13px;
+	background: #30caa0;
+	border:1px solid #30caa0;
+	transition:all .5s;
+	color: #fff;
+}
+
+.room-price:hover {
+	color:#30caa0;
+	background-color: #fff;
 }

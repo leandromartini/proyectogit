@@ -59,8 +59,7 @@
 			/**
 			 * For single.php show the regular content
 			 */
-			?>
-
+			?>                        
 			<div class="post-content clear">
 				<?php
 				the_content( sprintf(
@@ -79,8 +78,7 @@
 			/**
 			 * For all other views, show the_excerpt to avoid a bunch of duplicated images
 			 */
-			?>
-
+			?>                       
 			<div class="post-content clear">
 				<?php the_excerpt(); ?>
 			</div><!--/.post-content-->
@@ -95,7 +93,9 @@
 
 			<footer class="post-meta-container clear">
 				<?php baskerville_2_author_bio(); ?>
-
+                                <div class="post-content .room-price">
+				<a href="" class="room-price">VER PROPIEDAD</a>
+			        </div><!--/.post-content-->
 				<div class="post-meta clear">
 					<?php baskerville_2_single_post_meta(); ?>
 					<?php the_post_navigation(); ?>
