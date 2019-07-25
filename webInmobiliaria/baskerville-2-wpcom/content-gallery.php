@@ -9,7 +9,7 @@
 <?php if ( ! is_single() ) { ?>
 	<div class="post-container">
 <?php } ?>
-
+            
 	<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 
 		<?php
@@ -35,9 +35,14 @@
 				if ( ! is_single() ) { ?>
 					</a>
 				<?php } ?>
+                        
 			</div> <!-- /featured-media -->
+                        
+				
+			
 
 		<?php
+                
 		/**
 		 * If there is no featured image, and it's not the single.php view
 		 * show a flexslider gallery of the attached images
@@ -46,6 +51,7 @@
 	 } else if ( ! is_single() ) { ?>
 			<div class="featured-media">
 				<?php baskerville_2_flexslider( 'baskerville-post-image' ); ?>
+                                <a href="<?php echo esc_url( get_permalink() ) ; ?>" class="room-price">VER PROPIEDAD</a>
 			</div> <!-- /featured-media -->
 		<?php }
 
@@ -93,8 +99,7 @@
 
 			<footer class="post-meta-container clear">
 				<?php baskerville_2_author_bio(); ?>
-                                <div class="post-content .room-price">
-				<a href="" class="room-price">VER PROPIEDAD</a>
+                                <div class="post-content .room-price">				
 			        </div><!--/.post-content-->
 				<div class="post-meta clear">
 					<?php baskerville_2_single_post_meta(); ?>

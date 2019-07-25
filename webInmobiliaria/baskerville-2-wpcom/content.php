@@ -9,7 +9,7 @@
 <?php if ( ! is_single() ) { ?>
 	<div class="post-container">
 <?php } ?>
-
+            
 	<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 
 		<?php

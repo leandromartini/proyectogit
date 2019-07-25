@@ -47,9 +47,8 @@
 		<div class="credits-inner section-inner clear">
 
 			<p class="credits-left fleft">
-				<a href="<?php echo esc_url( __( 'http://wordpress.org/', 'baskerville-2' ) ); ?>"><?php printf( esc_html__( 'Proudly powered by %s', 'baskerville-2' ), 'WordPress' ); ?></a>
-				<span class="sep"> | </span>
-				<?php printf( esc_html__( 'Theme: %1$s by %2$s.', 'baskerville-2' ), 'Baskerville 2', '<a href="http://www.andersnoren.se/teman/baskerville-wordpress-theme/" rel="designer">Anders Noren</a>' ); ?>
+				
+							
 			</p>
 
 			<p class="credits-right fright">

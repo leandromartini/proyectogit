@@ -12,6 +12,8 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0" >
 	<link rel="profile" href="http://gmpg.org/xfn/11" />
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.9.0/css/all.css">
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.9.0/css/v4-shims.css">
 	<?php wp_head(); ?>
 </head>
 
@@ -69,7 +71,7 @@
 
 	<div class="filter-search">
 		<div class="container">
-			<form action="https://www.marilakpropiedades.com.ar/resultados" class="filter-form" method="get">
+			<form action="" class="filter-form" method="get">
 				<select name="localidad">
                     <option selected="selected" disabled="disabled">Localidad</option>
                     <option value="el-bolson">El Bolsón</option><option value="el-hoyo">El Hoyo</option><option value="lago-puelo">Lago Puelo</option><option value="san-carlos-de-bariloche">San Carlos de Bariloche                </option></select>

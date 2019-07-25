@@ -656,9 +656,11 @@
 .fa-hand-o-up:before {
   content: "\f0a6";
 }
+
 .fa-hand-o-down:before {
   content: "\f0a7";
 }
+
 .fa-arrow-circle-left:before {
   content: "\f0a8";
 }
