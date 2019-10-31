@@ -1,0 +1,371 @@
+<!DOCTYPE >
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>Anna Rosa</title>              
+    <style>
+        *{
+            margin:0;
+            padding:0;
+        }
+        html{
+            height:100%;
+            background:url('./tile_bg.jpg') #b0b0b0;
+            position:relative;
+        }
+
+        body{
+            background:url('./bground.jpg') no-repeat center center;
+            -webkit-background-size: 100% 100%;           /* Safari 3.0 */
+            -moz-background-size: 100% 100%;           /* Gecko 1.9.2 (Firefox 3.6) */
+            -o-background-size: 100% 100%;           /* Opera 9.5 */
+            background-size: 100% 100%;           /* Gecko 2.0 (Firefox 4.0) and other CSS3-compliant browsers */ 
+            min-height: 100%;
+            height: 100%;
+            margin: 0px;
+            padding: 200px 0 0;
+            font-family: 'Gochi Hand', cursive;   
+            font-size: 100px;
+            text-align: center;
+
+        }
+
+        a, a:visited {
+            text-decoration:none;
+            outline:none;
+            color:#54a6de;
+        }
+
+        a:hover{
+            text-decoration:underline;
+        }
+
+        section, footer{
+            display: block;
+        }
+        #note{
+            color: #666666;
+            font-size: 12px;
+            margin: 0 auto;
+            padding: 4px;
+            text-align: center;
+            text-shadow: 1px 1px 0 rgba(255, 255, 255, 0.3);
+            width: 400px;
+        }
+
+        @media (max-width: 700px) { 
+            body{
+                font-size: 50px; 
+            }
+            #prox {
+                font-size: 40px;
+            }
+        }
+        .countdownHolder{
+            width:450px;
+            margin:9% auto;
+            font: 40px/1.5 'Open Sans Condensed',sans-serif;
+            text-align:center;
+            letter-spacing:-3px;
+        }
+
+        .position{
+            display: inline-block;
+            height: 1.6em;
+            overflow: hidden;
+            position: relative;
+            width: 1.05em;
+        }
+
+        .digit{
+            position:absolute;
+            display:block;
+            width:1em;
+            background-color:#444;
+            border-radius:0.2em;
+            text-align:center;
+            color:#fff;
+            letter-spacing:-1px;
+        }
+
+        .digit.static{
+            box-shadow:1px 1px 1px rgba(4, 4, 4, 0.35);
+
+            background-image: linear-gradient(bottom, #3A3A3A 50%, #444444 50%);
+            background-image: -o-linear-gradient(bottom, #3A3A3A 50%, #444444 50%);
+            background-image: -moz-linear-gradient(bottom, #3A3A3A 50%, #444444 50%);
+            background-image: -webkit-linear-gradient(bottom, #3A3A3A 50%, #444444 50%);
+            background-image: -ms-linear-gradient(bottom, #3A3A3A 50%, #444444 50%);
+
+            background-image: -webkit-gradient(
+                linear,
+                left bottom,
+                left top,
+                color-stop(0.5, #3A3A3A),
+                color-stop(0.5, #444444)
+                );
+        }
+    .countDays{ /* display:none !important;*/ }
+.countDiv0{ /* display:none !important;*/ }
+.countHours{}
+.countDiv1{}
+.countMinutes{}
+.countDiv2{}
+.countSeconds{}
+.countDiv{
+    display:inline-block;
+    width:16px;
+    height:1.6em;
+    position:relative;
+}
+.countDiv:before,
+.countDiv:after{
+    position:absolute;
+    width:5px;
+    height:5px;
+    background-color:#444;
+    border-radius:50%;
+    left:50%;
+    margin-left:-3px;
+    top:0.5em;
+    box-shadow:1px 1px 1px rgba(4, 4, 4, 0.5);
+    content:'';
+}
+.countDiv:after{
+    top:0.9em;
+}
+#prox {
+  cursor: default;  
+  top: 30px;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 100px;
+  margin: auto;
+  display: block;
+  
+  -webkit-animation: bounce .3s ease infinite alternate;
+  
+  font-family: 'Erica One', cursive;
+  font-size: 60px;
+  color: #FFF;
+  text-align: center;
+  line-height: 100px;
+  text-shadow: 0 1px 0 #CCC,
+  0 2px 0 #CCC,
+  0 3px 0 #CCC,
+  0 4px 0 #CCC,
+  0 5px 0 #CCC,
+  0 6px 0 transparent,
+  0 7px 0 transparent,
+  0 8px 0 transparent,
+  0 9px 0 transparent,
+  0 10px 10px rgba(0, 0, 0, .6);
+}
+@-webkit-keyframes bounce {
+  100% {
+    top: -30px;
+    
+    text-shadow: 0 1px 0 #CCC,
+    0 2px 0 #CCC,
+    0 3px 0 #CCC,
+    0 4px 0 #CCC,
+    0 5px 0 #CCC,
+    0 6px 0 #CCC,
+    0 7px 0 #CCC,
+    0 8px 0 #CCC,
+    0 9px 0 #CCC,
+    0 30px 30px rgba(0, 0, 0, .3);
+}
+}
+
+</style>
+</head>
+<body>
+  <div id="countdown"></div>	
+  <div id="prox">Proximamente</div>
+  <!--<p id="note"></p>-->
+  <link href="https://fonts.googleapis.com/css?family=Erica+One&display=swap" rel="stylesheet">
+  <script  src="https://code.jquery.com/jquery-3.4.1.min.js"  integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="  crossorigin="anonymous"></script>		
+  <script>
+      $(function(){
+
+        var note = $('#note'),
+        ts = new Date(2019, 11 - 1 , 15),
+        newYear = true;
+
+        var diffDays = parseInt((ts - new Date()) / (1000 * 60 * 60 * 24), 10); 
+
+
+        if(diffDays < 10){
+        // The new year is here! Count towards something else.
+        // Notice the *1000 at the end - time must be in milliseconds
+        //ts = (new Date()).getTime() + 10*24*60*60*1000;
+        newYear = false;
+    }
+
+    $('#countdown').countdown({
+        timestamp   : ts,
+        callback    : function(days, hours, minutes, seconds){
+
+            var message = "";
+            
+            message += days + " day" + ( days==1 ? '':'s' ) + ", ";
+            message += hours + " hour" + ( hours==1 ? '':'s' ) + ", ";
+            message += minutes + " minute" + ( minutes==1 ? '':'s' ) + " and ";
+            message += seconds + " second" + ( seconds==1 ? '':'s' ) + " <br />";
+            
+            if(newYear){
+                message += "PROXIMAMENTE";
+            }
+            else {
+                message += "quedan 10 días!";
+            }
+            
+            note.html(message);
+        }
+    });
+    
+});
+        /**
+ * @name        jQuery Countdown Plugin
+ * @author      Martin Angelov
+ * @version     1.0
+ * @url         http://tutorialzine.com/2011/12/countdown-jquery/
+ * @license     MIT License
+ */
+
+ (function($){
+
+    // Number of seconds in every time division
+    var days    = 24*60*60,
+    hours   = 60*60,
+    minutes = 60;
+    
+    // Creating the plugin
+    $.fn.countdown = function(prop){
+
+        var options = $.extend({
+            callback    : function(){},
+            timestamp   : 0
+        },prop);
+        
+        var left, d, h, m, s, positions;
+
+        // Initialize the plugin
+        init(this, options);
+        
+        positions = this.find('.position');
+        
+        (function tick(){
+
+            // Time left
+            left = Math.floor((options.timestamp - (new Date())) / 1000);
+            
+            if(left < 0){
+                left = 0;
+            }
+            
+            // Number of days left
+            d = Math.floor(left / days);
+            updateDuo(0, 1, d);
+            left -= d*days;
+            
+            // Number of hours left
+            h = Math.floor(left / hours);
+            updateDuo(2, 3, h);
+            left -= h*hours;
+            
+            // Number of minutes left
+            m = Math.floor(left / minutes);
+            updateDuo(4, 5, m);
+            left -= m*minutes;
+            
+            // Number of seconds left
+            s = left;
+            updateDuo(6, 7, s);
+            
+            // Calling an optional user supplied callback
+            options.callback(d, h, m, s);
+            
+            // Scheduling another call of this function in 1s
+            setTimeout(tick, 1000);
+        })();
+        
+        // This function updates two digit positions at once
+        function updateDuo(minor,major,value){
+            switchDigit(positions.eq(minor),Math.floor(value/10)%10);
+            switchDigit(positions.eq(major),value%10);
+        }
+        
+        return this;
+    };
+
+
+    function init(elem, options){
+        elem.addClass('countdownHolder');
+
+        // Creating the markup inside the container
+        $.each(['Days','Hours','Minutes','Seconds'],function(i){
+            $('<span class="count'+this+'">').html(
+                '<span class="position">\
+                <span class="digit static">0</span>\
+                </span>\
+                <span class="position">\
+                <span class="digit static">0</span>\
+                </span>'
+                ).appendTo(elem);
+            
+            if(this!="Seconds"){
+                elem.append('<span class="countDiv countDiv'+i+'"></span>');
+            }
+        });
+
+    }
+
+    // Creates an animated transition between the two numbers
+    function switchDigit(position,number){
+
+        var digit = position.find('.digit')
+        
+        if(digit.is(':animated')){
+            return false;
+        }
+        
+        if(position.data('digit') == number){
+            // We are already showing this number
+            return false;
+        }
+        
+        position.data('digit', number);
+        
+        var replacement = $('<span>',{
+            'class':'digit',
+            css:{
+                top:'-2.1em',
+                opacity:0
+            },
+            html:number
+        });
+        
+        // The .static class is added when the animation
+        // completes. This makes it run smoother.
+        
+        digit
+        .before(replacement)
+        .removeClass('static')
+        .animate({top:'2.5em',opacity:0},'fast',function(){
+            digit.remove();
+        })
+
+        replacement
+        .delay(100)
+        .animate({top:0,opacity:1},'fast',function(){
+            replacement.addClass('static');
+        });
+    }
+})(jQuery);
+</script>
+</body>
+</html>
+
