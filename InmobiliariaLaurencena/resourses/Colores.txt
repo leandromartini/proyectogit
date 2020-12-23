@@ -1,0 +1,13 @@
+Fondo Redes Sociales F1F4F8
+
+Tipografia Bordó CC1332
+Fondo Filtro Buscador Gris ECEEF0
+Fondo Filtro Buscador Bordo CC1332
+
+Fondo Novedades Gris ECEEF0
+Tipografia Etiqueda Sobre la Foto Bordó CC1332
+Tipografia Etiqueda Sobre la Foto Dorada D4A657
+
+Fondo Iconos F1F4F8
+
+Fonod Pie CC1332
