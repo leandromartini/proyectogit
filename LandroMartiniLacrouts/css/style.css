@@ -1,0 +1,26 @@
+html,body,.cv{
+  height: auto;
+  background: -moz-linear-gradient(center bottom , #264d73, #0e2b48 184px);
+  background: -ms-linear-gradient(center bottom , #264d73, #0e2b48 184px);
+  background: -webkit-radial-gradient(center bottom , #264d73, #0e2b48 184px);
+  background: -o-linear-gradient(center bottom , #264d73, #0e2b48 184px);
+  font-family: 'Trebuchet MS', sans-serif;
+}
+
+.row {
+  padding-bottom: 1em;
+  padding-top: 1em;
+}
+.right {
+  padding-left: 4em;
+}
+.titulo{
+  color: #164370;
+}    
+a {
+  text-decoration: none;
+}
+
+.descarga {
+  padding: 2em;
+}
