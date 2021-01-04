@@ -6,21 +6,20 @@ html,body,.cv{
   background: -o-linear-gradient(center bottom , #264d73, #0e2b48 184px);
   font-family: 'Trebuchet MS', sans-serif;
 }
+hr {  margin: 0 0;  background-color: aliceblue;}
 
-.row {
-  padding-bottom: 1em;
-  padding-top: 1em;
-}
-.right {
-  padding-left: 4em;
-}
-.titulo{
-  color: #164370;
-}    
-a {
-  text-decoration: none;
-}
+a {  text-decoration: none;}
 
-.descarga {
-  padding: 2em;
-}
+.row {  padding-bottom: 1em;  padding-top: 1em;}
+
+.right {  padding-left: 3.5em;border-left-style: double;}
+
+.titulo{  background: #0e2b48;  color: #ffffff;  border-left: double;}    
+
+.image {  padding-top: 0;    padding-bottom: 3em;}
+
+.descarga {  padding: 2em;}
+
+.rounded-circle {background: darkgray; border-style: solid;}
+
+.bio { padding: 0em 3em;}
