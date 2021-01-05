@@ -1,25 +1,82 @@
-html,body,.cv{
-  height: auto;
-  background: -moz-linear-gradient(center bottom , #264d73, #0e2b48 184px);
-  background: -ms-linear-gradient(center bottom , #264d73, #0e2b48 184px);
-  background: -webkit-radial-gradient(center bottom , #264d73, #0e2b48 184px);
-  background: -o-linear-gradient(center bottom , #264d73, #0e2b48 184px);
-  font-family: 'Trebuchet MS', sans-serif;
+html,
+body,
+.cv {
+    height: auto;
+    background: -moz-linear-gradient(center bottom, #264d73, #0e2b48 184px);
+    background: -ms-linear-gradient(center bottom, #264d73, #0e2b48 184px);
+    background: -webkit-radial-gradient(center bottom, #264d73, #0e2b48 184px);
+    background: -o-linear-gradient(center bottom, #264d73, #0e2b48 184px);
+    font-family: 'Trebuchet MS', sans-serif;
 }
-hr {  margin: 0 0;  background-color: aliceblue;}
 
-a {  text-decoration: none;}
+hr {
+    margin: 0 0;
+    background-color: aliceblue;
+}
 
-.row {  padding-bottom: 1em;  padding-top: 1em;}
+a {
+    text-decoration: none;
+}
 
-.right {  padding-left: 3.5em;border-left-style: double;}
+.row {
+    padding-top: 0.5em;
+}
 
-.titulo{  background: #0e2b48;  color: #ffffff;  border-left: double;}    
+.right {
+    padding-left: 3.5em;
+    border-left-style: double;
+}
 
-.image {  padding-top: 0;    padding-bottom: 3em;}
+.titulo {
+    background: #0e2b48;
+    color: #ffffff;
+    border-left: double;
+}
 
-.descarga {  padding: 2em;}
+.image {
+    padding-top: 0;
+    padding-bottom: 3em;
+}
 
-.rounded-circle {background: darkgray; border-style: solid;}
+.descarga {
+    padding: 2em;
+}
 
-.bio { padding: 0em 3em;}
+.rounded-circle {
+    background: darkgray;
+    border-style: solid;
+}
+
+.bio {
+    padding: 0em 3em;
+}
+
+progress {
+    display: block;
+    -webkit-appearance: none;
+}
+
+#content {
+    display: inline-block;
+}
+
+.progress {
+    height: 1em;
+}
+
+progress::-webkit-progress-bar {
+    background: black;
+    border-radius: 50px;
+    padding: 2px;
+}
+
+progress::-moz-progress-bar {
+    background: black;
+    border-radius: 50px;
+    padding: 2px;
+}
+
+progress::-webkit-progress-value {
+    border-radius: 50px;
+    background: orange;
+}
