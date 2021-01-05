@@ -51,17 +51,19 @@ a {
     padding: 0em 3em;
 }
 
+.contec{
+    margin-left: 2em;
+}
+
 progress {
     display: block;
     -webkit-appearance: none;
 }
 
-#content {
-    display: inline-block;
-}
-
 .progress {
     height: 1em;
+    margin-top: 6px;
+    float: right;
 }
 
 progress::-webkit-progress-bar {
