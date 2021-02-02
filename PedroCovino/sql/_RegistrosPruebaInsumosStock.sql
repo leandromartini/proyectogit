@@ -1,0 +1,30 @@
+begin tran INSERT INTO [dbo].[insumos]([codigo],[descrip]) VALUES
+('800',	'CAMARA  8 X 300      P/CURVO.............JS87-DURO'),
+('801',	'CAMARA  8 X 400      P/CURVO.............JS87-DURO'),
+('802',	'CAMARA 10 X 250/275  P/CURVO.............JS87-DURO'),
+('803',	'CAMARA 10 X 300      P/CURVO.............JS87-DURO'),
+('804',	'CAMARA 10 X 350      P/CURVO.............JS87-DURO'),
+('805',	'CAMARA 12 X 300/350  P/RECTO.............TR4 -DURO'),
+('806',	'CAMARA 12 X 400      P/CURVO.............JS87-DURO'),
+('807',	'CAMARA 13 X 130/60   P/RECTO.............TR4 -DURO'),
+('808',	'CAMARA 14 X 275/300  P/RECTO.............TR4 -DURO'),
+('809',	'CAMARA 15 X 130/90   P/RECTO.............TR4 -DURO'),
+('810','CAMARA 16 X 225/250  P/RECTO.............TR4 -DURO'),
+('811',	'CAMARA 16 X 250/275  P/RECTO.............TR4 -DURO'),
+('812',	'CAMARA 16 X 300/325  P/RECTO.............TR4 -DURO'),
+('813',	'CAMARA 16 X 350/400  P/RECTO.............TR4 -DURO'),
+('814',	'CAMARA 17 X 225/250  P/RECTO.............TR4 -DURO'),
+('815',	'CAMARA 17 X 275/300  P/RECTO.............TR4 -DURO'),
+('816',	'CAMARA 17 X 400/450  P/RECTO.............TR4 -DURO'),
+('817',	'CAMARA 18 X 250/275  P/RECTO.............TR4 -DURO'),
+('818',	'CAMARA 18 X 275/300  P/RECTO.............TR4 -DURO'),
+('819',	'CAMARA 18 X 325      P/RECTO.............TR4 -DURO'),
+('820',	'CAMARA 18 X 350      P/RECTO.............TR4 -DURO'),
+('821',	'CAMARA 18 X 400/450  P/RECTO.............TR4 -DURO'),
+('822',	'CAMARA 19 X 250/275  P/RECTO.............TR4 -DURO'),
+('823',	'CAMARA 19 X 300      P/RECTO.............TR4 -DURO'),
+('824',	'CAMARA 19 X 350/400  P/RECTO.............TR4 -DURO'),
+('825',	'CAMARA 21 X 275/300  P/RECTO.............TR4 -DURO')
+select * from [insumos] --commit   
+
+
