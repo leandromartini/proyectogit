@@ -26,5 +26,5 @@ begin tran INSERT INTO [dbo].[insumosStock]([codigo] ,[stock]  ,[stockMin]  ,[st
 (823		,515,			623,	873,'02-02-2021'),
 (824		,613,	    	743,	1040,'02-02-2021'),
 (825		,381,		    461,	645,'02-02-2021')
-select * from [insumosPrecios] --commit
+select * from [insumosStock] --commit
 
