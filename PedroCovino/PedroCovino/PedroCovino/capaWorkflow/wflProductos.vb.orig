@@ -1,0 +1,34 @@
+<<<<<<< HEAD
+﻿Imports listView.productos
+Public Class wflProductos
+
+=======
+﻿Public Class wflProductos
+>>>>>>> 80c4c7a1715dd540ff38a8bdc26be447c10a6a6c
+    'agregaProducto se refiere a los materiales que entraron en el dia y se tienen que cargar a datos
+    Friend Sub AgregarProducto(item As ListViewItem)
+        Dim objProducto As New productoCantidad
+        'cargo clases correspondientes al producto
+        objProducto.NuevoPruducto(item.SubItems(0).Text, "", item.SubItems(2).Text)
+        objProducto.agregarCantidad(item.SubItems(1).Text)
+
+        'en la tabla Prod_cantidad se incrementa el stock, 
+        'actulizarProd_cantidad()
+
+        'Si el precio cambio  
+        If Not objProducto.obtenerprecio = objProducto.obtenerProductos(1) Then
+            objProducto.actualizarProducto()
+        End If
+        'entonces hay que modificarlo en la tabla Productos, y agregar en prod_historia el nuevo precio con su fecha de modificacion
+    End Sub
+
+    Public Function ProductoNuevo() As Long
+        Dim objcnProducto As New cnProductos
+        Dim objProducto As productos
+
+
+        ProductoNuevo = objcnProducto.guardarNuevo(-1, objProducto.obtenerNombre, objProducto.obtenerdescripcion, "")
+
+
+    End Function
+End Class

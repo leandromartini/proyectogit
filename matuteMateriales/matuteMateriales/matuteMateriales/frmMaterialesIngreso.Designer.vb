@@ -177,7 +177,7 @@ Partial Class frmMaterialesIngreso
         'btnProdGuardar
         '
         Me.btnProdGuardar.Enabled = False
-        Me.btnProdGuardar.Image = Global.listView.My.Resources.Resources.save
+        Me.btnProdGuardar.Image = Global.matuteMateriales.My.Resources.Resources.save
         Me.btnProdGuardar.Location = New System.Drawing.Point(264, 170)
         Me.btnProdGuardar.Name = "btnProdGuardar"
         Me.btnProdGuardar.Size = New System.Drawing.Size(45, 40)
@@ -200,7 +200,7 @@ Partial Class frmMaterialesIngreso
         'BtnBorrar
         '
         Me.BtnBorrar.Enabled = False
-        Me.BtnBorrar.Image = Global.listView.My.Resources.Resources.cancel
+        Me.BtnBorrar.Image = Global.matuteMateriales.My.Resources.Resources.cancel
         Me.BtnBorrar.Location = New System.Drawing.Point(188, 170)
         Me.BtnBorrar.Name = "BtnBorrar"
         Me.BtnBorrar.Size = New System.Drawing.Size(45, 40)
@@ -222,7 +222,7 @@ Partial Class frmMaterialesIngreso
         '
         'BtnNuevo
         '
-        Me.BtnNuevo.Image = Global.listView.My.Resources.Resources.add
+        Me.BtnNuevo.Image = Global.matuteMateriales.My.Resources.Resources.add
         Me.BtnNuevo.Location = New System.Drawing.Point(112, 170)
         Me.BtnNuevo.Name = "BtnNuevo"
         Me.BtnNuevo.Size = New System.Drawing.Size(45, 40)
@@ -302,7 +302,7 @@ Partial Class frmMaterialesIngreso
         '
         'btnModificaPrecio
         '
-        Me.btnModificaPrecio.Image = Global.listView.My.Resources.Resources.edit
+        Me.btnModificaPrecio.Image = Global.matuteMateriales.My.Resources.Resources.edit
         Me.btnModificaPrecio.Location = New System.Drawing.Point(289, 53)
         Me.btnModificaPrecio.Name = "btnModificaPrecio"
         Me.btnModificaPrecio.Size = New System.Drawing.Size(39, 39)
@@ -311,7 +311,7 @@ Partial Class frmMaterialesIngreso
         '
         'btnReset
         '
-        Me.btnReset.Image = Global.listView.My.Resources.Resources.refresh
+        Me.btnReset.Image = Global.matuteMateriales.My.Resources.Resources.refresh
         Me.btnReset.Location = New System.Drawing.Point(336, 208)
         Me.btnReset.Name = "btnReset"
         Me.btnReset.Size = New System.Drawing.Size(45, 40)
@@ -320,7 +320,7 @@ Partial Class frmMaterialesIngreso
         '
         'btnQuitar
         '
-        Me.btnQuitar.Image = Global.listView.My.Resources.Resources.undo
+        Me.btnQuitar.Image = Global.matuteMateriales.My.Resources.Resources.undo
         Me.btnQuitar.Location = New System.Drawing.Point(336, 151)
         Me.btnQuitar.Name = "btnQuitar"
         Me.btnQuitar.Size = New System.Drawing.Size(45, 40)
@@ -329,7 +329,7 @@ Partial Class frmMaterialesIngreso
         '
         'btnAgregar
         '
-        Me.btnAgregar.Image = Global.listView.My.Resources.Resources.redo
+        Me.btnAgregar.Image = Global.matuteMateriales.My.Resources.Resources.redo
         Me.btnAgregar.Location = New System.Drawing.Point(336, 95)
         Me.btnAgregar.Name = "btnAgregar"
         Me.btnAgregar.Size = New System.Drawing.Size(45, 40)
@@ -387,7 +387,7 @@ Partial Class frmMaterialesIngreso
         '
         'btnVolver
         '
-        Me.btnVolver.Image = Global.listView.My.Resources.Resources.back
+        Me.btnVolver.Image = Global.matuteMateriales.My.Resources.Resources.back
         Me.btnVolver.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
         Me.btnVolver.Location = New System.Drawing.Point(12, 387)
         Me.btnVolver.Name = "btnVolver"
@@ -399,7 +399,7 @@ Partial Class frmMaterialesIngreso
         '
         'btnGuardar
         '
-        Me.btnGuardar.Image = Global.listView.My.Resources.Resources.save
+        Me.btnGuardar.Image = Global.matuteMateriales.My.Resources.Resources.save
         Me.btnGuardar.ImageAlign = System.Drawing.ContentAlignment.MiddleRight
         Me.btnGuardar.Location = New System.Drawing.Point(706, 387)
         Me.btnGuardar.Name = "btnGuardar"
@@ -411,7 +411,7 @@ Partial Class frmMaterialesIngreso
         '
         'btnImprimir
         '
-        Me.btnImprimir.Image = Global.listView.My.Resources.Resources.print
+        Me.btnImprimir.Image = Global.matuteMateriales.My.Resources.Resources.print
         Me.btnImprimir.ImageAlign = System.Drawing.ContentAlignment.MiddleRight
         Me.btnImprimir.Location = New System.Drawing.Point(605, 387)
         Me.btnImprimir.Name = "btnImprimir"
@@ -423,7 +423,7 @@ Partial Class frmMaterialesIngreso
         '
         'btnVistaPevia
         '
-        Me.btnVistaPevia.Image = Global.listView.My.Resources.Resources.print_preview
+        Me.btnVistaPevia.Image = Global.matuteMateriales.My.Resources.Resources.print_preview
         Me.btnVistaPevia.ImageAlign = System.Drawing.ContentAlignment.MiddleRight
         Me.btnVistaPevia.Location = New System.Drawing.Point(501, 387)
         Me.btnVistaPevia.Name = "btnVistaPevia"

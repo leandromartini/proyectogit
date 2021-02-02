@@ -128,7 +128,7 @@ Partial Class frmMaterialesInventario
         '
         'btnVistaPrevia
         '
-        Me.btnVistaPrevia.Image = Global.listView.My.Resources.Resources.print_preview
+        Me.btnVistaPrevia.Image = Global.matuteMateriales.My.Resources.Resources.print_preview
         Me.btnVistaPrevia.ImageAlign = System.Drawing.ContentAlignment.MiddleRight
         Me.btnVistaPrevia.Location = New System.Drawing.Point(580, 394)
         Me.btnVistaPrevia.Name = "btnVistaPrevia"
@@ -140,7 +140,7 @@ Partial Class frmMaterialesInventario
         '
         'btnImprimir
         '
-        Me.btnImprimir.Image = Global.listView.My.Resources.Resources.print
+        Me.btnImprimir.Image = Global.matuteMateriales.My.Resources.Resources.print
         Me.btnImprimir.ImageAlign = System.Drawing.ContentAlignment.MiddleRight
         Me.btnImprimir.Location = New System.Drawing.Point(690, 394)
         Me.btnImprimir.Name = "btnImprimir"
@@ -152,7 +152,7 @@ Partial Class frmMaterialesInventario
         '
         'btnVolver
         '
-        Me.btnVolver.Image = Global.listView.My.Resources.Resources.back
+        Me.btnVolver.Image = Global.matuteMateriales.My.Resources.Resources.back
         Me.btnVolver.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
         Me.btnVolver.Location = New System.Drawing.Point(12, 394)
         Me.btnVolver.Name = "btnVolver"

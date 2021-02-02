@@ -1,0 +1,2 @@
+stock con cantidad y precio
+camaras y cubiertas (stock)

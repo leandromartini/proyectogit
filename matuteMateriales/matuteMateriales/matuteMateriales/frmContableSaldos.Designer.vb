@@ -186,7 +186,7 @@ Partial Class frmContableSaldos
         'btnImprimir
         '
         Me.btnImprimir.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnImprimir.Image = Global.listView.My.Resources.Resources._01_Excel
+        Me.btnImprimir.Image = Global.matuteMateriales.My.Resources.Resources._01_Excel
         Me.btnImprimir.ImageAlign = System.Drawing.ContentAlignment.MiddleRight
         Me.btnImprimir.Location = New System.Drawing.Point(682, 461)
         Me.btnImprimir.Name = "btnImprimir"
@@ -199,7 +199,7 @@ Partial Class frmContableSaldos
         'btnVolver
         '
         Me.btnVolver.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnVolver.Image = Global.listView.My.Resources.Resources.back
+        Me.btnVolver.Image = Global.matuteMateriales.My.Resources.Resources.back
         Me.btnVolver.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
         Me.btnVolver.Location = New System.Drawing.Point(10, 461)
         Me.btnVolver.Name = "btnVolver"
