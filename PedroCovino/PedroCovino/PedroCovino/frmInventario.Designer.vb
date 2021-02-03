@@ -24,21 +24,37 @@ Partial Class frmInventario
     Private Sub InitializeComponent()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(frmInventario))
         Me.gbMateriales = New System.Windows.Forms.GroupBox()
-        Me.CheckBox1 = New System.Windows.Forms.CheckBox()
+        Me.CbVerTodo = New System.Windows.Forms.CheckBox()
         Me.cboInsumos = New System.Windows.Forms.ComboBox()
-        Me.dgMaterialesStock = New System.Windows.Forms.DataGridView()
+        Me.dgInsumosDetalle = New System.Windows.Forms.DataGridView()
         Me.btnVistaPrevia = New System.Windows.Forms.Button()
         Me.btnImprimir = New System.Windows.Forms.Button()
         Me.btnVolver = New System.Windows.Forms.Button()
+        Me.TextBox1 = New System.Windows.Forms.TextBox()
+        Me.TextBox2 = New System.Windows.Forms.TextBox()
+        Me.TextBox3 = New System.Windows.Forms.TextBox()
+        Me.TextBox4 = New System.Windows.Forms.TextBox()
+        Me.Label1 = New System.Windows.Forms.Label()
+        Me.Label2 = New System.Windows.Forms.Label()
+        Me.Label3 = New System.Windows.Forms.Label()
+        Me.Label4 = New System.Windows.Forms.Label()
         Me.gbMateriales.SuspendLayout()
-        CType(Me.dgMaterialesStock, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.dgInsumosDetalle, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'gbMateriales
         '
-        Me.gbMateriales.Controls.Add(Me.CheckBox1)
+        Me.gbMateriales.Controls.Add(Me.Label4)
+        Me.gbMateriales.Controls.Add(Me.Label3)
+        Me.gbMateriales.Controls.Add(Me.Label2)
+        Me.gbMateriales.Controls.Add(Me.Label1)
+        Me.gbMateriales.Controls.Add(Me.TextBox4)
+        Me.gbMateriales.Controls.Add(Me.TextBox3)
+        Me.gbMateriales.Controls.Add(Me.TextBox2)
+        Me.gbMateriales.Controls.Add(Me.TextBox1)
+        Me.gbMateriales.Controls.Add(Me.CbVerTodo)
         Me.gbMateriales.Controls.Add(Me.cboInsumos)
-        Me.gbMateriales.Controls.Add(Me.dgMaterialesStock)
+        Me.gbMateriales.Controls.Add(Me.dgInsumosDetalle)
         Me.gbMateriales.Location = New System.Drawing.Point(12, 12)
         Me.gbMateriales.Name = "gbMateriales"
         Me.gbMateriales.Size = New System.Drawing.Size(776, 376)
@@ -46,15 +62,15 @@ Partial Class frmInventario
         Me.gbMateriales.TabStop = False
         Me.gbMateriales.Text = "Insumos"
         '
-        'CheckBox1
+        'CbVerTodo
         '
-        Me.CheckBox1.AutoSize = True
-        Me.CheckBox1.Location = New System.Drawing.Point(6, 51)
-        Me.CheckBox1.Name = "CheckBox1"
-        Me.CheckBox1.Size = New System.Drawing.Size(70, 17)
-        Me.CheckBox1.TabIndex = 8
-        Me.CheckBox1.Text = "Ver Todo"
-        Me.CheckBox1.UseVisualStyleBackColor = True
+        Me.CbVerTodo.AutoSize = True
+        Me.CbVerTodo.Location = New System.Drawing.Point(6, 51)
+        Me.CbVerTodo.Name = "CbVerTodo"
+        Me.CbVerTodo.Size = New System.Drawing.Size(70, 17)
+        Me.CbVerTodo.TabIndex = 8
+        Me.CbVerTodo.Text = "Ver Todo"
+        Me.CbVerTodo.UseVisualStyleBackColor = True
         '
         'cboInsumos
         '
@@ -62,19 +78,18 @@ Partial Class frmInventario
         Me.cboInsumos.Items.AddRange(New Object() {"Arena", "Cal", "Cemento"})
         Me.cboInsumos.Location = New System.Drawing.Point(6, 16)
         Me.cboInsumos.Name = "cboInsumos"
-        Me.cboInsumos.Size = New System.Drawing.Size(764, 21)
+        Me.cboInsumos.Size = New System.Drawing.Size(349, 21)
         Me.cboInsumos.TabIndex = 2
         '
-        'dgMaterialesStock
+        'dgInsumosDetalle
         '
-        Me.dgMaterialesStock.AllowUserToAddRows = False
-        Me.dgMaterialesStock.AllowUserToDeleteRows = False
-        Me.dgMaterialesStock.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.dgMaterialesStock.Location = New System.Drawing.Point(6, 92)
-        Me.dgMaterialesStock.Name = "dgMaterialesStock"
-        Me.dgMaterialesStock.ReadOnly = True
-        Me.dgMaterialesStock.Size = New System.Drawing.Size(764, 278)
-        Me.dgMaterialesStock.TabIndex = 0
+        Me.dgInsumosDetalle.AllowUserToAddRows = False
+        Me.dgInsumosDetalle.AllowUserToDeleteRows = False
+        Me.dgInsumosDetalle.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.dgInsumosDetalle.Location = New System.Drawing.Point(6, 92)
+        Me.dgInsumosDetalle.Name = "dgInsumosDetalle"
+        Me.dgInsumosDetalle.Size = New System.Drawing.Size(764, 278)
+        Me.dgInsumosDetalle.TabIndex = 0
         '
         'btnVistaPrevia
         '
@@ -112,6 +127,74 @@ Partial Class frmInventario
         Me.btnVolver.TextAlign = System.Drawing.ContentAlignment.MiddleRight
         Me.btnVolver.UseVisualStyleBackColor = True
         '
+        'TextBox1
+        '
+        Me.TextBox1.Location = New System.Drawing.Point(492, 19)
+        Me.TextBox1.Name = "TextBox1"
+        Me.TextBox1.ReadOnly = True
+        Me.TextBox1.Size = New System.Drawing.Size(69, 20)
+        Me.TextBox1.TabIndex = 9
+        '
+        'TextBox2
+        '
+        Me.TextBox2.Location = New System.Drawing.Point(492, 49)
+        Me.TextBox2.Name = "TextBox2"
+        Me.TextBox2.ReadOnly = True
+        Me.TextBox2.Size = New System.Drawing.Size(69, 20)
+        Me.TextBox2.TabIndex = 10
+        '
+        'TextBox3
+        '
+        Me.TextBox3.Location = New System.Drawing.Point(639, 19)
+        Me.TextBox3.Name = "TextBox3"
+        Me.TextBox3.ReadOnly = True
+        Me.TextBox3.Size = New System.Drawing.Size(69, 20)
+        Me.TextBox3.TabIndex = 11
+        '
+        'TextBox4
+        '
+        Me.TextBox4.Location = New System.Drawing.Point(639, 49)
+        Me.TextBox4.Name = "TextBox4"
+        Me.TextBox4.ReadOnly = True
+        Me.TextBox4.Size = New System.Drawing.Size(69, 20)
+        Me.TextBox4.TabIndex = 12
+        '
+        'Label1
+        '
+        Me.Label1.AutoSize = True
+        Me.Label1.Location = New System.Drawing.Point(399, 24)
+        Me.Label1.Name = "Label1"
+        Me.Label1.Size = New System.Drawing.Size(87, 13)
+        Me.Label1.TabIndex = 13
+        Me.Label1.Text = "Stock Disponible"
+        '
+        'Label2
+        '
+        Me.Label2.AutoSize = True
+        Me.Label2.Location = New System.Drawing.Point(389, 52)
+        Me.Label2.Name = "Label2"
+        Me.Label2.Size = New System.Drawing.Size(97, 13)
+        Me.Label2.TabIndex = 14
+        Me.Label2.Text = "Fecha Atualizacion"
+        '
+        'Label3
+        '
+        Me.Label3.AutoSize = True
+        Me.Label3.Location = New System.Drawing.Point(577, 24)
+        Me.Label3.Name = "Label3"
+        Me.Label3.Size = New System.Drawing.Size(60, 13)
+        Me.Label3.TabIndex = 15
+        Me.Label3.Text = "Stock Mín."
+        '
+        'Label4
+        '
+        Me.Label4.AutoSize = True
+        Me.Label4.Location = New System.Drawing.Point(576, 52)
+        Me.Label4.Name = "Label4"
+        Me.Label4.Size = New System.Drawing.Size(61, 13)
+        Me.Label4.TabIndex = 16
+        Me.Label4.Text = "Stock Máx."
+        '
         'frmInventario
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -129,16 +212,24 @@ Partial Class frmInventario
         Me.Text = "Lista de Productos"
         Me.gbMateriales.ResumeLayout(False)
         Me.gbMateriales.PerformLayout()
-        CType(Me.dgMaterialesStock, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.dgInsumosDetalle, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub
 
     Friend WithEvents gbMateriales As GroupBox
     Friend WithEvents btnVolver As Button
-    Friend WithEvents dgMaterialesStock As DataGridView
+    Friend WithEvents dgInsumosDetalle As DataGridView
     Friend WithEvents cboInsumos As ComboBox
     Friend WithEvents btnImprimir As Button
     Friend WithEvents btnVistaPrevia As Button
-    Friend WithEvents CheckBox1 As CheckBox
+    Friend WithEvents CbVerTodo As CheckBox
+    Friend WithEvents Label4 As Label
+    Friend WithEvents Label3 As Label
+    Friend WithEvents Label2 As Label
+    Friend WithEvents Label1 As Label
+    Friend WithEvents TextBox4 As TextBox
+    Friend WithEvents TextBox3 As TextBox
+    Friend WithEvents TextBox2 As TextBox
+    Friend WithEvents TextBox1 As TextBox
 End Class

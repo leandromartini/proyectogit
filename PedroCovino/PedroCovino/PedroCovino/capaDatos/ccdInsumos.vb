@@ -1,7 +1,6 @@
 ﻿Imports System.Data.SqlClient
 Public Class ccdInsumos
-    Public Function actualizarInsumo(ByVal codigo As Integer, ByVal descrip As String, ByVal preciosiva As Double,
-                                     ByVal preciociva As Double, ByVal ventapublico As Double, ByVal stock As Integer) As Integer
+    Public Function actualizarInsumo(ByVal codigo As Integer, ByVal descrip As String) As Integer
         Try
             Dim dataset As New DataSet
             Dim sProdString As String = "[dbo].[insumos_actualizarRegistro]"
@@ -10,10 +9,6 @@ Public Class ccdInsumos
                 command.CommandType = CommandType.StoredProcedure
                 command.Parameters.AddWithValue("@codigo", codigo)
                 command.Parameters.AddWithValue("@descrip", descrip)
-                command.Parameters.AddWithValue("@preciosiva", preciosiva)
-                command.Parameters.AddWithValue("@preciociva", preciociva)
-                command.Parameters.AddWithValue("@ventapublico", ventapublico)
-                command.Parameters.AddWithValue("@stock", stock)
                 conn()
                 actualizarInsumo = CInt(command.ExecuteScalar())
             End With

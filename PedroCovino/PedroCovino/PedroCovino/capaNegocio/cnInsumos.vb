@@ -1,21 +1,39 @@
 ﻿Public Class cnInsumos
-    Dim objccdProducto As New ccdInsumos
-    Public Function guardarNuevo(codigo, descrip, preciosiva, preciociva, ventapublico, stock) As Integer
+    Dim objccdInsumos As New ccdInsumos
+    Dim objccdInsumosPrecios As New ccdInsumosPrecios
+    Dim objccdInsumosStock As New ccdInsumosStock
+    Public Function ActualizarInsumo(codigo, descrip) As Integer
 
         Try
-            guardarNuevo = objccdProducto.actualizarInsumo(codigo, descrip, preciosiva, preciociva, ventapublico, stock)
+            ActualizarInsumo = objccdInsumos.actualizarInsumo(codigo, descrip)
         Catch ex As Exception
-            agregar_error(ex, "cnProductos guardarNuevo")
-            guardarNuevo = Nothing
+            agregar_error(ex, "cnInsumos ActualizarInsumo")
+            ActualizarInsumo = Nothing
+        End Try
+    End Function
+    Public Function ActualizarInsumoPrecios(codigo, preciosiva, preciociva, ventapublico) As Integer
+        Try
+            ActualizarInsumoPrecios = objccdInsumosPrecios.actualizarInsumoPrecios(codigo, preciosiva, preciociva, ventapublico)
+        Catch ex As Exception
+            agregar_error(ex, "cnInsumos ActualizarInsumoPrecios")
+            ActualizarInsumoPrecios = Nothing
+        End Try
+    End Function
+    Public Function ActualizarInsumoStock(codigo, stock, stockMin, stockMax) As Integer
+        Try
+            ActualizarInsumoStock = objccdInsumosStock.actualizarInsumoStock(codigo, stock, stockMin, stockMax, DateTime.Now)
+        Catch ex As Exception
+            agregar_error(ex, "cnInsumos ActualizarInsumoStock")
+            ActualizarInsumoStock = Nothing
         End Try
     End Function
 
     Public Function obtenerInsumosDescrip(codigo As Integer) As DataSet
 
         Try
-            obtenerInsumosDescrip = objccdProducto.obtenerInsumosDescrip(codigo)
+            obtenerInsumosDescrip = objccdInsumos.obtenerInsumosDescrip(codigo)
         Catch ex As Exception
-            agregar_error(ex, "cnProductos obtenerInsumosDescrip")
+            agregar_error(ex, "cnInsumos obtenerInsumosDescrip")
             obtenerInsumosDescrip = Nothing
         End Try
     End Function
@@ -23,9 +41,9 @@
     Friend Function obtenerinsumosDetalle(id_prod As Integer) As DataSet
 
         Try
-            obtenerinsumosDetalle = objccdProducto.obtenerinsumosDetalles(id_prod)
+            obtenerinsumosDetalle = objccdInsumos.obtenerinsumosDetalles(id_prod)
         Catch ex As Exception
-            agregar_error(ex, "cnProductos obtenerinsumosDetalle")
+            agregar_error(ex, "cnInsumos obtenerinsumosDetalle")
             obtenerinsumosDetalle = Nothing
         End Try
     End Function

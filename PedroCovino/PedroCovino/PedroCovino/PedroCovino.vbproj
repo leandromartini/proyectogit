@@ -110,13 +110,15 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="capaDatos\ccdErrores.vb" />
-    <Compile Include="capaDatos\ccdProductoPrecio.vb" />
     <Compile Include="capaDatos\ccdInsumos.vb" />
-    <Compile Include="capaDatos\ccdProductoPrecioHist.vb" />
-    <Compile Include="capaworkflow\wflProductos.vb" />
+    <Compile Include="capaDatos\ccdInsumosPrecios.vb" />
+    <Compile Include="capaDatos\ccdInsumosStock.vb" />
+    <Compile Include="capaworkflow\wflInsumos.vb" />
     <Compile Include="capaNegocio\cnInsumos.vb" />
     <Compile Include="clases\imprimir.vb" />
-    <Compile Include="clases\producto.vb" />
+    <Compile Include="clases\insumoPrecios.vb" />
+    <Compile Include="clases\insumoStock.vb" />
+    <Compile Include="clases\insumo.vb" />
     <Compile Include="Comun.vb" />
     <Compile Include="conexion.vb" />
     <Compile Include="errores.vb" />
@@ -126,10 +128,10 @@
     <Compile Include="frmInventario.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmNuevoIngreso.Designer.vb">
-      <DependentUpon>frmNuevoIngreso.vb</DependentUpon>
+    <Compile Include="frmNuevoInsumo.Designer.vb">
+      <DependentUpon>frmNuevoInsumo.vb</DependentUpon>
     </Compile>
-    <Compile Include="frmNuevoIngreso.vb">
+    <Compile Include="frmNuevoInsumo.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="frmPrincipal.Designer.vb">
@@ -158,8 +160,8 @@
     <EmbeddedResource Include="frmInventario.resx">
       <DependentUpon>frmInventario.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmNuevoIngreso.resx">
-      <DependentUpon>frmNuevoIngreso.vb</DependentUpon>
+    <EmbeddedResource Include="frmNuevoInsumo.resx">
+      <DependentUpon>frmNuevoInsumo.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmPrincipal.resx">
       <DependentUpon>frmPrincipal.vb</DependentUpon>

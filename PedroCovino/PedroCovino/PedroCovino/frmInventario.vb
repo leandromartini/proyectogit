@@ -12,9 +12,9 @@ Public Class frmInventario
     End Sub
     Private Sub cargarComboInsumos()
         Try
-            Dim objWflProd As New wflInsumos 'Ojo se instancia tambienn al guardar productos
+            Dim objWfIns As New wflInsumos 'Ojo se instancia tambienn al guardar productos
             Dim objDS As New DataSet
-            objDS = objWflProd.obtenerInsumosDescrip(-1)
+            objDS = objWfIns.obtenerInsumosDescrip(-1)
             If Not IsNothing(objDS) Then
                 cboInsumos.DataSource = objDS.Tables(0)
                 cboInsumos.DisplayMember = "descrip"
@@ -29,13 +29,13 @@ Public Class frmInventario
     Private Sub cargardgInsumosStock(codigo)
         Try
 
-            Dim objWflProd As New wflInsumos 'Ojo se instancia tambienn al guardar productos
+            Dim objWflIns As New wflInsumos 'Ojo se instancia tambienn al guardar productos
             Dim objDSGrid As New DataSet
             Dim objComun As New Comun
             Dim costoInv As Double = 0
-            objDSGrid = objWflProd.obtenerInsumosDetalle(codigo)
+            objDSGrid = objWflIns.obtenerInsumosDetalle(codigo)
             If Not IsNothing(objDSGrid) Then
-                dgMaterialesStock.DataSource = objDSGrid.Tables(0)
+                dgInsumosDetalle.DataSource = objDSGrid.Tables(0)
                 'For Each item As DataGridViewRow In dgMaterialesStock.Rows
                 '    costoInv = costoInv + objComun.totalProduc(item.Cells(1).Value, item.Cells(2).Value, IIf(IsDBNull(item.Cells(3).Value), 0, item.Cells(3).Value))
                 '    If IsDBNull(item.Cells(3).Value) Then
@@ -49,29 +49,9 @@ Public Class frmInventario
             agregar_error(ex, Name)
         End Try
     End Sub
-    Private Sub btnVistaPrevia_Click(sender As Object, e As EventArgs) Handles btnVistaPrevia.Click
-        objImprimir.imprimirVistaPrevia(dgMaterialesStock, TitulosDoc)
-    End Sub
-    Private Sub btnImprimir_Click(sender As Object, e As EventArgs) Handles btnImprimir.Click
-        objImprimir.imprimir(dgMaterialesStock, TitulosDoc)
-    End Sub
-    Private Sub limpiar()
-        Try
-            cboInsumos.DataSource = Nothing
-            cboInsumos.ValueMember = Nothing
-            dgMaterialesStock.DataSource = Nothing
-        Catch ex As Exception
-            agregar_error(ex, Name)
-        End Try
-    End Sub
-    Private Sub btnVolver_Click(sender As Object, e As EventArgs) Handles btnVolver.Click
-        limpiar()
-        Close()
-    End Sub
 
-    Private Sub cboMateriales_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cboInsumos.SelectedIndexChanged
-        Dim objProductos As New producto
-        'Dim objProdCant As New productoCantidad
+    Private Sub cboInsumos_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cboInsumos.SelectedIndexChanged
+
         Dim DSprod As New DataSet
         Try
             If cboInsumos.ValueMember = "" Then
@@ -84,13 +64,52 @@ Public Class frmInventario
             agregar_error(ex, Name)
         End Try
     End Sub
-
-    Private Sub CheckBox1_CheckedChanged(sender As Object, e As EventArgs) Handles CheckBox1.CheckedChanged
-        If CheckBox1.Checked Then
+    Private Sub CbVerTodo_CheckedChanged(sender As Object, e As EventArgs) Handles CbVerTodo.CheckedChanged
+        If CbVerTodo.Checked Then
             cboInsumos.Enabled = False
         Else
             cboInsumos.Enabled = True
         End If
-        ' cargardgMaterialesStock(-1)
+        cargardgInsumosStock(-1)
+    End Sub
+    Private Sub dgInsumosDetalle_CellValueChanged(sender As Object, e As DataGridViewCellEventArgs) Handles dgInsumosDetalle.CellValueChanged
+        Dim codigo As Integer
+        Try
+            'Preguntar si es es la columna stock, sino mensaje no puede modificar demas columnas
+            If dgInsumosDetalle.Columns(e.ColumnIndex).Name <> "stock" Then
+                MsgBox("Solo se puede modificar el Stock")
+                Exit Sub
+            End If
+            'obtener el codigo
+            codigo = dgInsumosDetalle.Item(0, dgInsumosDetalle.CurrentRow.Index).Value
+
+            'modificar la tabla stock con el nuevo valor
+
+            'llamar a la wflInsumos
+
+            'mostrar mensaje se modifico el valor exitosamente
+
+        Catch ex As Exception
+            agregar_error(ex, Name)
+        End Try
+    End Sub
+    Private Sub limpiar()
+        Try
+            cboInsumos.DataSource = Nothing
+            cboInsumos.ValueMember = Nothing
+            dgInsumosDetalle.DataSource = Nothing
+        Catch ex As Exception
+            agregar_error(ex, Name)
+        End Try
+    End Sub
+    Private Sub btnVolver_Click(sender As Object, e As EventArgs) Handles btnVolver.Click
+        limpiar()
+        Close()
+    End Sub
+    Private Sub btnVistaPrevia_Click(sender As Object, e As EventArgs) Handles btnVistaPrevia.Click
+        objImprimir.imprimirVistaPrevia(dgInsumosDetalle, TitulosDoc)
+    End Sub
+    Private Sub btnImprimir_Click(sender As Object, e As EventArgs) Handles btnImprimir.Click
+        objImprimir.imprimir(dgInsumosDetalle, TitulosDoc)
     End Sub
 End Class

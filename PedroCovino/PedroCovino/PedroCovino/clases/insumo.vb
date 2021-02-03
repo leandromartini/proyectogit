@@ -1,16 +1,16 @@
-﻿Public Class producto
-    Private codigo As Integer
-    Private descripcion As String
+﻿Public Class insumo
+    Dim codigo As Integer
+    Public descripcion As String
 
-    Public Sub NuevoPruducto(codigo As Integer, descripcion As String)
+    Public Sub Nuevo(codigonuevo As Integer, descripcionNuevo As String)
         Try
-            codigo = codigo
-            descripcion = descripcion
+            codigo = codigonuevo
+            descripcion = descripcionNuevo
         Catch ex As Exception
             agregar_error(ex, "producto NuevoPruducto")
         End Try
     End Sub
-    Public Function verCodigo()
+    Function verCodigo()
         Return codigo
     End Function
 
