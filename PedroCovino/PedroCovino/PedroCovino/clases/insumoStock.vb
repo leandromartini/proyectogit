@@ -1,8 +1,8 @@
 ﻿Public Class insumoStock
-    Private codigo As Integer
-    Private stock As Integer
-    Private stockmin As Integer
-    Private stockmax As Integer
+    Private codigo As Integer = 0
+    Private stock As Integer = 0
+    Private stockmin As Integer = 0
+    Private stockmax As Integer = 0
 
     Public Sub Nuevo(cod As Integer, stck As Integer, stckmin As Integer, stckmax As Integer)
         Try

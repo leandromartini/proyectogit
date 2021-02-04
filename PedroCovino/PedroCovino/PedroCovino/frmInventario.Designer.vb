@@ -24,20 +24,20 @@ Partial Class frmInventario
     Private Sub InitializeComponent()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(frmInventario))
         Me.gbMateriales = New System.Windows.Forms.GroupBox()
+        Me.Label4 = New System.Windows.Forms.Label()
+        Me.Label3 = New System.Windows.Forms.Label()
+        Me.Label2 = New System.Windows.Forms.Label()
+        Me.Label1 = New System.Windows.Forms.Label()
+        Me.txtStockMax = New System.Windows.Forms.TextBox()
+        Me.txtStockMin = New System.Windows.Forms.TextBox()
+        Me.txtFecAct = New System.Windows.Forms.TextBox()
+        Me.txtStockDisp = New System.Windows.Forms.TextBox()
         Me.CbVerTodo = New System.Windows.Forms.CheckBox()
         Me.cboInsumos = New System.Windows.Forms.ComboBox()
         Me.dgInsumosDetalle = New System.Windows.Forms.DataGridView()
         Me.btnVistaPrevia = New System.Windows.Forms.Button()
         Me.btnImprimir = New System.Windows.Forms.Button()
         Me.btnVolver = New System.Windows.Forms.Button()
-        Me.TextBox1 = New System.Windows.Forms.TextBox()
-        Me.TextBox2 = New System.Windows.Forms.TextBox()
-        Me.TextBox3 = New System.Windows.Forms.TextBox()
-        Me.TextBox4 = New System.Windows.Forms.TextBox()
-        Me.Label1 = New System.Windows.Forms.Label()
-        Me.Label2 = New System.Windows.Forms.Label()
-        Me.Label3 = New System.Windows.Forms.Label()
-        Me.Label4 = New System.Windows.Forms.Label()
         Me.gbMateriales.SuspendLayout()
         CType(Me.dgInsumosDetalle, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
@@ -48,10 +48,10 @@ Partial Class frmInventario
         Me.gbMateriales.Controls.Add(Me.Label3)
         Me.gbMateriales.Controls.Add(Me.Label2)
         Me.gbMateriales.Controls.Add(Me.Label1)
-        Me.gbMateriales.Controls.Add(Me.TextBox4)
-        Me.gbMateriales.Controls.Add(Me.TextBox3)
-        Me.gbMateriales.Controls.Add(Me.TextBox2)
-        Me.gbMateriales.Controls.Add(Me.TextBox1)
+        Me.gbMateriales.Controls.Add(Me.txtStockMax)
+        Me.gbMateriales.Controls.Add(Me.txtStockMin)
+        Me.gbMateriales.Controls.Add(Me.txtFecAct)
+        Me.gbMateriales.Controls.Add(Me.txtStockDisp)
         Me.gbMateriales.Controls.Add(Me.CbVerTodo)
         Me.gbMateriales.Controls.Add(Me.cboInsumos)
         Me.gbMateriales.Controls.Add(Me.dgInsumosDetalle)
@@ -61,6 +61,74 @@ Partial Class frmInventario
         Me.gbMateriales.TabIndex = 0
         Me.gbMateriales.TabStop = False
         Me.gbMateriales.Text = "Insumos"
+        '
+        'Label4
+        '
+        Me.Label4.AutoSize = True
+        Me.Label4.Location = New System.Drawing.Point(576, 52)
+        Me.Label4.Name = "Label4"
+        Me.Label4.Size = New System.Drawing.Size(61, 13)
+        Me.Label4.TabIndex = 16
+        Me.Label4.Text = "Stock Máx."
+        '
+        'Label3
+        '
+        Me.Label3.AutoSize = True
+        Me.Label3.Location = New System.Drawing.Point(577, 24)
+        Me.Label3.Name = "Label3"
+        Me.Label3.Size = New System.Drawing.Size(60, 13)
+        Me.Label3.TabIndex = 15
+        Me.Label3.Text = "Stock Mín."
+        '
+        'Label2
+        '
+        Me.Label2.AutoSize = True
+        Me.Label2.Location = New System.Drawing.Point(389, 52)
+        Me.Label2.Name = "Label2"
+        Me.Label2.Size = New System.Drawing.Size(97, 13)
+        Me.Label2.TabIndex = 14
+        Me.Label2.Text = "Fecha Atualizacion"
+        '
+        'Label1
+        '
+        Me.Label1.AutoSize = True
+        Me.Label1.Location = New System.Drawing.Point(399, 24)
+        Me.Label1.Name = "Label1"
+        Me.Label1.Size = New System.Drawing.Size(87, 13)
+        Me.Label1.TabIndex = 13
+        Me.Label1.Text = "Stock Disponible"
+        '
+        'txtStockMax
+        '
+        Me.txtStockMax.Location = New System.Drawing.Point(639, 49)
+        Me.txtStockMax.Name = "txtStockMax"
+        Me.txtStockMax.ReadOnly = True
+        Me.txtStockMax.Size = New System.Drawing.Size(69, 20)
+        Me.txtStockMax.TabIndex = 12
+        '
+        'txtStockMin
+        '
+        Me.txtStockMin.Location = New System.Drawing.Point(639, 19)
+        Me.txtStockMin.Name = "txtStockMin"
+        Me.txtStockMin.ReadOnly = True
+        Me.txtStockMin.Size = New System.Drawing.Size(69, 20)
+        Me.txtStockMin.TabIndex = 11
+        '
+        'txtFecAct
+        '
+        Me.txtFecAct.Location = New System.Drawing.Point(492, 49)
+        Me.txtFecAct.Name = "txtFecAct"
+        Me.txtFecAct.ReadOnly = True
+        Me.txtFecAct.Size = New System.Drawing.Size(69, 20)
+        Me.txtFecAct.TabIndex = 10
+        '
+        'txtStockDisp
+        '
+        Me.txtStockDisp.Location = New System.Drawing.Point(492, 19)
+        Me.txtStockDisp.Name = "txtStockDisp"
+        Me.txtStockDisp.ReadOnly = True
+        Me.txtStockDisp.Size = New System.Drawing.Size(69, 20)
+        Me.txtStockDisp.TabIndex = 9
         '
         'CbVerTodo
         '
@@ -127,74 +195,6 @@ Partial Class frmInventario
         Me.btnVolver.TextAlign = System.Drawing.ContentAlignment.MiddleRight
         Me.btnVolver.UseVisualStyleBackColor = True
         '
-        'TextBox1
-        '
-        Me.TextBox1.Location = New System.Drawing.Point(492, 19)
-        Me.TextBox1.Name = "TextBox1"
-        Me.TextBox1.ReadOnly = True
-        Me.TextBox1.Size = New System.Drawing.Size(69, 20)
-        Me.TextBox1.TabIndex = 9
-        '
-        'TextBox2
-        '
-        Me.TextBox2.Location = New System.Drawing.Point(492, 49)
-        Me.TextBox2.Name = "TextBox2"
-        Me.TextBox2.ReadOnly = True
-        Me.TextBox2.Size = New System.Drawing.Size(69, 20)
-        Me.TextBox2.TabIndex = 10
-        '
-        'TextBox3
-        '
-        Me.TextBox3.Location = New System.Drawing.Point(639, 19)
-        Me.TextBox3.Name = "TextBox3"
-        Me.TextBox3.ReadOnly = True
-        Me.TextBox3.Size = New System.Drawing.Size(69, 20)
-        Me.TextBox3.TabIndex = 11
-        '
-        'TextBox4
-        '
-        Me.TextBox4.Location = New System.Drawing.Point(639, 49)
-        Me.TextBox4.Name = "TextBox4"
-        Me.TextBox4.ReadOnly = True
-        Me.TextBox4.Size = New System.Drawing.Size(69, 20)
-        Me.TextBox4.TabIndex = 12
-        '
-        'Label1
-        '
-        Me.Label1.AutoSize = True
-        Me.Label1.Location = New System.Drawing.Point(399, 24)
-        Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(87, 13)
-        Me.Label1.TabIndex = 13
-        Me.Label1.Text = "Stock Disponible"
-        '
-        'Label2
-        '
-        Me.Label2.AutoSize = True
-        Me.Label2.Location = New System.Drawing.Point(389, 52)
-        Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(97, 13)
-        Me.Label2.TabIndex = 14
-        Me.Label2.Text = "Fecha Atualizacion"
-        '
-        'Label3
-        '
-        Me.Label3.AutoSize = True
-        Me.Label3.Location = New System.Drawing.Point(577, 24)
-        Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(60, 13)
-        Me.Label3.TabIndex = 15
-        Me.Label3.Text = "Stock Mín."
-        '
-        'Label4
-        '
-        Me.Label4.AutoSize = True
-        Me.Label4.Location = New System.Drawing.Point(576, 52)
-        Me.Label4.Name = "Label4"
-        Me.Label4.Size = New System.Drawing.Size(61, 13)
-        Me.Label4.TabIndex = 16
-        Me.Label4.Text = "Stock Máx."
-        '
         'frmInventario
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -228,8 +228,8 @@ Partial Class frmInventario
     Friend WithEvents Label3 As Label
     Friend WithEvents Label2 As Label
     Friend WithEvents Label1 As Label
-    Friend WithEvents TextBox4 As TextBox
-    Friend WithEvents TextBox3 As TextBox
-    Friend WithEvents TextBox2 As TextBox
-    Friend WithEvents TextBox1 As TextBox
+    Friend WithEvents txtStockMax As TextBox
+    Friend WithEvents txtStockMin As TextBox
+    Friend WithEvents txtFecAct As TextBox
+    Friend WithEvents txtStockDisp As TextBox
 End Class

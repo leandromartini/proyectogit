@@ -33,18 +33,31 @@
             agregar_error(ex, "Comun ActualizarInsumoPrecios")
         End Try
     End Sub
-    Public Sub actualizarInsumo()
+    Public Function grabarInsumo() As Boolean
         Try
-
+            Dim fec As DateTime
             Dim objWlfInsumo As New wflInsumos
+            grabarInsumo = False
 
-            objWlfInsumo.actualizarInsumo(objInsumo.verCodigo, objInsumo.verDescripcion, objInsumoPrecio.verpreciosiva, objInsumoPrecio.verpreciociva,
+
+            fec = objWlfInsumo.actualizarInsumo(objInsumoStock.verCodigo, objInsumo.verDescripcion, objInsumoPrecio.verpreciosiva, objInsumoPrecio.verpreciociva,
                                           objInsumoPrecio.verventapublico, objInsumoStock.verStock, objInsumoStock.verstockmin, objInsumoStock.verstockmax)
+
+            objInsumo.limpiar()
+            objInsumoPrecio.limpiar()
+            objInsumoStock.limpiar()
+
+            If fec = "01/01/1900" Then
+                MsgBox("No se pudideron guardar los cambios! Consulte con el desarrollador")
+                Exit Function
+            End If
+            grabarInsumo = True
 
         Catch ex As Exception
             agregar_error(ex, "Comun ActualizarInsumoPrecios")
+            grabarInsumo = False
         End Try
-    End Sub
+    End Function
 
 
 End Class

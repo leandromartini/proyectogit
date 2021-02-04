@@ -1,6 +1,6 @@
 ﻿Public Class insumo
-    Dim codigo As Integer
-    Public descripcion As String
+    Public codigo As Integer = 0
+    Public descripcion As String = ""
 
     Public Sub Nuevo(codigonuevo As Integer, descripcionNuevo As String)
         Try

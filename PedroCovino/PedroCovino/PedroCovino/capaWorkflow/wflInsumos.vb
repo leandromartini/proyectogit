@@ -6,16 +6,18 @@ Public Class wflInsumos
         actualizarInsumo = "01/01/1900"
         Try
 
-            'Me fijo si existe el insumo, de lo contrario lo agrego
-            objcnInsumos.ActualizarInsumo(codigo, descrip)
+            If descrip <> "" Then
+                'Me fijo si existe el insumo, de lo contrario lo agrego
+                objcnInsumos.ActualizarInsumo(codigo, descrip)
+            End If
+
 
             'Me fijo si cambio algun importe de lo contrario acualizo
-
-            objcnInsumos.ActualizarInsumoPrecios(codigo, preciosiva, preciociva, precioPub)
-
+            If preciosiva <> 0.0 And preciociva <> 0.0 And precioPub <> 0.0 Then
+                objcnInsumos.ActualizarInsumoPrecios(codigo, preciosiva, preciociva, precioPub)
+            End If
 
             'Me fijo si cambio el stock de lo contrario lo actualizo
-
             objcnInsumos.ActualizarInsumoStock(codigo, stock, stockmin, stockmax)
 
             actualizarInsumo = DateTime.Now

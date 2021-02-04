@@ -1,8 +1,8 @@
 ﻿Public Class insumoPrecios
-    Private codigo As Integer
-    Private preciosiva As Double
-    Private preciociva As Double
-    Private ventapublico As Double
+    Private codigo As Integer = 0
+    Private preciosiva As Double = 0.0
+    Private preciociva As Double = 0.0
+    Private ventapublico As Double = 0.0
 
     Public Sub Nuevo(cod As Integer, presiva As Double, preciva As Double, ventpub As Double)
         Try

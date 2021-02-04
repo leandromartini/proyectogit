@@ -45,6 +45,7 @@ Public Class frmInventario
                 'lblcanprod.Text = dgMaterialesStock.Rows.Count
                 'lblCostoInventario.Text = costoInv
             End If
+            cargarStock()
         Catch ex As Exception
             agregar_error(ex, Name)
         End Try
@@ -72,27 +73,39 @@ Public Class frmInventario
         End If
         cargardgInsumosStock(-1)
     End Sub
+
+    Private Sub dgInsumosDetalle_CellClick(sender As Object, e As DataGridViewCellEventArgs) Handles dgInsumosDetalle.CellClick
+        cargarStock()
+    End Sub
+
+
     Private Sub dgInsumosDetalle_CellValueChanged(sender As Object, e As DataGridViewCellEventArgs) Handles dgInsumosDetalle.CellValueChanged
-        Dim codigo As Integer
+        Dim objComun As New Comun
         Try
             'Preguntar si es es la columna stock, sino mensaje no puede modificar demas columnas
             If dgInsumosDetalle.Columns(e.ColumnIndex).Name <> "stock" Then
                 MsgBox("Solo se puede modificar el Stock")
                 Exit Sub
             End If
-            'obtener el codigo
-            codigo = dgInsumosDetalle.Item(0, dgInsumosDetalle.CurrentRow.Index).Value
 
-            'modificar la tabla stock con el nuevo valor
+            objComun.ActualizarInsumoStock(dgInsumosDetalle.Item(0, dgInsumosDetalle.CurrentRow.Index).Value, dgInsumosDetalle.CurrentCell.Value, txtStockMin.Text, txtStockMax.Text)
 
-            'llamar a la wflInsumos
-
-            'mostrar mensaje se modifico el valor exitosamente
-
+            If objComun.grabarInsumo() Then
+                MsgBox("El cambio se grabo con exito!")
+            End If
+            cargardgInsumosStock(-1)
         Catch ex As Exception
             agregar_error(ex, Name)
         End Try
     End Sub
+
+    Sub cargarStock()
+        txtStockDisp.Text = dgInsumosDetalle.Item(5, dgInsumosDetalle.CurrentRow.Index).Value
+        txtStockMin.Text = dgInsumosDetalle.Item(6, dgInsumosDetalle.CurrentRow.Index).Value
+        txtStockMax.Text = dgInsumosDetalle.Item(7, dgInsumosDetalle.CurrentRow.Index).Value
+        txtFecAct.Text = dgInsumosDetalle.Item(8, dgInsumosDetalle.CurrentRow.Index).Value
+    End Sub
+
     Private Sub limpiar()
         Try
             cboInsumos.DataSource = Nothing
@@ -112,4 +125,6 @@ Public Class frmInventario
     Private Sub btnImprimir_Click(sender As Object, e As EventArgs) Handles btnImprimir.Click
         objImprimir.imprimir(dgInsumosDetalle, TitulosDoc)
     End Sub
+
+
 End Class

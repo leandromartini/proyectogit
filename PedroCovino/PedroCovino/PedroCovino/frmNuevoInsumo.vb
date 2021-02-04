@@ -20,7 +20,7 @@
 
             objComun.ActualizarInsumoStock(txtBoxCodigo.Text, txtBoxStock.Text, txtBoxStockMin.Text, txtboxStockMax.Text)
 
-            objComun.actualizarInsumo()
+            objComun.grabarInsumo()
 
             limpiar()
 
