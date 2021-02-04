@@ -3,7 +3,7 @@ Public Class wflInsumos
     Dim objcnInsumos As New cnInsumos
 
     Public Function actualizarInsumo(codigo, descrip, preciosiva, preciociva, precioPub, stock, stockmin, stockmax) As Date
-        actualizarInsumo = "01/01/1900"
+
         Try
 
             If descrip <> "" Then
@@ -11,16 +11,13 @@ Public Class wflInsumos
                 objcnInsumos.ActualizarInsumo(codigo, descrip)
             End If
 
-
             'Me fijo si cambio algun importe de lo contrario acualizo
             If preciosiva <> 0.0 And preciociva <> 0.0 And precioPub <> 0.0 Then
                 objcnInsumos.ActualizarInsumoPrecios(codigo, preciosiva, preciociva, precioPub)
             End If
 
             'Me fijo si cambio el stock de lo contrario lo actualizo
-            objcnInsumos.ActualizarInsumoStock(codigo, stock, stockmin, stockmax)
-
-            actualizarInsumo = DateTime.Now
+            actualizarInsumo = objcnInsumos.ActualizarInsumoStock(codigo, stock, stockmin, stockmax)
 
         Catch ex As Exception
             agregar_error(ex, "wflProductos ProductoNuevo")

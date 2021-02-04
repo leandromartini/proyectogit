@@ -18,8 +18,8 @@ Public Class ccdInsumosStock
             End With
             disconect()
         Catch ex As Exception
-            agregar_error(ex, "actualizarProducto")
-            actualizarInsumoStock = 0
+            agregar_error(ex, "actualizarInsumoStock")
+            actualizarInsumoStock = -1
         End Try
     End Function
 End Class

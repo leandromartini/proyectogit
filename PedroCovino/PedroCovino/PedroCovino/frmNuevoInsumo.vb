@@ -7,7 +7,9 @@
     Private Sub frmNuevoInsumo_Load(sender As Object, e As EventArgs) Handles MyBase.Load
 
     End Sub
-
+    Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
+        limpiar()
+    End Sub
 
 
     Private Sub BtnGuardar_Click(sender As Object, e As EventArgs) Handles BtnGuardar.Click
@@ -20,7 +22,11 @@
 
             objComun.ActualizarInsumoStock(txtBoxCodigo.Text, txtBoxStock.Text, txtBoxStockMin.Text, txtboxStockMax.Text)
 
-            objComun.grabarInsumo()
+            If objComun.grabarInsumo() Then
+                MsgBox("Los datos se grabaron con exito!")
+            Else
+                MsgBox("Error al grabar! Consulte al desarrollador")
+            End If
 
             limpiar()
 
@@ -30,23 +36,37 @@
     End Sub
     Function validar()
 
-        If txtBoxPrecioSiva.Text = "0,00" Then
+        If txtBoxCodigo.Text = "0" Then
             MsgBox("Agregue un precio sin IVA.", MsgBoxStyle.OkOnly, "Aviso")
             txtBoxPrecioSiva.Focus()
             Return False
         End If
-        If txtBoxPrecioCiva.Text = "0,00" Then
+
+        If txtBoxDescrip.Text = "" Then
+            MsgBox("Agregue un precio sin IVA.", MsgBoxStyle.OkOnly, "Aviso")
+            txtBoxPrecioSiva.Focus()
+            Return False
+        End If
+
+        If txtBoxPrecioSiva.Text = "0.00" Then
+            MsgBox("Agregue un precio sin IVA.", MsgBoxStyle.OkOnly, "Aviso")
+            txtBoxPrecioSiva.Focus()
+            Return False
+        End If
+
+        If txtBoxPrecioCiva.Text = "0.00" Then
             MsgBox("Agregue un precio con IVA.", MsgBoxStyle.OkOnly, "Aviso")
             txtBoxPrecioCiva.Focus()
             Return False
         End If
-        If txtBoxPrecioPub.Text = "0,00" Then
+
+        If txtBoxPrecioPub.Text = "0.00" Then
             MsgBox("Agregue un precio para público.", MsgBoxStyle.OkOnly, "Aviso")
             txtBoxPrecioPub.Focus()
             Return False
         End If
     End Function
-    Function limpiar()
+    Sub limpiar()
         txtBoxCodigo.Text = ""
         txtBoxDescrip.Text = ""
         txtBoxPrecioSiva.Text = ""
@@ -55,9 +75,11 @@
         txtBoxStock.Text = ""
         txtBoxStockMin.Text = ""
         txtboxStockMax.Text = ""
-    End Function
+    End Sub
     Private Sub btnVolver_Click(sender As Object, e As EventArgs) Handles btnVolver.Click
         limpiar()
         Close()
     End Sub
+
+
 End Class

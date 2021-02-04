@@ -28,6 +28,7 @@ Partial Class frmPrincipal
         Me.AgregarToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.EnStockToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.SalirToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.CargarNuevaListaToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.MenuStrip1.SuspendLayout()
         Me.SuspendLayout()
         '
@@ -42,7 +43,7 @@ Partial Class frmPrincipal
         '
         'ProductosToolStripMenuItem
         '
-        Me.ProductosToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.AgregarToolStripMenuItem, Me.EnStockToolStripMenuItem})
+        Me.ProductosToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.AgregarToolStripMenuItem, Me.EnStockToolStripMenuItem, Me.CargarNuevaListaToolStripMenuItem})
         Me.ProductosToolStripMenuItem.Name = "ProductosToolStripMenuItem"
         Me.ProductosToolStripMenuItem.Size = New System.Drawing.Size(64, 20)
         Me.ProductosToolStripMenuItem.Text = "Insumos"
@@ -50,13 +51,13 @@ Partial Class frmPrincipal
         'AgregarToolStripMenuItem
         '
         Me.AgregarToolStripMenuItem.Name = "AgregarToolStripMenuItem"
-        Me.AgregarToolStripMenuItem.Size = New System.Drawing.Size(152, 22)
+        Me.AgregarToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
         Me.AgregarToolStripMenuItem.Text = "Nuevo Ingreso"
         '
         'EnStockToolStripMenuItem
         '
         Me.EnStockToolStripMenuItem.Name = "EnStockToolStripMenuItem"
-        Me.EnStockToolStripMenuItem.Size = New System.Drawing.Size(152, 22)
+        Me.EnStockToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
         Me.EnStockToolStripMenuItem.Text = "Inventario"
         '
         'SalirToolStripMenuItem
@@ -64,6 +65,12 @@ Partial Class frmPrincipal
         Me.SalirToolStripMenuItem.Name = "SalirToolStripMenuItem"
         Me.SalirToolStripMenuItem.Size = New System.Drawing.Size(41, 20)
         Me.SalirToolStripMenuItem.Text = "Salir"
+        '
+        'CargarNuevaListaToolStripMenuItem
+        '
+        Me.CargarNuevaListaToolStripMenuItem.Name = "CargarNuevaListaToolStripMenuItem"
+        Me.CargarNuevaListaToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
+        Me.CargarNuevaListaToolStripMenuItem.Text = "CargarNuevaLista"
         '
         'frmPrincipal
         '
@@ -88,4 +95,5 @@ Partial Class frmPrincipal
     Friend WithEvents SalirToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents AgregarToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents EnStockToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents CargarNuevaListaToolStripMenuItem As ToolStripMenuItem
 End Class

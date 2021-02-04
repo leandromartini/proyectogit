@@ -1,7 +1,6 @@
 USE PedroCovino
 GO
 
-/****** Object:  Table [dbo].[errores]    Script Date: 09/05/2019 13:45:40 ******/
 SET ANSI_NULLS ON
 GO
 

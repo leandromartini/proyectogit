@@ -19,9 +19,15 @@
             ActualizarInsumoPrecios = Nothing
         End Try
     End Function
-    Public Function ActualizarInsumoStock(codigo, stock, stockMin, stockMax) As Integer
+    Public Function ActualizarInsumoStock(codigo, stock, stockMin, stockMax) As DateTime
         Try
-            ActualizarInsumoStock = objccdInsumosStock.actualizarInsumoStock(codigo, stock, stockMin, stockMax, DateTime.Now)
+            Dim int As Integer = -1
+            ActualizarInsumoStock = "01/01/1900"
+            int = objccdInsumosStock.actualizarInsumoStock(codigo, stock, stockMin, stockMax, DateTime.Now)
+            If int > 0 Then
+                ActualizarInsumoStock = DateTime.Now
+            End If
+
         Catch ex As Exception
             agregar_error(ex, "cnInsumos ActualizarInsumoStock")
             ActualizarInsumoStock = Nothing

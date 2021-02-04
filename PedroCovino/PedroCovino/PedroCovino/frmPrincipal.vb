@@ -8,4 +8,8 @@
     Private Sub EnStockToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles EnStockToolStripMenuItem.Click
         frmInventario.ShowDialog()
     End Sub
+
+    Private Sub CargarNuevaListaToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles CargarNuevaListaToolStripMenuItem.Click
+        frmCargarLista.ShowDialog()
+    End Sub
 End Class
