@@ -3,7 +3,7 @@ sqlcmd -S LEANDRO-PC -i C:\proyectogit\PedroCovino\sql\_EliminarTablaOREliminarC
 sqlcmd -S LEANDRO-PC -i C:\proyectogit\PedroCovino\sql\001_CREATE_TABLE_Errores.sql
 sqlcmd -S LEANDRO-PC -i C:\proyectogit\PedroCovino\sql\002_CREATE_TABLE_insumos.sql
 sqlcmd -S LEANDRO-PC -i C:\proyectogit\PedroCovino\sql\003_CREATE_TABLE_insumosPrecio.sql
-sqlcmd -S LEANDRO-PC -i C:\Proyectosgit\PedroCovino\sql\004_CREATE_TABLE_insumosStock.sql
+sqlcmd -S LEANDRO-PC -i C:\Proyectogit\PedroCovino\sql\004_CREATE_TABLE_insumosStock.sql
 sqlcmd -S LEANDRO-PC -i C:\proyectogit\PedroCovino\sql\005_CREATE_TABLE_insumosPrecioHist.sql
 
 sqlcmd -S LEANDRO-PC -i C:\proyectogit\PedroCovino\sql\00100_CREATE_SP_errores_actualizarRegistro.sql 

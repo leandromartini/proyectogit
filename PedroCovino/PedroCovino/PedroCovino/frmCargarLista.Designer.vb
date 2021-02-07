@@ -22,39 +22,40 @@ Partial Class frmCargarLista
     'No lo modifique con el editor de código.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
-        Me.Button2 = New System.Windows.Forms.Button()
-        Me.Button1 = New System.Windows.Forms.Button()
+        Me.BtnSubirXLS = New System.Windows.Forms.Button()
+        Me.BtnCargarXLS = New System.Windows.Forms.Button()
         Me.SuspendLayout()
         '
-        'Button2
+        'BtnSubirXLS
         '
-        Me.Button2.Image = Global.PedroCovino.My.Resources.Resources.up
-        Me.Button2.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.Button2.Location = New System.Drawing.Point(130, 43)
-        Me.Button2.Name = "Button2"
-        Me.Button2.Size = New System.Drawing.Size(40, 41)
-        Me.Button2.TabIndex = 15
-        Me.Button2.TextAlign = System.Drawing.ContentAlignment.MiddleRight
-        Me.Button2.UseVisualStyleBackColor = True
+        Me.BtnSubirXLS.Image = Global.PedroCovino.My.Resources.Resources.up
+        Me.BtnSubirXLS.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.BtnSubirXLS.Location = New System.Drawing.Point(106, 44)
+        Me.BtnSubirXLS.Name = "BtnSubirXLS"
+        Me.BtnSubirXLS.Size = New System.Drawing.Size(40, 41)
+        Me.BtnSubirXLS.TabIndex = 15
+        Me.BtnSubirXLS.TextAlign = System.Drawing.ContentAlignment.MiddleRight
+        Me.BtnSubirXLS.UseVisualStyleBackColor = True
+        Me.BtnSubirXLS.Visible = False
         '
-        'Button1
+        'BtnCargarXLS
         '
-        Me.Button1.Image = Global.PedroCovino.My.Resources.Resources._01_Excel
-        Me.Button1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.Button1.Location = New System.Drawing.Point(84, 43)
-        Me.Button1.Name = "Button1"
-        Me.Button1.Size = New System.Drawing.Size(40, 41)
-        Me.Button1.TabIndex = 14
-        Me.Button1.TextAlign = System.Drawing.ContentAlignment.MiddleRight
-        Me.Button1.UseVisualStyleBackColor = True
+        Me.BtnCargarXLS.Image = Global.PedroCovino.My.Resources.Resources._01_Excel
+        Me.BtnCargarXLS.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.BtnCargarXLS.Location = New System.Drawing.Point(106, 44)
+        Me.BtnCargarXLS.Name = "BtnCargarXLS"
+        Me.BtnCargarXLS.Size = New System.Drawing.Size(40, 41)
+        Me.BtnCargarXLS.TabIndex = 14
+        Me.BtnCargarXLS.TextAlign = System.Drawing.ContentAlignment.MiddleRight
+        Me.BtnCargarXLS.UseVisualStyleBackColor = True
         '
         'frmCargarLista
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(268, 141)
-        Me.Controls.Add(Me.Button2)
-        Me.Controls.Add(Me.Button1)
+        Me.Controls.Add(Me.BtnCargarXLS)
+        Me.Controls.Add(Me.BtnSubirXLS)
         Me.Name = "frmCargarLista"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "frmCargarLista"
@@ -62,6 +63,6 @@ Partial Class frmCargarLista
 
     End Sub
 
-    Friend WithEvents Button1 As Button
-    Friend WithEvents Button2 As Button
+    Friend WithEvents BtnCargarXLS As Button
+    Friend WithEvents BtnSubirXLS As Button
 End Class

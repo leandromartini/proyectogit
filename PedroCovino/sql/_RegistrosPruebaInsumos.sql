@@ -1,3 +1,5 @@
+use PedroCovino
+
 begin tran INSERT INTO [dbo].[insumosStock]([codigo] ,[stock]  ,[stockMin]  ,[stockMax] ,[fecAct])
      VALUES
 (800		,303,			367,	514, '02-02-2021'),

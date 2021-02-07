@@ -1,3 +1,5 @@
+use PedroCovino
+
 begin tran INSERT INTO [dbo].[insumos]([codigo],[descrip]) VALUES
 (800,	'CAMARA  8 X 300      P/CURVO.............JS87-DURO'),
 (801,	'CAMARA  8 X 400      P/CURVO.............JS87-DURO'),

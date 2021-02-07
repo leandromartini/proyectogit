@@ -1,3 +1,5 @@
+use PedroCovino
+
 begin tran INSERT INTO [dbo].[insumosPrecios]([codigo],[preciosiva],[preciociva],[ventapublico])
      VALUES
 (800		,303.41,			367,	514),
