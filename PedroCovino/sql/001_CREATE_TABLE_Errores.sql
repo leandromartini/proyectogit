@@ -14,7 +14,7 @@ CREATE TABLE [dbo].[errores](
 	[id_error] [int] IDENTITY(1,1) NOT NULL,
 	[mensaje] [varchar](2048) NOT NULL,
 	[namefrm] [varchar](100) NOT NULL,
-	[fec] [date] NOT NULL
+	[fec] [datetime] NOT NULL
  CONSTRAINT [PK_errores] PRIMARY KEY CLUSTERED 
 (
 	[id_error] ASC

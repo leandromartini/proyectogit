@@ -54,4 +54,9 @@ Public Class DalExcel
             'End If
         Next
     End Sub
+
+    Public Overloads Sub SeleccionarRango(ByVal arrErrores() As String, ByVal FilaDesde As Integer,
+ ByVal FilaHasta As Integer, ByVal ColumnaDesde As Integer, ByVal ColumnaHasta As Integer, ByVal worksheetName As String)
+        Me._ExcelWorkBook.Worksheets(worksheetName).Range(Me._ExcelWorkSheet.Cells(FilaDesde, ColumnaDesde), Me._ExcelWorkSheet.Cells(FilaHasta, ColumnaHasta)).Select()
+    End Sub
 End Class
