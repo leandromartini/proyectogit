@@ -120,6 +120,8 @@ Public Class frmInventario
                 Exit Sub
             End If
 
+            objComun.ActualizarInsumo(dgInsumosDetalle.Item(0, dgInsumosDetalle.CurrentRow.Index).Value, "")
+
             objComun.ActualizarInsumoStock(dgInsumosDetalle.Item(0, dgInsumosDetalle.CurrentRow.Index).Value, dgInsumosDetalle.CurrentCell.Value, txtStockMin.Text, txtStockMax.Text)
 
             If objComun.grabarInsumo() Then

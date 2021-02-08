@@ -1,30 +1,47 @@
 ﻿Public Class frmCargarLista
-    Dim objDalExcel As New DalExcel
-    Dim objComun As New Comun
-    Private url As String = "C:\proyectosgit\PedroCovino\resources\"
+    Private url As String
     Private urlXLSDestino As String
     Private openFileDialog = New OpenFileDialog()
+    Private objDalExcel As New DalExcel
+    Private objComun As New Comun
     Private Sub frmCargarLista_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         estadoBotones(True)
-
+        url = txtPath.Text
     End Sub
     Public Sub ChooseFolder()
-        If FolderBrowserDialog1.ShowDialog() = DialogResult.OK Then
-            txtPath.Text = FolderBrowserDialog1.SelectedPath
-        End If
+
+        Try
+            If FolderBrowserDialog1.ShowDialog() = DialogResult.OK Then
+                txtPath.Text = FolderBrowserDialog1.SelectedPath
+            End If
+            url = txtPath.Text
+        Catch ex As Exception
+            agregar_error(ex, "frmCargarLista ChooseFolder")
+        End Try
+
     End Sub
     Private Sub btnPath_Click(sender As Object, e As EventArgs) Handles btnPath.Click
         ChooseFolder()
     End Sub
     Private Sub BtnCargarXLS_Click(sender As Object, e As EventArgs) Handles BtnCargarXLS.Click
-
+        Dim c As Cursor = Cursor
         Try
 
             openFileDialog.ShowDialog()
 
             urlXLSDestino = url + openFileDialog.SafeFileName
 
-            System.IO.File.Copy(openFileDialog.FileName, urlXLSDestino)
+            If System.IO.File.Exists(urlXLSDestino) Then
+                Dim ask As MsgBoxResult = MsgBox("El archivo seleccionado ya existe en la carpeta! Desea volver a cargarlo?", MsgBoxStyle.YesNo)
+                If ask = MsgBoxResult.No Then
+                    Exit Sub
+                Else
+                    IO.File.Delete(urlXLSDestino)
+                End If
+            End If
+            MsgBox("Se elimino con exito, prosiga subiendo nuevamente el archivo!")
+
+            IO.File.Copy(openFileDialog.FileName, urlXLSDestino)
 
             estadoBotones(False)
 
@@ -36,16 +53,19 @@
     End Sub
 
     Private Sub BtnSubirXLS_Click(sender As Object, e As EventArgs) Handles BtnSubirXLS.Click
-
+        Dim IntError As Integer = 0
         Dim objCodigos As DataSet
-        Dim c As Cursor = Me.Cursor
+        Dim s As Cursor = Cursor
 
         Try
 
-            Me.Cursor = Cursors.WaitCursor
+            Cursor = Cursors.WaitCursor
 
-            objDalExcel.AbrirLibro(urlXLSDestino)
-
+            objDalExcel.AbrirLibro(IntError, urlXLSDestino)
+            If IntError > 0 Then
+                MsgBox("Error al abrir excel. Consulte con el desarrollador")
+                Exit Sub
+            End If
 
             objCodigos = objComun.obtenerCodInsumos(-1)
 
@@ -70,20 +90,19 @@
 
             Next rowTable
 
+            Cursor = s
 
             MsgBox("La lista se actualizo EXITO!")
 
             BtnSubirXLS.Visible = False
 
-            objDalExcel.MatarApp()
-
-            Me.Close()
+            objDalExcel.close()
 
         Catch ex As Exception
             agregar_error(ex, "frmCargarLista BtnSubirXLS_Click")
             objDalExcel.MatarApp()
         Finally
-            Me.Cursor = c
+            Me.Close()
         End Try
 
     End Sub
@@ -118,6 +137,4 @@
         BtnCargarXLS.Visible = estado
         BtnSubirXLS.Visible = Not estado
     End Sub
-
-
 End Class

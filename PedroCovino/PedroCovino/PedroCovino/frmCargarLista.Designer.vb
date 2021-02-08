@@ -22,6 +22,7 @@ Partial Class frmCargarLista
     'No lo modifique con el editor de código.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(frmCargarLista))
         Me.BtnSubirXLS = New System.Windows.Forms.Button()
         Me.BtnCargarXLS = New System.Windows.Forms.Button()
         Me.FolderBrowserDialog1 = New System.Windows.Forms.FolderBrowserDialog()
@@ -33,7 +34,7 @@ Partial Class frmCargarLista
         '
         Me.BtnSubirXLS.Image = Global.PedroCovino.My.Resources.Resources.up
         Me.BtnSubirXLS.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.BtnSubirXLS.Location = New System.Drawing.Point(106, 44)
+        Me.BtnSubirXLS.Location = New System.Drawing.Point(65, 63)
         Me.BtnSubirXLS.Name = "BtnSubirXLS"
         Me.BtnSubirXLS.Size = New System.Drawing.Size(40, 41)
         Me.BtnSubirXLS.TabIndex = 15
@@ -45,7 +46,7 @@ Partial Class frmCargarLista
         '
         Me.BtnCargarXLS.Image = Global.PedroCovino.My.Resources.Resources._01_Excel
         Me.BtnCargarXLS.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.BtnCargarXLS.Location = New System.Drawing.Point(106, 44)
+        Me.BtnCargarXLS.Location = New System.Drawing.Point(19, 63)
         Me.BtnCargarXLS.Name = "BtnCargarXLS"
         Me.BtnCargarXLS.Size = New System.Drawing.Size(40, 41)
         Me.BtnCargarXLS.TabIndex = 14
@@ -54,18 +55,20 @@ Partial Class frmCargarLista
         '
         'txtPath
         '
-        Me.txtPath.Location = New System.Drawing.Point(12, 13)
+        Me.txtPath.Location = New System.Drawing.Point(19, 29)
         Me.txtPath.Name = "txtPath"
-        Me.txtPath.Size = New System.Drawing.Size(185, 20)
+        Me.txtPath.ReadOnly = True
+        Me.txtPath.Size = New System.Drawing.Size(232, 20)
         Me.txtPath.TabIndex = 16
+        Me.txtPath.Text = "C:\proyectogit\PedroCovino\resources\"
         '
         'btnPath
         '
-        Me.btnPath.Location = New System.Drawing.Point(213, 13)
+        Me.btnPath.Location = New System.Drawing.Point(257, 29)
         Me.btnPath.Name = "btnPath"
-        Me.btnPath.Size = New System.Drawing.Size(40, 20)
+        Me.btnPath.Size = New System.Drawing.Size(77, 20)
         Me.btnPath.TabIndex = 17
-        Me.btnPath.Text = "..."
+        Me.btnPath.Text = "Examinar"
         Me.btnPath.TextAlign = System.Drawing.ContentAlignment.TopCenter
         Me.btnPath.UseVisualStyleBackColor = True
         '
@@ -73,14 +76,15 @@ Partial Class frmCargarLista
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(268, 141)
+        Me.ClientSize = New System.Drawing.Size(356, 141)
         Me.Controls.Add(Me.btnPath)
         Me.Controls.Add(Me.txtPath)
         Me.Controls.Add(Me.BtnCargarXLS)
         Me.Controls.Add(Me.BtnSubirXLS)
+        Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.Name = "frmCargarLista"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
-        Me.Text = "frmCargarLista"
+        Me.Text = "Actualizar Lista"
         Me.ResumeLayout(False)
         Me.PerformLayout()
 

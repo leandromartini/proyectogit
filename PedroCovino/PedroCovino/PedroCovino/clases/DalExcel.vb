@@ -1,24 +1,38 @@
 ﻿Imports Microsoft.Office.Interop
 Public Class DalExcel
-    Private _ExcelApplication As New Excel.Application 'Exception.application
+    Implements IDisposable
+    Private _ExcelApplication As New Excel.Application
     Private _ExcelWorkBook As Excel.Workbook
     Private _ExcelWorkSheet As Excel.Worksheet
-    Private FechaInicioProceso As Date
-    Private _ExcelFunction As Excel.XlConsolidationFunction
 
-    Public Overloads Sub AbrirLibro(ByVal strRuta As String)
+    Private Sub init(ByVal visible As Boolean)
         Try
+            If Me._ExcelApplication Is Nothing Then
+                Me._ExcelApplication = New Excel.Application
+                Me._ExcelApplication.Visible = visible
+            End If
+        Catch ex As Exception
+            agregar_error(ex, "DalExcel init")
+        End Try
+    End Sub
+
+    Public Overloads Sub AbrirLibro(ByRef Interror As Integer, strRuta As String)
+
+        Try
+            If Me._ExcelApplication Is Nothing Then init(False)
 
             _ExcelWorkBook = Me._ExcelApplication.Workbooks.Open(strRuta)
             _ExcelWorkSheet = Me._ExcelWorkBook.Sheets("lista")
 
         Catch ex As Exception
             agregar_error(ex, "DalExcel AbrirLibro")
+            Interror = 10000
         End Try
     End Sub
 
     Public Function ExisteHoja(ByVal NombreHoja As String) As Boolean
         Try
+            If Me._ExcelApplication Is Nothing Then init(True)
             Dim i As Integer
             ExisteHoja = False
             For i = 1 To Me._ExcelApplication.Sheets.Count
@@ -58,5 +72,17 @@ Public Class DalExcel
     Public Overloads Sub SeleccionarRango(ByVal arrErrores() As String, ByVal FilaDesde As Integer,
  ByVal FilaHasta As Integer, ByVal ColumnaDesde As Integer, ByVal ColumnaHasta As Integer, ByVal worksheetName As String)
         Me._ExcelWorkBook.Worksheets(worksheetName).Range(Me._ExcelWorkSheet.Cells(FilaDesde, ColumnaDesde), Me._ExcelWorkSheet.Cells(FilaHasta, ColumnaHasta)).Select()
+    End Sub
+
+    Public Sub close()
+
+        _ExcelWorkSheet = Nothing
+        _ExcelWorkBook = Nothing
+        _ExcelApplication.Quit()
+        _ExcelApplication = Nothing
+
+
+    End Sub
+    Public Sub Dispose() Implements System.IDisposable.Dispose
     End Sub
 End Class
