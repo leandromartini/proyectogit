@@ -40,7 +40,7 @@
             grabarInsumo = False
 
 
-            fec = objWlfInsumo.actualizarInsumo(objInsumoStock.verCodigo, objInsumo.verDescripcion, objInsumoPrecio.verpreciosiva, objInsumoPrecio.verpreciociva,
+            fec = objWlfInsumo.actualizarInsumo(objInsumo.verCodigo, objInsumo.verDescripcion, objInsumoPrecio.verpreciosiva, objInsumoPrecio.verpreciociva,
                                           objInsumoPrecio.verventapublico, objInsumoStock.verStock, objInsumoStock.verstockmin, objInsumoStock.verstockmax)
 
             objInsumo.limpiar()
@@ -59,5 +59,19 @@
         End Try
     End Function
 
+    Public Function obtenerCodInsumos(cod) As DataSet
+        Dim objDS As New DataSet
+        Dim objWlfInsumo As New wflInsumos
+
+        Try
+
+            obtenerCodInsumos = objWlfInsumo.obtenerInsumosDescrip(cod)
+
+
+        Catch ex As Exception
+            agregar_error(ex, "Comun obtenerCodInsumos")
+            obtenerCodInsumos = Nothing
+        End Try
+    End Function
 
 End Class

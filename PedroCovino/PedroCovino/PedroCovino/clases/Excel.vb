@@ -1,6 +1,6 @@
 ﻿Imports Microsoft.Office.Interop
 Public Class DalExcel
-    Private _ExcelApplication As Excel.Application 'Exception.application
+    Private _ExcelApplication As New Excel.Application 'Exception.application
     Private _ExcelWorkBook As Excel.Workbook
     Private _ExcelWorkSheet As Excel.Worksheet
     Private FechaInicioProceso As Date
@@ -9,11 +9,11 @@ Public Class DalExcel
     Public Overloads Sub AbrirLibro(ByVal strRuta As String)
         Try
 
-            Me._ExcelWorkBook = Me._ExcelApplication.Workbooks.Open(strRuta)
-            Me._ExcelWorkSheet = Me._ExcelWorkBook.ActiveSheet
-        Catch ex As Exception
+            _ExcelWorkBook = Me._ExcelApplication.Workbooks.Open(strRuta)
+            _ExcelWorkSheet = Me._ExcelWorkBook.Sheets("lista")
 
-            Throw ex
+        Catch ex As Exception
+            agregar_error(ex, "DalExcel AbrirLibro")
         End Try
     End Sub
 
@@ -28,8 +28,35 @@ Public Class DalExcel
                 End If
             Next
         Catch ex As Exception
-
-            Throw ex
+            agregar_error(ex, "DalExcel ExisteHoja")
+            ExisteHoja = False
         End Try
     End Function
+
+    Public Function TomarValorCelda(ByVal row As Integer, ByVal col As Integer) As Object
+        Try
+            TomarValorCelda = Me._ExcelWorkSheet.Range(Me._ExcelWorkSheet.Cells(row, col), Me._ExcelWorkSheet.Cells(row, col)).Value
+        Catch ex As Exception
+            agregar_error(ex, "DalExcel TomarValorCelda")
+        End Try
+    End Function
+
+    Public Sub MatarApp()
+        Dim proceso As System.Diagnostics.Process()
+        proceso = System.Diagnostics.Process.GetProcessesByName("EXCEL")
+
+        For Each opro As System.Diagnostics.Process In proceso
+            'antes de iniciar el proceso obtengo la fecha en que inicie el 
+            'proceso para detener todos los procesos que excel que inicio
+            'mi código durante el proceso
+            'If opro.StartTime >= fechaInicioProceso Then
+            opro.Kill()
+            'End If
+        Next
+    End Sub
+
+    Public Overloads Sub SeleccionarRango(ByVal arrErrores() As String, ByVal FilaDesde As Integer,
+ ByVal FilaHasta As Integer, ByVal ColumnaDesde As Integer, ByVal ColumnaHasta As Integer, ByVal worksheetName As String)
+        Me._ExcelWorkBook.Worksheets(worksheetName).Range(Me._ExcelWorkSheet.Cells(FilaDesde, ColumnaDesde), Me._ExcelWorkSheet.Cells(FilaHasta, ColumnaHasta)).Select()
+    End Sub
 End Class

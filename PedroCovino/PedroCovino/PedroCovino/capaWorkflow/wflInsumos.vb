@@ -17,7 +17,9 @@ Public Class wflInsumos
             End If
 
             'Me fijo si cambio el stock de lo contrario lo actualizo
-            actualizarInsumo = objcnInsumos.ActualizarInsumoStock(codigo, stock, stockmin, stockmax)
+            If stock <> 0 Then
+                actualizarInsumo = objcnInsumos.ActualizarInsumoStock(codigo, stock, stockmin, stockmax)
+            End If
 
         Catch ex As Exception
             agregar_error(ex, "wflProductos ProductoNuevo")
