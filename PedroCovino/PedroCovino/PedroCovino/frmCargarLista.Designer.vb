@@ -24,6 +24,9 @@ Partial Class frmCargarLista
     Private Sub InitializeComponent()
         Me.BtnSubirXLS = New System.Windows.Forms.Button()
         Me.BtnCargarXLS = New System.Windows.Forms.Button()
+        Me.FolderBrowserDialog1 = New System.Windows.Forms.FolderBrowserDialog()
+        Me.txtPath = New System.Windows.Forms.TextBox()
+        Me.btnPath = New System.Windows.Forms.Button()
         Me.SuspendLayout()
         '
         'BtnSubirXLS
@@ -49,20 +52,43 @@ Partial Class frmCargarLista
         Me.BtnCargarXLS.TextAlign = System.Drawing.ContentAlignment.MiddleRight
         Me.BtnCargarXLS.UseVisualStyleBackColor = True
         '
+        'txtPath
+        '
+        Me.txtPath.Location = New System.Drawing.Point(12, 13)
+        Me.txtPath.Name = "txtPath"
+        Me.txtPath.Size = New System.Drawing.Size(185, 20)
+        Me.txtPath.TabIndex = 16
+        '
+        'btnPath
+        '
+        Me.btnPath.Location = New System.Drawing.Point(213, 13)
+        Me.btnPath.Name = "btnPath"
+        Me.btnPath.Size = New System.Drawing.Size(40, 20)
+        Me.btnPath.TabIndex = 17
+        Me.btnPath.Text = "..."
+        Me.btnPath.TextAlign = System.Drawing.ContentAlignment.TopCenter
+        Me.btnPath.UseVisualStyleBackColor = True
+        '
         'frmCargarLista
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(268, 141)
+        Me.Controls.Add(Me.btnPath)
+        Me.Controls.Add(Me.txtPath)
         Me.Controls.Add(Me.BtnCargarXLS)
         Me.Controls.Add(Me.BtnSubirXLS)
         Me.Name = "frmCargarLista"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "frmCargarLista"
         Me.ResumeLayout(False)
+        Me.PerformLayout()
 
     End Sub
 
     Friend WithEvents BtnCargarXLS As Button
     Friend WithEvents BtnSubirXLS As Button
+    Friend WithEvents FolderBrowserDialog1 As FolderBrowserDialog
+    Friend WithEvents txtPath As TextBox
+    Friend WithEvents btnPath As Button
 End Class

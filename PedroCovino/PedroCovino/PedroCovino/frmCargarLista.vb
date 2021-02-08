@@ -1,13 +1,21 @@
 ﻿Public Class frmCargarLista
     Dim objDalExcel As New DalExcel
     Dim objComun As New Comun
-    Private url As String = "C:\proyectogit\PedroCovino\resources\"
+    Private url As String = "C:\proyectosgit\PedroCovino\resources\"
     Private urlXLSDestino As String
     Private openFileDialog = New OpenFileDialog()
     Private Sub frmCargarLista_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         estadoBotones(True)
-    End Sub
 
+    End Sub
+    Public Sub ChooseFolder()
+        If FolderBrowserDialog1.ShowDialog() = DialogResult.OK Then
+            txtPath.Text = FolderBrowserDialog1.SelectedPath
+        End If
+    End Sub
+    Private Sub btnPath_Click(sender As Object, e As EventArgs) Handles btnPath.Click
+        ChooseFolder()
+    End Sub
     Private Sub BtnCargarXLS_Click(sender As Object, e As EventArgs) Handles BtnCargarXLS.Click
 
         Try
@@ -110,4 +118,6 @@
         BtnCargarXLS.Visible = estado
         BtnSubirXLS.Visible = Not estado
     End Sub
+
+
 End Class
