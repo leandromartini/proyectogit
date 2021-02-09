@@ -18,13 +18,14 @@ Public Class ccdInsumos
             actualizarInsumo = 0
         End Try
     End Function
-    Public Function obtenerInsumosDescrip(codigo) As DataSet
+    Public Function obtenerInsumosDescrip(codigo, idprov) As DataSet
         Try
             Dim sProdString As String = "[dbo].[insumos_obtenerLista]"
             Dim command As New SqlCommand(sProdString, objConn)
             Dim dataset As New DataSet
             With command
                 command.Parameters.AddWithValue("@codigo", codigo)
+                command.Parameters.AddWithValue("@idprov", idprov)
                 command.CommandType = CommandType.StoredProcedure
                 conn()
             End With

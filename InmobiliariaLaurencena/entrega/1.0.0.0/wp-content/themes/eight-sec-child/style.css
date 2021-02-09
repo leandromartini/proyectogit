@@ -1,0 +1,169 @@
+/*
+Theme Name: eight-sec-child
+Description: Its a child theme of eight
+Template: eight-sec 
+*/
+
+.eight_sec_plx_slider_section .slide:after {
+    background: none;
+}
+
+.eight_sec_plx_portfolio_section {
+    background: #ffff;
+}
+
+.site-header,
+.site-header.fixed,
+.no-slider .site-header {
+    background: #ffff;
+}
+
+.eight_sec_plx_blog_section {
+    background: none;
+    background-attachment: fixed;
+    background-size: cover;
+    padding: 10px 0;
+    text-align: center;
+    background-color: #ECEEF0;
+}
+
+.eight_sec_plx_testimonial_section {
+    padding: 10px 0;
+}
+
+.eight_sec_plx_about_section .section-title h2,
+.eight_sec_plx_portfolio_section .section-title h2,
+.eight_sec_plx_team_section h2.team-sec,
+.eight_sec_plx_cta_section h2.cta-sec,
+.eight_sec_plx_blog_section h2.blog-sec,
+.eight_sec_plx_testimonial_section h2.testimonial-sec,
+.eight_sec_plx_contact_section h2.contact-sec {
+    color: #cf2e2e;
+    display: inline-block;
+    font-family: "trebuchet";
+    font-size: 60px;
+    font-weight: 400;
+    margin: 0 0 30px;
+    padding-bottom: 10px;
+}
+
+.section-title {
+    text-align: left;
+}
+
+.eight_sec_plx_testimonial_section {
+    background: none;
+}
+
+.eight_sec_plx_testimonial_section:after {
+    background: none;
+}
+
+p,
+h1,
+h4 {
+    color: black;
+}
+
+.main-navigation ul li a {
+    color: #000;
+}
+
+footer.site-footer {
+    background: #cf2e2e none repeat scroll 0 0;
+    color: #fff;
+}
+
+.es-search__wrapper {
+    background: #ffffff;
+}
+
+.admin-bar .site-header {
+    padding-top: 0px;
+}
+
+.site-header {
+    position: inherit;
+}
+
+.fa {
+    font-size: larger;
+}
+
+.top-nav-actions .susy-container .ab-top-menu {
+    display: inline;
+    list-style: none;
+    margin: 0px;
+    padding-inline-start: 4px;
+}
+
+#wp-admin-bar-top-secondary li {
+    float: right
+}
+
+ul.ab-top-menu li {
+    display: inline;
+    padding-right: 0.2em;
+}
+
+.top-nav-actions {
+    position: relative;
+    display: block;
+    padding: .3125rem 0;
+    background: #F1F4F8;
+    line-height: 1.5625rem;
+    box-shadow: -1px 1px 4px 2px rgba(0, 0, 0, 0.62);
+    margin-bottom: 10px;
+    padding-right: 4%;
+}
+
+@media screen and (min-width: 50em) {
+    .top-nav-actions .susy-container {
+        padding: 0 1rem;
+    }
+}
+
+@media screen and (min-width: 50em) {
+    .top-nav-actions .left {
+        display: inline;
+        float: left;
+        width: auto;
+        text-align: inherit;
+    }
+}
+
+.top-nav-actions .left {
+    display: block;
+    width: 100%;
+    text-align: left;
+}
+
+@media screen and (min-width: 50em) {
+    .top-nav-actions .right {
+        display: inline;
+        float: inherit;
+        width: auto;
+        text-align: inherit;
+    }
+}
+
+.top-nav-actions .right {
+    display: block;
+    width: 100%;
+    text-align: right;
+}
+
+button, input[type="button"], input[type="reset"], input[type="submit"] {
+    background: #cf2e2e none repeat scroll 0 0;
+}
+
+.eight_sec_plx_contact_section {
+	padding: 30px 0px 1px 0px;
+	text-align: center;
+}
+
+.image-fondo {
+    background-image: url("./images/IMG_Fondo_Iconos.png");
+    background-repeat: no-repeat;
+    background-position: left;
+}

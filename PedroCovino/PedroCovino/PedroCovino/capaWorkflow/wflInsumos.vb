@@ -26,22 +26,31 @@ Public Class wflInsumos
         End Try
     End Function
 
-    Function obtenerInsumosDescrip(codigo) As DataSet
-        Dim objcnProductos As New cnInsumos
+    Function obtenerInsumosProv(idprov) As DataSet
+        Dim objcnInsumosProv As New cnInsumos
         Try
-            obtenerInsumosDescrip = objcnProductos.obtenerInsumosDescrip(codigo)
+            obtenerInsumosProv = objcnInsumosProv.obtenerInsumosProv(idprov)
         Catch ex As Exception
-            agregar_error(ex, "wflProductos obtenerinsumosInventario")
+            agregar_error(ex, "wflProductos obtenerInsumosProv")
+            obtenerInsumosProv = Nothing
+        End Try
+    End Function
+    Function obtenerInsumosDescrip(codigo) As DataSet
+        Dim objcnInsumos As New cnInsumos
+        Try
+            obtenerInsumosDescrip = objcnInsumos.obtenerInsumosDescrip(codigo)
+        Catch ex As Exception
+            agregar_error(ex, "wflProductos obtenerInsumosDescrip")
             obtenerInsumosDescrip = Nothing
         End Try
     End Function
 
     Function obtenerInsumosDetalle(codigo) As DataSet
-        Dim objcnProductos As New cnInsumos
+        Dim objcnInsumos As New cnInsumos
         Try
-            obtenerInsumosDetalle = objcnProductos.obtenerinsumosDetalle(codigo)
+            obtenerInsumosDetalle = objcnInsumos.obtenerinsumosDetalle(codigo)
         Catch ex As Exception
-            agregar_error(ex, "wflProductos obtenerinsumosInventario")
+            agregar_error(ex, "wflProductos obtenerInsumosDetalle")
             obtenerInsumosDetalle = Nothing
         End Try
     End Function

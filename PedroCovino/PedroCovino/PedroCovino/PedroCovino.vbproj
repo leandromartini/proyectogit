@@ -114,6 +114,7 @@
     <Compile Include="capaDatos\ccdErrores.vb" />
     <Compile Include="capaDatos\ccdInsumos.vb" />
     <Compile Include="capaDatos\ccdInsumosPrecios.vb" />
+    <Compile Include="capaDatos\ccdInsumosProveedores.vb" />
     <Compile Include="capaDatos\ccdInsumosStock.vb" />
     <Compile Include="capaworkflow\wflInsumos.vb" />
     <Compile Include="capaNegocio\cnInsumos.vb" />

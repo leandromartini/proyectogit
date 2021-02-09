@@ -12,19 +12,37 @@ Public Class frmInventario
 
     Private Sub cargarVista()
         Try
-            cargarComboInsumos()
+            cargarComboInsumosProv()
+            cargarComboInsumos(-1)
             cargardgInsumosStock(-1)
             cargarStock()
         Catch ex As Exception
-
+            agregar_error(ex, Name)
         End Try
     End Sub
 
-    Private Sub cargarComboInsumos()
+    Private Sub cargarComboInsumosProv()
         Try
-            Dim objWfIns As New wflInsumos 'Ojo se instancia tambienn al guardar productos
+            Dim objWfIns As New wflInsumos
             Dim objDS As New DataSet
-            objDS = objWfIns.obtenerInsumosDescrip(-1)
+            objDS = objWfIns.obtenerInsumosProv(-1)
+            If Not IsNothing(objDS) Then
+                cboProveedores.DataSource = objDS.Tables(0)
+                cboProveedores.DisplayMember = "nombreProv"
+                cboProveedores.SelectedIndex = -1
+                cboProveedores.Text = "Seleccionar un proveedor"
+                cboProveedores.ValueMember = "idProv"
+            End If
+        Catch ex As Exception
+            agregar_error(ex, Name)
+        End Try
+    End Sub
+
+    Private Sub cargarComboInsumos(idInsumo)
+        Try
+            Dim objWfIns As New wflInsumos
+            Dim objDS As New DataSet
+            objDS = objWfIns.obtenerInsumosDescrip(idInsumo)
             If Not IsNothing(objDS) Then
                 cboInsumos.DataSource = objDS.Tables(0)
                 cboInsumos.DisplayMember = "descrip"
@@ -53,6 +71,33 @@ Public Class frmInventario
         End Try
     End Sub
 
+    Private Sub cboProveedores_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cboProveedores.SelectedIndexChanged
+        Dim DSprod As New DataSet
+        Try
+            If cboProveedores.ValueMember = "" Then
+                Exit Sub
+            End If
+            If cboProveedores.SelectedValue > 0 Then
+                cargarComboInsumos(cboProveedores.SelectedValue)
+            End If
+        Catch ex As Exception
+            agregar_error(ex, Name)
+        End Try
+    End Sub
+    Private Sub cboInsumos_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cboInsumos.SelectedIndexChanged
+
+        Dim DSprod As New DataSet
+        Try
+            If cboInsumos.ValueMember = "" Then
+                Exit Sub
+            End If
+            If cboInsumos.SelectedValue > 0 Then
+                cargardgInsumosStock(cboInsumos.SelectedValue)
+            End If
+        Catch ex As Exception
+            agregar_error(ex, Name)
+        End Try
+    End Sub
     Private Sub InicializarGrilla(dgInsumosDetalle As DataGridView)
         Try
 
@@ -78,21 +123,6 @@ Public Class frmInventario
             dgInsumosDetalle.Columns("stockMin").Visible = False
             dgInsumosDetalle.Columns("stockMax").Visible = False
             dgInsumosDetalle.Columns("fecAct").Visible = False
-        Catch ex As Exception
-            agregar_error(ex, Name)
-        End Try
-    End Sub
-
-    Private Sub cboInsumos_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cboInsumos.SelectedIndexChanged
-
-        Dim DSprod As New DataSet
-        Try
-            If cboInsumos.ValueMember = "" Then
-                Exit Sub
-            End If
-            If cboInsumos.SelectedValue > 0 Then
-                cargardgInsumosStock(cboInsumos.SelectedValue)
-            End If
         Catch ex As Exception
             agregar_error(ex, Name)
         End Try

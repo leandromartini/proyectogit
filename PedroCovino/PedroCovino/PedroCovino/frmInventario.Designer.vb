@@ -24,6 +24,7 @@ Partial Class frmInventario
     Private Sub InitializeComponent()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(frmInventario))
         Me.gbMateriales = New System.Windows.Forms.GroupBox()
+        Me.cboProveedores = New System.Windows.Forms.ComboBox()
         Me.Label4 = New System.Windows.Forms.Label()
         Me.Label3 = New System.Windows.Forms.Label()
         Me.Label2 = New System.Windows.Forms.Label()
@@ -44,6 +45,7 @@ Partial Class frmInventario
         '
         'gbMateriales
         '
+        Me.gbMateriales.Controls.Add(Me.cboProveedores)
         Me.gbMateriales.Controls.Add(Me.Label4)
         Me.gbMateriales.Controls.Add(Me.Label3)
         Me.gbMateriales.Controls.Add(Me.Label2)
@@ -62,10 +64,18 @@ Partial Class frmInventario
         Me.gbMateriales.TabStop = False
         Me.gbMateriales.Text = "Insumos"
         '
+        'cboProveedores
+        '
+        Me.cboProveedores.FormattingEnabled = True
+        Me.cboProveedores.Location = New System.Drawing.Point(6, 16)
+        Me.cboProveedores.Name = "cboProveedores"
+        Me.cboProveedores.Size = New System.Drawing.Size(247, 21)
+        Me.cboProveedores.TabIndex = 17
+        '
         'Label4
         '
         Me.Label4.AutoSize = True
-        Me.Label4.Location = New System.Drawing.Point(576, 52)
+        Me.Label4.Location = New System.Drawing.Point(632, 52)
         Me.Label4.Name = "Label4"
         Me.Label4.Size = New System.Drawing.Size(61, 13)
         Me.Label4.TabIndex = 16
@@ -74,7 +84,7 @@ Partial Class frmInventario
         'Label3
         '
         Me.Label3.AutoSize = True
-        Me.Label3.Location = New System.Drawing.Point(577, 24)
+        Me.Label3.Location = New System.Drawing.Point(633, 24)
         Me.Label3.Name = "Label3"
         Me.Label3.Size = New System.Drawing.Size(60, 13)
         Me.Label3.TabIndex = 15
@@ -83,7 +93,7 @@ Partial Class frmInventario
         'Label2
         '
         Me.Label2.AutoSize = True
-        Me.Label2.Location = New System.Drawing.Point(389, 52)
+        Me.Label2.Location = New System.Drawing.Point(445, 52)
         Me.Label2.Name = "Label2"
         Me.Label2.Size = New System.Drawing.Size(97, 13)
         Me.Label2.TabIndex = 14
@@ -92,7 +102,7 @@ Partial Class frmInventario
         'Label1
         '
         Me.Label1.AutoSize = True
-        Me.Label1.Location = New System.Drawing.Point(399, 24)
+        Me.Label1.Location = New System.Drawing.Point(455, 24)
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(87, 13)
         Me.Label1.TabIndex = 13
@@ -100,7 +110,7 @@ Partial Class frmInventario
         '
         'txtStockMax
         '
-        Me.txtStockMax.Location = New System.Drawing.Point(639, 49)
+        Me.txtStockMax.Location = New System.Drawing.Point(695, 49)
         Me.txtStockMax.Name = "txtStockMax"
         Me.txtStockMax.ReadOnly = True
         Me.txtStockMax.Size = New System.Drawing.Size(69, 20)
@@ -108,7 +118,7 @@ Partial Class frmInventario
         '
         'txtStockMin
         '
-        Me.txtStockMin.Location = New System.Drawing.Point(639, 19)
+        Me.txtStockMin.Location = New System.Drawing.Point(695, 19)
         Me.txtStockMin.Name = "txtStockMin"
         Me.txtStockMin.ReadOnly = True
         Me.txtStockMin.Size = New System.Drawing.Size(69, 20)
@@ -116,7 +126,7 @@ Partial Class frmInventario
         '
         'txtFecAct
         '
-        Me.txtFecAct.Location = New System.Drawing.Point(492, 49)
+        Me.txtFecAct.Location = New System.Drawing.Point(548, 49)
         Me.txtFecAct.Name = "txtFecAct"
         Me.txtFecAct.ReadOnly = True
         Me.txtFecAct.Size = New System.Drawing.Size(69, 20)
@@ -124,7 +134,7 @@ Partial Class frmInventario
         '
         'txtStockDisp
         '
-        Me.txtStockDisp.Location = New System.Drawing.Point(492, 19)
+        Me.txtStockDisp.Location = New System.Drawing.Point(548, 19)
         Me.txtStockDisp.Name = "txtStockDisp"
         Me.txtStockDisp.ReadOnly = True
         Me.txtStockDisp.Size = New System.Drawing.Size(69, 20)
@@ -133,7 +143,7 @@ Partial Class frmInventario
         'CbVerTodo
         '
         Me.CbVerTodo.AutoSize = True
-        Me.CbVerTodo.Location = New System.Drawing.Point(6, 51)
+        Me.CbVerTodo.Location = New System.Drawing.Point(361, 47)
         Me.CbVerTodo.Name = "CbVerTodo"
         Me.CbVerTodo.Size = New System.Drawing.Size(70, 17)
         Me.CbVerTodo.TabIndex = 8
@@ -144,7 +154,7 @@ Partial Class frmInventario
         '
         Me.cboInsumos.FormattingEnabled = True
         Me.cboInsumos.Items.AddRange(New Object() {"Arena", "Cal", "Cemento"})
-        Me.cboInsumos.Location = New System.Drawing.Point(6, 16)
+        Me.cboInsumos.Location = New System.Drawing.Point(6, 44)
         Me.cboInsumos.Name = "cboInsumos"
         Me.cboInsumos.Size = New System.Drawing.Size(349, 21)
         Me.cboInsumos.TabIndex = 2
@@ -232,4 +242,5 @@ Partial Class frmInventario
     Friend WithEvents txtStockMin As TextBox
     Friend WithEvents txtFecAct As TextBox
     Friend WithEvents txtStockDisp As TextBox
+    Friend WithEvents cboProveedores As ComboBox
 End Class

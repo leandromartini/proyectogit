@@ -1,5 +1,6 @@
 ﻿Public Class cnInsumos
     Dim objccdInsumos As New ccdInsumos
+    Dim objccdInsumosProv As New ccdInsumosProveedores
     Dim objccdInsumosPrecios As New ccdInsumosPrecios
     Dim objccdInsumosStock As New ccdInsumosStock
     Public Function ActualizarInsumo(codigo, descrip) As Integer
@@ -31,6 +32,15 @@
         Catch ex As Exception
             agregar_error(ex, "cnInsumos ActualizarInsumoStock")
             ActualizarInsumoStock = Nothing
+        End Try
+    End Function
+
+    Friend Function obtenerInsumosProv(idprov As Integer) As DataSet
+        Try
+            obtenerInsumosProv = objccdInsumosProv.obtenerInsumosProv(idprov)
+        Catch ex As Exception
+            agregar_error(ex, "cnInsumos obtenerInsumosProv")
+            obtenerInsumosProv = Nothing
         End Try
     End Function
 
