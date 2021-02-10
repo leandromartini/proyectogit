@@ -314,7 +314,7 @@ function es_get_the_formatted_bedrooms( $post = 0 ) {
 
     if ( ! empty( $value ) ) {
         // _n function doesn't work :(
-        return $value == 1 ? sprintf( __( '%g bed', 'es-plugin' ), $value  ) :  sprintf( __( '%g beds', 'es-plugin' ), $value );
+        return $value == 1 ? sprintf( __( '%g dormitorio', 'es-plugin' ), $value  ) :  sprintf( __( '%g dormitorios', 'es-plugin' ), $value );
     }
 }
 
