@@ -42,7 +42,7 @@ Public Class frmInventario
         Try
             Dim objWfIns As New wflInsumos
             Dim objDS As New DataSet
-            objDS = objWfIns.obtenerInsumosDescrip(idInsumo)
+            objDS = objWfIns.obtenerInsumosDescrip(idInsumo, idprov)
             If Not IsNothing(objDS) Then
                 cboInsumos.DataSource = objDS.Tables(0)
                 cboInsumos.DisplayMember = "descrip"
