@@ -60,7 +60,7 @@ Partial Class frmCargarLista
         Me.txtPath.ReadOnly = True
         Me.txtPath.Size = New System.Drawing.Size(232, 20)
         Me.txtPath.TabIndex = 16
-        Me.txtPath.Text = "C:\proyectogit\PedroCovino\resources\"
+        Me.txtPath.Text = "C:\ProyectoPedro\resources\"
         '
         'btnPath
         '

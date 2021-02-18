@@ -37,9 +37,9 @@
                     Exit Sub
                 Else
                     IO.File.Delete(urlXLSDestino)
+                    MsgBox("Se elimino con exito, prosiga subiendo nuevamente el archivo!")
                 End If
             End If
-            MsgBox("Se elimino con exito, prosiga subiendo nuevamente el archivo!")
 
             IO.File.Copy(openFileDialog.FileName, urlXLSDestino)
 
@@ -73,7 +73,7 @@
 
             For rowTable = 0 To objCodigos.Tables(0).Rows.Count - 1
 
-                For row = codi To 6693
+                For row = codi To 1664
 
                     If objDalExcel.TomarValorCelda(row, 1) = objCodigos.Tables(0).Rows(rowTable).Item(0) Then
 
@@ -101,7 +101,9 @@
         Catch ex As Exception
             agregar_error(ex, "frmCargarLista BtnSubirXLS_Click")
             objDalExcel.MatarApp()
+            Cursor = s
         Finally
+            Cursor = s
             Me.Close()
         End Try
 

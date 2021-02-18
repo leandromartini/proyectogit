@@ -35,10 +35,10 @@ Public Class wflInsumos
             obtenerInsumosProv = Nothing
         End Try
     End Function
-    Function obtenerInsumosDescrip(codigo, idprov) As DataSet
+    Function obtenerInsumosDescrip(codigo) As DataSet
         Dim objcnInsumos As New cnInsumos
         Try
-            obtenerInsumosDescrip = objcnInsumos.obtenerInsumosDescrip(codigo, idprov)
+            obtenerInsumosDescrip = objcnInsumos.obtenerInsumosDescrip(codigo)
         Catch ex As Exception
             agregar_error(ex, "wflProductos obtenerInsumosDescrip")
             obtenerInsumosDescrip = Nothing

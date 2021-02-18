@@ -1,5 +1,6 @@
 USE [PedroCovino]
 
+Begin tran
 INSERT INTO [dbo].[insumosProveedoresMarca] ([codigo] ,[idProv] ,[idmarca])
      VALUES	 
 (800 ,1,		1),

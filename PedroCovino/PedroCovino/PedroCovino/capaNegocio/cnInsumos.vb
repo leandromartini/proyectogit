@@ -44,10 +44,10 @@
         End Try
     End Function
 
-    Public Function obtenerInsumosDescrip(codigo As Integer, idprov As Integer) As DataSet
+    Public Function obtenerInsumosDescrip(codigo As Integer) As DataSet
 
         Try
-            obtenerInsumosDescrip = objccdInsumos.obtenerInsumosDescrip(codigo, idprov)
+            obtenerInsumosDescrip = objccdInsumos.obtenerInsumosDescrip(codigo)
         Catch ex As Exception
             agregar_error(ex, "cnInsumos obtenerInsumosDescrip")
             obtenerInsumosDescrip = Nothing

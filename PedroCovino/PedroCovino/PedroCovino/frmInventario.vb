@@ -12,7 +12,7 @@ Public Class frmInventario
 
     Private Sub cargarVista()
         Try
-            cargarComboInsumosProv()
+            'cargarComboInsumosProv()
             cargarComboInsumos(-1)
             cargardgInsumosStock(-1)
             cargarStock()
@@ -42,7 +42,7 @@ Public Class frmInventario
         Try
             Dim objWfIns As New wflInsumos
             Dim objDS As New DataSet
-            objDS = objWfIns.obtenerInsumosDescrip(idInsumo, idprov)
+            objDS = objWfIns.obtenerInsumosDescrip(idInsumo)
             If Not IsNothing(objDS) Then
                 cboInsumos.DataSource = objDS.Tables(0)
                 cboInsumos.DisplayMember = "descrip"
