@@ -28,14 +28,12 @@ a {
 }
 
 .right {
-    padding-left: 3.5em;
-    border-left-style: double;
+    padding-left: 3.5em;    
 }
 
 .titulo {
     background: #0e2b48;
     color: #ffffff;
-    border-left: double;
 }
 
 .image {
