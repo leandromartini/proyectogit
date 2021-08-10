@@ -1,0 +1,35 @@
+.rounded-circle {
+    height: 185px;
+}
+
+.row>* {
+    width: auto;
+}
+
+h1 {
+    font-family: "Avant Garde", Avantgarde, "Century Gothic", CenturyGothic, "AppleGothic", sans-serif;
+    text-align: center;
+    text-transform: uppercase;
+    text-rendering: optimizeLegibility;   
+    text-shadow: 1px 1px 0 #8f310b, -1px 1px 0 #bb450d, 1px -1px 0 #6f1c1c, -1px -1px 0 #a03d10, 0px 1px 0 #c25f23, 0px -1px 0 #9a2323, -1px 0px 0 #b05822, 1px 0px 0 #943610, 2px 2px 0 #923610, -2px 2px 0 #a43e10, 2px -2px 0px #8f310b, -2px -2px 0 #570000, 0px 2px 0 #982121, 0px -2px 0 #943810, -2px 0px 0 #ad4816, 2px 0px 0 #cb6628, 1px 2px 0 #af4410, -1px 2px 0 #a84110, 1px -2px 0 #93330e, -1px -2px 0 #b10d0d, 2px 1px 0 #b35923, -2px 1px 0 #cc862b, 2px -1px 0 #771b1b, -2px -1px 0 #f27c29;
+    color: #fefa62;
+    padding-top:1px ;
+    font-weight: 600;
+  }
+
+  img, svg ,h2 ,.bi bi-whatsapp{  
+    font-family: "Avant Garde", Avantgarde, "Century Gothic", CenturyGothic, "AppleGothic", sans-serif;
+    text-rendering: optimizeLegibility;
+    text-shadow: 1px 1px 0 #8f310b, -1px 1px 0 #bb450d, 1px -1px 0 #6f1c1c, -1px -1px 0 #a03d10, 0px 1px 0 #c25f23, 0px -1px 0 #9a2323, -1px 0px 0 #b05822, 1px 0px 0 #943610, 2px 2px 0 #923610, -2px 2px 0 #a43e10, 2px -2px 0px #8f310b, -2px -2px 0 #570000, 0px 2px 0 #982121, 0px -2px 0 #943810, -2px 0px 0 #ad4816, 2px 0px 0 #cb6628, 1px 2px 0 #af4410, -1px 2px 0 #a84110, 1px -2px 0 #93330e, -1px -2px 0 #b10d0d, 2px 1px 0 #b35923, -2px 1px 0 #cc862b, 2px -1px 0 #771b1b, -2px -1px 0 #f27c29;
+    color: #fefa62;
+    padding-top: 1px;
+    font-weight: 200;
+  }
+  .stretch {
+    display:inline-block;
+    -webkit-transform:scale(1,1); /* Safari and Chrome */
+    -moz-transform:scale(1,1); /* Firefox */
+    -ms-transform:scale(1,1); /* IE 9 */
+    -o-transform:scale(1,1); /* Opera */
+    transform:scale(1,1); /* W3C */
+}
