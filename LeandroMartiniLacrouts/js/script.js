@@ -30,7 +30,7 @@ $(document).ready(function () {
     function cargarbarras(bool) {
         if (!bool) {
 
-            percent = 0; percent1 = 0; percent2 = 0; percent3 = 0; percent4 = 0; percent5 = 0; percent6 = 0; percent7 = 0; percent8 = 0; inc = 1;
+            percent = 0; percent1 = 0; percent2 = 0; percent3 = 0; percent4 = 0; percent5 = 0; percent6 = 0; percent7 = 0; percent8 = 0; percent9 = 0; inc = 1;
             timerId = setInterval(function () {
                 percent += inc;
                 $('.prg').css('width', percent + '%'); if (percent == 75) { clearInterval(timerId); }
@@ -66,6 +66,10 @@ $(document).ready(function () {
             timerId8 = setInterval(function () {
                 percent8 += inc;
                 $('.prg8').css('width', percent8 + '%'); if (percent8 == 80) { clearInterval(timerId8); }
+            }, 20);
+            timerId9 = setInterval(function () {
+                percent9 += inc;
+                $('.prg9').css('width', percent9 + '%'); if (percent9 == 90) { clearInterval(timerId9); }
             }, 20);
         }
     }
