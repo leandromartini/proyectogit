@@ -4,9 +4,13 @@
     Private openFileDialog = New OpenFileDialog()
     Private objDalExcel As New DalExcel
     Private objComun As New Comun
+    Private strAccion As String = ""
     Private Sub frmCargarLista_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         estadoBotones(True)
         url = txtPath.Text
+        If Not System.IO.File.Exists(url) Then
+            ChooseFolder()
+        End If
     End Sub
     Public Sub ChooseFolder()
 
@@ -24,10 +28,15 @@
         ChooseFolder()
     End Sub
     Private Sub BtnCargarXLS_Click(sender As Object, e As EventArgs) Handles BtnCargarXLS.Click
-        Dim c As Cursor = Cursor
+
         Try
 
+
             openFileDialog.ShowDialog()
+
+            If openFileDialog.SafeFileName = "" Then
+                Exit Sub
+            End If
 
             urlXLSDestino = url + openFileDialog.SafeFileName
 
@@ -52,7 +61,7 @@
 
     End Sub
 
-    Private Sub BtnSubirXLS_Click(sender As Object, e As EventArgs) Handles BtnSubirXLS.Click
+    Private Sub BtnActualizarXLS_Click(sender As Object, e As EventArgs) Handles BtnActualizarXLS.Click
         Dim IntError As Integer = 0
         Dim objCodigos As DataSet
         Dim s As Cursor = Cursor
@@ -94,7 +103,7 @@
 
             MsgBox("La lista se actualizo EXITO!")
 
-            BtnSubirXLS.Visible = False
+            BtnActualizarXLS.Visible = False
 
             objDalExcel.close()
 
@@ -107,6 +116,62 @@
             Me.Close()
         End Try
 
+    End Sub
+
+    Private Sub btnNuevoInsumoXLS_Click(sender As Object, e As EventArgs) Handles btnNuevoInsumoXLS.Click
+        Dim s As Cursor = Cursor
+        Dim IntError As Integer = 0
+
+        Try
+            Cursor = Cursors.WaitCursor
+
+            If Not openFileDialog.SafeFileName = "excel template.xlsx" Then
+                MsgBox("Por favor cargue el archivo excel modelo")
+                Exit Sub
+            End If
+
+            objDalExcel.AbrirLibro(IntError, urlXLSDestino)
+            If IntError > 0 Then
+                MsgBox("Error al abrir excel. Consulte con el desarrollador")
+                Exit Sub
+            End If
+
+            'For row = codi To 1664
+
+            '    If objDalExcel.TomarValorCelda(row, 1) = objCodigos.Tables(0).Rows(rowTable).Item(0) Then
+
+            '        Me.actulizarRegistroXCodigo(row)
+
+            '        codi = row
+
+            '        Exit For
+
+            '    End If
+
+            'Next row
+            'objComun.ActualizarInsumo(txtBoxCodigo.Text, txtBoxDescrip.Text)
+
+            'objComun.ActualizarInsumoPrecios(txtBoxCodigo.Text, CDbl(txtBoxPrecioSiva.Text), CDbl(txtBoxPrecioCiva.Text), CDbl(txtBoxPrecioPub.Text))
+
+            'objComun.ActualizarInsumoStock(txtBoxCodigo.Text, txtBoxStock.Text, txtBoxStockMin.Text, txtboxStockMax.Text)
+
+            'objComun.grabarInsumo()
+
+            Me.Close()
+        Catch ex As Exception
+            Cursor = s
+        Finally
+            Cursor = s
+
+        End Try
+    End Sub
+
+    Private Sub btnSubirXLS_Click(sender As Object, e As EventArgs) Handles btnSubirXLS.Click
+        Try
+
+        Catch ex As Exception
+
+        End Try
     End Sub
 
     Private Sub actulizarRegistroXCodigo(row)
@@ -137,6 +202,8 @@
 
     Private Sub estadoBotones(estado As Boolean)
         BtnCargarXLS.Visible = estado
-        BtnSubirXLS.Visible = Not estado
+        BtnActualizarXLS.Visible = Not estado
+        btnNuevoInsumoXLS.Visible = Not estado
     End Sub
+
 End Class
