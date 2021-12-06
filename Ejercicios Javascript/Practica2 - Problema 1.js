@@ -25,16 +25,11 @@ function secuItera(num) {
     }
     numTerminos.push(term)
 }
-
 function maxCantTerm(entero) {
     for (let j = 1; j <= entero; j++) {
         secuItera(j)
         //console.log(numTerminos[j])
     }
 }
-
 maxCantTerm(entero)
 console.log("El número inicial, por debajo de 1.000.000 que produce la cadena más con mayor cantidad de términos: " + numTerminos.indexOf(numTerminos.reduce((n, m) => Math.max(n, m), -Number.POSITIVE_INFINITY)))
-
-
-
