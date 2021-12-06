@@ -6,7 +6,7 @@
 //13, 40, 20, 10, 5, 16, 8, 4, 2, 1
 //Puede verse que esta secuencia (comenzando en 13 y finalizando en 1) contiene 10 términos. Se sabe que las secuencias para todos los números terminan en "1". 
 //La pregunta a responder es: ¿Cuál número inicial, por debajo de 1.000.000 (un millón) produce la cadena más con mayor cantidad de términos?
-
+console.time('loop');
 entero = 1000000
 numTerminos = [0]
 function secuItera(num) {
@@ -33,3 +33,4 @@ function maxCantTerm(entero) {
 }
 maxCantTerm(entero)
 console.log("El número inicial, por debajo de 1.000.000 que produce la cadena más con mayor cantidad de términos: " + numTerminos.indexOf(numTerminos.reduce((n, m) => Math.max(n, m), -Number.POSITIVE_INFINITY)))
+console.timeEnd('loop');
